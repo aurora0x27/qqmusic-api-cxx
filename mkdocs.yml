@@ -1,0 +1,4 @@
+site_name: My Docs
+site_url: https://aurora0x27.github.io/qqmusic-api-cxx
+theme:
+  name: material
