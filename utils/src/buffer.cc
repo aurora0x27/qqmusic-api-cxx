@@ -1,4 +1,7 @@
+//-------------utils/buffer.h---------------
+//   class to describe web request buffer
 #include <utils/buffer.h>
+
 #include <stdlib.h>
 
 // constructor
