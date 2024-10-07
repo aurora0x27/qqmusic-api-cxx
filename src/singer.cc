@@ -1,0 +1,1 @@
+#include <qqmusic/singer.h>
