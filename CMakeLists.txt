@@ -8,19 +8,36 @@ endif()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_subdirectory(utils/NetWork)
-
+project(qmapi-demo LANGUAGES CXX)
 file(GLOB_RECURSE QQMUSIC_API_SOURCE CONFIGURE_DEPENDS src/*.cc include/*.h)
 
 if (NOT DEFINED QQMUSIC_API_BUILD_TYPE)
     message(FATAL_ERROR "==>QQMUSIC_API_BUILD_TYPE not set...")
 elseif(${QQMUSIC_API_BUILD_TYPE} STREQUAL "DEMO")
     message("==>Building Demo...")
-    project(demo LANGUAGES CXX)
-    set(CMAKE_TOOLCHAIN_FILE ${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake)
-    add_executable(demo demo/main.cc)
+    add_subdirectory(utils)
+    set(CMAKE_TOOLCHAIN_FILE $ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake)
+    message("VCPKG PATH = " ${CMAKE_TOOLCHAIN_FILE})
     add_library(qmapi SHARED ${QQMUSIC_API_SOURCE})
+    target_include_directories(
+        qmapi PUBLIC
+        include
+    )
+    target_link_libraries(
+        qmapi PUBLIC
+        qmutils
+    )
+    add_executable(demo demo/main.cc)
+    target_include_directories(
+        demo PUBLIC
+        include
+    )
+    target_link_libraries(
+        demo PUBLIC
+        qmapi
+    )
 elseif(${QQMUSIC_API_BUILD_TYPE} STREQUAL "SHARED_LIB")
     message("==>Building as shared library...")
     add_library(qmapi SHARED ${QQMUSIC_API_SOURCE})
