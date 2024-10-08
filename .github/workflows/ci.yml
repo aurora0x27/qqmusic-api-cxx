@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - dev
+      - feat/utils/qrc-decoder
 permissions:
   contents: write
 jobs:
