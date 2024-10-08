@@ -1,0 +1,11 @@
+{
+	"name": "qmapi",
+	"dependencies": [
+		{
+			"name": "zlib"
+		},
+		{
+		    "name": "curl"
+		}
+	]
+}
