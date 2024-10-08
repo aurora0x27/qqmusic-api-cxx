@@ -1,3 +1,5 @@
+//-------------utils/buffer.h---------------
+//        http request buffer class
 #ifndef BUFFER_H
 #define BUFFER_H
 
