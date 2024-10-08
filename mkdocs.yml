@@ -1,4 +1,50 @@
-site_name: My Docs
+site_name: QQMUSIC-API-CXX
+site_description: QQ音乐C++SDK
 site_url: https://aurora0x27.github.io/qqmusic-api-cxx
+
 theme:
-  name: material
+  name: "material"
+  language: zh
+  font: false
+  features:
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy
+    - announce.dismiss
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/theme-light-dark
+        name: Automatically Switch ui mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: latte
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: macchiato
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+repo_name: aurora0x27/qqmusic-api-cxx
+repo_url: https://github.com/aurora0x27/qqmusic-api-cxx
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/aurora0x27/qqmusic-api-cxx
+
+extra_css:
+  - css/font.css
+  - css/scheme.css
+  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - https://fonts.loli.net/css2?family=Noto+Serif+SC&display=swap       
