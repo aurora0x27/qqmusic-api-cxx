@@ -9,6 +9,15 @@
 
 关于curl库, 请参考[everything curl](https://everything.curl.dev/)文档
 
+## api接口规范
+
+- 所有的入参和返回参数当作函数参数, 返回值需要设置成`qqmusic/error.h`中的`error`枚举类,
+代表报错信息, 函数原型举例:
+
+```cpp
+qqmusic::error::network get_song_list(std::string url, std::string& res_json);
+```
+
 ## 提交规范
 
 从`issue`新建分支时请基于`dev`分支构建. 一个分支对应一个`issue`, 只完成`issue`规定的任务.
