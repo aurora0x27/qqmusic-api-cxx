@@ -15,7 +15,9 @@ namespace qqmusic
         data_destroy,
 
         // cannot sure what happened
-        unknown_error
+        unknown_error,
+
+        mem_alloc_failure
     };
 }
 // namespace qqmusic
