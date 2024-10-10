@@ -1,4 +1,35 @@
-build/*
-.cache/*
-vcpkg_installed/*
+# CMake build directory
+build/
+out/
+
+# IDE settings
+.vscode/settings.json
+.idea
+.vs
+
+# clangd cache
+.cache/
+
+# vcpkg installed
+vcpkg_installed/
+
+# debug data
 demo/main.cc
+
+# log file
+*.log
+
+# executable
+*.exe
+
+# compile product
+*.o
+*.obj
+
+# static lib
+*.lib
+*.a
+
+# shared lib
+*.dll
+*.so
