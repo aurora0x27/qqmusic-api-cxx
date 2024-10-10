@@ -5,7 +5,11 @@
 主要采用[linux kernel](https://docs.kernel.org/translations/zh_CN/process/coding-style.html)的规范,
 但是统一使用4个空格作为缩进, 注释使用统一的单行注释.
 
-## 网络库
+## 开发环境
+
+使用`git`下载仓库后, `cmake -B build -DQQMUSIC_API_BUILD_TYPE=DEMO && cmake --build build`, 此时会构建与api库动态链接的
+可执行文件, 可以利用`demo/main.cc`进行调试(该文件在`.gitignore`中, 更改不会被提交, 专门用于调试)
+
 
 关于curl库, 请参考[everything curl](https://everything.curl.dev/)文档
 
@@ -15,7 +19,7 @@
 代表报错信息, 函数原型举例:
 
 ```cpp
-qqmusic::error::network get_song_list(std::string url, std::string& res_json);
+qqmusic::result get_song_list(std::string url, std::string& res_json);
 ```
 
 ## 提交规范
@@ -52,4 +56,4 @@ git pull --rebase origin dev
 
 提交规范: [约定式提交规范](https://www.conventionalcommits.org/zh-hans/v1.0.0/)
 
-请在各人的分支中进行操作, 不要自行合并.
+请在各人的分支中进行操作, 不要自行合并, 进行第一次代码提交后就可以向`dev`分支提出合并请求.

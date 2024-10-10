@@ -1,3 +1,4 @@
 build/*
 .cache/*
 vcpkg_installed/*
+demo/main.cc
