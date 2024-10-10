@@ -15,6 +15,7 @@ project(qmapi LANGUAGES CXX)
 file(GLOB_RECURSE QQMUSIC_API_SOURCE CONFIGURE_DEPENDS src/*.cc include/*.h)
 find_package(CURL REQUIRED)
 find_package(ZLIB REQUIRED)
+find_package(jsoncpp REQUIRED)
 add_subdirectory(utils)
 
 add_library(qmapi SHARED ${QQMUSIC_API_SOURCE})
@@ -27,6 +28,7 @@ target_link_libraries(
     qmutils
     ZLIB::ZLIB
     CURL::libcurl
+    jsoncpp_lib
 )
 
 if (NOT DEFINED QQMUSIC_API_BUILD_TYPE)
