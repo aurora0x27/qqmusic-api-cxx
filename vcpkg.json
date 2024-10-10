@@ -6,6 +6,9 @@
 		},
 		{
 		    "name": "curl"
+		},
+		{
+		    "name": "jsoncpp"
 		}
 	]
 }
