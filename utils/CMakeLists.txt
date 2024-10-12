@@ -4,6 +4,7 @@ add_library(qmutils STATIC ${QMUTILS_BIULD_SOURCE})
 target_include_directories(
     qmutils PUBLIC
     include
+    ../include
 )
 
 # target_link_libraries(
