@@ -1,0 +1,25 @@
+Detecting compiler hash for triplet x64-linux...
+Compiler found: /usr/bin/g++
+All requested packages are currently installed.
+Total install time: 404 ns
+The package zlib is compatible with built-in CMake targets:
+
+    find_package(ZLIB REQUIRED)
+    target_link_libraries(main PRIVATE ZLIB::ZLIB)
+
+curl is compatible with built-in CMake targets:
+
+    find_package(CURL REQUIRED)
+    target_link_libraries(main PRIVATE CURL::libcurl)
+
+jsoncpp provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(jsoncpp CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE JsonCpp::JsonCpp)
+
+jsoncpp provides pkg-config modules:
+
+  # A C++ library for interacting with JSON
+  jsoncpp
+
