@@ -5,10 +5,17 @@ namespace qqmusic
 {
     enum class result
     {
-        network_connect_ok,
+        // normally return this
+        excecuted_success,
+
+        // net work error
         network_connect_timeout,
 
-        mem_alloc_failure
+        mem_alloc_error,
+        data_destroy,
+
+        // cannot sure what happened
+        unknown_error
     };
 }
 // namespace qqmusic
