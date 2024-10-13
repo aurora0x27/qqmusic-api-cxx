@@ -1,4 +1,3 @@
-#include <cstdint>
 #include <stdint.h>
 #include <string>
 #include <string.h>
@@ -132,8 +131,6 @@ decompress(qqmusic::utils::buffer* src,
     size_t src_size = src->get_size();
     uint8_t* src_head = src->get_head();
 
-    // ZEXTERN int ZEXPORT uncompress(Bytef *dest,   uLongf *destLen,
-    //                                const Bytef *source, uLong sourceLen);
     int uncompress_res = uncompress(dest_head, &dest_size, src_head, src_size);
     switch (uncompress_res) {
     case Z_OK:
@@ -154,10 +151,6 @@ decompress(qqmusic::utils::buffer* src,
     return 0;
 }
 
-// qmc decoder
-// def qmc1_decrypt(data: bytearray) -> None:
-//     for i, _value in enumerate(data):
-//         data[i] ^= PRIVKEY[(i % 0x7FFF) & 0x7F] if i > 0x7FFF else PRIVKEY[i & 0x7F]
 static void
 qmc1_decrypt(qqmusic::utils::buffer* src)
 {
