@@ -85,7 +85,7 @@ qqmusic::utils::qrc_decode(qqmusic::utils::buffer*  src,
             return qqmusic::result::unknown_error;
     }
 
-    return qqmusic::result::qrc_decode_ok;
+    return qqmusic::result::excecuted_success;
 }
 
 static int
