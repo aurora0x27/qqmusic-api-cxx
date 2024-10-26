@@ -28,7 +28,7 @@ target_link_libraries(
     qmutils
     ZLIB::ZLIB
     CURL::libcurl
-    jsoncpp_lib
+    JsonCpp::JsonCpp
 )
 
 if (NOT DEFINED QQMUSIC_API_BUILD_TYPE)
