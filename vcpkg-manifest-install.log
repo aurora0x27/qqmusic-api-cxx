@@ -1,34 +1,7 @@
-Fetching registry information from https://github.com/microsoft/vcpkg (HEAD)...
 Detecting compiler hash for triplet x64-linux...
 Compiler found: /usr/bin/g++
-The following packages will be built and installed:
-    curl[core,non-http,openssl,ssl]:x64-linux@8.7.1#3 -- /home/aurora/.cache/vcpkg/registries/git-trees/32945fcb82088dc4055db602b3ebe95f67f04326
-  * openssl:x64-linux@3.3.0 -- /home/aurora/.cache/vcpkg/registries/git-trees/033278114ce1aff68a03a777df0689c846760006
-  * vcpkg-cmake:x64-linux@2024-04-18 -- /home/aurora/.cache/vcpkg/registries/git-trees/a10a94e8d0071ed4804d40d0f0f0c5e4e7180afd
-  * vcpkg-cmake-config:x64-linux@2022-02-06#1 -- /home/aurora/.cache/vcpkg/registries/git-trees/8d54cc4f487d51b655abec5f9c9c3f86ca83311f
-  * vcpkg-cmake-get-vars:x64-linux@2023-12-31 -- /home/aurora/.cache/vcpkg/registries/git-trees/725c841810ceb8de33da68ea879eb8f0b4d6c94c
-    zlib:x64-linux@1.3.1 -- /home/aurora/.cache/vcpkg/registries/git-trees/3f05e04b9aededb96786a911a16193cdb711f0c9
-Additional packages (*) will be modified to complete this operation.
-Restored 6 package(s) from /home/aurora/.cache/vcpkg/archives in 277 ms. Use --debug to see more details.
-Installing 1/6 vcpkg-cmake:x64-linux@2024-04-18...
-Elapsed time to handle vcpkg-cmake:x64-linux: 261 us
-vcpkg-cmake:x64-linux package ABI: 7f8b2bc135a13dc6e6dd547c68ad13197621d80b467536761a34eebebc95dc2e
-Installing 2/6 vcpkg-cmake-get-vars:x64-linux@2023-12-31...
-Elapsed time to handle vcpkg-cmake-get-vars:x64-linux: 163 us
-vcpkg-cmake-get-vars:x64-linux package ABI: dea201f7cd05252cb14e3546ac72ba8427a90b25a352882fb42a6eaf6d44ee1c
-Installing 3/6 vcpkg-cmake-config:x64-linux@2022-02-06#1...
-Elapsed time to handle vcpkg-cmake-config:x64-linux: 140 us
-vcpkg-cmake-config:x64-linux package ABI: ea7a08037479299bd8c997ce496cf4a92674695aef9ec66fa30febb83f9eb4f6
-Installing 4/6 openssl:x64-linux@3.3.0...
-Elapsed time to handle openssl:x64-linux: 1.47 ms
-openssl:x64-linux package ABI: 0fd9973a5dc166c155edca7d61860ed2c0509fee5c9f4760bb0fbcc88d680aa7
-Installing 5/6 zlib:x64-linux@1.3.1...
-Elapsed time to handle zlib:x64-linux: 273 us
-zlib:x64-linux package ABI: 7767a0a39e67f8cc46795393924146ba0e461ca48db6ea194a40867a122e201e
-Installing 6/6 curl[core,non-http,openssl,ssl]:x64-linux@8.7.1#3...
-Elapsed time to handle curl:x64-linux: 560 us
-curl:x64-linux package ABI: ba1d619ce6136130ebaa1c7a37274312b014ceb6099c6415444018df8c28452e
-Total install time: 2.9 ms
+All requested packages are currently installed.
+Total install time: 685 ns
 The package zlib is compatible with built-in CMake targets:
 
     find_package(ZLIB REQUIRED)
