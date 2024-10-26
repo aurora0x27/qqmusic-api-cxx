@@ -14,8 +14,8 @@ namespace qqmusic::utils
         local
     };
 
-    qqmusic::result qrc_decode(qqmusic::utils::buffer* src,
-                               qqmusic::utils::buffer* dest,
+    qqmusic::result qrc_decode(qqmusic::utils::buffer*  src,
+                               qqmusic::utils::buffer*  dest,
                                qqmusic::utils::qrc_type type);
 }
 // namespace qqmusic::utils

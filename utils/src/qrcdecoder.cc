@@ -1,6 +1,8 @@
+#include <cstdint>
 #include <stdint.h>
-#include <string>
+#include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include <zlib.h>
 
@@ -10,12 +12,6 @@
 
 static int decompress(qqmusic::utils::buffer* src,
                       qqmusic::utils::buffer* dest);
-
-// I don't know how to "decode('utf-8')", do not use this function
-static int encoding_utf8(qqmusic::utils::buffer* src,
-                         qqmusic::utils::buffer* dest);
-
-static void builtin_memcpy(void* dest, void* src, size_t size);
 
 // qmc decoder
 static void qmc1_decrypt(qqmusic::utils::buffer* src);
@@ -58,8 +54,8 @@ qqmusic::utils::qrc_decode(qqmusic::utils::buffer*  src,
 
     // generate key schedule
     qqmusic::utils::tripledes_key_schedule schedule = qqmusic::utils::tripledes_key_setup((uint8_t*)qrc_key,
-                                                                                          qrc_key_size,
-                                                                                          qqmusic::utils::tripledes_crypt_mode::decrypt);
+                                                                                           qrc_key_size,
+                                                                                           qqmusic::utils::tripledes_crypt_mode::decrypt);
 
     qqmusic::utils::buffer compressed_buffer;
 
@@ -67,90 +63,77 @@ qqmusic::utils::qrc_decode(qqmusic::utils::buffer*  src,
     // origin python code:
     // for i in range(0, len(encrypted_text_byte), 8):
     //     data += tripledes_crypt(encrypted_text_byte[i:], schedule)
-    for (size_t i = 0; i < tmp_size / 8; i += 8) {
-        qqmusic::utils::buffer tmp_section(tmp->get_head() + i * 8, 8);
+    uint8_t* head = tmp->get_head();
+    for (size_t i = 0; i < tmp_size / 8; ++i) {
+        qqmusic::utils::buffer tmp_section(head + i * 8, 8);
         qqmusic::utils::tripledes_crypt(&tmp_section, &compressed_buffer, schedule);
     }
+    delete tmp;
 
     // decompress the buffer
     int decompress_res = decompress(&compressed_buffer, dest);
 
     switch (decompress_res) {
-    case -1:
-    case 1:
-        delete tmp;
-        return qqmusic::result::mem_alloc_error;
-    case 2:
-        delete tmp;
-        return qqmusic::result::data_destroy;
-    case 0:
-        break;
-    default:
-        delete tmp;
-        return qqmusic::result::unknown_error;
+        case -1:
+        case 1:
+            return qqmusic::result::mem_alloc_error;
+        case 2:
+            return qqmusic::result::data_destroy;
+        case 0:
+            break;
+        default:
+            return qqmusic::result::unknown_error;
     }
 
-    delete tmp;
-    return qqmusic::result::excecuted_success;
-}
-
-static void
-builtin_memcpy(void* dest, void* src, size_t size)
-{
-    uint8_t* d = (uint8_t*)dest;
-    uint8_t* s = (uint8_t*)src;
-    for (size_t i = 0; i < size; ++i) {
-        d[i] = s[i];
-    }
-}
-
-static int
-encoding_utf8(qqmusic::utils::buffer* src,
-              qqmusic::utils::buffer* dest)
-{
-    auto chunk = std::string((char*)src->get_head(), (int)src->get_size());
-    if (chunk.size() != dest->get_size()) {
-        dest->resize(chunk.size());
-    }
-    builtin_memcpy((void*)dest->get_head(), (void*)chunk.c_str(), chunk.size());
-    return 0;
+    return qqmusic::result::qrc_decode_ok;
 }
 
 static int
 decompress(qqmusic::utils::buffer* src,
            qqmusic::utils::buffer* dest)
 {
-    // resize the receive buffer as 4 times larger than src
-    size_t dest_size = src->get_size() * 4;
-    uint8_t* dest_head = dest->get_head();
-    bool resize_res = dest->resize(dest_size);
-    if (resize_res) {
-        return -1;
-    }
+    // prepare receive buffer
+    size_t   tmp_dest_size = src->get_size() * 4;
+    uint8_t* tmp_dest_head = (uint8_t*)malloc(tmp_dest_size);
 
-    size_t src_size = src->get_size();
+    // prepare input buffer
+    size_t   src_size = src->get_size();
     uint8_t* src_head = src->get_head();
 
-    int uncompress_res = uncompress(dest_head, &dest_size, src_head, src_size);
+    // ZEXTERN int ZEXPORT uncompress(Bytef *dest,   uLongf *destLen,
+    //                                const Bytef *source, uLong sourceLen);
+    int uncompress_res = uncompress(tmp_dest_head, &tmp_dest_size, src_head, src_size);
     switch (uncompress_res) {
     case Z_OK:
         break;
     case Z_MEM_ERROR:
+        free(tmp_dest_head);
         return -1; // mem alloc error
         break;
     case Z_BUF_ERROR:
+        free(tmp_dest_head);
         return 1; // buffer too small
         break;
     case Z_DATA_ERROR:
+        free(tmp_dest_head);
         return 2; // data demage
         break;
+    default:
+        free(tmp_dest_head);
+        return 3; // unknown error
     }
 
-    dest->resize(dest_size);
+    // write buffer into dest
+    dest->append(tmp_dest_head, tmp_dest_size);
 
+    free(tmp_dest_head);
     return 0;
 }
 
+// qmc decoder
+// def qmc1_decrypt(data: bytearray) -> None:
+//     for i, _value in enumerate(data):
+//         data[i] ^= PRIVKEY[(i % 0x7FFF) & 0x7F] if i > 0x7FFF else PRIVKEY[i & 0x7F]
 static void
 qmc1_decrypt(qqmusic::utils::buffer* src)
 {
@@ -184,6 +167,6 @@ qmc1_decrypt(qqmusic::utils::buffer* src)
     uint8_t* head = src->get_head();
 
     for (size_t i = 0; i < size; ++i) {
-        head[i] ^= i > 0x7FFF ? private_key[(i % 0x7FFF) & 0x7F] : private_key[i & 0x7FF];
+        head[i] ^= i > 0x7fff ? private_key[(i % 0x7fff) & 0x7f] : private_key[i & 0x7f];
     }
 }

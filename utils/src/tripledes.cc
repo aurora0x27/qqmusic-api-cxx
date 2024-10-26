@@ -1,31 +1,32 @@
+#include <cstdio>
 #include <utils/tripledes.h>
 
-static std::vector<std::vector<long>>
+static std::vector<std::vector<uint32_t>>
 key_schedule(uint8_t* key_head, size_t key_size, qqmusic::utils::tripledes_crypt_mode mode);
 
-static long
-bitnum(uint8_t* head, size_t size, long b, long c);
+static uint32_t
+bitnum(uint8_t* head, size_t size, uint32_t b, uint32_t c);
 
-static long
-bitnum_intl(long a, long b, long c);
+static uint32_t
+bitnum_intl(uint32_t a, uint32_t b, uint32_t c);
 
-static long
-bitnum_intr(long a, long b, long c);
-
-static void
-crypt(qqmusic::utils::buffer* buf, std::vector<std::vector<long>> key);
+static uint32_t
+bitnum_intr(uint32_t a, uint32_t b, uint32_t c);
 
 static void
-initial_permutation(long* a, long* b, qqmusic::utils::buffer* buf);
+crypt(qqmusic::utils::buffer* buf, std::vector<std::vector<uint32_t>> key);
 
 static void
-inverse_permutation(long a, long b, qqmusic::utils::buffer* buf);
+initial_permutation(uint32_t* a, uint32_t* b, qqmusic::utils::buffer* buf);
 
-static long
-transform(long state, std::vector<long> key);
+static void
+inverse_permutation(uint32_t a, uint32_t b, qqmusic::utils::buffer* buf);
 
-static long
-sbox_bit(long a);
+static uint32_t
+transform(uint32_t state, std::vector<uint32_t> key);
+
+static uint32_t
+sbox_bit(uint32_t a);
 
 // extern api
 qqmusic::utils::tripledes_key_schedule
@@ -33,7 +34,7 @@ qqmusic::utils::tripledes_key_setup(uint8_t*                             key_hea
                                     size_t                               key_size,
                                     qqmusic::utils::tripledes_crypt_mode mode)
 {
-    std::vector<std::vector<std::vector<long>>> res;
+    std::vector<std::vector<std::vector<uint32_t>>> res;
 
     if (mode == qqmusic::utils::tripledes_crypt_mode::encrypt) {
         res.push_back(key_schedule(key_head, key_size, qqmusic::utils::tripledes_crypt_mode::encrypt));
@@ -57,24 +58,25 @@ qqmusic::utils::tripledes_crypt(qqmusic::utils::buffer*                buf_in,
     for (int i = 0; i < 3; ++i) {
         crypt(buf_in, key_schedule[i]);
     }
+
     // insert processed data into output buffer
-    buf_out->buf_append(buf_in->get_head(), buf_in->get_size());
+    buf_out->append(buf_in->get_head(), buf_in->get_size());
 }
 
-static std::vector<std::vector<long>>
+static std::vector<std::vector<uint32_t>>
 key_schedule(uint8_t* key_head, size_t key_size, qqmusic::utils::tripledes_crypt_mode mode)
 {
-    std::vector<std::vector<long>> res(16, std::vector<long>(6, 0L));
-    const long key_rnd_shift[]   = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
-    const long key_perm_c[]      = {56, 48, 40, 32, 24, 16, 8, 0, 57, 49, 41, 33, 25, 17,
-                                   9, 1, 58, 50, 42, 34, 26, 18, 10, 2, 59, 51, 43, 35};
-    const long key_perm_d[]      = {62, 54, 46, 38, 30, 22, 14, 6, 61, 53, 45, 37, 29, 21,
-                                    13, 5, 60, 52, 44, 36, 28, 20, 12, 4, 27, 19, 11, 3};
-    const long key_compression[] = {13, 16, 10, 23, 0, 4, 2, 27, 14, 5, 20, 9, 22, 18, 11, 3, 25,
-                                   7, 15, 6, 26, 19, 12, 1, 40, 51, 30, 36, 46, 54, 29, 39, 50,
-                                   44, 32, 47, 43, 48, 38, 55, 33, 52, 45, 41, 49, 35, 28, 31};
+    std::vector<std::vector<uint32_t>> schedule(16, std::vector<uint32_t>(6, 0L));
+    const uint32_t key_rnd_shift[]   = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
+    const uint32_t key_perm_c[]      = {56, 48, 40, 32, 24, 16, 8, 0, 57, 49, 41, 33, 25, 17,
+                                        9, 1, 58, 50, 42, 34, 26, 18, 10, 2, 59, 51, 43, 35};
+    const uint32_t key_perm_d[]      = {62, 54, 46, 38, 30, 22, 14, 6, 61, 53, 45, 37, 29, 21,
+                                        13, 5, 60, 52, 44, 36, 28, 20, 12, 4, 27, 19, 11, 3};
+    const uint32_t key_compression[] = {13, 16, 10, 23, 0, 4, 2, 27, 14, 5, 20, 9, 22, 18, 11, 3, 25,
+                                        7, 15, 6, 26, 19, 12, 1, 40, 51, 30, 36, 46, 54, 29, 39, 50,
+                                        44, 32, 47, 43, 48, 38, 55, 33, 52, 45, 41, 49, 35, 28, 31};
 
-    long c = 0, d = 0;
+    uint32_t c = 0, d = 0;
     for (int i = 0; i < 28; ++i) {
         c += bitnum(key_head, key_size, key_perm_c[i], 31 - i);
         d += bitnum(key_head, key_size, key_perm_d[i], 31 - i);
@@ -86,41 +88,44 @@ key_schedule(uint8_t* key_head, size_t key_size, qqmusic::utils::tripledes_crypt
 
         int togen = mode == qqmusic::utils::tripledes_crypt_mode::decrypt ? 15 - i : i;
 
-        for (int j = 0; j < 6; ++j)
-            res[togen][j] = 0;
+        for (int j = 0; j < 6; ++j) {
+            schedule[togen][j] = 0;
+        }
 
-        for (int j = 0; j < 24; ++j)
-            res[togen][j / 8] |= bitnum_intr(c, key_compression[j], 7 - (j % 8));
+        for (int j = 0; j < 24; ++j) {
+            schedule[togen][j / 8] |= bitnum_intr(c, key_compression[j], 7 - (j % 8));
+        }
 
-        for (int j = 24; j < 48; ++j)
-            res[togen][j / 8] |= bitnum_intr(d, key_compression[j] - 27, 7 - (j % 8));
+        for (int j = 24; j < 48; ++j){
+            schedule[togen][j / 8] |= bitnum_intr(d, key_compression[j] - 27, 7 - (j % 8));
+        }
     }
 
-    return res;
+    return schedule;
 }
 
-static long
-bitnum(uint8_t* head, size_t size, long b, long c)
+static uint32_t
+bitnum(uint8_t* head, size_t size, uint32_t b, uint32_t c)
 {
     return ((head[(b / 32) * 4 + 3 - (b % 32) / 8] >> (7 - b % 8)) & 1) << c;
 }
 
-static long
-bitnum_intl(long a, long b, long c)
-{
-    return ((a >> (31 - b)) & 1) << c;
-}
-
-static long
-bitnum_intr(long a, long b, long c)
+static uint32_t
+bitnum_intl(uint32_t a, uint32_t b, uint32_t c)
 {
     return ((a << b) & 0x80000000) >> c;
 }
 
-static void
-crypt(qqmusic::utils::buffer* buf, std::vector<std::vector<long>> key)
+static uint32_t
+bitnum_intr(uint32_t a, uint32_t b, uint32_t c)
 {
-    long a = 0, b = 0;
+    return ((a >> (31 - b)) & 1) << c;
+}
+
+static void
+crypt(qqmusic::utils::buffer* buf, std::vector<std::vector<uint32_t>> key)
+{
+    uint32_t a = 0, b = 0;
     initial_permutation(&a, &b, buf);
 
     for (int i = 0; i < 15; ++i) {
@@ -134,7 +139,7 @@ crypt(qqmusic::utils::buffer* buf, std::vector<std::vector<long>> key)
 }
 
 static void
-initial_permutation(long* a, long* b,qqmusic::utils::buffer* buf)
+initial_permutation(uint32_t* a, uint32_t* b,qqmusic::utils::buffer* buf)
 {
     uint8_t* input_data = buf->get_head();
     size_t   size       = buf->get_size();
@@ -159,7 +164,7 @@ initial_permutation(long* a, long* b,qqmusic::utils::buffer* buf)
 }
 
 static void
-inverse_permutation(long a, long b, qqmusic::utils::buffer* buf)
+inverse_permutation(uint32_t a, uint32_t b, qqmusic::utils::buffer* buf)
 {
     uint8_t data[8] = {0};
 
@@ -195,14 +200,14 @@ inverse_permutation(long a, long b, qqmusic::utils::buffer* buf)
                bitnum_intr(a, 8, 4) | bitnum_intr(b, 16, 3) | bitnum_intr(a, 16, 2) |
                bitnum_intr(b, 24,1) | bitnum_intr(a, 24, 0));
 
-    // append the result to the end of buffer
-    buf->buf_append(data, 8);
+    buf->clear();
+    buf->append(data, 8);
 }
 
-static long
-transform(long state, std::vector<long> key)
+static uint32_t
+transform(uint32_t state, std::vector<uint32_t> key)
 {
-    int sbox[8][64] = {
+    uint32_t sbox[8][64] = {
         // sbox1
         {14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7,
         0, 15, 7, 4, 14, 2, 13, 1, 10, 6, 12, 11, 9, 5, 3, 8,
@@ -252,17 +257,17 @@ transform(long state, std::vector<long> key)
         2, 1, 14, 7, 4, 10, 8, 13, 15, 12, 9, 0, 3, 5, 6, 11},
     };
 
-    long t1 = (bitnum_intl(state, 31,  0) | ((state & 0xf0000000) >> 1) | bitnum_intl(state, 4,   5) |
-               bitnum_intl(state,  3,  6) | ((state & 0x0f000000) >> 3) | bitnum_intl(state, 8,  11) |
-               bitnum_intl(state,  7, 12) | ((state & 0x00f00000) >> 5) | bitnum_intl(state, 12, 17) |
-               bitnum_intl(state, 11, 18) | ((state & 0x000f0000) >> 7) | bitnum_intl(state, 16, 23));
+    uint32_t t1 = (bitnum_intl(state, 31,  0) | ((state & 0xf0000000) >> 1) | bitnum_intl(state, 4,   5) |
+                   bitnum_intl(state,  3,  6) | ((state & 0x0f000000) >> 3) | bitnum_intl(state, 8,  11) |
+                   bitnum_intl(state,  7, 12) | ((state & 0x00f00000) >> 5) | bitnum_intl(state, 12, 17) |
+                   bitnum_intl(state, 11, 18) | ((state & 0x000f0000) >> 7) | bitnum_intl(state, 16, 23));
 
-    long t2 = (bitnum_intl(state, 15,  0) | ((state & 0x0000f000) << 15) | bitnum_intl(state, 20,  5) |
-               bitnum_intl(state, 19,  6) | ((state & 0x00000f00) << 13) | bitnum_intl(state, 24, 11) |
-               bitnum_intl(state, 23, 12) | ((state & 0x000000f0) << 11) | bitnum_intl(state, 28, 17) |
-               bitnum_intl(state, 27, 18) | ((state & 0x0000000f) <<  9) | bitnum_intl(state, 0,  23));
+    uint32_t t2 = (bitnum_intl(state, 15,  0) | ((state & 0x0000f000) << 15) | bitnum_intl(state, 20,  5) |
+                   bitnum_intl(state, 19,  6) | ((state & 0x00000f00) << 13) | bitnum_intl(state, 24, 11) |
+                   bitnum_intl(state, 23, 12) | ((state & 0x000000f0) << 11) | bitnum_intl(state, 28, 17) |
+                   bitnum_intl(state, 27, 18) | ((state & 0x0000000f) <<  9) | bitnum_intl(state, 0,  23));
 
-    long lrgstate[] = {
+    uint32_t lrgstate[] = {
         (t1 >> 24) & 0x000000ff, (t1 >> 16) & 0x000000ff, (t1 >> 8) & 0x000000ff,
         (t2 >> 24) & 0x000000ff, (t2 >> 16) & 0x000000ff, (t2 >> 8) & 0x000000ff,
     };
@@ -293,8 +298,8 @@ transform(long state, std::vector<long> key)
             bitnum_intl(state,  3, 30) | bitnum_intl(state, 24, 31));
 }
 
-static long
-sbox_bit(long a)
+static uint32_t
+sbox_bit(uint32_t a)
 {
     return (a & 32) | ((a & 31) >> 1) | ((a & 1) << 4);
 }
