@@ -4,6 +4,10 @@ on:
     branches:
       - main
       - dev
+  merge:
+    branched:
+      - main
+      - dev
 permissions:
   contents: write
 jobs:
