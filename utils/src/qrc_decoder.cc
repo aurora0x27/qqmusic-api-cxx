@@ -7,7 +7,7 @@
 #include <zlib.h>
 
 #include <utils/tripledes.h>
-#include <utils/qrcdecoder.h>
+#include <utils/qrc_decoder.h>
 #include <utils/buffer.h>
 
 static int decompress(qqmusic::utils::buffer* src,
