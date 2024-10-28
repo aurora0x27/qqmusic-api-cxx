@@ -1,17 +1,11 @@
-# Welcome to MkDocs
+---
+hide: navigation
+---
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+<div align="center">
+    <h1> QQMusic-API-CXX </h1>
+</div>
 
-## Commands
+## 简介
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+本项目使用C++借助[cURL](https://curl.se/)库封装QQ音乐的API.
