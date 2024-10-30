@@ -13,8 +13,8 @@ namespace qqmusic::utils
                     buffer          (size_t size);
                     buffer          (const uint8_t* src_head, size_t src_size);
                     ~buffer         ();
-        size_t      get_size        ();
-        uint8_t*    get_head        ();
+        size_t      get_size        () const ;
+        uint8_t*    get_head        () const ;
         size_t      append          (const void*  src_data_buf,
                                            size_t data_buf_size);
         void        clear           ();

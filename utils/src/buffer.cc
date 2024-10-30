@@ -46,13 +46,13 @@ qqmusic::utils::buffer::append(const void*  src_data_buf,
 }
 
 size_t
-qqmusic::utils::buffer::get_size()
+qqmusic::utils::buffer::get_size() const
 {
     return this->size;
 }
 
 uint8_t*
-qqmusic::utils::buffer::get_head()
+qqmusic::utils::buffer::get_head() const
 {
     return this->head;
 }
