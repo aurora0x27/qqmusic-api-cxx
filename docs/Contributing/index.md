@@ -7,6 +7,14 @@
 
 ## 开发环境
 
+依赖项:
+
+- gcc/g++12及以上或clang/clang++18及以上的编译器
+
+- [vcpkg](https://vcpkg.io/en/)包管理器
+
+- [mkdocs](https://squidfunk.github.io/mkdocs-material/)文档生成器
+
 使用`git`下载仓库后, `cmake -B build -DQQMUSIC_API_BUILD_TYPE=DEMO && cmake --build build`, 此时会构建与api库动态链接的
 可执行文件, 可以利用`demo/main.cc`进行调试(该文件在`.gitignore`中, 更改不会被提交, 专门用于调试)
 
