@@ -57,3 +57,19 @@ git pull --rebase origin dev
 提交规范: [约定式提交规范](https://www.conventionalcommits.org/zh-hans/v1.0.0/)
 
 请在各人的分支中进行操作, 不要自行合并, 进行第一次代码提交后就可以向`dev`分支提出合并请求.
+
+## 文档编写规范
+
+- 每个头文件对应`docs/Api/main_module`或`docs/Api/utils`下的一个markdown文件
+
+- 在文档文件开头应该描述该头文件中的类或函数作用, 以及对应的头文件相对项目根目录的路径
+
+- 一级标题是对头文件内容概括
+
+- 二级标题是类或函数名称, 前面使用加粗斜体格式标注***func***或***class***
+
+- 三级标题是类的成员函数或重要成员变量名称
+
+- 函数接口或类的成员函数需要介绍功能, 参数和返回值含义
+
+***参考示例:[utils/buffer](../Api/utils/buffer.md)***
