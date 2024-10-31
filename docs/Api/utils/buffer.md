@@ -63,7 +63,8 @@ qqmusic::utils::buffer::append(const void* src_data_buf,
 ### ***func*** `clear`
 
 ```cpp
-void clear();
+void
+qqmusic::utils::buffer::clear();
 ```
 
 将缓冲区内容清除
@@ -71,7 +72,8 @@ void clear();
 ### ***func*** `resize`
 
 ```cpp
-bool resize(size_t size)
+bool
+qqmusic::utils::buffer::resize(size_t size);
 ```
 
 将缓冲区大小设置为`size`, 如果成功就返回`false`, 否则返回`true`
@@ -79,7 +81,10 @@ bool resize(size_t size)
 ## ***func*** `http_writebuf`
 
 ```cpp
-size_t http_writebuf(void* src_data_buf, size_t data_buf_size, size_t data_buf_num, void* buffer_ptr)
+size_t http_writebuf(void*  src_data_buf,
+                     size_t data_buf_size,
+                     size_t data_buf_num,
+                     void*  buffer_ptr);
 ```
 
 `http_writebuf`函数是为与`libcurl`交互设计的回调函数.
