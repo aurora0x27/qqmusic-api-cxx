@@ -2,7 +2,7 @@
 
 ## 编码规范
 
-主要采用[linux kernel](https://docs.kernel.org/translations/zh_CN/process/coding-style.html)的规范,
+主要采用[linux kernel](https://docs.kernel.org/translations/zh_CN/process/coding-style.html){:target="_blank"}的规范,
 但是统一使用4个空格作为缩进, 注释使用统一的单行注释.
 
 ## 开发环境
@@ -11,9 +11,13 @@
 
 - gcc/g++12及以上或clang/clang++18及以上的编译器
 
-- [vcpkg](https://vcpkg.io/en/)包管理器
+- cmake3.20及以上
 
-- [mkdocs](https://squidfunk.github.io/mkdocs-material/)文档生成器
+- ~~[xmake](https://xmake.io/#/)预计发布测试版之后添加支持~~
+
+- [vcpkg](https://vcpkg.io/en/){:target="_blank"}包管理器
+
+- [mkdocs](https://squidfunk.github.io/mkdocs-material/){:target="_blank"}文档生成器
 
 使用`git`下载仓库后, `cmake -B build -DQQMUSIC_API_BUILD_TYPE=DEMO && cmake --build build`, 此时会构建与api库动态链接的
 可执行文件, 可以利用`demo/main.cc`进行调试(该文件在`.gitignore`中, 更改不会被提交, 专门用于调试)
@@ -62,7 +66,7 @@ git pull --rebase origin dev
 
 任务完成后需要合并进入`dev`分支, 并关闭`issue`. 
 
-提交规范: [约定式提交规范](https://www.conventionalcommits.org/zh-hans/v1.0.0/)
+提交规范: [约定式提交规范](https://www.conventionalcommits.org/zh-hans/v1.0.0/){:target="_blank"}
 
 请在各人的分支中进行操作, 不要自行合并, 进行第一次代码提交后就可以向`dev`分支提出合并请求.
 
@@ -79,5 +83,7 @@ git pull --rebase origin dev
 - 三级标题是类的成员函数或重要成员变量名称
 
 - 函数接口或类的成员函数需要介绍功能, 参数和返回值含义
+
+- 关于超链接, 内部链接直接使用`[my-url](url)`即可, 外部链接必须使用新标签页打开, 语法: `[my-url](url){:target="_blank"}`
 
 ***参考示例:[utils/buffer](../Api/utils/buffer.md)***

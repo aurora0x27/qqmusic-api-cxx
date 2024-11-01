@@ -50,6 +50,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tilde
+  - attr_list
 
 extra_css:
   - css/font.css
