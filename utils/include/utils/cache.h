@@ -3,8 +3,7 @@
 #ifndef CACHE_H
 #define CACHE_H
 
-namespace qqmusic::utils
-{
+namespace qqmusic::utils {
 
 }
 // namespace qqmusic::utils

@@ -5,11 +5,9 @@
 #include <qqmusic/error.h>
 #include <utils/buffer.h>
 
-namespace qqmusic::utils
-{
+namespace qqmusic::utils {
 
-    enum class qrc_type
-    {
+    enum class qrc_type {
         cloud,
         local
     };

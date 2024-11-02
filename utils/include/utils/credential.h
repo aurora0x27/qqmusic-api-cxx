@@ -8,8 +8,7 @@
 #include <json/json.h>
 #include <stdexcept>
 
-namespace qqmusic::utils
-{
+namespace qqmusic::utils {
     // 自定义异常类，用于处理凭据无效的情况
     class CredentialInvalidError : public std::runtime_error {
     public:

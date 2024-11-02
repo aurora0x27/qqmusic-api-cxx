@@ -5,8 +5,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-namespace qqmusic::utils
-{
+namespace qqmusic::utils {
     class buffer {
     public:
                     buffer          ();
