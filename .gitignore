@@ -4,8 +4,10 @@ out/
 
 # IDE settings
 .vscode/settings.json
+.vscode
 .idea
 .vs
+.editorconfig
 
 # clangd cache
 .cache/
@@ -33,3 +35,6 @@ demo/main.cc
 # shared lib
 *.dll
 *.so
+
+# Cmake generated files
+CmakePresets.json
