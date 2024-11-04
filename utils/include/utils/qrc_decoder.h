@@ -2,7 +2,7 @@
 //       decode qrc lyric files
 #ifndef QRC_DECODER_H
 #define QRC_DECODER_H
-#include <qqmusic/error.h>
+#include <qqmusic/result.h>
 #include <utils/buffer.h>
 
 namespace qqmusic::utils {

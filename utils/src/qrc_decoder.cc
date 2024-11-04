@@ -1,4 +1,3 @@
-#include "qqmusic/error.h"
 #include <cstdint>
 #include <stdint.h>
 #include <stdio.h>
@@ -10,6 +9,7 @@
 #include <utils/tripledes.h>
 #include <utils/qrc_decoder.h>
 #include <utils/buffer.h>
+#include <qqmusic/result.h>
 
 static int decompress(qqmusic::utils::buffer* src,
                       qqmusic::utils::buffer* dest);
@@ -31,14 +31,14 @@ qqmusic::utils::qrc_decode(qqmusic::utils::buffer*  src,
         try {
             tmp = new qqmusic::utils::buffer(pre_processed_buf.get_head() + 11, pre_processed_buf.get_size() - 11);
         } catch (std::bad_alloc& e) {
-            qqmusic::result res(qqmusic::state::error, "memory alloc error when decoding lyrics");
+            qqmusic::result res(qqmusic::api_state::error, "memory alloc error when decoding lyrics");
             return res;
         }
     } else if (type == qqmusic::utils::qrc_type::cloud) {
         try {
             tmp = new qqmusic::utils::buffer(src->get_head(), src->get_size());
         } catch (std::bad_alloc& e) {
-            qqmusic::result res(qqmusic::state::error, "memory alloc error when decoding lyrics");
+            qqmusic::result res(qqmusic::api_state::error, "memory alloc error when decoding lyrics");
             return res;
         }
     }
@@ -46,7 +46,7 @@ qqmusic::utils::qrc_decode(qqmusic::utils::buffer*  src,
     size_t tmp_size = tmp->get_size();
     // check if size is integer multiple of 8 bytes
     if (tmp_size % 8 != 0) {
-        qqmusic::result res(qqmusic::state::error, "data destroy after pre-process lyrics");
+        qqmusic::result res(qqmusic::api_state::error, "data destroy after pre-process lyrics");
         return res;
     }
 
@@ -80,16 +80,16 @@ qqmusic::utils::qrc_decode(qqmusic::utils::buffer*  src,
     switch (decompress_res) {
         case -1:
         case 1:
-            return qqmusic::result(qqmusic::state::error, "memory alloc error when decompressing data");
+            return qqmusic::result(qqmusic::api_state::error, "memory alloc error when decompressing data");
         case 2:
-            return qqmusic::result(qqmusic::state::error, "data destroy when decompressing data");
+            return qqmusic::result(qqmusic::api_state::error, "data destroy when decompressing data");
         case 0:
             break;
         default:
-            return qqmusic::result(qqmusic::state::error, "unknown error occurred when decompressing data");
+            return qqmusic::result(qqmusic::api_state::error, "unknown error occurred when decompressing data");
     }
 
-    return qqmusic::result(qqmusic::state::ok, "lyric decode ok");
+    return qqmusic::result(qqmusic::api_state::ok, "lyric decode ok");
 }
 
 static int

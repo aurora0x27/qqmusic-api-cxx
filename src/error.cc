@@ -1,6 +1,6 @@
-#include <qqmusic/error.h>
+#include <qqmusic/result.h>
 
-qqmusic::result::result(qqmusic::state     stat,
+qqmusic::result::result(qqmusic::api_state     stat,
                         const std::string& desc)
 {
     this->stat = stat;
@@ -9,7 +9,7 @@ qqmusic::result::result(qqmusic::state     stat,
 
 qqmusic::result::~result() {}
 
-qqmusic::state
+qqmusic::api_state
 qqmusic::result::get_state() const
 {
     return this->stat;
