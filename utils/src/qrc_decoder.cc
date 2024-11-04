@@ -1,3 +1,4 @@
+#include "qqmusic/error.h"
 #include <cstdint>
 #include <stdint.h>
 #include <stdio.h>
@@ -30,20 +31,23 @@ qqmusic::utils::qrc_decode(qqmusic::utils::buffer*  src,
         try {
             tmp = new qqmusic::utils::buffer(pre_processed_buf.get_head() + 11, pre_processed_buf.get_size() - 11);
         } catch (std::bad_alloc& e) {
-            return qqmusic::result::mem_alloc_error;
+            qqmusic::result res(qqmusic::state::error, "memory alloc error when decoding lyrics");
+            return res;
         }
     } else if (type == qqmusic::utils::qrc_type::cloud) {
         try {
             tmp = new qqmusic::utils::buffer(src->get_head(), src->get_size());
         } catch (std::bad_alloc& e) {
-            return qqmusic::result::mem_alloc_error;
+            qqmusic::result res(qqmusic::state::error, "memory alloc error when decoding lyrics");
+            return res;
         }
     }
 
     size_t tmp_size = tmp->get_size();
     // check if size is integer multiple of 8 bytes
     if (tmp_size % 8 != 0) {
-        return qqmusic::result::data_destroy;
+        qqmusic::result res(qqmusic::state::error, "data destroy after pre-process lyrics");
+        return res;
     }
 
     // QRC_KEY = b"!@#)(*$%123ZXC!@!@#)(NHL"
@@ -76,16 +80,16 @@ qqmusic::utils::qrc_decode(qqmusic::utils::buffer*  src,
     switch (decompress_res) {
         case -1:
         case 1:
-            return qqmusic::result::mem_alloc_error;
+            return qqmusic::result(qqmusic::state::error, "memory alloc error when decompressing data");
         case 2:
-            return qqmusic::result::data_destroy;
+            return qqmusic::result(qqmusic::state::error, "data destroy when decompressing data");
         case 0:
             break;
         default:
-            return qqmusic::result::unknown_error;
+            return qqmusic::result(qqmusic::state::error, "unknown error occurred when decompressing data");
     }
 
-    return qqmusic::result::excecuted_success;
+    return qqmusic::result(qqmusic::state::ok, "lyric decode ok");
 }
 
 static int

@@ -1,21 +1,32 @@
 
 //-------------qqmusic/error.h---------------
 //            global error info
-namespace qqmusic
-{
-    enum class result
-    {
-        // normally return this
-        excecuted_success,
+#ifndef ERROR_H
+#define ERROR_H
 
-        // net work error
-        network_connect_timeout,
+#include <string>
 
-        mem_alloc_error,
-        data_destroy,
+namespace qqmusic {
 
-        // cannot sure what happened
-        unknown_error
-    };
-}
-// namespace qqmusic
+enum class state {
+    ok,
+    error
+};
+
+class result {
+public:
+                    result() = delete;
+                    result(qqmusic::state     stat,
+                           const std::string& desc);
+                    ~result();
+    qqmusic::state  get_state() const;
+    std::string     get_description() const;
+
+private:
+    qqmusic::state       stat;
+    std::string          desc;
+};
+
+} // namespace qqmusic
+
+#endif // !ERROR_H
