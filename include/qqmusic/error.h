@@ -15,12 +15,12 @@ enum class state {
 
 class result {
 public:
-                    result() = delete;
-                    result(qqmusic::state     stat,
-                           const std::string& desc);
-                    ~result();
-    qqmusic::state  get_state() const;
-    std::string     get_description() const;
+                    result          () = delete;
+                    result          (qqmusic::state     stat,
+                                     const std::string& desc);
+                    ~result         ();
+    qqmusic::state  get_state       () const;
+    std::string     get_description () const;
 
 private:
     qqmusic::state       stat;
