@@ -7,6 +7,7 @@ target_include_directories(
     ../include
 )
 
-# target_link_libraries(
-#     qmutils PUBLIC
-# )
+target_link_libraries(
+    qmutils PUBLIC
+    OpenSSL::SSL
+)
