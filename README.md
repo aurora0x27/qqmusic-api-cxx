@@ -4,6 +4,20 @@
 
 ## Brief introduction
 
-## Usage
+## Dependencies
 
-## Run demo
+- boost asio (for async and coroutine)
+
+- boost beast (for make requests)
+
+- botan (for crypto)
+
+- zlib (for decompress)
+
+- jsoncpp (for encode and decode json)
+
+## Build
+
+### CMake
+
+### ~~xmake~~(**Not Usable Yet**)

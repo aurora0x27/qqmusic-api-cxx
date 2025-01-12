@@ -5,13 +5,19 @@
 			"name": "zlib"
 		},
 		{
-		    "name": "curl"
+		    "name": "boost-asio"
+		},
+		{
+		    "name": "boost-beast"
 		},
 		{
 		    "name": "jsoncpp"
 		},
 		{
-            "name": "openssl"
+            "name": "botan"
+		},
+		{
+		    "name": "libqrencode"
 		}
 	]
 }

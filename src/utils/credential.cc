@@ -1,19 +1,26 @@
-#include <cstdint>
-#include <utils/credential.h>
-#include <json/json.h>
-#include <iostream>
-#include <stdexcept>
 #include <ctime>
+#include <json/json.h>
 #include <map>
+#include <qqmusic/utils/credential.h>
 #include <string>
 
 // constructor
 qqmusic::utils::Credential::Credential()
-    : openid(""), refresh_token(""), access_token(""), expired_at(0), musicid(0),
-      musickey(""), unionid(""), str_musicid(""), refresh_key(""), encrypt_uin(""), login_type(0) {}
+    : openid("")
+    , refresh_token("")
+    , access_token("")
+    , expired_at(0)
+    , musicid(0)
+    , musickey("")
+    , unionid("")
+    , str_musicid("")
+    , refresh_key("")
+    , encrypt_uin("")
+    , login_type(0) {}
 
 // check if musickey starts with the given prefix
-bool qqmusic::utils::Credential::starts_with(const std::string& str, const std::string& prefix) const {
+bool qqmusic::utils::Credential::starts_with(const std::string& str,
+                                             const std::string& prefix) const {
     return str.rfind(prefix, 0) == 0;
 }
 
@@ -51,7 +58,7 @@ void qqmusic::utils::Credential::raise_for_invalid() const {
 // refresh function (assumed implementation)
 bool qqmusic::utils::Credential::refresh() {
     // simulate refresh logic
-    return true;  // return whether it was successful
+    return true; // return whether it was successful
 }
 
 // check if the credential can be refreshed (assumed implementation)
@@ -94,7 +101,8 @@ std::string qqmusic::utils::Credential::as_json() const {
 }
 
 // create credential from cookies
-qqmusic::utils::Credential qqmusic::utils::Credential::from_cookies_dict(const std::map<std::string, std::string>& cookies) {
+qqmusic::utils::Credential qqmusic::utils::Credential::from_cookies_dict(
+    const std::map<std::string, std::string>& cookies) {
     Credential cred;
     cred.openid = cookies.at("openid");
     cred.refresh_token = cookies.at("refresh_token");

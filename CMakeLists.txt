@@ -12,11 +12,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_TOOLCHAIN_FILE $ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake)
 
 project(qmapi LANGUAGES CXX)
-file(GLOB_RECURSE QQMUSIC_API_SOURCE CONFIGURE_DEPENDS src/*.cc include/*.h)
+file(GLOB_RECURSE QQMUSIC_API_SOURCE CONFIGURE_DEPENDS src/*.cc src/utils/*.cc)
 find_package(CURL REQUIRED)
 find_package(ZLIB REQUIRED)
 find_package(jsoncpp REQUIRED)
-add_subdirectory(utils)
+add_subdirectory(details)
 
 add_library(qmapi SHARED ${QQMUSIC_API_SOURCE})
 target_include_directories(
@@ -25,7 +25,7 @@ target_include_directories(
 )
 target_link_libraries(
     qmapi PUBLIC
-    qmutils
+    qmdetails
     ZLIB::ZLIB
     CURL::libcurl
     JsonCpp::JsonCpp

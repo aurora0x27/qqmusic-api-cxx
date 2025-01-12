@@ -1,30 +1,16 @@
-//-------------qqmusic/result.h---------------
-//       global api result and error
+/*---------qmusic/utils/result.hpp------------
+ * global api result
+ *-------------------------------------------*/
 #ifndef RESULT_H
 #define RESULT_H
 
+#include <optional>
 #include <string>
 
 namespace qqmusic {
 
-enum class api_state {
-    ok,
-    error
-};
-
-class result {
-public:
-                        result          () = delete;
-                        result          (qqmusic::api_state stat,
-                                        const std::string& desc);
-                        ~result         ();
-    qqmusic::api_state  get_state       () const;
-    std::string         get_description () const;
-
-private:
-    qqmusic::api_state   stat;
-    std::string          desc;
-};
+/*if execute success, return {}; if failure, return a string to describe reason*/
+using result = std::optional<std::string>;
 
 } // namespace qqmusic
 

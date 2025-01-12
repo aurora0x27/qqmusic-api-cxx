@@ -3,8 +3,6 @@
 #ifndef SONG_LISTS_H
 #define SONG_LISTS_H
 
-namespace qqmusic {
-
-} // namespace qqmusic
+namespace qqmusic {} // namespace qqmusic
 
 #endif

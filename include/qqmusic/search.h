@@ -3,8 +3,6 @@
 #ifndef SEARCHING_H
 #define SEARCHING_H
 
-namespace qqmusic {
-
-} // namespace qqmusic
+namespace qqmusic {} // namespace qqmusic
 
 #endif

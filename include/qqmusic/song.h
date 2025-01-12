@@ -3,8 +3,6 @@
 #ifndef SONG_H
 #define SONG_H
 
-namespace qqmusic {
-
-} // namespace qqmusic
+namespace qqmusic {} // namespace qqmusic
 
 #endif

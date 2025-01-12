@@ -3,8 +3,6 @@
 #ifndef API_H
 #define API_H
 
-namespace qqmusic {
-
-} // namespace qqmusic
+namespace qqmusic {} // namespace qqmusic
 
 #endif
