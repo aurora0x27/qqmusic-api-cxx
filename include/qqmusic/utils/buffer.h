@@ -1,5 +1,5 @@
-/*-----------qqmusic/utils/buffer.hpp--------------
- * general description of buffer in 
+/*-----------qqmusic/utils/buffer.h----------------
+ * general description of io buffer
  *-----------------------------------------------*/
 #ifndef QQMUSIC_UTILS_BUFFER_HPP
 #define QQMUSIC_UTILS_BUFFER_HPP

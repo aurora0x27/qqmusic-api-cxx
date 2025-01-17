@@ -13,9 +13,6 @@ out/
 # vcpkg installed
 vcpkg_installed/
 
-# debug data
-demo/main.cc
-
 # log file
 *.log
 

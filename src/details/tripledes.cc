@@ -1,5 +1,5 @@
 #include <cstdio>
-#include <details/tripledes.h>
+#include <qqmusic/details/tripledes.h>
 
 static std::vector<std::vector<uint32_t>> key_schedule(const uint8_t* key_head,
                                                        size_t key_size,

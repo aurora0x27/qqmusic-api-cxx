@@ -2,9 +2,9 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <qqmusic/details/tripledes.h>
 #include <qqmusic/utils/buffer.h>
 #include <qqmusic/utils/qrc-decoder.h>
-#include <details/tripledes.h>
 #include <zlib.h>
 
 static int decompress(const qqmusic::utils::buffer& src, qqmusic::utils::buffer& dest);
@@ -12,9 +12,8 @@ static int decompress(const qqmusic::utils::buffer& src, qqmusic::utils::buffer&
 // qmc decoder
 static void qmc1_decrypt(qqmusic::utils::buffer& src);
 
-qqmusic::result qqmusic::utils::qrc_decode(const qqmusic::utils::buffer& src,
-                                           qqmusic::utils::buffer& dest,
-                                           qqmusic::utils::qrc_type type) {
+qqmusic::result<std::string> qqmusic::utils::qrc_decode(const qqmusic::utils::buffer& src,
+                                                        qqmusic::utils::qrc_type type) {
     qqmusic::utils::buffer tmp;
     if (type == qqmusic::utils::qrc_type::local) {
         qqmusic::utils::buffer raw(src);
@@ -27,12 +26,13 @@ qqmusic::result qqmusic::utils::qrc_decode(const qqmusic::utils::buffer& src,
     size_t tmp_size = tmp.size();
     // check if size is integer multiple of 8 bytes
     if (tmp_size % 8 != 0) {
-        return qqmusic::result({"data destroy"});
+        return Err(qqmusic::details::Exception(qqmusic::details::Exception::Kind::DataDestroy,
+                                               "qrc-decoder: buffer size cannot devided by 8"));
     }
 
     // QRC_KEY = b"!@#)(*$%123ZXC!@!@#)(NHL"
-    constexpr uint8_t qrc_key[]
-        = "\x21\x40\x23\x29\x28\x2A\x24\x25\x31\x32\x33\x5A\x58\x43\x21\x40\x21\x40\x23\x29\x28\x4E\x48\x4C";
+    constexpr uint8_t qrc_key[] = "\x21\x40\x23\x29\x28\x2A\x24\x25\x31\x32\x33\x5A\x58\x43\x21\x40"
+                                  "\x21\x40\x23\x29\x28\x4E\x48\x4C";
 
     constexpr size_t qrc_key_size = sizeof(qrc_key) - 1;
 
@@ -55,21 +55,27 @@ qqmusic::result qqmusic::utils::qrc_decode(const qqmusic::utils::buffer& src,
     }
 
     // decompress the buffer
+    qqmusic::utils::buffer dest;
     int decompress_res = decompress(compressed_buffer, dest);
 
     switch (decompress_res) {
     case -1:
     case 1:
-        return qqmusic::result({"memory alloc error"});
+        return Err(qqmusic::details::Exception(qqmusic::details::Exception::Kind::RuntimeError,
+                                               "qrc-decoder: memory alloc error"));
     case 2:
-        return qqmusic::result({"data destroy when decompressing decoding lyric"});
+        return Err(qqmusic::details::Exception(
+            qqmusic::details::Exception::Kind::DataDestroy,
+            "qrc-decoder: data destroy when decompressing decoding lyric"));
     case 0:
         break;
     default:
-        return qqmusic::result({"unknown error when decompressing decoded lyric"});
+        return Err(qqmusic::details::Exception(
+            qqmusic::details::Exception::Kind::UnknownError,
+            "qrc-decoder: unknown error when decompressing decoded lyric"));
     }
 
-    return qqmusic::result({});
+    return Ok(std::string((char*) dest.data(), dest.size()));
 }
 
 static int decompress(const qqmusic::utils::buffer& src, qqmusic::utils::buffer& dest) {

@@ -23,8 +23,6 @@
 可执行文件, 可以利用`demo/main.cc`进行调试(该文件在`.gitignore`中, 更改不会被提交, 专门用于调试)
 
 
-关于curl库, 请参考[everything curl](https://everything.curl.dev/)文档
-
 ## api接口规范
 
 - 所有的入参和返回参数当作函数参数, 返回值需要设置成`qqmusic/error.h`中的`error`枚举类,
@@ -53,7 +51,7 @@ branch_type/module/issue
     – 从主分支创建的特性分支命名通常以feat/开头, 后接特性的简短描述, 例如: `feat/ui/new-login-page`
 
 4. **修复分支(Bugfix Branch)**
-    – 从主分支创建的修复分支命名通常以fix/开头, 后接修复的问题的简短描述, 例如: `bugfix/backend/fix-login-issue`
+    – 从主分支创建的修复分支命名通常以fix/开头, 后接修复的问题的简短描述, 例如: `fix/backend/fix-login-issue`
 
 5. **热修复分支(Hotfix Branch)**
     – 从主分支创建的热修复分支命名通常以hfix/开头, 后接修复的问题的简短描述, 例如: `hfix/security/fix-security-issue`

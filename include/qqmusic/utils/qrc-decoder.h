@@ -12,9 +12,8 @@ namespace qqmusic::utils {
 
 enum class qrc_type { cloud, local };
 
-qqmusic::result qrc_decode(const qqmusic::utils::buffer& src,
-                           qqmusic::utils::buffer& dest,
-                           qqmusic::utils::qrc_type type);
+qqmusic::result<std::string> qrc_decode(const qqmusic::utils::buffer& src,
+                                        qqmusic::utils::qrc_type type);
 } // namespace qqmusic::utils
 
 #endif

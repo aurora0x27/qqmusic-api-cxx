@@ -12,11 +12,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_TOOLCHAIN_FILE $ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake)
 
 project(qmapi LANGUAGES CXX)
-file(GLOB_RECURSE QQMUSIC_API_SOURCE CONFIGURE_DEPENDS src/*.cc src/utils/*.cc)
+file(GLOB_RECURSE QQMUSIC_API_SOURCE CONFIGURE_DEPENDS src/*.cc src/utils/*.cc src/details/*.cc)
 find_package(CURL REQUIRED)
 find_package(ZLIB REQUIRED)
 find_package(jsoncpp REQUIRED)
-add_subdirectory(details)
 
 add_library(qmapi SHARED ${QQMUSIC_API_SOURCE})
 target_include_directories(
@@ -25,27 +24,36 @@ target_include_directories(
 )
 target_link_libraries(
     qmapi PUBLIC
-    qmdetails
     ZLIB::ZLIB
     CURL::libcurl
     JsonCpp::JsonCpp
 )
 
+set(IS_DEMO "OFF")
+set(IS_SHARED_LIB "OFF")
+set(IS_TEST "OFF")
 if (NOT DEFINED QQMUSIC_API_BUILD_TYPE)
     message(FATAL_ERROR "==>QQMUSIC_API_BUILD_TYPE not set...")
 elseif(${QQMUSIC_API_BUILD_TYPE} STREQUAL "DEMO")
-    message("==>Building Demo...")
-    add_executable(demo demo/main.cc)
-    target_include_directories(
-        demo PUBLIC
-        include
-    )
-    target_link_libraries(
-        demo PUBLIC
-        qmapi
-    )
+    set(IS_DEMO "ON ")
+    add_subdirectory(demo)
+elseif(${QQMUSIC_API_BUILD_TYPE} STREQUAL "TEST")
+    set(IS_TEST "ON ")
+    add_subdirectory(test)
 elseif(${QQMUSIC_API_BUILD_TYPE} STREQUAL "SHARED_LIB")
-    message("==>Building as shared library...")
+    set(IS_SHARED_LIB "ON ")
 else ()
     message(FATAL_ERROR "==>QQMUSIC_API_BUILD_TYPE set error...")
 endif()
+
+message("+---------------QQMUSIC API CXX---------------+")
+message("|                                             |")
+message("|              QQMUSIC BUILD TYPE             |")
+message("|                                             |")
+message("|    DEMO           ${IS_DEMO}                       |")
+message("|                                             |")
+message("|    SHARED LIBRARY ${IS_SHARED_LIB}                       |")
+message("|                                             |")
+message("|    TEST           ${IS_TEST}                       |")
+message("|                                             |")
+message("+---------------------------------------------+")
