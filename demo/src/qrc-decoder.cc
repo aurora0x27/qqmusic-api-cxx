@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
 
             output_file.close();
         } else if (res.isErr()) {
-            std::cout << res.unwrapErr().what();
+            std::cout << res.unwrapErr().what() << std::endl;;
         }
     }
 

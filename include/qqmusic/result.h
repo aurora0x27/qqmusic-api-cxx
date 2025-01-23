@@ -9,9 +9,6 @@
 
 namespace qqmusic {
 
-/*if execute success, return {}; if failure, return a string to describe reason*/
-// using result = std::optional<std::string>;
-
 template <typename T>
 using result = Result<T, qqmusic::details::Exception>;
 
