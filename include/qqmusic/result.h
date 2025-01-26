@@ -1,5 +1,6 @@
 /*---------qmusic/utils/result.hpp------------
- * global api result
+ * global api result -- using result.h from
+ * `https://github.com/oktal/result`
  *-------------------------------------------*/
 #ifndef RESULT_H
 #define RESULT_H

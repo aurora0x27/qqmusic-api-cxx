@@ -31,9 +31,8 @@ public:
         }
     }
 
-    [[nodiscard]] std::string what() const { return ReasonKindMap[kind_code]; }
-    [[nodiscard]] Kind kind() const { return kind_code; }
-    [[nodiscard]] operator std::string() const { return what(); }
+    [[nodiscard]] std::string kind() const { return ReasonKindMap[kind_code]; }
+    [[nodiscard]] std::string what() const { return reason; }
 
 private:
     enum Kind kind_code;
