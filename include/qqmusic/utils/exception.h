@@ -1,11 +1,11 @@
-/*----------------details/exception.h----------------
+/*-----------------utils/exception.h-----------------
  * api exception, used by class result to avoid throw
  * exceptions
  *--------------------------------------------------*/
 #include <string>
 #include <unordered_map>
 
-namespace qqmusic::details {
+namespace qqmusic::utils {
 
 class Exception {
 public:
@@ -21,9 +21,14 @@ public:
         UnknownError
     };
 
-    Exception(Kind kind) : kind_code(kind), reason(ReasonKindMap[kind]) {}
-    Exception(Kind kind, std::string_view reason) : kind_code(kind), reason(reason) {}
-    Exception(unsigned int http_rc) : kind_code(ResponseCodeError) {
+    Exception(Kind kind)
+        : kind_code(kind)
+        , reason(ReasonKindMap[kind]) {}
+    Exception(Kind kind, std::string_view reason)
+        : kind_code(kind)
+        , reason(reason) {}
+    Exception(unsigned int http_rc)
+        : kind_code(ResponseCodeError) {
         if (HttpResponseCodeMap.contains(http_rc)) {
             reason = HttpResponseCodeMap[http_rc];
         } else {
@@ -58,4 +63,4 @@ private:
     };
 };
 
-} // namespace qqmusic::details
+} // namespace qqmusic::utils

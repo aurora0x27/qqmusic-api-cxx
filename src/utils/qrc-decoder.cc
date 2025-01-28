@@ -26,8 +26,8 @@ qqmusic::result<std::string> qqmusic::utils::qrc_decode(const qqmusic::utils::bu
     size_t tmp_size = tmp.size();
     // check if size is integer multiple of 8 bytes
     if (tmp_size % 8 != 0) {
-        return Err(qqmusic::details::Exception(qqmusic::details::Exception::Kind::DataDestroy,
-                                               "qrc-decoder: buffer size cannot devided by 8"));
+        return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::Kind::DataDestroy,
+                                             "qrc-decoder: buffer size cannot devided by 8"));
     }
 
     // QRC_KEY = b"!@#)(*$%123ZXC!@!@#)(NHL"
@@ -61,17 +61,17 @@ qqmusic::result<std::string> qqmusic::utils::qrc_decode(const qqmusic::utils::bu
     switch (decompress_res) {
     case -1:
     case 1:
-        return Err(qqmusic::details::Exception(qqmusic::details::Exception::Kind::RuntimeError,
-                                               "qrc-decoder: memory alloc error"));
+        return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::Kind::RuntimeError,
+                                             "qrc-decoder: memory alloc error"));
     case 2:
-        return Err(qqmusic::details::Exception(
-            qqmusic::details::Exception::Kind::DataDestroy,
+        return Err(qqmusic::utils::Exception(
+            qqmusic::utils::Exception::Kind::DataDestroy,
             "qrc-decoder: data destroy when decompressing decoding lyric"));
     case 0:
         break;
     default:
-        return Err(qqmusic::details::Exception(
-            qqmusic::details::Exception::Kind::UnknownError,
+        return Err(qqmusic::utils::Exception(
+            qqmusic::utils::Exception::Kind::UnknownError,
             "qrc-decoder: unknown error when decompressing decoded lyric"));
     }
 
