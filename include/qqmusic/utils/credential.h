@@ -5,9 +5,9 @@
 #define QQMUSIC_UTILS_CREDENTIAL_H
 
 #include <cstdint>
+#include <map>
 #include <string>
 #include <variant>
-#include <map>
 
 namespace qqmusic::utils {
 
