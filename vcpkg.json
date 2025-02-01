@@ -11,13 +11,10 @@
 		    "name": "boost-beast"
 		},
 		{
-		    "name": "jsoncpp"
+		    "name": "nlohmann-json"
 		},
 		{
             "name": "botan"
-		},
-		{
-		    "name": "libqrencode"
 		}
 	]
 }

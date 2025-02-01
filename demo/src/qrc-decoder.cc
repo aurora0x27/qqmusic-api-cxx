@@ -1,3 +1,7 @@
+/*******************example/src/qrc-decoder.cc*********************
+ * This example shows an example of qrc lyric decoder, which can 
+ * decode *.qrc lyric file to human readable lyric format
+ ******************************************************************/
 #include <format>
 #include <fstream>
 #include <iostream>
@@ -30,19 +34,20 @@ int main(int argc, char** argv) {
         // decode...
         auto res = qqmusic::utils::qrc_decode(in_buf, qqmusic::utils::qrc_type::local);
         if (res.isOk()) {
-            std::cout << std::format( "decode file {} end", argv[i]) << std::endl;
+            std::cout << std::format("decode file {} end", argv[i]) << std::endl;
 
             std::fstream output_file;
             std::string output_file_name = (std::string) argv[i] + ".decode";
             std::cout << std::format("output file is {}", output_file_name) << std::endl;
             output_file.open(output_file_name, std::ios::out);
             std::cout << "writing file begin..." << std::endl;
-            output_file.write(res.unwrap().data(), (long)res.unwrap().size());
+            output_file.write(res.unwrap().data(), (long) res.unwrap().size());
             std::cout << "writing file end..." << std::endl;
 
             output_file.close();
         } else if (res.isErr()) {
-            std::cout << res.unwrapErr().what() << std::endl;;
+            std::cout << res.unwrapErr().what() << std::endl;
+            ;
         }
     }
 

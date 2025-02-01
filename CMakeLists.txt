@@ -15,7 +15,7 @@ project(qmapi LANGUAGES CXX)
 file(GLOB_RECURSE QQMUSIC_API_SOURCE CONFIGURE_DEPENDS src/*.cc src/utils/*.cc src/details/*.cc)
 find_package(CURL REQUIRED)
 find_package(ZLIB REQUIRED)
-find_package(jsoncpp REQUIRED)
+find_package(nlohmann_json CONFIG REQUIRED)
 
 add_library(qmapi SHARED ${QQMUSIC_API_SOURCE})
 target_include_directories(
@@ -26,7 +26,7 @@ target_link_libraries(
     qmapi PUBLIC
     ZLIB::ZLIB
     CURL::libcurl
-    JsonCpp::JsonCpp
+    nlohmann_json::nlohmann_json
 )
 
 set(IS_DEMO "OFF")
