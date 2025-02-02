@@ -58,7 +58,7 @@ qqmusic::details::CacheManager::CacheManager() {
         } else {
             cache_path = fs::path(home) / fs::path(".cache/qqmusic-api-cxx/cache");
             log_path = fs::path(home) / fs::path(".cache/qqmusic-api-cxx/log");
-            download_path = fs::path(home) / fs::path("Download/qqmusic-api-cxx");
+            download_path = fs::path(home) / fs::path("Downloads/qqmusic-api-cxx");
         }
     } else {
         cache_path = fs::path(xdg_cache_home) / fs::path("qqmusic-api-cxx/cache");
@@ -67,9 +67,10 @@ qqmusic::details::CacheManager::CacheManager() {
         if (home == nullptr) {
             download_path = fs::path(fs::current_path()) / fs::path("download");
         } else {
-            download_path = fs::path(home) / fs::path("Download/qqmusic-api-cxx");
+            download_path = fs::path(home) / fs::path("Downloads/qqmusic-api-cxx");
         }
     }
+
 #elif defined(PLATFORM_APPLE)
     /*MacOS Related Code*/
 #error "Platform not supported yet"
@@ -77,4 +78,15 @@ qqmusic::details::CacheManager::CacheManager() {
     /*Warining platform not supported*/
 #error "Platform not supported"
 #endif
+    if (!fs::exists(cache_path)) {
+        fs::create_directories(cache_path);
+    }
+
+    if (!fs::exists(download_path)) {
+        fs::create_directories(download_path);
+    }
+
+    if (!fs::exists(log_path)) {
+        fs::create_directories(log_path);
+    }
 }

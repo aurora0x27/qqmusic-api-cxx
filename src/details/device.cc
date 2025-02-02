@@ -1,10 +1,61 @@
 #include <boost/uuid.hpp>
 #include <boost/uuid/detail/md5.hpp>
-#include <botan/hex.h>
 #include <botan/auto_rng.h>
+#include <botan/hex.h>
+#include <exception>
+#include <filesystem>
 #include <format>
+#include <fstream>
+#include <nlohmann/detail/conversions/from_json.hpp>
+#include <nlohmann/json.hpp>
+#include <qqmusic/details/cache.h>
 #include <qqmusic/details/device.h>
 #include <qqmusic/utils/buffer.h>
+#include <string>
+
+qqmusic::result<qqmusic::details::Device> qqmusic::details::get_device_info() {
+    try {
+        auto cache_path = qqmusic::details::CacheManager::get_instance().get_cache_path()
+                          / std::filesystem::path("device.json");
+
+        qqmusic::details::Device device;
+
+        std::fstream fs(cache_path.c_str());
+        if (fs.good()) {
+            /*file exist, load cache*/
+            std::ostringstream oss;
+            std::string line;
+            while (std::getline(fs, line)) {
+                oss << line << '\n';
+            }
+            std::string s = oss.str();
+
+            try {
+                nlohmann::json j = nlohmann::json::parse(s);
+                nlohmann::from_json(j, device);
+                return Ok(device);
+            } catch (const std::exception& e) {
+                /*parse error, data destroy, create a new one*/
+                fs.open(cache_path.c_str(), std::ios::out);
+                nlohmann::json j;
+                nlohmann::to_json(j, device);
+                fs << nlohmann::to_string(j);
+                return Ok(device);
+            }
+        } else {
+            /*file not exist, create a new one*/
+            fs.open(cache_path.c_str(), std::ios::out);
+            nlohmann::json j;
+            nlohmann::to_json(j, device);
+            fs << nlohmann::to_string(j);
+            return Ok(device);
+        }
+    } catch (const std::exception& e) {
+        return Err(qqmusic::utils::Exception(
+            qqmusic::utils::Exception::DataDestroy,
+            std::format("[get_device_info] -- get random device info failure: {}", e.what())));
+    }
+}
 
 qqmusic::details::OSVersion::OSVersion() {
     incremental = "5891938";

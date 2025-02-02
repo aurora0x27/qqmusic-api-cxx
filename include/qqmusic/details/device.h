@@ -78,9 +78,8 @@ struct Device {
                                    vendor_os_name);
 };
 
+/*Prioritize loading cached device information*/
 qqmusic::result<Device> get_device_info();
-
-qqmusic::result<void> cache_device_info(const Device& dev);
 
 } // namespace qqmusic::details
 
