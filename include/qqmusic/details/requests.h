@@ -1,7 +1,6 @@
-/*-------------details/requests.h--------------
- * Provide a common interface to send http 
- * requests
-*---------------------------------------------*/
+/*----------------------------details/requests.h--------------------------------
+ * Provide a common interface to send http requests
+*-----------------------------------------------------------------------------*/
 
 namespace qqmusic::details {
 

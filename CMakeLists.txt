@@ -16,6 +16,7 @@ file(GLOB_RECURSE QQMUSIC_API_SOURCE CONFIGURE_DEPENDS src/*.cc src/utils/*.cc s
 find_package(CURL REQUIRED)
 find_package(ZLIB REQUIRED)
 find_package(nlohmann_json CONFIG REQUIRED)
+find_package(botan CONFIG REQUIRED)
 
 add_library(qmapi SHARED ${QQMUSIC_API_SOURCE})
 target_include_directories(
@@ -27,6 +28,20 @@ target_link_libraries(
     ZLIB::ZLIB
     CURL::libcurl
     nlohmann_json::nlohmann_json
+    Botan::Botan-static
+)
+
+# set platform info
+if(WIN32)
+  set(PLATFORM PLATFORM_WINDOWS)
+elseif(APPLE)
+  set(PLATFORM PLATFORM_APPLE)
+elseif(LINUX)
+  set(PLATFORM PLATFORM_LINUX)
+endif()
+target_compile_definitions(
+    qmapi PRIVATE
+    ${PLATFORM}
 )
 
 set(IS_DEMO "OFF")
@@ -34,13 +49,13 @@ set(IS_SHARED_LIB "OFF")
 set(IS_TEST "OFF")
 if (NOT DEFINED QQMUSIC_API_BUILD_TYPE)
     message(FATAL_ERROR "==>QQMUSIC_API_BUILD_TYPE not set...")
-elseif(${QQMUSIC_API_BUILD_TYPE} STREQUAL "DEMO")
+elseif(${QQMUSIC_API_BUILD_TYPE} STREQUAL "Demo")
     set(IS_DEMO "ON ")
     add_subdirectory(demo)
-elseif(${QQMUSIC_API_BUILD_TYPE} STREQUAL "TEST")
+elseif(${QQMUSIC_API_BUILD_TYPE} STREQUAL "Test")
     set(IS_TEST "ON ")
     add_subdirectory(test)
-elseif(${QQMUSIC_API_BUILD_TYPE} STREQUAL "SHARED_LIB")
+elseif(${QQMUSIC_API_BUILD_TYPE} STREQUAL "SharedLib")
     set(IS_SHARED_LIB "ON ")
 else ()
     message(FATAL_ERROR "==>QQMUSIC_API_BUILD_TYPE set error...")
