@@ -8,7 +8,7 @@
 int main(int argc, char** argv) {
 
     qqmusic::details::Device device;
-    auto res = qqmusic::details::get_qimei(device, "114514");
+    auto res = qqmusic::details::get_qimei(device, "13.2.5.8");
     if (res.isErr()) {
         std::cout << res.unwrapErr().what() << std::endl;
     } else {

@@ -175,7 +175,9 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
 
         auto qimei_res = nlohmann::json::parse(buffers_to_string(res.body().data()));
 
-        if (qimei_res["msg"] != "success") {
+        std::cout << res << std::endl;
+
+        if (qimei_res["code"] != 0) {
             /*get qimei failure*/
             return Ok(qqmusic::details::QimeiResult{.q16 = "",
                                                     .q36 = "6c9d3cd110abca9b16311cee10001e717614"});
@@ -317,7 +319,7 @@ std::string random_beacon_id() {
     std::tm tm_now = *std::localtime(&time_t_now);
 
     std::ostringstream time_month;
-    time_month << std::put_time(&tm_now, "%Y-%m-") << "01"; // 格式化成 YYYY-MM-01
+    time_month << std::put_time(&tm_now, "%Y-%m-") << "01";
 
     Botan::AutoSeeded_RNG rng;
 
@@ -330,8 +332,8 @@ std::string random_beacon_id() {
         return res;
     };
 
-    auto rand1 = randull() % 1000000 + 100000;
-    auto rand2 = randull() % 1000000000 + 100000000;
+    auto rand1 = (randull() + 100000) % 1000000;
+    auto rand2 = (randull() + 100000000) % 1000000000;
 
     for (int i = 1; i <= 40; ++i) {
         if (i == 1 || i == 2 || i == 13 || i == 14 || i == 17 || i == 18 || i == 21 || i == 22
