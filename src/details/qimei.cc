@@ -26,6 +26,7 @@
 #include <qqmusic/details/qimei.h>
 #include <qqmusic/result.h>
 #include <qqmusic/utils/buffer.h>
+#include <set>
 #include <string>
 #include <vector>
 
@@ -53,7 +54,6 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
     Botan::AutoSeeded_RNG rng;
 
     try {
-        auto payload = nlohmann::to_string(load_rand_payload(device, version));
         auto gen_hex_strings = [&rng](int len) {
             const char table[] = "abcdef1234567890";
             uint64_t randi = 0;
@@ -94,6 +94,7 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
             key = Botan::base64_encode(rsa_res.unwrap());
         }
 
+        auto payload = nlohmann::to_string(load_rand_payload(device, version));
         qqmusic::utils::buffer buf((uint8_t*) payload.data(), payload.size());
         auto aes_res = aes_encrypt(crypt_key_buf, buf);
         if (aes_res.isErr()) {
@@ -105,7 +106,7 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
             params = Botan::base64_encode(aes_res.unwrap());
         }
 
-        std::string extra = R"({'appKey':;)";
+        std::string extra = R"({'appKey':')";
         extra += APP_KEY;
         extra += R"('})";
 
@@ -174,8 +175,6 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
         http::read(tcps, fb, res);
 
         auto qimei_res = nlohmann::json::parse(buffers_to_string(res.body().data()));
-
-        std::cout << res << std::endl;
 
         if (qimei_res["code"] != 0) {
             /*get qimei failure*/
@@ -313,6 +312,8 @@ static nlohmann::json load_rand_payload(qqmusic::details::Device& device, std::s
 
 std::string random_beacon_id() {
     std::ostringstream beacon_id;
+    const static std::set<int> numtable
+        = {1, 2, 13, 14, 17, 18, 21, 22, 25, 26, 29, 30, 33, 34, 37, 38};
 
     auto now = std::chrono::system_clock::now();
     auto time_t_now = std::chrono::system_clock::to_time_t(now);
@@ -336,9 +337,7 @@ std::string random_beacon_id() {
     auto rand2 = (randull() + 100000000) % 1000000000;
 
     for (int i = 1; i <= 40; ++i) {
-        if (i == 1 || i == 2 || i == 13 || i == 14 || i == 17 || i == 18 || i == 21 || i == 22
-            || i == 25 || i == 26 || i == 29 || i == 30 || i == 33 || i == 34 || i == 37
-            || i == 38) {
+        if (numtable.contains(i)) {
             beacon_id << "k" << i << ":" << time_month.str() << rand1 << "." << rand2;
         } else if (i == 3) {
             beacon_id << "k3:0000000000000000";
