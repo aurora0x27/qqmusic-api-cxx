@@ -1,19 +1,20 @@
-#include <filesystem>
-#include <iostream>
+#include <botan/auto_rng.h>
+#include <cstdlib>
 #include <nlohmann/json.hpp>
 #include <qqmusic/details/cache.h>
 #include <qqmusic/details/device.h>
+#include <qqmusic/details/qimei.h>
 
 int main(int argc, char** argv) {
-    qqmusic::details::Device dev;
-    auto res = qqmusic::details::get_device_info();
+
+    qqmusic::details::Device device;
+    auto res = qqmusic::details::get_qimei(device, "114514");
     if (res.isErr()) {
         std::cout << res.unwrapErr().what() << std::endl;
     } else {
-        dev = res.unwrap();
-        nlohmann::json j;
-        nlohmann::to_json(j, dev);
-        std::cout << nlohmann::to_string(j) << std::endl;
+        std::cout << res.unwrap().q16 << std::endl;
+        std::cout << res.unwrap().q36 << std::endl;
     }
+
     return 0;
 }

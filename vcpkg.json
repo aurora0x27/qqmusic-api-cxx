@@ -11,6 +11,9 @@
 		    "name": "boost-beast"
 		},
 		{
+		    "name": "boost-url"
+		},
+		{
 		    "name": "nlohmann-json"
 		},
 		{

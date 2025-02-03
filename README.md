@@ -4,6 +4,8 @@
 
 ## Brief introduction
 
+基于项目[QQMusicApi](https://github.com/luren-dc/QQMusicApi)
+
 ## Dependencies
 
 - boost asio (for async and coroutine)
@@ -14,7 +16,7 @@
 
 - zlib (for decompress)
 
-- jsoncpp (for encode and decode json)
+- nlohmann-json (for encode and decode json)
 
 ## Build
 
