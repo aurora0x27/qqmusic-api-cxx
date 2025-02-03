@@ -15,9 +15,9 @@ class buffer : public std::vector<uint8_t> {
 public:
     buffer() = default;
     buffer(size_t size)
-        : std::vector<uint8_t>(size) {};
+        : std::vector<uint8_t>(size){};
     buffer(const uint8_t* src_head, size_t src_size)
-        : std::vector<uint8_t>(src_head, src_head + src_size) {};
+        : std::vector<uint8_t>(src_head, src_head + src_size){};
     buffer(size_t size, char c)
         : std::vector<uint8_t>(size, c) {}
     ~buffer() = default;

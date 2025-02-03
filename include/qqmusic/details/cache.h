@@ -60,6 +60,7 @@ public:
     [[nodiscard]] fs::path get_cache_path() const;
     [[nodiscard]] fs::path get_download_path() const;
     [[nodiscard]] fs::path get_log_path() const;
+
 private:
     CacheManager();
     fs::path cache_path;
