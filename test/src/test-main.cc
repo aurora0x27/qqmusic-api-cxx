@@ -1,7 +1,7 @@
 #include <botan/auto_rng.h>
 #include <cstdlib>
 #include <nlohmann/json.hpp>
-#include <qqmusic/details/cache.h>
+#include <qqmusic/utils/cache.h>
 #include <qqmusic/details/device.h>
 #include <qqmusic/details/qimei.h>
 

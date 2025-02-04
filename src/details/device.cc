@@ -8,9 +8,9 @@
 #include <fstream>
 #include <nlohmann/detail/conversions/from_json.hpp>
 #include <nlohmann/json.hpp>
-#include <qqmusic/details/cache.h>
 #include <qqmusic/details/device.h>
 #include <qqmusic/utils/buffer.h>
+#include <qqmusic/utils/cache.h>
 #include <string>
 
 qqmusic::result<qqmusic::details::Device> qqmusic::details::get_device_info() {
