@@ -68,7 +68,6 @@ struct Device {
                                    sim_info,
                                    os_type,
                                    mac_address,
-                                   ip_address,
                                    wifi_bssid,
                                    wifi_ssid,
                                    imsi_md5,

@@ -95,6 +95,7 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
         }
 
         auto payload = nlohmann::to_string(load_rand_payload(device, version));
+        std::cout << payload << std::endl;
         qqmusic::utils::buffer buf((uint8_t*) payload.data(), payload.size());
         auto aes_res = aes_encrypt(crypt_key_buf, buf);
         if (aes_res.isErr()) {
@@ -106,9 +107,9 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
             params = Botan::base64_encode(aes_res.unwrap());
         }
 
-        std::string extra = R"({'appKey':')";
+        std::string extra = R"({"appKey":")";
         extra += APP_KEY;
-        extra += R"('})";
+        extra += R"("})";
 
         boost::uuids::detail::md5 hash;
         boost::uuids::detail::md5::digest_type d;
@@ -124,21 +125,23 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
 
         /*prepare params*/
         boost::uuids::detail::md5 header_hash;
+        boost::uuids::detail::md5::digest_type hd;
         header_hash.process_bytes("qimei_qq_androidpzAuCmaFAaFaHrdakPjLIEqKrGnSOOvH", 49);
         ts_s = std::to_string(ts);
         header_hash.process_bytes(ts_s.data(), ts_s.size());
-        header_hash.get_digest(d);
+        header_hash.get_digest(hd);
 
         /*request header table*/
-        nlohmann::json headers = {
-            {"Host", "api.tencentmusic.com"},
-            {"method", "GetQimei"},
-            {"service", "trpc.tme_datasvr.qimeiproxy.QimeiProxy"},
-            {"appid", "qimei_qq_android"},
-            {"sign", Botan::hex_encode(d, sizeof(d), false)},
-            {"user-agent", "QQMusic"},
-            {"timestamp", ts_s},
-        };
+        nlohmann::json headers = {{"Host", "api.tencentmusic.com"},
+                                  {"method", "GetQimei"},
+                                  {"service", "trpc.tme_datasvr.qimeiproxy.QimeiProxy"},
+                                  {"appid", "qimei_qq_android"},
+                                  {"sign", Botan::hex_encode(hd, sizeof(hd), false)},
+                                  {"user-agent", "QQMusic"},
+                                  {"timestamp", ts_s},
+                                  {"content-type", "application/json"},
+                                  {"accept", "*/*"},
+                                  {"accept-encoding", "gzip, deflate"}};
 
         /*request body table*/
         nlohmann::json body = {
@@ -173,6 +176,8 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
         flat_buffer fb;
         http::response<http::dynamic_body> res;
         http::read(tcps, fb, res);
+
+        std::cout << res << std::endl;
 
         auto qimei_res = nlohmann::json::parse(buffers_to_string(res.body().data()));
 
@@ -236,13 +241,14 @@ static qqmusic::result<qqmusic::utils::buffer> aes_encrypt(qqmusic::utils::buffe
         }
         enc->set_key(key.data(), key.size());
 
-        /*insert buffer after iv*/
-        qqmusic::utils::buffer res(padding_size, (char) ('\x000' + padding_size));
-        res.insert(res.end(), buf.begin(), buf.end());
+        /*use padding_size as char to pad after buffer*/
+        qqmusic::utils::buffer padding(padding_size, (char) ('\0' + padding_size));
+        buf.insert(buf.end(), padding.begin(), padding.end());
         enc->start(key);
-        enc->finish(res);
+        enc->update(buf);
+        enc->finish(key);
 
-        return Ok(res);
+        return Ok(buf);
     } catch (const std::exception& e) {
         return Err(
             qqmusic::utils::Exception(qqmusic::utils::Exception::DataDestroy,
@@ -262,8 +268,11 @@ static nlohmann::json load_rand_payload(qqmusic::details::Device& device, std::s
     }() % 14400;
 
     std::chrono::time_point<std::chrono::system_clock> tp(std::chrono::system_clock::now());
-    tp += std::chrono::duration(std::chrono::seconds(14400 + fixed_rand));
-    std::string uptimes = std::format("{0:%F} {0:%H}:{0:%M}:{0:%OS}", tp);
+    /*add random offset*/
+    tp -= std::chrono::duration(std::chrono::seconds(fixed_rand));
+    /*zoned time with random offset*/
+    auto zoned_time = std::chrono::zoned_time{std::chrono::current_zone(), tp};
+    std::string uptimes = std::format("{0:%F} {0:%H}:{0:%M}:{0:%OS}", zoned_time);
 
     nlohmann::json reserved = {{"harmony", "0"},
                                {"clone", "0"},
@@ -310,7 +319,7 @@ static nlohmann::json load_rand_payload(qqmusic::details::Device& device, std::s
     };
 };
 
-std::string random_beacon_id() {
+static std::string random_beacon_id() {
     std::ostringstream beacon_id;
     const static std::set<int> numtable
         = {1, 2, 13, 14, 17, 18, 21, 22, 25, 26, 29, 30, 33, 34, 37, 38};
@@ -333,8 +342,8 @@ std::string random_beacon_id() {
         return res;
     };
 
-    auto rand1 = (randull() + 100000) % 1000000;
-    auto rand2 = (randull() + 100000000) % 1000000000;
+    auto rand1 = randull() % 899999 + 100000;
+    auto rand2 = randull() % 899999999 + 100000000;
 
     for (int i = 1; i <= 40; ++i) {
         if (numtable.contains(i)) {

@@ -15,7 +15,7 @@
 
 qqmusic::result<qqmusic::details::Device> qqmusic::details::get_device_info() {
     try {
-        auto cache_path = qqmusic::details::CacheManager::get_instance().get_cache_path()
+        auto cache_path = qqmusic::utils::CacheManager::get_instance().get_cache_path()
                           / std::filesystem::path("device.json");
 
         qqmusic::details::Device device;
@@ -35,10 +35,13 @@ qqmusic::result<qqmusic::details::Device> qqmusic::details::get_device_info() {
                 nlohmann::from_json(j, device);
                 return Ok(device);
             } catch (const std::exception& e) {
+                std::cout << e.what() << std::endl;
                 /*parse error, data destroy, create a new one*/
+                fs.close();
                 fs.open(cache_path.c_str(), std::ios::out);
                 nlohmann::json j;
                 nlohmann::to_json(j, device);
+                std::cout << nlohmann::to_string(j) << std::endl;
                 fs << nlohmann::to_string(j);
                 return Ok(device);
             }
@@ -132,14 +135,14 @@ qqmusic::details::Device::Device() {
         return res;
     };
 
-    display = std::format("QMAPI.{}.001", randull() % 9999999 + 1000000);
+    display = std::format("QMAPI.{}.001", randull() % 8999999 + 1000000);
     product = "iarim";
     device = "sagit";
     board = "eomam";
     model = "MI 6";
 
     fingerprint = std::format("xiaomi/iarim/sagit:10/eomam.200122.001/{}:user/release-keys",
-                              randull() % 9999999 - 1000000);
+                              randull() % 8999999 + 1000000);
 
     boost::uuids::uuid u = boost::uuids::random_generator()();
     boot_id = to_string(u);

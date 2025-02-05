@@ -1,4 +1,4 @@
-/*------------------------------utils/cache.h----------------------------------
+/*-------------------------------utils/cache.h----------------------------------
  * CacheManager provide common interface to file system.
  *
  * CacheManager provide 3 types of files for io : log, cache, download
@@ -14,7 +14,7 @@
  *         - log: $XDG_CACHE_HOME/qqmusic-api-cxx/log
  *                OR $HOME/.cache/qqmusic-api-cxx/log
  *
- *         - download $HOME/Download/qqmusic-api-cxx
+ *         - download: $HOME/Download/qqmusic-api-cxx
  *
  *
  *    - Windows:
