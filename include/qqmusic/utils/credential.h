@@ -5,9 +5,9 @@
 #define QQMUSIC_UTILS_CREDENTIAL_H
 
 #include <cstdint>
-#include <map>
+#include <nlohmann/detail/macro_scope.hpp>
+#include <qqmusic/result.h>
 #include <string>
-#include <variant>
 
 namespace qqmusic::utils {
 
@@ -15,11 +15,13 @@ class Credential {
 public:
     Credential() = default;
     Credential(std::string_view cookie);
-    bool is_valid();
-    bool is_refreshable();
-    std::string as_json();
+    Credential(const Json& cookie);
+    bool is_valid() const;
+    qqmusic::Task<qqmusic::Result<bool>> is_refreshable();
+    qqmusic::Task<qqmusic::Result<bool>> refresh();
+    qqmusic::Result<std::string> as_string();
+    qqmusic::Result<Json> as_json();
 
-private:
     struct {
         std::string openid;
         std::string refresh_token;
@@ -31,9 +33,21 @@ private:
         std::string musicid_s;
         std::string refresh_key;
         std::string encrypt_uin;
-        int login_type;
-        std::map<std::string, std::variant<uint64_t, std::string>> extra_fields;
+        int loginType;
+        Json extra_fields;
     } inner;
+
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(Credential,
+                                   inner.openid,
+                                   inner.refresh_token,
+                                   inner.access_token,
+                                   inner.expired_at,
+                                   inner.musicid,
+                                   inner.unionid,
+                                   inner.musicid_s,
+                                   inner.refresh_key,
+                                   inner.encrypt_uin,
+                                   inner.extra_fields);
 };
 
 } // namespace qqmusic::utils

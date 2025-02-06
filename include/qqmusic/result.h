@@ -1,9 +1,9 @@
-/*----------qqmusic/utils/result.h------------
+/*-----------------------------qqmusic/result.h---------------------------------
  * Provide global api result -- based on
  * `https://github.com/oktal/result`
  *
  * Provide some type aliases
- *-------------------------------------------*/
+*-----------------------------------------------------------------------------*/
 #ifndef QQMUSIC_RESULT_H
 #define QQMUSIC_RESULT_H
 

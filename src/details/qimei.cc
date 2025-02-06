@@ -88,7 +88,6 @@ qqmusic::Result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
         }
 
         auto payload = nlohmann::to_string(load_rand_payload(device, version));
-        std::cout << payload << std::endl;
         qqmusic::utils::buffer buf((uint8_t*) payload.data(), payload.size());
         auto aes_res = aes_encrypt(crypt_key_buf, buf);
         if (aes_res.isErr()) {
@@ -113,22 +112,18 @@ qqmusic::Result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
 
         boost::uuids::detail::md5 hash;
         boost::uuids::detail::md5::digest_type d;
-        hash.process_bytes(key.data(), key.size());
-        hash.process_bytes(params.data(), params.size());
         std::string ts_s = std::to_string(ts * 1000);
-        hash.process_bytes(ts_s.data(), ts_s.size());
-        hash.process_bytes(nonce.data(), nonce.size());
-        hash.process_bytes(SECRET, sizeof(SECRET));
-        hash.process_bytes(extra.data(), extra.size());
+        auto hash_buf = key + params + ts_s + nonce + SECRET + extra;
+        hash.process_bytes(hash_buf.data(), hash_buf.size());
         hash.get_digest(d);
         std::string sign = Botan::hex_encode(d, sizeof(d), false);
 
         /*prepare params*/
         boost::uuids::detail::md5 header_hash;
         boost::uuids::detail::md5::digest_type hd;
-        header_hash.process_bytes("qimei_qq_androidpzAuCmaFAaFaHrdakPjLIEqKrGnSOOvH", 49);
         ts_s = std::to_string(ts);
-        header_hash.process_bytes(ts_s.data(), ts_s.size());
+        auto header_sign_buf = "qimei_qq_androidpzAuCmaFAaFaHrdakPjLIEqKrGnSOOvH" + ts_s;
+        header_hash.process_bytes(header_sign_buf.data(), header_sign_buf.size());
         header_hash.get_digest(hd);
 
         /*request header table*/
@@ -167,8 +162,6 @@ qqmusic::Result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
         req.body() = body.dump();
         req.prepare_payload();
 
-        std::cout << req << std::endl;
-
         boost::asio::io_context ioc;
         tcp_stream tcps(ioc);
         auto resolver = boost::asio::ip::tcp::resolver(ioc);
@@ -179,9 +172,9 @@ qqmusic::Result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
         http::response<http::dynamic_body> res;
         http::read(tcps, fb, res);
 
-        std::cout << res << std::endl;
-
-        auto qimei_res = nlohmann::json::parse(buffers_to_string(res.body().data()));
+        /*must parse twice, because one of the value is string, not json*/
+        auto qimei_res = nlohmann::json::parse(
+            std::string(nlohmann::json::parse(buffers_to_string(res.body().data()))["data"]));
 
         if (qimei_res["code"] != 0) {
             /*get qimei failure*/
@@ -189,11 +182,10 @@ qqmusic::Result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
                                                     .q36 = "6c9d3cd110abca9b16311cee10001e717614"});
         } else {
             /*get qimei success*/
-            return Ok(qqmusic::details::QimeiResult{.q16 = qimei_res["data"]["data"]["q16"],
-                                                    .q36 = qimei_res["data"]["data"]["q36"]});
+            return Ok(qqmusic::details::QimeiResult{.q16 = qimei_res["data"]["q16"],
+                                                    .q36 = qimei_res["data"]["q36"]});
         }
 
-        // FIXME: always cannot get qimei successfully
     } catch (const std::exception& e) {
         /*exception, for debug*/
         return Err(
