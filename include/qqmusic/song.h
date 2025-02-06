@@ -1,8 +1,9 @@
-//-------------qqmusic/song.h---------------
-//          api about song info
-#ifndef SONG_H
-#define SONG_H
+/*------------------------------qqmusic/song.h----------------------------------
+ * Song info
+*-----------------------------------------------------------------------------*/
+#ifndef QQMUSIC_SONG_H
+#define QQMUSIC_SONG_H
 
 namespace qqmusic {} // namespace qqmusic
 
-#endif
+#endif // !QQMUSIC_SONG_H

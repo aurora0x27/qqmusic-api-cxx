@@ -1,4 +1,4 @@
-/*-----------------------------details/device.h---------------------------------
+/*--------------------------qqmusic/details/device.h-----------------------------
  * Provide random device info generator
  *
  * Generate random IMEI number, OS version and device info
@@ -78,7 +78,7 @@ struct Device {
 };
 
 /*Prioritize loading cached device information*/
-qqmusic::result<Device> get_device_info();
+qqmusic::Result<Device> get_device_info();
 
 } // namespace qqmusic::details
 

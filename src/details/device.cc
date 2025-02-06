@@ -13,7 +13,7 @@
 #include <qqmusic/utils/cache.h>
 #include <string>
 
-qqmusic::result<qqmusic::details::Device> qqmusic::details::get_device_info() {
+qqmusic::Result<qqmusic::details::Device> qqmusic::details::get_device_info() {
     try {
         auto cache_path = qqmusic::utils::CacheManager::get_instance().get_cache_path()
                           / std::filesystem::path("device.json");

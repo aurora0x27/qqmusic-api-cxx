@@ -1,8 +1,9 @@
-//-------------qqmusic/membership.h---------------
-//             api about membership
-#ifndef MEMBERSHIP_H
-#define MEMBERSHIP_H
+/*----------------------------qqmusic/membership.h------------------------------
+ * Membership utils
+*-----------------------------------------------------------------------------*/
+#ifndef QQMUSIC_MEMBERSHIP_H
+#define QQMUSIC_MEMBERSHIP_H
 
 namespace qqmusic {} // namespace qqmusic
 
-#endif
+#endif // !QQMUSIC_MEMBERSHIP_H

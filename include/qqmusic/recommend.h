@@ -1,8 +1,9 @@
-//-------------qqmusic/recommend.h---------------
-//          api about recommend list
-#ifndef RECOMMEND_H
-#define RECOMMEND_H
+/*---------------------------qqmusic/recommend.h--------------------------------
+ * Recommend lists
+*-----------------------------------------------------------------------------*/
+#ifndef QQMUSIC_RECOMMEND_H
+#define QQMUSIC_RECOMMEND_H
 
 namespace qqmusic {} // namespace qqmusic
 
-#endif
+#endif // !QQMUSIC_RECOMMEND_H

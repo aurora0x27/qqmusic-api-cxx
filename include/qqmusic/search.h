@@ -1,8 +1,9 @@
-//-------------qqmusic/search.h---------------
-//            api about searching
-#ifndef SEARCHING_H
-#define SEARCHING_H
+/*-----------------------------qqmusic/search.h---------------------------------
+ * Searching
+*-----------------------------------------------------------------------------*/
+#ifndef QQMUSIC_SEARCH_H
+#define QQMUSIC_SEARCH_H
 
 namespace qqmusic {} // namespace qqmusic
 
-#endif
+#endif // !QQMUSIC_SEARCH_H

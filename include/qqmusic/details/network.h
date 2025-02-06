@@ -1,4 +1,4 @@
-/*-----------------------------details/network.h--------------------------------
+/*------------------------qqmusic/details/network.h-----------------------------
  * Provide a basic interface to manage sessions.
 *-----------------------------------------------------------------------------*/
 #ifndef QQMUSIC_DETAILS_NETWORK_H

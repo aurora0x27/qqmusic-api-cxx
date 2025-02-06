@@ -38,14 +38,14 @@ PHyUvuCb0rIarmgDnzkfQAqVufEtR64iazGDKatvJ9y6B9NMbHddGSAUmRTCrHQIDAQAB\n\
 const static char SECRET[] = "ZdJqM15EeO2zWc08";
 const static char APP_KEY[] = "0AND0HD6FE4HY80F";
 
-static qqmusic::result<qqmusic::utils::buffer> rsa_encrypt(qqmusic::utils::buffer& buf);
-static qqmusic::result<qqmusic::utils::buffer> aes_encrypt(qqmusic::utils::buffer& key,
+static qqmusic::Result<qqmusic::utils::buffer> rsa_encrypt(qqmusic::utils::buffer& buf);
+static qqmusic::Result<qqmusic::utils::buffer> aes_encrypt(qqmusic::utils::buffer& key,
                                                            qqmusic::utils::buffer& buf);
 static std::string random_beacon_id();
 /*load random payload by device*/
 static nlohmann::json load_rand_payload(qqmusic::details::Device& device, std::string_view version);
 
-qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
+qqmusic::Result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
     qqmusic::details::Device& device, std::string_view version) {
     using namespace boost::beast;
 
@@ -72,13 +72,6 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
 
         auto crypt_key = gen_hex_strings(16);
         auto nonce = gen_hex_strings(16);
-
-        /*get time stamp by second*/
-        uint64_t ts = std::chrono::time_point<std::chrono::system_clock>(
-                          std::chrono::system_clock::now())
-                          .time_since_epoch()
-                          .count();
-        ts /= 1000000000;
 
         std::string key;
         std::string params;
@@ -110,6 +103,13 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
         std::string extra = R"({"appKey":")";
         extra += APP_KEY;
         extra += R"("})";
+
+        /*get time stamp by second*/
+        uint64_t ts = std::chrono::time_point<std::chrono::system_clock>(
+                          std::chrono::system_clock::now())
+                          .time_since_epoch()
+                          .count();
+        ts /= 1000000000;
 
         boost::uuids::detail::md5 hash;
         boost::uuids::detail::md5::digest_type d;
@@ -167,6 +167,8 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
         req.body() = body.dump();
         req.prepare_payload();
 
+        std::cout << req << std::endl;
+
         boost::asio::io_context ioc;
         tcp_stream tcps(ioc);
         auto resolver = boost::asio::ip::tcp::resolver(ioc);
@@ -201,7 +203,7 @@ qqmusic::result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
 }
 
 /*rsa encrypt, padding: PKCS1v15*/
-static qqmusic::result<qqmusic::utils::buffer> rsa_encrypt(qqmusic::utils::buffer& buf) {
+static qqmusic::Result<qqmusic::utils::buffer> rsa_encrypt(qqmusic::utils::buffer& buf) {
     try {
         /*construct a random number generator*/
         Botan::AutoSeeded_RNG rng;
@@ -223,7 +225,8 @@ static qqmusic::result<qqmusic::utils::buffer> rsa_encrypt(qqmusic::utils::buffe
     }
 }
 
-static qqmusic::result<qqmusic::utils::buffer> aes_encrypt(qqmusic::utils::buffer& key,
+/*aes encrypt*/
+static qqmusic::Result<qqmusic::utils::buffer> aes_encrypt(qqmusic::utils::buffer& key,
                                                            qqmusic::utils::buffer& buf) {
     try {
         /*construct a random number generator*/

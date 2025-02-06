@@ -1,7 +1,7 @@
-/*-----------------utils/exception.h-----------------
+/*------------------------qqmusic/utils/exception.h-----------------------------
  * api exception, used by class result to avoid throw
  * exceptions
- *--------------------------------------------------*/
+*-----------------------------------------------------------------------------*/
 #include <string>
 #include <unordered_map>
 

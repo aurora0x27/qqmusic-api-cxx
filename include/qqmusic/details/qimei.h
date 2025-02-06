@@ -1,4 +1,4 @@
-/*------------------------------details/qimei.h---------------------------------
+/*--------------------------qqmusic/details/qimei.h-----------------------------
  * Provide interface to manage q-imei.
  *
  * Q-IMEI is IMEI used in qqmusic and other tencent services, it is required in
@@ -20,7 +20,7 @@ struct QimeiResult {
 };
 
 /*always return ok*/
-qqmusic::result<QimeiResult> get_qimei(qqmusic::details::Device& device, std::string_view version);
+qqmusic::Result<QimeiResult> get_qimei(qqmusic::details::Device& device, std::string_view version);
 
 } // namespace qqmusic::details
 

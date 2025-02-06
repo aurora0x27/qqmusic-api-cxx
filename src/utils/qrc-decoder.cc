@@ -12,7 +12,7 @@ static int decompress(const qqmusic::utils::buffer& src, qqmusic::utils::buffer&
 // qmc decoder
 static void qmc1_decrypt(qqmusic::utils::buffer& src);
 
-qqmusic::result<std::string> qqmusic::utils::qrc_decode(const qqmusic::utils::buffer& src,
+qqmusic::Result<std::string> qqmusic::utils::qrc_decode(const qqmusic::utils::buffer& src,
                                                         qqmusic::utils::qrc_type type) {
     qqmusic::utils::buffer tmp;
     if (type == qqmusic::utils::qrc_type::local) {
