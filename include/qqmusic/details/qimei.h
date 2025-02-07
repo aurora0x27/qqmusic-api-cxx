@@ -19,7 +19,6 @@ struct QimeiResult {
     std::string q36;
 };
 
-/*always return ok*/
 qqmusic::Result<QimeiResult> get_qimei(qqmusic::details::Device& device, std::string_view version);
 
 } // namespace qqmusic::details

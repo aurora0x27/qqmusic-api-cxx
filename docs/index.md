@@ -8,22 +8,24 @@ hide: navigation
 
 ## 简介
 
-本项目使用C++借助[cURL](https://curl.se/){:target="_blank"}库封装QQ音乐的API.
+本项目使用C++借助[Boost Beast](https://www.boost.org/doc/libs/1_85_0/libs/beast/doc/html/index.html){:target="_blank"}库封装QQ音乐的API.
 
 ## 使用的第三方库
 
-- [libcurl](https://github.com/curl/curl){:target="_blank"}
+- [Boost Beast](https://www.boost.org/doc/libs/1_85_0/libs/beast/doc/html/index.html){:target="_blank"}
 
-- [JsonCpp](https://github.com/open-source-parsers/jsoncpp){:target="_blank"}
+- [Nlohmann Json](https://json.nlohmann.me/){:target="_blank"}
 
 - [zlib](https://github.com/madler/zlib){:target="_blank"}
+
+- [Botan](https://botan.randombit.net/){:target="_blank"}
 
 ## 使用方法--如何在项目中使用
 
 设置构建类型
 
 ```cmake
-set(QQMUSIC_API_BUILD_TYPE SHARED_LIB)
+set(QQMUSIC_API_BUILD_TYPE SharedLib)
 ```
 
 作为子项目引入
@@ -46,27 +48,40 @@ target_link_library(
 可用头文件目录:
 
 ```
-./include/
-└── qqmusic/
+./include
+└── qqmusic
+    ├── crypto
+    │   ├── mflac.h
+    │   ├── mgg.h
+    │   ├── qmcflac.h
+    │   ├── qmc.h
+    │   ├── qmcogg.h
+    │   ├── tkm.h
+    │   └── tm.h
+    ├── details
+    │   ├── api.h
+    │   ├── device.h
+    │   ├── network.h
+    │   ├── qimei.h
+    │   ├── result.h
+    │   └── tripledes.h
+    ├── utils               
+    │  ├── async-executor.h
+    │  ├── buffer.h        
+    │  ├── cache.h         
+    │  ├── credential.h    
+    │  ├── exception.h     
+    │  ├── qrc-decoder.h   
+    │  └── requests.h      
     ├── album.h
-    ├── api.h
-    ├── data.h
-    ├── error.h
     ├── login.h
     ├── membership.h
     ├── recommend.h
+    ├── result.h
     ├── search.h
     ├── singer.h
     ├── song.h
-    ├── song_lists.h
-    └── utils/
-        ├── buffer.h
-        ├── cache.h
-        ├── credential.h
-        ├── qimei.h
-        ├── qrc_decoder.h
-        ├── requests.h
-        └── tripledes.h
+    └── song_lists.h
 ```
 
 ## 参考项目
