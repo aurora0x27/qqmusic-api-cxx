@@ -172,7 +172,7 @@ qqmusic::Result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
         http::response<http::dynamic_body> res;
         http::read(tcps, fb, res);
 
-        /*must parse twice, because one of the value is string, not json*/
+        /*raw_json_res["data"] is string*/
         auto qimei_res = nlohmann::json::parse(
             std::string(nlohmann::json::parse(buffers_to_string(res.body().data()))["data"]));
 

@@ -18,6 +18,9 @@ public:
         DataDestroy,            /*Data destroy during crypto, serialization,
                                 deserialization or decoding*/
         RuntimeError,           /*Any runtime error including exceptions thrown by 3rd libs*/
+        NetworkError,           /*Unknown network error*/
+        SslError,               /*SSL connection error*/
+        OperationOutOfTime,     /*Out of Time*/
         UnknownError
     };
 
@@ -50,6 +53,9 @@ private:
                                                                  "SignInvalidError",
                                                                  "DataDestroy",
                                                                  "RuntimeError",
+                                                                 "NetworkError",
+                                                                 "SslError",
+                                                                 "OperationOutOfTime",
                                                                  "Unknown Error"};
 
     inline static std::unordered_map<unsigned, std::string> HttpResponseCodeMap = {

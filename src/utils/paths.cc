@@ -1,49 +1,49 @@
 #include <cstdlib>
 #include <filesystem>
-#include <qqmusic/utils/cache.h>
+#include <qqmusic/utils/paths.h>
 
-qqmusic::utils::CacheManager& qqmusic::utils::CacheManager::get_instance() {
-    static qqmusic::utils::CacheManager cm;
+qqmusic::utils::PathManager& qqmusic::utils::PathManager::get_instance() {
+    static qqmusic::utils::PathManager cm;
     return cm;
 }
 
-std::filesystem::path qqmusic::utils::CacheManager::get_log_path() const {
+std::filesystem::path qqmusic::utils::PathManager::get_log_path() const {
     return log_path;
 }
 
-std::filesystem::path qqmusic::utils::CacheManager::get_cache_path() const {
+std::filesystem::path qqmusic::utils::PathManager::get_cache_path() const {
     return cache_path;
 }
 
-std::filesystem::path qqmusic::utils::CacheManager::get_download_path() const {
+std::filesystem::path qqmusic::utils::PathManager::get_download_path() const {
     return download_path;
 }
 
-void qqmusic::utils::CacheManager::set_log_path(std::string_view path) {
+void qqmusic::utils::PathManager::set_log_path(std::string_view path) {
     log_path = fs::path(path);
 }
 
-void qqmusic::utils::CacheManager::set_cache_path(std::string_view path) {
+void qqmusic::utils::PathManager::set_cache_path(std::string_view path) {
     cache_path = fs::path(path);
 }
 
-void qqmusic::utils::CacheManager::set_download_path(std::string_view path) {
+void qqmusic::utils::PathManager::set_download_path(std::string_view path) {
     download_path = fs::path(path);
 }
 
-void qqmusic::utils::CacheManager::set_log_path(const std::filesystem::path& path) {
+void qqmusic::utils::PathManager::set_log_path(const std::filesystem::path& path) {
     log_path = path;
 }
 
-void qqmusic::utils::CacheManager::set_cache_path(const std::filesystem::path& path) {
+void qqmusic::utils::PathManager::set_cache_path(const std::filesystem::path& path) {
     cache_path = path;
 }
 
-void qqmusic::utils::CacheManager::set_download_path(const std::filesystem::path& path) {
+void qqmusic::utils::PathManager::set_download_path(const std::filesystem::path& path) {
     download_path = path;
 }
 
-qqmusic::utils::CacheManager::CacheManager() {
+qqmusic::utils::PathManager::PathManager() {
 #ifdef PLATFORM_WINDOWS
     /*Windows Related Code*/
 #error "Platform not supported yet"

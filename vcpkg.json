@@ -1,26 +1,13 @@
 {
 	"name": "qmapi",
 	"dependencies": [
-		{
-			"name": "zlib"
-		},
-		{
-		    "name": "boost-asio"
-		},
-		{
-		    "name": "boost-beast"
-		},
-		{
-		    "name": "boost-url"
-		},
-		{
-		    "name": "boost-uuid"
-		},
-		{
-		    "name": "nlohmann-json"
-		},
-		{
-            "name": "botan"
-		}
+		"zlib",
+		"boost-asio",
+		"boost-beast",
+		"boost-url",
+		"boost-uuid",
+		"nlohmann-json",
+        "botan",
+        "openssl"
 	]
 }

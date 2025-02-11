@@ -34,7 +34,7 @@ public:
         std::string refresh_key;
         std::string encrypt_uin;
         int loginType;
-        Json extra_fields;
+        nlohmann::json extra_fields;
     } inner;
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(Credential,

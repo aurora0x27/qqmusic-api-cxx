@@ -50,6 +50,7 @@ struct Device {
     std::string apn;
     std::string vendor_name;
     std::string vendor_os_name;
+    std::string qimei;
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(Device,
                                    display,
@@ -74,11 +75,13 @@ struct Device {
                                    android_id,
                                    apn,
                                    vendor_name,
-                                   vendor_os_name);
+                                   vendor_os_name,
+                                   qimei);
 };
 
 /*Prioritize loading cached device information*/
 qqmusic::Result<Device> get_device_info();
+qqmusic::Result<void> cache_device(const Device& device);
 
 } // namespace qqmusic::details
 

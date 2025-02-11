@@ -10,12 +10,12 @@
 #include <nlohmann/json.hpp>
 #include <qqmusic/details/device.h>
 #include <qqmusic/utils/buffer.h>
-#include <qqmusic/utils/cache.h>
+#include <qqmusic/utils/paths.h>
 #include <string>
 
 qqmusic::Result<qqmusic::details::Device> qqmusic::details::get_device_info() {
     try {
-        auto cache_path = qqmusic::utils::CacheManager::get_instance().get_cache_path()
+        auto cache_path = qqmusic::utils::PathManager::get_instance().get_cache_path()
                           / std::filesystem::path("device.json");
 
         qqmusic::details::Device device;
@@ -41,8 +41,8 @@ qqmusic::Result<qqmusic::details::Device> qqmusic::details::get_device_info() {
                 fs.open(cache_path.c_str(), std::ios::out);
                 nlohmann::json j;
                 nlohmann::to_json(j, device);
-                std::cout << nlohmann::to_string(j) << std::endl;
                 fs << nlohmann::to_string(j);
+                fs.close();
                 return Ok(device);
             }
         } else {
@@ -51,12 +51,33 @@ qqmusic::Result<qqmusic::details::Device> qqmusic::details::get_device_info() {
             nlohmann::json j;
             nlohmann::to_json(j, device);
             fs << nlohmann::to_string(j);
+            fs.close();
             return Ok(device);
         }
     } catch (const std::exception& e) {
         return Err(qqmusic::utils::Exception(
-            qqmusic::utils::Exception::DataDestroy,
+            qqmusic::utils::Exception::UnknownError,
             std::format("[get_device_info] -- get random device info failure: {}", e.what())));
+    }
+}
+
+qqmusic::Result<void> qqmusic::details::cache_device(const Device& device) {
+    auto cache_path = qqmusic::utils::PathManager::get_instance().get_cache_path()
+                      / std::filesystem::path("device.json");
+
+    try {
+        std::fstream fs;
+        fs.open(cache_path.c_str(), std::ios::out);
+        nlohmann::json j;
+        nlohmann::to_json(j, device);
+        fs << nlohmann::to_string(j);
+        fs.close();
+        return Ok();
+    } catch (const std::exception& e) {
+        return Err(
+            qqmusic::utils::Exception(qqmusic::utils::Exception::UnknownError,
+                                      std::format("[cache_device] -- cannot cache device: {}",
+                                                  e.what())));
     }
 }
 
