@@ -15,39 +15,39 @@ class Credential {
 public:
     Credential() = default;
     Credential(std::string_view cookie);
-    Credential(const Json& cookie);
+    Credential(const nlohmann::json& cookie);
     bool is_valid() const;
-    qqmusic::Task<qqmusic::Result<bool>> is_refreshable();
-    qqmusic::Task<qqmusic::Result<bool>> refresh();
-    qqmusic::Result<std::string> as_string();
-    qqmusic::Result<Json> as_json();
+    qqmusic::Task<qqmusic::Result<bool>> is_expired();
+    qqmusic::Task<qqmusic::Result<void>> refresh();
+    qqmusic::Result<std::string> to_string();
+    qqmusic::Result<nlohmann::json> to_json();
 
-    struct {
-        std::string openid;
-        std::string refresh_token;
-        std::string access_token;
-        uint64_t expired_at;
-        uint64_t musicid;
-        std::string musickey;
-        std::string unionid;
-        std::string musicid_s;
-        std::string refresh_key;
-        std::string encrypt_uin;
-        int loginType;
-        nlohmann::json extra_fields;
-    } inner;
+    std::string openid;
+    std::string refresh_token;
+    std::string access_token;
+    uint64_t expired_at = 0;
+    uint64_t musicid = 0;
+    std::string musickey;
+    std::string unionid;
+    std::string str_musicid;
+    std::string refresh_key;
+    std::string encryptUin;
+    int loginType = 2;
+    nlohmann::json extra_fields;
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(Credential,
-                                   inner.openid,
-                                   inner.refresh_token,
-                                   inner.access_token,
-                                   inner.expired_at,
-                                   inner.musicid,
-                                   inner.unionid,
-                                   inner.musicid_s,
-                                   inner.refresh_key,
-                                   inner.encrypt_uin,
-                                   inner.extra_fields);
+                                   openid,
+                                   refresh_token,
+                                   access_token,
+                                   expired_at,
+                                   musicid,
+                                   unionid,
+                                   str_musicid,
+                                   musickey,
+                                   refresh_key,
+                                   encryptUin,
+                                   loginType,
+                                   extra_fields);
 };
 
 } // namespace qqmusic::utils

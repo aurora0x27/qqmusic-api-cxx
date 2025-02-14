@@ -5,17 +5,14 @@
 #define QQMUSIC_DETAILS_NETWORK_H
 
 #include <boost/asio.hpp>
-#include <boost/asio/ssl.hpp>
 #include <boost/beast/http/dynamic_body.hpp>
 #include <boost/beast/http/message.hpp>
 #include <boost/beast/http/string_body.hpp>
-#include <exception>
 #include <format>
 #include <qqmusic/details/device.h>
 #include <qqmusic/details/qimei.h>
 #include <qqmusic/result.h>
 #include <qqmusic/utils/credential.h>
-#include <stdexcept>
 
 namespace qqmusic::details {
 
@@ -23,7 +20,7 @@ using HttpResponse = boost::beast::http::response<boost::beast::http::dynamic_bo
 namespace http = boost::beast::http;
 
 const char VERSION[] = "13.2.5.8";
-const uint64_t VERSION_CODE = 12030508;
+const uint64_t VERSION_CODE = 12020508;
 
 struct ApiConfig {
     std::string version;
@@ -31,6 +28,14 @@ struct ApiConfig {
     bool enable_sign = false;
     std::string endpoint;
     std::string enc_endpoint;
+};
+
+struct GlobalContext {
+    nlohmann::json cookie;
+    qqmusic::utils::Credential credential;
+    ApiConfig api_config;
+    qqmusic::details::Device device;
+    qqmusic::details::QimeiResult qimei;
 };
 
 class NetworkContextManager {
@@ -44,20 +49,16 @@ public:
 
     static NetworkContextManager& get_instance();
 
-    nlohmann::json get_cookie();
-    qqmusic::utils::Credential get_credential();
-    ApiConfig get_api_config();
-    void set_timeout(std::chrono::seconds& duration);
-    void set_cookie(const nlohmann::json& cookie);
-    void set_credential(const qqmusic::utils::Credential& credential);
+    /*get a copy of global context for param building and write back the change*/
+    GlobalContext get_global_context();
+    void set_global_context(const GlobalContext& ctx);
 
 private:
     NetworkContextManager()
-        : ssl_ctx(boost::asio::ssl::context::tlsv12_client)
-        , timeout(std::chrono::seconds(20)) {
-        context.cookie = nlohmann::json();
-        context.credential = qqmusic::utils::Credential();
-        context.api_config = {
+        : timeout(std::chrono::seconds(20)) {
+        ctx.cookie = nlohmann::json();
+        ctx.credential = qqmusic::utils::Credential();
+        ctx.api_config = {
             .version = VERSION,
             .version_code = VERSION_CODE,
             .enable_sign = false,
@@ -69,28 +70,27 @@ private:
             throw(std::runtime_error(std::format("Unknown error: get device failed because of {}",
                                                  dev_res.unwrapErr().what())));
         }
-        context.device = dev_res.unwrap();
-        auto qimei_res = get_qimei(context.device, VERSION);
-        if (qimei_res.isErr()) {
-            throw(std::runtime_error(std::format("Unkown error: get qimei failed because of {}",
-                                                 qimei_res.unwrapErr().what())));
+        ctx.device = dev_res.unwrap();
+        if (ctx.device.qimei == "") {
+            auto qimei_res = get_qimei(ctx.device, VERSION);
+            if (qimei_res.isErr()) {
+                throw(std::runtime_error(std::format("Unkown error: get qimei failed because of {}",
+                                                     qimei_res.unwrapErr().what())));
+            } else {
+                ctx.qimei = qimei_res.unwrap();
+            }
+        } else {
+            ctx.qimei = {.q16 = "", .q36 = ctx.device.qimei};
         }
-        context.qimei = qimei_res.unwrap();
-        context.device.qimei = context.qimei.q36;
-        cache_device(context.device);
+        ctx.device.qimei = ctx.qimei.q36;
+        cache_device(ctx.device);
     };
 
-    boost::asio::ssl::context ssl_ctx;
+    boost::asio::io_context ioc;
     std::chrono::seconds timeout;
 
     /*global context*/
-    struct {
-        nlohmann::json cookie;
-        qqmusic::utils::Credential credential;
-        ApiConfig api_config;
-        qqmusic::details::Device device;
-        qqmusic::details::QimeiResult qimei;
-    } context;
+    struct GlobalContext ctx;
 
     /*mutex on global context*/
     std::mutex lock;

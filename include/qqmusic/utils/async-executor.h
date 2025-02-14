@@ -8,8 +8,10 @@
 #define QQMUSIC_UTILS_ASYNC_EXECUTOR_H
 
 #include <boost/asio/co_spawn.hpp>
+#include <boost/asio/detached.hpp>
 #include <boost/asio/io_context.hpp>
 #include <boost/asio/steady_timer.hpp>
+#include <boost/asio/use_future.hpp>
 #include <exception>
 #include <qqmusic/result.h>
 #include <thread>
@@ -17,19 +19,37 @@
 
 namespace qqmusic::utils {
 
+/*custom co_spawn entry point to avoid using deleted default Result<T> constructor*/
+template<typename T, typename Executor>
+boost::asio::awaitable<void> custom_co_spawn_entry_point(
+    boost::asio::awaitable<T, Executor> aw,
+    std::function<void(std::exception_ptr, std::optional<T>)> handler) {
+    try {
+        T result = co_await std::move(aw);
+        handler(nullptr, std::move(result));
+    } catch (...) {
+        handler(std::current_exception(), std::optional<T>());
+    }
+}
+
 /*synchronously execute the task and get reslt, need io_context*/
 template<typename T>
 T sync_exec(boost::asio::io_context& ioc, qqmusic::Task<T> task) {
-    T result;
+    std::optional<T> result;
     std::exception_ptr exception;
 
-    boost::asio::co_spawn(ioc, std::move(task), [&](std::exception_ptr e, T value) {
-        if (e) {
-            exception = e;
-        } else {
-            result = std::move(value);
-        }
-    });
+    std::function<void(std::exception_ptr, std::optional<T>)> handler =
+        [&](std::exception_ptr e, std::optional<T> value) {
+            if (e) {
+                exception = e;
+            } else {
+                result.emplace(std::move(*value));
+            }
+        };
+
+    boost::asio::co_spawn(ioc,
+                          custom_co_spawn_entry_point(std::move(task), handler),
+                          boost::asio::detached);
 
     ioc.run();
 
@@ -37,14 +57,18 @@ T sync_exec(boost::asio::io_context& ioc, qqmusic::Task<T> task) {
         std::rethrow_exception(exception);
     }
 
-    return std::move(result);
+    if (!result.has_value()) {
+        throw std::runtime_error("Result has no value");
+    }
+
+    return std::move(*result);
 }
 
 /*sync get result*/
 template<typename T>
 T sync_exec(qqmusic::Task<T> task) {
     boost::asio::io_context ioc;
-    return std::move(sync_exec(ioc, std::move(task)));
+    return sync_exec(ioc, std::move(task));
 }
 
 /*Global AsyncExecutor class*/

@@ -19,7 +19,7 @@ public:
                                 deserialization or decoding*/
         RuntimeError,           /*Any runtime error including exceptions thrown by 3rd libs*/
         NetworkError,           /*Unknown network error*/
-        SslError,               /*SSL connection error*/
+        JsonError,              /*Error when handling json*/
         OperationOutOfTime,     /*Out of Time*/
         UnknownError
     };
@@ -39,6 +39,7 @@ public:
         }
     }
 
+    [[nodiscard]] unsigned int get_error_enum() const { return kind_code; }
     [[nodiscard]] std::string kind() const { return ReasonKindMap[kind_code]; }
     [[nodiscard]] std::string what() const { return reason; }
 
@@ -54,7 +55,7 @@ private:
                                                                  "DataDestroy",
                                                                  "RuntimeError",
                                                                  "NetworkError",
-                                                                 "SslError",
+                                                                 "JsonError",
                                                                  "OperationOutOfTime",
                                                                  "Unknown Error"};
 

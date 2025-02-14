@@ -7,7 +7,6 @@
 		"boost-url",
 		"boost-uuid",
 		"nlohmann-json",
-        "botan",
-        "openssl"
+        "botan"
 	]
 }

@@ -22,7 +22,7 @@ struct AlbumEntity {
     uint64_t id;
 };
 
-qqmusic::Task<qqmusic::Result<Json>> get_album_detail();
+qqmusic::Task<qqmusic::Result<nlohmann::json>> get_album_detail();
 
 // get_song(): get std::vector<song>
 

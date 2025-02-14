@@ -20,7 +20,6 @@ find_package(boost_asio CONFIG REQUIRED)
 find_package(boost_beast CONFIG REQUIRED)
 find_package(Boost REQUIRED COMPONENTS url)
 find_package(boost_uuid REQUIRED CONFIG)
-find_package(OpenSSL REQUIRED)
 
 add_library(qmapi SHARED ${QQMUSIC_API_SOURCE})
 target_include_directories(
@@ -36,8 +35,6 @@ target_link_libraries(
     Boost::beast
     Boost::url
     Boost::uuid
-    OpenSSL::Crypto
-    OpenSSL::SSL
 )
 
 # set platform info
@@ -74,10 +71,10 @@ message("+---------------QQMUSIC API CXX---------------+")
 message("|                                             |")
 message("|              QQMUSIC BUILD TYPE             |")
 message("|                                             |")
-message("|    DEMO           ${IS_DEMO}                       |")
+message("|    DEMO                           ${IS_DEMO}       |")
 message("|                                             |")
-message("|    SHARED LIBRARY ${IS_SHARED_LIB}                       |")
+message("|    SHARED LIBRARY                 ${IS_SHARED_LIB}       |")
 message("|                                             |")
-message("|    TEST           ${IS_TEST}                       |")
+message("|    TEST                           ${IS_TEST}       |")
 message("|                                             |")
 message("+---------------------------------------------+")
