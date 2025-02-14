@@ -17,14 +17,20 @@ enum class cover_size : int { SMALL = 150, DEFAULT = 300, MIDIUM = 500, LARGE = 
 
 std::string get_album_cover_url(std::string_view mid, cover_size size);
 
-struct AlbumEntity {
-    std::string mid; /*field: albummid*/
-    uint64_t id;
-};
+/*Get album detailed info from *album mid* */
+qqmusic::Task<qqmusic::Result<nlohmann::json>> get_album_detail(std::string_view album_mid);
 
-qqmusic::Task<qqmusic::Result<nlohmann::json>> get_album_detail();
+/*Get album detailed info from *album id* */
+qqmusic::Task<qqmusic::Result<nlohmann::json>> get_album_detail(uint64_t album_id);
 
-// get_song(): get std::vector<song>
+/*Get song list of album*/
+qqmusic::Task<qqmusic::Result<nlohmann::json>> get_album_songs(std::string_view album_mid,
+                                                               unsigned int num = 10,
+                                                               unsigned int page = 1);
+
+qqmusic::Task<qqmusic::Result<nlohmann::json>> get_album_songs(uint64_t album_id,
+                                                               unsigned int num = 10,
+                                                               unsigned int page = 1);
 
 } // namespace qqmusic
 
