@@ -26,25 +26,46 @@ target_include_directories(
     qmapi PUBLIC
     include
 )
-target_link_libraries(
-    qmapi PUBLIC
-    ZLIB::ZLIB
-    nlohmann_json::nlohmann_json
-    Botan::Botan-static
-    Boost::asio
-    Boost::beast
-    Boost::url
-    Boost::uuid
-)
 
 # set platform info
 if(WIN32)
   set(PLATFORM PLATFORM_WINDOWS)
+  target_link_libraries(
+      qmapi PUBLIC
+      ZLIB::ZLIB
+      nlohmann_json::nlohmann_json
+      Botan::Botan
+      Boost::asio
+      Boost::beast
+      Boost::url
+      Boost::uuid
+  )
 elseif(APPLE)
   set(PLATFORM PLATFORM_APPLE)
+  target_link_libraries(
+      qmapi PUBLIC
+      ZLIB::ZLIB
+      nlohmann_json::nlohmann_json
+      Botan::Botan-static
+      Boost::asio
+      Boost::beast
+      Boost::url
+      Boost::uuid
+  )
 elseif(LINUX)
   set(PLATFORM PLATFORM_LINUX)
+  target_link_libraries(
+      qmapi PUBLIC
+      ZLIB::ZLIB
+      nlohmann_json::nlohmann_json
+      Botan::Botan-static
+      Boost::asio
+      Boost::beast
+      Boost::url
+      Boost::uuid
+  )
 endif()
+
 target_compile_definitions(
     qmapi PRIVATE
     ${PLATFORM}
