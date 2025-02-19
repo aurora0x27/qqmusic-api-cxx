@@ -1,6 +1,5 @@
 /*---------------------------qqmusic/details/api.h------------------------------
- * Base api class, common interface to send http requests and deal with 
- * json result
+ * Api class prepare a request with provided infomation and global context
 *-----------------------------------------------------------------------------*/
 #ifndef QQMUSIC_DETIALS_API_H
 #define QQMUSIC_DETIALS_API_H
