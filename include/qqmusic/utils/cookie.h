@@ -26,14 +26,14 @@
  *     }
  * }
 *-----------------------------------------------------------------------------*/
-#ifndef QQMUSIC_DETAILS_COOKIE_H
-#define QQMUSIC_DETAILS_COOKIE_H
+#ifndef QQMUSIC_UTILS_COOKIE_H
+#define QQMUSIC_UTILS_COOKIE_H
 
 #include <nlohmann/json.hpp>
 #include <qqmusic/result.h>
 #include <string_view>
 
-namespace qqmusic::details {
+namespace qqmusic::utils {
 
 struct Cookie {
     std::string domain;
@@ -59,7 +59,7 @@ qqmusic::Result<nlohmann::json> parse_cookie(std::string_view cookie_str);
 class CookieJar {
 public:
     CookieJar()
-        : content({"NoDomain", {"/", nlohmann::json::object()}}){};
+        : content({{"NoDomain", {{"/", nlohmann::json::object()}}}}){};
     /*Construct from cache string *created by CookieJar::dump()* */
     CookieJar(std::string_view cache)
         : content(nlohmann::json::parse(cache)){};
@@ -93,6 +93,6 @@ private:
     nlohmann::json content;
 };
 
-} // namespace qqmusic::details
+} // namespace qqmusic::utils
 
-#endif // !QQMUSIC_DETAILS_COOKIE_H
+#endif // !QQMUSIC_UTILS_COOKIE_H

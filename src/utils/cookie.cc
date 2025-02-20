@@ -1,12 +1,12 @@
 #include <format>
 #include <nlohmann/json.hpp>
-#include <qqmusic/details/cookie.h>
+#include <qqmusic/utils/cookie.h>
 #include <regex>
 
-qqmusic::details::CookieJar::CookieJar(std::string_view cookie_str,
-                                       std::string_view domain,
-                                       std::string_view path) {
-    auto res = qqmusic::details::parse_cookie(cookie_str);
+qqmusic::utils::CookieJar::CookieJar(std::string_view cookie_str,
+                                     std::string_view domain,
+                                     std::string_view path) {
+    auto res = qqmusic::utils::parse_cookie(cookie_str);
     if (res.isErr()) {
         throw std::runtime_error(res.unwrapErr().what());
     }
@@ -14,14 +14,14 @@ qqmusic::details::CookieJar::CookieJar(std::string_view cookie_str,
     content = nlohmann::json{{domain, {{path, json}}}};
 }
 
-qqmusic::Result<void> qqmusic::details::CookieJar::set(const qqmusic::details::Cookie& cookie) {
+qqmusic::Result<void> qqmusic::utils::CookieJar::set(const qqmusic::utils::Cookie& cookie) {
     content[cookie.domain][cookie.path][cookie.key] = cookie.value;
     return Ok();
 }
 
-qqmusic::Result<std::string> qqmusic::details::CookieJar::get(std::string_view key,
-                                                              std::optional<std::string> domain,
-                                                              std::optional<std::string> path) {
+qqmusic::Result<std::string> qqmusic::utils::CookieJar::get(std::string_view key,
+                                                            std::optional<std::string> domain,
+                                                            std::optional<std::string> path) {
     try {
         if (domain.has_value()) {
             if (path.has_value()) {
@@ -58,9 +58,9 @@ qqmusic::Result<std::string> qqmusic::details::CookieJar::get(std::string_view k
     }
 }
 
-qqmusic::Result<void> qqmusic::details::CookieJar::del(std::string_view key,
-                                                       std::optional<std::string> domain,
-                                                       std::optional<std::string> path) {
+qqmusic::Result<void> qqmusic::utils::CookieJar::del(std::string_view key,
+                                                     std::optional<std::string> domain,
+                                                     std::optional<std::string> path) {
     try {
         if (domain.has_value()) {
             if (path.has_value()) {
@@ -120,7 +120,7 @@ qqmusic::Result<void> qqmusic::details::CookieJar::del(std::string_view key,
     }
 }
 
-qqmusic::Result<std::string> qqmusic::details::CookieJar::dump() {
+qqmusic::Result<std::string> qqmusic::utils::CookieJar::dump() {
     try {
         return Ok(nlohmann::to_string(content));
     } catch (const std::exception& e) {
@@ -132,8 +132,8 @@ qqmusic::Result<std::string> qqmusic::details::CookieJar::dump() {
 }
 
 /*Serialize sellected domain's cookie to cookie string*/
-qqmusic::Result<std::string> qqmusic::details::CookieJar::serialize(std::string_view domain,
-                                                                    std::string_view path) {
+qqmusic::Result<std::string> qqmusic::utils::CookieJar::serialize(std::string_view domain,
+                                                                  std::string_view path) {
     /*TODO: convert json to cookie string*/
     std::string res;
     if (!content.contains(domain)) {
@@ -160,9 +160,9 @@ qqmusic::Result<std::string> qqmusic::details::CookieJar::serialize(std::string_
     return Ok(res);
 }
 
-qqmusic::Result<void> qqmusic::details::CookieJar::clear(std::optional<std::string> domain,
-                                                         std::optional<std::string> path,
-                                                         std::optional<std::string> key) {
+qqmusic::Result<void> qqmusic::utils::CookieJar::clear(std::optional<std::string> domain,
+                                                       std::optional<std::string> path,
+                                                       std::optional<std::string> key) {
     try {
         if (domain.has_value()) {
             if (path.has_value()) {
@@ -218,13 +218,12 @@ qqmusic::Result<void> qqmusic::details::CookieJar::clear(std::optional<std::stri
 }
 
 /*Replace cookie jar content with a new Cookie object*/
-qqmusic::Result<void> qqmusic::details::CookieJar::update(
-    const qqmusic::details::CookieJar& cookies) {
+qqmusic::Result<void> qqmusic::utils::CookieJar::update(const qqmusic::utils::CookieJar& cookies) {
     content = cookies.content;
     return Ok();
 }
 
-qqmusic::Result<nlohmann::json> qqmusic::details::parse_cookie(std::string_view cookie_str) {
+qqmusic::Result<nlohmann::json> qqmusic::utils::parse_cookie(std::string_view cookie_str) {
     /*
      * Slice cookie into single `key=value` strings, then parse values
      * */

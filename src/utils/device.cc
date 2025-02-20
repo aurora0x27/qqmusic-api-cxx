@@ -8,17 +8,17 @@
 #include <fstream>
 #include <nlohmann/detail/conversions/from_json.hpp>
 #include <nlohmann/json.hpp>
-#include <qqmusic/details/device.h>
 #include <qqmusic/utils/buffer.h>
+#include <qqmusic/utils/device.h>
 #include <qqmusic/utils/paths.h>
 #include <string>
 
-qqmusic::Result<qqmusic::details::Device> qqmusic::details::get_device_info() {
+qqmusic::Result<qqmusic::utils::Device> qqmusic::utils::get_device_info() {
     try {
         auto cache_path = qqmusic::utils::PathManager::get_instance().get_cache_path()
                           / std::filesystem::path("device.json");
 
-        qqmusic::details::Device device;
+        qqmusic::utils::Device device;
 
         std::fstream fs(cache_path.c_str());
         if (fs.good()) {
@@ -61,7 +61,7 @@ qqmusic::Result<qqmusic::details::Device> qqmusic::details::get_device_info() {
     }
 }
 
-qqmusic::Result<void> qqmusic::details::cache_device(const Device& device) {
+qqmusic::Result<void> qqmusic::utils::cache_device(const Device& device) {
     auto cache_path = qqmusic::utils::PathManager::get_instance().get_cache_path()
                       / std::filesystem::path("device.json");
 
@@ -81,14 +81,14 @@ qqmusic::Result<void> qqmusic::details::cache_device(const Device& device) {
     }
 }
 
-qqmusic::details::OSVersion::OSVersion() {
+qqmusic::utils::OSVersion::OSVersion() {
     incremental = "5891938";
     release = "10";
     codename = "REL";
     sdk = 29;
 }
 
-qqmusic::details::Device::Device() {
+qqmusic::utils::Device::Device() {
     /*default initialization*/
 
     Botan::AutoSeeded_RNG rng;
@@ -119,7 +119,7 @@ qqmusic::details::Device::Device() {
 
     /*random imei generator */
     /* 
-     * TODO: The imei cannot pass check, either the python version.
+     * NOTE: The imei cannot pass check, either the python version.
      *       def random_imei() -> str:
      *           """生成随机 IMEI 号码.
      *           Returns:

@@ -3,14 +3,14 @@
  *
  * Generate random IMEI number, OS version and device info
 *-----------------------------------------------------------------------------*/
-#ifndef QQMUSIC_DETAILS_DEVICE_H
-#define QQMUSIC_DETAILS_DEVICE_H
+#ifndef QQMUSIC_UTILS_DEVICE_H
+#define QQMUSIC_UTILS_DEVICE_H
 
 #include <nlohmann/detail/macro_scope.hpp>
 #include <nlohmann/json.hpp>
 #include <qqmusic/result.h>
 
-namespace qqmusic::details {
+namespace qqmusic::utils {
 
 struct OSVersion {
     OSVersion();
@@ -83,6 +83,6 @@ struct Device {
 qqmusic::Result<Device> get_device_info();
 qqmusic::Result<void> cache_device(const Device& device);
 
-} // namespace qqmusic::details
+} // namespace qqmusic::utils
 
-#endif // !QQMUSIC_DETAILS_DEVICE_H
+#endif // !QQMUSIC_UTILS_DEVICE_H

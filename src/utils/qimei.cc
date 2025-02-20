@@ -22,10 +22,10 @@
 #include <ctime>
 #include <format>
 #include <nlohmann/json.hpp>
-#include <qqmusic/details/device.h>
-#include <qqmusic/details/qimei.h>
 #include <qqmusic/result.h>
 #include <qqmusic/utils/buffer.h>
+#include <qqmusic/utils/device.h>
+#include <qqmusic/utils/qimei.h>
 #include <set>
 #include <string>
 #include <vector>
@@ -43,10 +43,10 @@ static qqmusic::Result<qqmusic::utils::buffer> aes_encrypt(qqmusic::utils::buffe
                                                            qqmusic::utils::buffer& buf);
 static std::string random_beacon_id();
 /*load random payload by device*/
-static nlohmann::json load_rand_payload(qqmusic::details::Device& device, std::string_view version);
+static nlohmann::json load_rand_payload(qqmusic::utils::Device& device, std::string_view version);
 
-qqmusic::Result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
-    qqmusic::details::Device& device, std::string_view version) {
+qqmusic::Result<qqmusic::utils::QimeiResult> qqmusic::utils::get_qimei(
+    qqmusic::utils::Device& device, std::string_view version) {
     using namespace boost::beast;
 
     /*if generate error, return default qimei*/
@@ -178,12 +178,12 @@ qqmusic::Result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
 
         if (qimei_res["code"] != 0) {
             /*get qimei failure*/
-            return Ok(qqmusic::details::QimeiResult{.q16 = "",
-                                                    .q36 = "6c9d3cd110abca9b16311cee10001e717614"});
+            return Ok(qqmusic::utils::QimeiResult{.q16 = "",
+                                                  .q36 = "6c9d3cd110abca9b16311cee10001e717614"});
         } else {
             /*get qimei success*/
-            return Ok(qqmusic::details::QimeiResult{.q16 = qimei_res["data"]["q16"],
-                                                    .q36 = qimei_res["data"]["q36"]});
+            return Ok(qqmusic::utils::QimeiResult{.q16 = qimei_res["data"]["q16"],
+                                                  .q36 = qimei_res["data"]["q36"]});
         }
 
     } catch (const std::exception& e) {
@@ -191,8 +191,8 @@ qqmusic::Result<qqmusic::details::QimeiResult> qqmusic::details::get_qimei(
         // return Err(
         //     qqmusic::utils::Exception(qqmusic::utils::Exception::UnknownError,
         //                               std::format("[get_qimei] -- Error ocurred: {}", e.what())));
-        return Ok(qqmusic::details::QimeiResult{.q16 = "",
-                                                .q36 = "6c9d3cd110abca9b16311cee10001e717614"});
+        return Ok(
+            qqmusic::utils::QimeiResult{.q16 = "", .q36 = "6c9d3cd110abca9b16311cee10001e717614"});
     }
 }
 
@@ -253,7 +253,7 @@ static qqmusic::Result<qqmusic::utils::buffer> aes_encrypt(qqmusic::utils::buffe
     }
 }
 
-static nlohmann::json load_rand_payload(qqmusic::details::Device& device, std::string_view version) {
+static nlohmann::json load_rand_payload(qqmusic::utils::Device& device, std::string_view version) {
     Botan::AutoSeeded_RNG rng;
     /*generate an uint64_t range(0, 14400)*/
     auto fixed_rand = [&rng]() {
