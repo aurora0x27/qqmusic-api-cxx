@@ -1,9 +1,11 @@
 #include <cstdio>
 #include <qqmusic/details/tripledes.h>
 
+namespace qqmusic::details {
+
 static std::vector<std::vector<uint32_t>> key_schedule(const uint8_t* key_head,
                                                        size_t key_size,
-                                                       qqmusic::utils::tripledes_crypt_mode mode);
+                                                       tripledes_crypt_mode mode);
 
 static uint32_t bitnum(const uint8_t* head, size_t size, uint32_t b, uint32_t c);
 
@@ -11,46 +13,39 @@ static uint32_t bitnum_intl(uint32_t a, uint32_t b, uint32_t c);
 
 static uint32_t bitnum_intr(uint32_t a, uint32_t b, uint32_t c);
 
-static void crypt(qqmusic::utils::buffer& buf, std::vector<std::vector<uint32_t>> key);
+static void crypt(utils::buffer& buf, std::vector<std::vector<uint32_t>> key);
 
-static void initial_permutation(uint32_t* a, uint32_t* b, qqmusic::utils::buffer& buf);
+static void initial_permutation(uint32_t* a, uint32_t* b, utils::buffer& buf);
 
-static void inverse_permutation(uint32_t a, uint32_t b, qqmusic::utils::buffer& buf);
+static void inverse_permutation(uint32_t a, uint32_t b, utils::buffer& buf);
 
 static uint32_t transform(uint32_t state, std::vector<uint32_t> key);
 
 static uint32_t sbox_bit(uint32_t a);
 
 // extern api
-qqmusic::utils::tripledes_key_schedule qqmusic::utils::tripledes_key_setup(
-    const uint8_t* key_head, size_t key_size, qqmusic::utils::tripledes_crypt_mode mode) {
+tripledes_key_schedule tripledes_key_setup(const uint8_t* key_head,
+                                           size_t key_size,
+                                           tripledes_crypt_mode mode) {
     std::vector<std::vector<std::vector<uint32_t>>> res;
 
-    if (mode == qqmusic::utils::tripledes_crypt_mode::encrypt) {
-        res.push_back(
-            key_schedule(key_head, key_size, qqmusic::utils::tripledes_crypt_mode::encrypt));
-        res.push_back(
-            key_schedule(key_head + 8, key_size - 8, qqmusic::utils::tripledes_crypt_mode::decrypt));
-        res.push_back(key_schedule(key_head + 16,
-                                   key_size - 16,
-                                   qqmusic::utils::tripledes_crypt_mode::encrypt));
+    if (mode == tripledes_crypt_mode::encrypt) {
+        res.push_back(key_schedule(key_head, key_size, tripledes_crypt_mode::encrypt));
+        res.push_back(key_schedule(key_head + 8, key_size - 8, tripledes_crypt_mode::decrypt));
+        res.push_back(key_schedule(key_head + 16, key_size - 16, tripledes_crypt_mode::encrypt));
     } else {
-        res.push_back(key_schedule(key_head + 16,
-                                   key_size - 16,
-                                   qqmusic::utils::tripledes_crypt_mode::decrypt));
-        res.push_back(
-            key_schedule(key_head + 8, key_size - 8, qqmusic::utils::tripledes_crypt_mode::encrypt));
-        res.push_back(
-            key_schedule(key_head, key_size, qqmusic::utils::tripledes_crypt_mode::decrypt));
+        res.push_back(key_schedule(key_head + 16, key_size - 16, tripledes_crypt_mode::decrypt));
+        res.push_back(key_schedule(key_head + 8, key_size - 8, tripledes_crypt_mode::encrypt));
+        res.push_back(key_schedule(key_head, key_size, tripledes_crypt_mode::decrypt));
     }
 
     return res;
 }
 
 // extern api
-void qqmusic::utils::tripledes_crypt(qqmusic::utils::buffer& buf_in,
-                                     qqmusic::utils::buffer& buf_out,
-                                     qqmusic::utils::tripledes_key_schedule key_schedule) {
+void tripledes_crypt(utils::buffer& buf_in,
+                     utils::buffer& buf_out,
+                     tripledes_key_schedule key_schedule) {
     for (int i = 0; i < 3; ++i) {
         crypt(buf_in, key_schedule[i]);
     }
@@ -61,7 +56,7 @@ void qqmusic::utils::tripledes_crypt(qqmusic::utils::buffer& buf_in,
 
 static std::vector<std::vector<uint32_t>> key_schedule(const uint8_t* key_head,
                                                        size_t key_size,
-                                                       qqmusic::utils::tripledes_crypt_mode mode) {
+                                                       tripledes_crypt_mode mode) {
     std::vector<std::vector<uint32_t>> schedule(16, std::vector<uint32_t>(6, 0L));
     const uint32_t key_rnd_shift[] = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
     const uint32_t key_perm_c[] = {56, 48, 40, 32, 24, 16, 8,  0,  57, 49, 41, 33, 25, 17,
@@ -83,7 +78,7 @@ static std::vector<std::vector<uint32_t>> key_schedule(const uint8_t* key_head,
         c = ((c << key_rnd_shift[i]) | (c >> (28 - key_rnd_shift[i]))) & 0xfffffff0;
         d = ((d << key_rnd_shift[i]) | (d >> (28 - key_rnd_shift[i]))) & 0xfffffff0;
 
-        int togen = mode == qqmusic::utils::tripledes_crypt_mode::decrypt ? 15 - i : i;
+        int togen = mode == tripledes_crypt_mode::decrypt ? 15 - i : i;
 
         for (int j = 0; j < 6; ++j) {
             schedule[togen][j] = 0;
@@ -113,7 +108,7 @@ static uint32_t bitnum_intr(uint32_t a, uint32_t b, uint32_t c) {
     return ((a >> (31 - b)) & 1) << c;
 }
 
-static void crypt(qqmusic::utils::buffer& buf, std::vector<std::vector<uint32_t>> key) {
+static void crypt(utils::buffer& buf, std::vector<std::vector<uint32_t>> key) {
     uint32_t a = 0, b = 0;
     initial_permutation(&a, &b, buf);
 
@@ -127,7 +122,7 @@ static void crypt(qqmusic::utils::buffer& buf, std::vector<std::vector<uint32_t>
     inverse_permutation(a, b, buf);
 }
 
-static void initial_permutation(uint32_t* a, uint32_t* b, qqmusic::utils::buffer& buf) {
+static void initial_permutation(uint32_t* a, uint32_t* b, utils::buffer& buf) {
     uint8_t* input_data = buf.data();
     size_t size = buf.size();
 
@@ -166,7 +161,7 @@ static void initial_permutation(uint32_t* a, uint32_t* b, qqmusic::utils::buffer
           | bitnum(input_data, size, 14, 1) | bitnum(input_data, size, 6, 0));
 }
 
-static void inverse_permutation(uint32_t a, uint32_t b, qqmusic::utils::buffer& buf) {
+static void inverse_permutation(uint32_t a, uint32_t b, utils::buffer& buf) {
     uint8_t data[8] = {0};
 
     data[3] = (bitnum_intr(b, 7, 7) | bitnum_intr(a, 7, 6) | bitnum_intr(b, 15, 5)
@@ -300,3 +295,5 @@ static uint32_t transform(uint32_t state, std::vector<uint32_t> key) {
 static uint32_t sbox_bit(uint32_t a) {
     return (a & 32) | ((a & 31) >> 1) | ((a & 1) << 4);
 }
+
+} // namespace qqmusic::details

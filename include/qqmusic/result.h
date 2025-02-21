@@ -3,7 +3,7 @@
  * `https://github.com/oktal/result`
  *
  * Provide some type aliases
-*-----------------------------------------------------------------------------*/
+ *-----------------------------------------------------------------------------*/
 #ifndef QQMUSIC_RESULT_H
 #define QQMUSIC_RESULT_H
 
@@ -21,8 +21,6 @@ using Result = Result<T, qqmusic::utils::Exception>;
 /*task used to asynchronous execution*/
 template<typename T>
 using Task = boost::asio::awaitable<T>;
-
-using Json = nlohmann::json;
 
 } // namespace qqmusic
 

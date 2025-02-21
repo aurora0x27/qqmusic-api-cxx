@@ -1,11 +1,11 @@
-/* 
+/*
    Mathieu Stefani, 03 mai 2016
-   
+
    This header provides a Result type that can be used to replace exceptions in code
    that has to handle error.
 
-   Result<T, E> can be used to return and propagate an error to the caller. Result<T, E> is an algebraic
-   data type that can either Ok(T) to represent success or Err(E) to represent an error.
+   Result<T, E> can be used to return and propagate an error to the caller. Result<T, E> is an
+   algebraic data type that can either Ok(T) to represent success or Err(E) to represent an error.
 */
 
 #pragma once
@@ -19,6 +19,7 @@ template<typename T>
 struct Ok {
     Ok(const T& val)
         : val(val) {}
+
     Ok(T&& val)
         : val(std::move(val)) {}
 
@@ -32,6 +33,7 @@ template<typename E>
 struct Err {
     Err(const E& val)
         : val(val) {}
+
     Err(E&& val)
         : val(std::move(val)) {}
 
@@ -111,6 +113,7 @@ struct ResultErrType<Result<T, E>> {
 
 template<typename R>
 struct IsResult : public std::false_type {};
+
 template<typename T, typename E>
 struct IsResult<Result<T, E>> : public std::true_type {};
 
@@ -523,12 +526,13 @@ Ret orElse(const Result<T, E>& result, Func func) {
 }
 
 struct ok_tag {};
+
 struct err_tag {};
 
 template<typename T, typename E>
 struct Storage {
-    static constexpr size_t Size = sizeof(T) > sizeof(E) ? sizeof(T) : sizeof(E);
-    static constexpr size_t Align = sizeof(T) > sizeof(E) ? alignof(T) : alignof(E);
+    constexpr static size_t Size = sizeof(T) > sizeof(E) ? sizeof(T) : sizeof(E);
+    constexpr static size_t Align = sizeof(T) > sizeof(E) ? alignof(T) : alignof(E);
 
     typedef typename std::aligned_storage<Size, Align>::type type;
 
@@ -539,6 +543,7 @@ struct Storage {
         new (&storage_) T(ok.val);
         initialized_ = true;
     }
+
     void construct(types::Err<E> err) {
         new (&storage_) E(err.val);
         initialized_ = true;
@@ -600,6 +605,7 @@ struct Storage<void, E> {
     }
 
     void destroy(ok_tag) { initialized_ = false; }
+
     void destroy(err_tag) {
         if (initialized_) {
             get<E>().~E();
@@ -800,6 +806,7 @@ struct Result {
 
 private:
     T expect_impl(std::true_type) const {}
+
     T expect_impl(std::false_type) const { return storage_.template get<T>(); }
 
     bool ok_;

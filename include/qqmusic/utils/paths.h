@@ -31,7 +31,7 @@
  *         - log:
  *
  *         - download:
- * 
+ *
  * Applications can set the path by themselves
  * Usage:
  * ```
@@ -39,7 +39,7 @@
  * auto& pm = PathManager::get_instance();
  * auto cache_path = cm.get_cache_path();
  * ```
-*-----------------------------------------------------------------------------*/
+ *-----------------------------------------------------------------------------*/
 #ifndef QQMUSIC_UTILS_CACHE_H
 #define QQMUSIC_UTILS_CACHE_H
 #include <filesystem>

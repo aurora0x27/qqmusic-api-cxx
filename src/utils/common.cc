@@ -12,11 +12,13 @@
 #include <span>
 #include <zlib.h>
 
+namespace qqmusic::utils {
+
 static std::string head(std::span<uint8_t> data);
 static std::string tail(std::span<uint8_t> data);
 static std::string middle(std::span<uint8_t> data);
 
-std::string qqmusic::utils::sign(const nlohmann::json& params) {
+std::string sign(const nlohmann::json& params) {
     boost::uuids::detail::md5 hash;
     boost::uuids::detail::md5::digest_type digest;
     auto str = params.dump();
@@ -143,16 +145,15 @@ static std::string middle(std::span<uint8_t> data) {
     return Botan::base64_encode(res);
 }
 
-static int decompress(const qqmusic::utils::buffer& src, qqmusic::utils::buffer& dest);
+static int decompress(const buffer& src, buffer& dest);
 
 // qmc decoder
-static void qmc1_decrypt(qqmusic::utils::buffer& src);
+static void qmc1_decrypt(buffer& src);
 
-qqmusic::Result<std::string> qqmusic::utils::qrc_decode(const qqmusic::utils::buffer& src,
-                                                        qqmusic::utils::qrc_type type) {
-    qqmusic::utils::buffer tmp;
-    if (type == qqmusic::utils::qrc_type::local) {
-        qqmusic::utils::buffer raw(src);
+qqmusic::Result<std::string> qrc_decode(const buffer& src, qrc_type type) {
+    buffer tmp;
+    if (type == qrc_type::local) {
+        buffer raw(src);
         qmc1_decrypt(raw);
         tmp.assign(raw.begin() + 11, raw.end());
     } else {
@@ -162,8 +163,8 @@ qqmusic::Result<std::string> qqmusic::utils::qrc_decode(const qqmusic::utils::bu
     size_t tmp_size = tmp.size();
     // check if size is integer multiple of 8 bytes
     if (tmp_size % 8 != 0) {
-        return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::Kind::DataDestroy,
-                                             "qrc-decoder: buffer size cannot devided by 8"));
+        return Err(Exception(Exception::Kind::DataDestroy,
+                             "qrc-decoder: buffer size cannot devided by 8"));
     }
 
     // QRC_KEY = b"!@#)(*$%123ZXC!@!@#)(NHL"
@@ -173,12 +174,11 @@ qqmusic::Result<std::string> qqmusic::utils::qrc_decode(const qqmusic::utils::bu
     constexpr size_t qrc_key_size = sizeof(qrc_key) - 1;
 
     // generate key schedule
-    const auto schedule
-        = qqmusic::utils::tripledes_key_setup(qrc_key,
+    const auto schedule = tripledes_key_setup(qrc_key,
                                               qrc_key_size,
-                                              qqmusic::utils::tripledes_crypt_mode::decrypt);
+                                              details::tripledes_crypt_mode::decrypt);
 
-    qqmusic::utils::buffer compressed_buffer;
+    buffer compressed_buffer;
 
     // iterate encrypted_text_byte function in units of 8 bytes
     // origin python code:
@@ -186,35 +186,32 @@ qqmusic::Result<std::string> qqmusic::utils::qrc_decode(const qqmusic::utils::bu
     //     data += tripledes_crypt(encrypted_text_byte[i:], schedule)
     uint8_t* head = tmp.data();
     for (size_t i = 0; i < tmp_size / 8; ++i) {
-        qqmusic::utils::buffer tmp_section(head + i * 8, 8);
-        qqmusic::utils::tripledes_crypt(tmp_section, compressed_buffer, schedule);
+        buffer tmp_section(head + i * 8, 8);
+        details::tripledes_crypt(tmp_section, compressed_buffer, schedule);
     }
 
     // decompress the buffer
-    qqmusic::utils::buffer dest;
+    buffer dest;
     int decompress_res = decompress(compressed_buffer, dest);
 
     switch (decompress_res) {
     case -1:
     case 1:
-        return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::Kind::RuntimeError,
-                                             "qrc-decoder: memory alloc error"));
+        return Err(Exception(Exception::Kind::RuntimeError, "qrc-decoder: memory alloc error"));
     case 2:
-        return Err(qqmusic::utils::Exception(
-            qqmusic::utils::Exception::Kind::DataDestroy,
-            "qrc-decoder: data destroy when decompressing decoding lyric"));
+        return Err(Exception(Exception::Kind::DataDestroy,
+                             "qrc-decoder: data destroy when decompressing decoding lyric"));
     case 0:
         break;
     default:
-        return Err(qqmusic::utils::Exception(
-            qqmusic::utils::Exception::Kind::UnknownError,
-            "qrc-decoder: unknown error when decompressing decoded lyric"));
+        return Err(Exception(Exception::Kind::UnknownError,
+                             "qrc-decoder: unknown error when decompressing decoded lyric"));
     }
 
     return Ok(std::string((char*) dest.data(), dest.size()));
 }
 
-static int decompress(const qqmusic::utils::buffer& src, qqmusic::utils::buffer& dest) {
+static int decompress(const buffer& src, buffer& dest) {
     // prepare receive buffer
     size_t tmp_dest_size = src.size() * 4;
     uint8_t* tmp_dest_head = (uint8_t*) malloc(tmp_dest_size);
@@ -257,7 +254,7 @@ static int decompress(const qqmusic::utils::buffer& src, qqmusic::utils::buffer&
 // def qmc1_decrypt(data: bytearray) -> None:
 //     for i, _value in enumerate(data):
 //         data[i] ^= PRIVKEY[(i % 0x7FFF) & 0x7F] if i > 0x7FFF else PRIVKEY[i & 0x7F]
-static void qmc1_decrypt(qqmusic::utils::buffer& src) {
+static void qmc1_decrypt(buffer& src) {
     uint8_t private_key[128] = {
         0xc3, 0x4a, 0xd6, 0xca, 0x90, 0x67, 0xf7, 0x52,
         0xd8, 0xa1, 0x66, 0x62, 0x9f, 0x5b, 0x09, 0x00,
@@ -291,3 +288,5 @@ static void qmc1_decrypt(qqmusic::utils::buffer& src) {
         head[i] ^= i > 0x7fff ? private_key[(i % 0x7fff) & 0x7f] : private_key[i & 0x7f];
     }
 }
+
+} // namespace qqmusic::utils

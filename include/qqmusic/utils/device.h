@@ -2,7 +2,7 @@
  * Provide random device info generator
  *
  * Generate random IMEI number, OS version and device info
-*-----------------------------------------------------------------------------*/
+ *-----------------------------------------------------------------------------*/
 #ifndef QQMUSIC_UTILS_DEVICE_H
 #define QQMUSIC_UTILS_DEVICE_H
 

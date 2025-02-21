@@ -7,9 +7,11 @@
 #include <string>
 #include <string_view>
 
+namespace qqmusic::utils {
+
 /* NOTE: Assume that only loginType and musickey field can be defaulted*/
-qqmusic::utils::Credential::Credential(const Json& cookie)
-    : qqmusic::utils::Credential() {
+Credential::Credential(const nlohmann::json& cookie)
+    : Credential() {
     nlohmann::from_json(cookie, *this);
     if (cookie.contains("musickey")) {
         musickey = cookie["musickey"].get<std::string>();
@@ -22,10 +24,10 @@ qqmusic::utils::Credential::Credential(const Json& cookie)
     }
 }
 
-qqmusic::utils::Credential::Credential(std::string_view cookie)
-    : qqmusic::utils::Credential(nlohmann::json::parse(cookie)) {}
+Credential::Credential(std::string_view cookie)
+    : Credential(nlohmann::json::parse(cookie)) {}
 
-bool qqmusic::utils::Credential::is_valid() const {
+bool Credential::is_valid() const {
     if (musickey.size() == 0 || musicid == 0) {
         /*credential have no musickey or musicid is not valid*/
         return false;
@@ -33,31 +35,32 @@ bool qqmusic::utils::Credential::is_valid() const {
     return true;
 }
 
-qqmusic::Result<nlohmann::json> qqmusic::utils::Credential::to_json() {
+qqmusic::Result<nlohmann::json> Credential::to_json() {
     try {
         nlohmann::json res;
         nlohmann::to_json(res, *this);
         return Ok(res);
     } catch (const std::exception& e) {
-        return Err(qqmusic::utils::Exception(
-            qqmusic::utils::Exception::DataDestroy,
-            std::format("[Credential::as_json] -- failed to generate json: {}", e.what())));
+        return Err(Exception(Exception::DataDestroy,
+                             std::format("[Credential::as_json] -- failed to generate json: {}",
+                                         e.what())));
     }
 }
 
-qqmusic::Result<std::string> qqmusic::utils::Credential::to_string() {
+qqmusic::Result<std::string> Credential::to_string() {
     try {
         nlohmann::json res;
         nlohmann::to_json(res, *this);
         return Ok(res.dump());
     } catch (const std::exception& e) {
-        return Err(qqmusic::utils::Exception(
-            qqmusic::utils::Exception::JsonError,
-            std::format("[Credential::as_string] -- failed to generate json string: {}", e.what())));
+        return Err(
+            Exception(Exception::JsonError,
+                      std::format("[Credential::as_string] -- failed to generate json string: {}",
+                                  e.what())));
     }
 }
 
-qqmusic::Task<qqmusic::Result<bool>> qqmusic::utils::Credential::is_expired() {
+qqmusic::Task<qqmusic::Result<bool>> Credential::is_expired() {
     // auto api = details::Api("music.UserInfo.userInfoServer", "GetLoginUserInfo", *this);
     // auto resp_res = co_await api.do_request(
     //     nlohmann::json::object()); /*use nlohmann::json::object as `{}`*/
@@ -78,11 +81,10 @@ qqmusic::Task<qqmusic::Result<bool>> qqmusic::utils::Credential::is_expired() {
     //     }
     // }
     // co_return Ok(false);
-    co_return Err(
-        qqmusic::utils::Exception(qqmusic::utils::Exception::UnknownError, "Not implemented yet"));
+    co_return Err(Exception(Exception::UnknownError, "Not implemented yet"));
 }
 
-qqmusic::Task<qqmusic::Result<void>> qqmusic::utils::Credential::refresh() {
+qqmusic::Task<qqmusic::Result<void>> Credential::refresh() {
     // auto api = qqmusic::details::Api("music.login.LoginServer",
     //                                  "Login",
     //                                  *this,
@@ -96,7 +98,7 @@ qqmusic::Task<qqmusic::Result<void>> qqmusic::utils::Credential::refresh() {
 
     // auto response_res = co_await api.do_request(params);
     // if (response_res.isErr()) {
-    //     co_return Err(qqmusic::utils::Exception(response_res.unwrapErr()));
+    //     co_return Err(Exception(response_res.unwrapErr()));
     // }
 
     // auto response = response_res.unwrap();
@@ -132,12 +134,13 @@ qqmusic::Task<qqmusic::Result<void>> qqmusic::utils::Credential::refresh() {
     //     json.erase("loginType");
     //     extra_fields = json;
     // } catch (const std::exception& e) {
-    //     co_return Err(qqmusic::utils::Exception(
-    //         qqmusic::utils::Exception::JsonError,
+    //     co_return Err(Exception(
+    //         Exception::JsonError,
     //         std::format("[Credential::refresh] -- Cannot write back from json: {}", e.what())));
     // }
 
     // co_return Ok();
-    co_return Err(
-        qqmusic::utils::Exception(qqmusic::utils::Exception::UnknownError, "Not implemented yet"));
+    co_return Err(Exception(Exception::UnknownError, "Not implemented yet"));
 }
+
+} // namespace qqmusic::utils

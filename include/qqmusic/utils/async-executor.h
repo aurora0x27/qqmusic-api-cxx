@@ -3,7 +3,7 @@
  * event loop, implement a scheduler yourself.
  *
  * Asynchronously execute asynchronous api and handle callbacks
-*-----------------------------------------------------------------------------*/
+ *-----------------------------------------------------------------------------*/
 #ifndef QQMUSIC_UTILS_ASYNC_EXECUTOR_H
 #define QQMUSIC_UTILS_ASYNC_EXECUTOR_H
 

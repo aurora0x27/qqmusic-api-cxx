@@ -1,7 +1,9 @@
 #include <boost/asio/signal_set.hpp>
 #include <qqmusic/utils/async-executor.h>
 
-qqmusic::utils::AsyncExecutor::AsyncExecutor() {
+namespace qqmusic::utils {
+
+AsyncExecutor::AsyncExecutor() {
     ioc_thread = std::thread([this]() {
         boost::asio::signal_set sigset{ioc, SIGINT, SIGTERM};
         /*set handler for SIGINT and SIGTERM*/
@@ -13,18 +15,20 @@ qqmusic::utils::AsyncExecutor::AsyncExecutor() {
     });
 }
 
-qqmusic::utils::AsyncExecutor::~AsyncExecutor() {
+AsyncExecutor::~AsyncExecutor() {
     shutdown();
 }
 
-void qqmusic::utils::AsyncExecutor::shutdown() {
+void AsyncExecutor::shutdown() {
     ioc.stop();
     if (ioc_thread.joinable()) {
         ioc_thread.join();
     }
 }
 
-qqmusic::utils::AsyncExecutor& qqmusic::utils::AsyncExecutor::get_instance() {
-    static qqmusic::utils::AsyncExecutor ae;
+AsyncExecutor& AsyncExecutor::get_instance() {
+    static AsyncExecutor ae;
     return ae;
 }
+
+} // namespace qqmusic::utils

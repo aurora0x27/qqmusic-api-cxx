@@ -190,7 +190,8 @@ qqmusic::Result<qqmusic::utils::QimeiResult> qqmusic::utils::get_qimei(
         /*exception, for debug*/
         // return Err(
         //     qqmusic::utils::Exception(qqmusic::utils::Exception::UnknownError,
-        //                               std::format("[get_qimei] -- Error ocurred: {}", e.what())));
+        //                               std::format("[get_qimei] -- Error ocurred: {}",
+        //                               e.what())));
         return Ok(
             qqmusic::utils::QimeiResult{.q16 = "", .q36 = "6c9d3cd110abca9b16311cee10001e717614"});
     }

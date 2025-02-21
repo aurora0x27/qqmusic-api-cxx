@@ -1,6 +1,6 @@
 /*----------------------------------album.h-------------------------------------
  * Api about albums
-*-----------------------------------------------------------------------------*/
+ *-----------------------------------------------------------------------------*/
 #ifndef QQMUSIC_ALBUM_H
 #define QQMUSIC_ALBUM_H
 
@@ -23,14 +23,13 @@ qqmusic::Task<qqmusic::Result<nlohmann::json>> get_album_detail(std::string_view
 /*Get album detailed info from *album id* */
 qqmusic::Task<qqmusic::Result<nlohmann::json>> get_album_detail(uint64_t album_id);
 
-/*Get song list of album*/
 qqmusic::Task<qqmusic::Result<nlohmann::json>> get_album_songs(std::string_view album_mid,
-                                                               unsigned int num = 10,
-                                                               unsigned int page = 1);
+                                                               unsigned int num,
+                                                               unsigned int page);
 
 qqmusic::Task<qqmusic::Result<nlohmann::json>> get_album_songs(uint64_t album_id,
-                                                               unsigned int num = 10,
-                                                               unsigned int page = 1);
+                                                               unsigned int num,
+                                                               unsigned int page);
 
 } // namespace qqmusic
 

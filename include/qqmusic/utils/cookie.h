@@ -25,7 +25,7 @@
  *         }
  *     }
  * }
-*-----------------------------------------------------------------------------*/
+ *-----------------------------------------------------------------------------*/
 #ifndef QQMUSIC_UTILS_COOKIE_H
 #define QQMUSIC_UTILS_COOKIE_H
 
@@ -88,6 +88,9 @@ public:
 
     /*Replace cookie jar content with a new Cookie object*/
     qqmusic::Result<void> update(const CookieJar& cookies);
+
+    /*merge cookies*/
+    qqmusic::Result<void> merge(const CookieJar& cookies);
 
 private:
     nlohmann::json content;

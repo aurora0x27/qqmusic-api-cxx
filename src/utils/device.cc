@@ -13,12 +13,14 @@
 #include <qqmusic/utils/paths.h>
 #include <string>
 
-qqmusic::Result<qqmusic::utils::Device> qqmusic::utils::get_device_info() {
+namespace qqmusic::utils {
+
+qqmusic::Result<Device> get_device_info() {
     try {
-        auto cache_path = qqmusic::utils::PathManager::get_instance().get_cache_path()
+        auto cache_path = PathManager::get_instance().get_cache_path()
                           / std::filesystem::path("device.json");
 
-        qqmusic::utils::Device device;
+        Device device;
 
         std::fstream fs(cache_path.c_str());
         if (fs.good()) {
@@ -55,14 +57,14 @@ qqmusic::Result<qqmusic::utils::Device> qqmusic::utils::get_device_info() {
             return Ok(device);
         }
     } catch (const std::exception& e) {
-        return Err(qqmusic::utils::Exception(
-            qqmusic::utils::Exception::UnknownError,
-            std::format("[get_device_info] -- get random device info failure: {}", e.what())));
+        return Err(Exception(Exception::UnknownError,
+                             std::format("[get_device_info] -- get random device info failure: {}",
+                                         e.what())));
     }
 }
 
-qqmusic::Result<void> qqmusic::utils::cache_device(const Device& device) {
-    auto cache_path = qqmusic::utils::PathManager::get_instance().get_cache_path()
+qqmusic::Result<void> cache_device(const Device& device) {
+    auto cache_path = PathManager::get_instance().get_cache_path()
                       / std::filesystem::path("device.json");
 
     try {
@@ -74,21 +76,19 @@ qqmusic::Result<void> qqmusic::utils::cache_device(const Device& device) {
         fs.close();
         return Ok();
     } catch (const std::exception& e) {
-        return Err(
-            qqmusic::utils::Exception(qqmusic::utils::Exception::UnknownError,
-                                      std::format("[cache_device] -- cannot cache device: {}",
-                                                  e.what())));
+        return Err(Exception(Exception::UnknownError,
+                             std::format("[cache_device] -- cannot cache device: {}", e.what())));
     }
 }
 
-qqmusic::utils::OSVersion::OSVersion() {
+OSVersion::OSVersion() {
     incremental = "5891938";
     release = "10";
     codename = "REL";
     sdk = 29;
 }
 
-qqmusic::utils::Device::Device() {
+Device::Device() {
     /*default initialization*/
 
     Botan::AutoSeeded_RNG rng;
@@ -104,7 +104,7 @@ qqmusic::utils::Device::Device() {
 
     /*random string generator*/
     auto randstr = [&randull](int len) -> std::string {
-        static const char alphanum[] = "0123456789"
+        const static char alphanum[] = "0123456789"
                                        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                        "abcdefghijklmnopqrstuvwxyz";
         std::string tmp_s;
@@ -118,7 +118,7 @@ qqmusic::utils::Device::Device() {
     };
 
     /*random imei generator */
-    /* 
+    /*
      * NOTE: The imei cannot pass check, either the python version.
      *       def random_imei() -> str:
      *           """生成随机 IMEI 号码.
@@ -189,7 +189,7 @@ qqmusic::utils::Device::Device() {
     boost::uuids::detail::md5::digest_type d;
     hash.process_bytes(imsi_buf.data(), imsi_buf.size());
     hash.get_digest(d);
-    qqmusic::utils::buffer imsi_res_buf(d, 16);
+    buffer imsi_res_buf(d, 16);
 
     imsi_md5 = std::vector<int>(imsi_res_buf.begin(), imsi_res_buf.end());
 
@@ -200,3 +200,5 @@ qqmusic::utils::Device::Device() {
     vendor_name = "MIUI";
     vendor_os_name = "qmapi";
 }
+
+} // namespace qqmusic::utils
