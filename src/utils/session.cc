@@ -174,6 +174,10 @@ qqmusic::Task<qqmusic::Result<HttpResponse>> Session::perform_request(
             || res.result() == http::status::permanent_redirect) {
             /*handle redirecting*/
             auto final_res = co_await handle_redirecting(*this, url, req, res);
+            if (final_res.isErr()) {
+                co_return Err(Exception(final_res.unwrapErr()));
+            }
+            co_return Ok(final_res.unwrap());
         }
 
         // // For DEBUGING

@@ -29,15 +29,42 @@
 #include <boost/beast/http/message.hpp>
 #include <boost/url.hpp>
 #include <boost/url/param.hpp>
+#include <nlohmann/json.hpp>
+#include <qqmusic/details/context.h>
 #include <qqmusic/result.h>
 #include <qqmusic/utils/buffer.h>
 #include <qqmusic/utils/credential.h>
+#include <qqmusic/utils/session.h>
 
 namespace qqmusic::details {
 
+namespace http = boost::beast::http;
+namespace asio = boost::asio;
+
 class Api {
 public:
+    Api(utils::Session& session,
+        std::string module,
+        std::string method,
+        utils::Credential credential = {},
+        nlohmann::json common = {{}})
+        : session(session)
+        , module(std::move(module))
+        , method(std::move(method)){};
+
+    /*prepare request by given infomation*/
+    qqmusic::Task<qqmusic::Result<http::request<http::string_body>>> prepare_request(
+        nlohmann::json& params);
+
+    /*parse result buffer to json format*/
+    qqmusic::Result<nlohmann::json> parse_response(utils::HttpResponse& resp);
+
 private:
+    utils::Session& session;
+    std::string module;
+    std::string method;
+    nlohmann::json common;
+    utils::Credential credential;
 };
 
 } // namespace qqmusic::details

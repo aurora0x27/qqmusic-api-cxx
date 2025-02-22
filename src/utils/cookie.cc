@@ -140,17 +140,22 @@ qqmusic::Result<std::string> CookieJar::serialize(std::string_view domain, std::
                                          domain)));
     }
 
-    if (!content[domain].contains(path)) {
-        return Err(
-            Exception(Exception::JsonError,
-                      std::format("[CookieJar::serialize] -- Does not have that path: {}", path)));
-    }
-
-    for (auto& i : content[domain][path].items()) {
-        res += i.key();
-        res += "+";
-        res += i.value().get<std::string>();
-        res += "; ";
+    if (content[domain].contains(path)) {
+        for (auto& i : content[domain][path].items()) {
+            res += i.key();
+            res += "=";
+            res += i.value().get<std::string>();
+            res += "; ";
+        }
+    } else {
+        for (auto& j : content[domain].items()) {
+            for (auto& i : content[domain][j.key()].items()) {
+                res += i.key();
+                res += "=";
+                res += i.value().get<std::string>();
+                res += "; ";
+            }
+        }
     }
 
     res.erase(res.size() - 2);
