@@ -14,6 +14,17 @@
 
 namespace qqmusic::utils {
 
+buffer to_buffer(http::response<http::dynamic_body>& resp) {
+    /* TODO: I haven't found a better way to convert http::request to normal buffer*/
+    qqmusic::utils::buffer response(resp.body().data().buffer_bytes());
+    std::size_t offset = 0;
+    for (auto const& buffer_part : resp.body().data()) {
+        std::memcpy(response.data() + offset, buffer_part.data(), buffer_part.size());
+        offset += buffer_part.size();
+    }
+    return response;
+}
+
 static std::string head(std::span<uint8_t> data);
 static std::string tail(std::span<uint8_t> data);
 static std::string middle(std::span<uint8_t> data);
