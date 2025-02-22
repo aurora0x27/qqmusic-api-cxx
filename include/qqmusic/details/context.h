@@ -5,6 +5,7 @@
 #ifndef QQMUSIC_DETAILS_CONTEXT_H
 #define QQMUSIC_DETAILS_CONTEXT_H
 
+#include <chrono>
 #include <format>
 #include <qqmusic/utils/cookie.h>
 #include <qqmusic/utils/credential.h>
@@ -32,8 +33,12 @@ struct NetworkContext {
     ApiConfig api_config;
     qqmusic::utils::Device device;
     qqmusic::utils::QimeiResult qimei;
+    bool verify;
+    std::chrono::seconds timeout;
 
-    NetworkContext() {
+    NetworkContext()
+        : timeout(20)
+        , verify(false) {
         api_config = ApiConfig();
         auto device_res = qqmusic::utils::get_device_info();
         if (device_res.isErr()) {

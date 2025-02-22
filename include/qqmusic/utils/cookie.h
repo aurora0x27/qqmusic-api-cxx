@@ -59,7 +59,7 @@ qqmusic::Result<nlohmann::json> parse_cookie(std::string_view cookie_str);
 class CookieJar {
 public:
     CookieJar()
-        : content({{"NoDomain", {{"/", nlohmann::json::object()}}}}){};
+        : content({{"", {{"/", nlohmann::json::object()}}}}){};
     /*Construct from cache string *created by CookieJar::dump()* */
     CookieJar(std::string_view cache)
         : content(nlohmann::json::parse(cache)){};

@@ -9,6 +9,7 @@
 #include <boost/beast/http/dynamic_body.hpp>
 #include <boost/beast/http/message.hpp>
 #include <boost/beast/http/string_body.hpp>
+#include <boost/url.hpp>
 #include <memory>
 #include <qqmusic/details/context.h>
 #include <qqmusic/result.h>
@@ -20,7 +21,7 @@
 namespace qqmusic::utils {
 
 namespace http = boost::beast::http;
-namespace net = boost::asio;
+namespace asio = boost::asio;
 using HttpResponse = http::response<http::dynamic_body>;
 
 class SessionManager;
@@ -34,7 +35,7 @@ public:
     Session() = delete;
 
     Session(qqmusic::details::NetworkContext& nc,
-            std::shared_ptr<net::io_context> ioc_ptr,
+            std::shared_ptr<asio::io_context> ioc_ptr,
             std::mutex& lock)
         : global_ctx(nc)
         , local_ctx(nc)
@@ -50,7 +51,7 @@ public:
     void update_local();
 
     qqmusic::Task<qqmusic::Result<HttpResponse>> perform_request(
-        http::request<http::string_body>& req);
+        boost::url_view url, http::request<http::string_body>& req);
 
 private:
     /*Global context lock*/
@@ -59,7 +60,7 @@ private:
 
     /*store a copy of local context*/
     qqmusic::details::NetworkContext local_ctx;
-    std::shared_ptr<net::io_context> ioc;
+    std::shared_ptr<asio::io_context> ioc;
 };
 
 /*
@@ -86,7 +87,7 @@ private:
     std::mutex lock;
     qqmusic::details::NetworkContext ctx;
     std::stack<qqmusic::details::NetworkContext> context_stack;
-    std::shared_ptr<net::io_context> ioc;
+    std::shared_ptr<asio::io_context> ioc;
 };
 
 /*
