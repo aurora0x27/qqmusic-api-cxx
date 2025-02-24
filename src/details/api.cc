@@ -1,4 +1,5 @@
 #include <boost/beast/http/message.hpp>
+#include <nlohmann/json.hpp>
 #include <qqmusic/details/api.h>
 #include <qqmusic/result.h>
 #include <qqmusic/utils/common.h>
@@ -9,10 +10,12 @@ namespace qqmusic::details {
 qqmusic::Result<nlohmann::json> Api::parse_response(utils::buffer& response) {
     try {
         nlohmann::json resp_json = nlohmann::json::parse(response);
-        nlohmann::json req_data = resp_json[module + "." + method];
-        int rc = req_data["code"].get<int>();
+        nlohmann::json req_data;
+        uint64_t rc = resp_json["code"].get<uint64_t>();
         switch (rc) {
         case 0:
+            /* FIXME: discarded req_data["code"] value*/
+            req_data = resp_json[module + "." + method];
             return Ok(req_data["data"]);
         case 2000:
             return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::SignInvalidError,
@@ -98,6 +101,7 @@ qqmusic::Task<qqmusic::Result<RequestParam>> Api::prepare_request(const nlohmann
                 "Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
                 "Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.54");
         req.set(http::field::content_type, "application/json");
+        req.body() = nlohmann::to_string(request_data);
 
         auto cookie_res = context.cookies.serialize("qq.com");
         if (cookie_res.isErr()) {
