@@ -20,6 +20,7 @@ find_package(boost_asio CONFIG REQUIRED)
 find_package(boost_beast CONFIG REQUIRED)
 find_package(Boost REQUIRED COMPONENTS url)
 find_package(boost_uuid REQUIRED CONFIG)
+find_package(OpenSSL 3.3.0 REQUIRED)
 
 add_library(qmapi SHARED ${QQMUSIC_API_SOURCE})
 target_include_directories(
@@ -39,6 +40,7 @@ if(WIN32)
       Boost::beast
       Boost::url
       Boost::uuid
+      OpenSSL::SSL
   )
 elseif(APPLE)
   set(PLATFORM PLATFORM_APPLE)
@@ -51,6 +53,7 @@ elseif(APPLE)
       Boost::beast
       Boost::url
       Boost::uuid
+      OpenSSL::SSL
   )
 elseif(LINUX)
   set(PLATFORM PLATFORM_LINUX)
@@ -63,6 +66,7 @@ elseif(LINUX)
       Boost::beast
       Boost::url
       Boost::uuid
+      OpenSSL::SSL
   )
 endif()
 

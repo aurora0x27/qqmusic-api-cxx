@@ -1,8 +1,9 @@
-#include "qqmusic/album.h"
 #include <cstdlib>
 #include <fstream>
 #include <nlohmann/json.hpp>
+#include <qqmusic/album.h>
 #include <qqmusic/details/api.h>
+#include <qqmusic/login.h>
 #include <qqmusic/result.h>
 #include <qqmusic/utils/async-executor.h>
 #include <qqmusic/utils/credential.h>
@@ -53,10 +54,15 @@ int main(int argc, char** argv) {
     auto res = qqmusic::utils::sync_exec(qqmusic::get_album_songs(21794411));
     if (res.isErr()) {
         std::cout << res.unwrapErr().what() << std::endl;
-        return 1;
     }
 
     std::cout << res.unwrap() << std::endl;
+
+    auto login_res = qqmusic::utils::sync_exec(qqmusic::get_qrcode(qqmusic::QRLoginType::QQ));
+    if (login_res.isErr()) {
+        std::cout << login_res.unwrapErr().what() << std::endl;
+        return 1;
+    }
 
     return 0;
 }

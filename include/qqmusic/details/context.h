@@ -34,10 +34,13 @@ struct NetworkContext {
     qqmusic::utils::Device device;
     qqmusic::utils::QimeiResult qimei;
     bool verify;
+    bool ignore_ssl_error;
     std::chrono::seconds timeout;
 
+    /*constructor*/
     NetworkContext()
         : timeout(20)
+        , ignore_ssl_error(false)
         , verify(false) {
         api_config = ApiConfig();
         auto device_res = qqmusic::utils::get_device_info();

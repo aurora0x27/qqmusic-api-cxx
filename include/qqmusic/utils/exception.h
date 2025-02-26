@@ -21,6 +21,7 @@ public:
         NetworkError,           /*Unknown network error*/
         JsonError,              /*Error when handling json*/
         OperationOutOfTime,     /*Out of Time*/
+        SslError,               /*Error when SSL/TLS operations*/
         UnknownError
     };
 
@@ -61,6 +62,7 @@ private:
                                                                  "NetworkError",
                                                                  "JsonError",
                                                                  "OperationOutOfTime",
+                                                                 "SslError",
                                                                  "Unknown Error"};
 
     inline static std::unordered_map<unsigned, std::string> HttpResponseCodeMap = {

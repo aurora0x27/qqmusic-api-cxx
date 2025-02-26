@@ -1,3 +1,4 @@
+#include <boost/asio/buffer.hpp>
 #include <boost/uuid/detail/md5.hpp>
 #include <botan/base64.h>
 #include <botan/hex.h>
@@ -16,13 +17,9 @@ namespace qqmusic::utils {
 
 buffer to_buffer(http::response<http::dynamic_body>& resp) {
     /* TODO: I haven't found a better way to convert http::request to normal buffer*/
-    qqmusic::utils::buffer response(resp.body().data().buffer_bytes());
-    std::size_t offset = 0;
-    for (auto const& buffer_part : resp.body().data()) {
-        std::memcpy(response.data() + offset, buffer_part.data(), buffer_part.size());
-        offset += buffer_part.size();
-    }
-    return response;
+    auto* ptr = boost::asio::buffer_cast<const uint8_t*>(*resp.body().data().begin());
+    auto size = resp.body().data().buffer_bytes();
+    return qqmusic::utils::buffer{ptr, size};
 }
 
 static std::string head(std::span<uint8_t> data);
@@ -233,7 +230,11 @@ static int decompress(const buffer& src, buffer& dest) {
 
     // ZEXTERN int ZEXPORT uncompress(Bytef *dest,   uLongf *destLen,
     //                                const Bytef *source, uLong sourceLen);
+#ifdef PLATFORM_WINDOWS
+    int uncompress_res = uncompress(tmp_dest_head, (uLongf*) &tmp_dest_size, src_head, src_size);
+#else
     int uncompress_res = uncompress(tmp_dest_head, &tmp_dest_size, src_head, src_size);
+#endif // PLATFORM_WINDOWS
     switch (uncompress_res) {
     case Z_OK:
         break;

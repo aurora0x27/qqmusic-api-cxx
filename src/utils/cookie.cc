@@ -42,8 +42,10 @@ qqmusic::Result<std::string> CookieJar::get(std::string_view key,
             /*Not provided with domain and path, search all the items*/
             for (auto& i : content.items()) {
                 for (auto& j : i.value().items()) {
-                    if (i.key() == key) {
-                        return Ok(i.value().get<std::string>());
+                    for (auto& k : j.value().items()) {
+                        if (k.key() == key) {
+                            return Ok(k.value().get<std::string>());
+                        }
                     }
                 }
             }

@@ -6,6 +6,7 @@
 #define QQMUSIC_UTILS_SESSION_H
 
 #include <boost/asio.hpp>
+#include <boost/asio/ssl.hpp>
 #include <boost/beast/http/dynamic_body.hpp>
 #include <boost/beast/http/message.hpp>
 #include <boost/beast/http/string_body.hpp>
@@ -17,6 +18,7 @@
 #include <qqmusic/utils/device.h>
 #include <qqmusic/utils/qimei.h>
 #include <stack>
+#include <utility>
 
 namespace qqmusic::utils {
 
@@ -36,10 +38,12 @@ public:
 
     Session(qqmusic::details::NetworkContext& nc,
             std::shared_ptr<asio::io_context> ioc_ptr,
+            std::shared_ptr<asio::ssl::context> ssl_ctx_ptr,
             std::mutex& lock)
         : global_ctx(nc)
         , local_ctx(nc)
         , ioc(std::move(ioc_ptr))
+        , ssl_ctx(std::move(ssl_ctx_ptr))
         , lock(lock){};
 
     /*get local context reference*/
@@ -54,6 +58,12 @@ public:
         boost::url_view url, http::request<http::string_body>& req);
 
 private:
+    qqmusic::Task<qqmusic::Result<HttpResponse>> handle_http_request(
+        boost::url_view url, http::request<http::string_body>& req);
+
+    qqmusic::Task<qqmusic::Result<HttpResponse>> handle_https_request(
+        boost::url_view url, http::request<http::string_body>& req);
+
     /*Global context lock*/
     std::mutex& lock;
     qqmusic::details::NetworkContext& global_ctx;
@@ -61,6 +71,7 @@ private:
     /*store a copy of local context*/
     qqmusic::details::NetworkContext local_ctx;
     std::shared_ptr<asio::io_context> ioc;
+    std::shared_ptr<asio::ssl::context> ssl_ctx;
 };
 
 /*
@@ -88,6 +99,7 @@ private:
     qqmusic::details::NetworkContext ctx;
     std::stack<qqmusic::details::NetworkContext> context_stack;
     std::shared_ptr<asio::io_context> ioc;
+    std::shared_ptr<asio::ssl::context> ssl_ctx;
 };
 
 /*
