@@ -30,44 +30,47 @@ target_include_directories(
 
 # set platform info
 if(WIN32)
-  set(PLATFORM PLATFORM_WINDOWS)
-  target_link_libraries(
-      qmapi PUBLIC
-      ZLIB::ZLIB
-      nlohmann_json::nlohmann_json
-      Botan::Botan
-      Boost::asio
-      Boost::beast
-      Boost::url
-      Boost::uuid
-      OpenSSL::SSL
-  )
+    target_compile_definitions(qmapi PRIVATE _WIN32_WINNT=0x0A00)
+    set(PLATFORM PLATFORM_WINDOWS)
+    target_compile_options(qmapi PRIVATE /bigobj)
+    set_target_properties(qmapi PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
+    target_link_libraries(
+        qmapi PUBLIC
+        ZLIB::ZLIB
+        nlohmann_json::nlohmann_json
+        Botan::Botan
+        Boost::asio
+        Boost::beast
+        Boost::url
+        Boost::uuid
+        OpenSSL::SSL
+    )
 elseif(APPLE)
-  set(PLATFORM PLATFORM_APPLE)
-  target_link_libraries(
-      qmapi PUBLIC
-      ZLIB::ZLIB
-      nlohmann_json::nlohmann_json
-      Botan::Botan-static
-      Boost::asio
-      Boost::beast
-      Boost::url
-      Boost::uuid
-      OpenSSL::SSL
-  )
+    set(PLATFORM PLATFORM_APPLE)
+    target_link_libraries(
+        qmapi PUBLIC
+        ZLIB::ZLIB
+        nlohmann_json::nlohmann_json
+        Botan::Botan-static
+        Boost::asio
+        Boost::beast
+        Boost::url
+        Boost::uuid
+        OpenSSL::SSL
+    )
 elseif(LINUX)
-  set(PLATFORM PLATFORM_LINUX)
-  target_link_libraries(
-      qmapi PUBLIC
-      ZLIB::ZLIB
-      nlohmann_json::nlohmann_json
-      Botan::Botan-static
-      Boost::asio
-      Boost::beast
-      Boost::url
-      Boost::uuid
-      OpenSSL::SSL
-  )
+    set(PLATFORM PLATFORM_LINUX)
+    target_link_libraries(
+        qmapi PUBLIC
+        ZLIB::ZLIB
+        nlohmann_json::nlohmann_json
+        Botan::Botan-static
+        Boost::asio
+        Boost::beast
+        Boost::url
+        Boost::uuid
+        OpenSSL::SSL
+    )
 endif()
 
 target_compile_definitions(
