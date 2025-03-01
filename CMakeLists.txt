@@ -46,6 +46,7 @@ if(WIN32)
     )
 elseif(APPLE)
     set(PLATFORM PLATFORM_APPLE)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET 11.0)
     target_link_libraries(
         qmapi PUBLIC
         ZLIB::ZLIB

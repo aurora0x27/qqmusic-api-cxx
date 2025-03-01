@@ -5,12 +5,13 @@
 #include <boost/uuid/uuid_io.hpp>
 #include <botan/auto_rng.h>
 #include <chrono>
-#include <cmath>
+#include <ctime>
 #include <qqmusic/details/api.h>
 #include <qqmusic/login.h>
 #include <qqmusic/result.h>
 #include <qqmusic/utils/common.h>
 #include <qqmusic/utils/session.h>
+#include <ratio>
 #include <regex>
 #include <sstream>
 #include <string>
@@ -165,11 +166,24 @@ qqmusic::Task<qqmusic::Result<QRCodeLoginResult>> check_qq_qr(QRCode& qrc) {
     auto& context = session.get_context_ref();
     auto qrsig = qrc.identifier;
 
+    /*zoned time cannot be used on MacOS platform yet*/
+#ifdef PLATFORM_APPLE
+    auto now = std::chrono::system_clock::now();
+    auto now_time_t = std::chrono::system_clock::to_time_t(now);
+    auto duration = now.time_since_epoch() % 1000;
+    auto millis = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(duration)
+                      .count();
+    std::tm local_tm{};
+    localtime_r(&now_time_t, &local_tm);
+    auto seconds = mktime(&local_tm);
+    double ts = static_cast<double>(seconds) * 1000.0 + millis;
+#else
     std::chrono::time_point<std::chrono::system_clock> tp{std::chrono::system_clock::now()};
     auto zoned_time = std::chrono::zoned_time{std::chrono::current_zone(), tp};
     double ts = std::chrono::duration<double, std::milli>(
                     zoned_time.get_local_time().time_since_epoch())
                     .count();
+#endif
 
     boost::url url{"https://ssl.ptlogin2.qq.com/ptqrlogin"};
     url.set_params({
@@ -274,11 +288,23 @@ qqmusic::Task<qqmusic::Result<QRCodeLoginResult>> check_wx_qr(QRCode& qrc) {
     auto& context = session.get_context_ref();
     auto uuid = qrc.identifier;
 
+#ifdef PLATFORM_APPLE
+    auto now = std::chrono::system_clock::now();
+    auto now_time_t = std::chrono::system_clock::to_time_t(now);
+    auto duration = now.time_since_epoch() % 1000;
+    auto millis = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(duration)
+                      .count();
+    std::tm local_tm{};
+    localtime_r(&now_time_t, &local_tm);
+    auto seconds = mktime(&local_tm);
+    double ts = static_cast<double>(seconds) * 1000.0 + millis;
+#else
     std::chrono::time_point<std::chrono::system_clock> tp{std::chrono::system_clock::now()};
     auto zoned_time = std::chrono::zoned_time{std::chrono::current_zone(), tp};
     double ts = std::chrono::duration<double, std::milli>(
                     zoned_time.get_local_time().time_since_epoch())
                     .count();
+#endif
 
     boost::url url{"https://lp.open.weixin.qq.com/connect/l/qrconnect"};
     url.set_params({{"uuid", uuid}, {"_", std::to_string(ts)}});

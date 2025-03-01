@@ -269,8 +269,25 @@ static nlohmann::json load_rand_payload(qqmusic::utils::Device& device, std::str
     /*add random offset*/
     tp -= std::chrono::duration(std::chrono::seconds(fixed_rand));
     /*zoned time with random offset*/
+#ifdef PLATFORM_APPLE
+    auto now = std::chrono::system_clock::now();
+    auto now_time_t = std::chrono::system_clock::to_time_t(now);
+    std::tm local_tm{};
+    localtime_r(&now_time_t, &local_tm);
+    auto duration = now.time_since_epoch();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(duration).count() % 1000;
+    std::string uptimes = std::format("{:04}-{:02}-{:02} {:02}:{:02}:{:02}.{:03}",
+                                      local_tm.tm_year + 1900,
+                                      local_tm.tm_mon + 1,
+                                      local_tm.tm_mday,
+                                      local_tm.tm_hour,
+                                      local_tm.tm_min,
+                                      local_tm.tm_sec,
+                                      millis);
+#else
     auto zoned_time = std::chrono::zoned_time{std::chrono::current_zone(), tp};
     std::string uptimes = std::format("{0:%F} {0:%H}:{0:%M}:{0:%OS}", zoned_time);
+#endif
 
     nlohmann::json reserved = {{"harmony", "0"},
                                {"clone", "0"},

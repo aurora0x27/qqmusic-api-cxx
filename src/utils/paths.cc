@@ -75,7 +75,16 @@ PathManager::PathManager() {
 
 #elif defined(PLATFORM_APPLE)
     /*MacOS Related Code*/
-#error "Platform not supported yet"
+    auto home = getenv("XDG_CACHE_HOME");
+    if (home == nullptr) {
+        cache_path = fs::path(fs::current_path()) / fs::path("cache");
+        log_path = fs::path(fs::current_path()) / fs::path("log");
+        download_path = fs::path(fs::current_path()) / fs::path("download");
+    } else {
+        cache_path = fs::path(home) / fs::path("Library/Caches/qqmusic-api-cxx/cache");
+        log_path = fs::path(home) / fs::path("Library/Caches/qqmusic-api-cxx/log");
+        download_path = fs::path(home) / fs::path("Downloads/qqmusic-api-cxx");
+    }
 #else
     /*Warining platform not supported*/
 #error "Platform not supported"
