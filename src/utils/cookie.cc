@@ -252,19 +252,10 @@ qqmusic::Result<nlohmann::json> parse_cookie(std::string_view cookie_str) {
      * */
     try {
         nlohmann::json res;
-        std::regex cookie_pattern("(.*?)=(.*?)(?:;(?: |)|$)");
+        std::regex cookie_pattern{R"REGEX((.*?)=(.*?)(?:;(?: |)|$))REGEX"};
         std::smatch matches;
         std::string raw = std::string(cookie_str.begin(), cookie_str.end());
         while (std::regex_search(raw, matches, cookie_pattern)) {
-            if (matches.size() != 3) {
-                /*assert match size is 3*/
-                return Err(Exception(
-                    Exception::DataDestroy,
-                    std::format("[parse_cookie] -- Error occured when parsing cookie: assert match "
-                                "size is 3, but {} has {}",
-                                matches.str(),
-                                matches.size())));
-            }
             res[matches[1].str()] = matches[2].str();
             raw = matches.suffix().str();
         }

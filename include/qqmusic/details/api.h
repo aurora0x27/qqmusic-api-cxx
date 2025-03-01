@@ -49,7 +49,7 @@ public:
     qqmusic::Task<qqmusic::Result<RequestParam>> prepare_request(const nlohmann::json& params);
 
     /*parse result buffer to json format*/
-    qqmusic::Result<nlohmann::json> parse_response(utils::buffer& response);
+    qqmusic::Result<nlohmann::json> parse_response(utils::buffer&& response);
 
 private:
     utils::Session& session;

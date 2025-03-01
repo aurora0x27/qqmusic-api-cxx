@@ -37,9 +37,7 @@ Task<Result<nlohmann::json>> get_album_detail(std::string_view album_mid) {
                         response_res.unwrapErr().what())));
     }
 
-    auto response_raw = response_res.unwrap();
-    auto resp_buf = utils::to_buffer(response_raw);
-    auto response_json_res = api.parse_response(resp_buf);
+    auto response_json_res = api.parse_response(utils::to_buffer(response_res.unwrap()));
     if (response_json_res.isErr()) {
         co_return Err(utils::Exception(
             utils::Exception::DataDestroy,
@@ -74,9 +72,7 @@ Task<Result<nlohmann::json>> get_album_detail(uint64_t album_id) {
                         response_res.unwrapErr().what())));
     }
 
-    auto response_raw = response_res.unwrap();
-    auto resp_buf = utils::to_buffer(response_raw);
-    auto response_json_res = api.parse_response(resp_buf);
+    auto response_json_res = api.parse_response(utils::to_buffer(response_res.unwrap()));
     if (response_json_res.isErr()) {
         co_return Err(utils::Exception(
             utils::Exception::DataDestroy,
@@ -117,9 +113,7 @@ Task<Result<nlohmann::json>> get_album_songs(std::string_view album_mid,
                         response_res.unwrapErr().what())));
     }
 
-    auto response_raw = response_res.unwrap();
-    auto resp_buf = utils::to_buffer(response_raw);
-    auto response_json_res = api.parse_response(resp_buf);
+    auto response_json_res = api.parse_response(utils::to_buffer(response_res.unwrap()));
     if (response_json_res.isErr()) {
         co_return Err(utils::Exception(response_res.unwrapErr()));
     }
@@ -157,9 +151,7 @@ Task<Result<nlohmann::json>> get_album_songs(uint64_t album_id,
                         response_res.unwrapErr().what())));
     }
 
-    auto response_raw = response_res.unwrap();
-    auto resp_buf = utils::to_buffer(response_raw);
-    auto response_json_res = api.parse_response(resp_buf);
+    auto response_json_res = api.parse_response(utils::to_buffer(response_res.unwrap()));
     if (response_json_res.isErr()) {
         co_return Err(utils::Exception(response_res.unwrapErr()));
     }

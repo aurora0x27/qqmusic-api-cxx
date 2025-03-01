@@ -81,9 +81,7 @@ qqmusic::Task<qqmusic::Result<bool>> Credential::is_expired() {
             std::format("[Credential::is_expired] -- Error occurred when performing request: `{}`",
                         resp_res.unwrapErr().what())));
     }
-    auto response = resp_res.unwrap();
-    auto resp_buf = to_buffer(response);
-    auto json_res = api.parse_response(resp_buf);
+    auto json_res = api.parse_response(to_buffer(resp_res.unwrap()));
     if (json_res.isErr()) {
         switch (json_res.unwrapErr().get_error_enum()) {
             using namespace qqmusic::utils;
@@ -128,9 +126,7 @@ qqmusic::Task<qqmusic::Result<void>> Credential::refresh() {
         co_return Err(Exception(response_res.unwrapErr()));
     }
 
-    auto response = response_res.unwrap();
-    auto resp_buf = to_buffer(response);
-    auto json_res = api.parse_response(resp_buf);
+    auto json_res = api.parse_response(to_buffer(response_res.unwrap()));
     if (json_res.isErr()) {
         co_return Err(std::move(json_res.unwrapErr()));
     }

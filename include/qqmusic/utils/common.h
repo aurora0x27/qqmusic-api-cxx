@@ -16,12 +16,15 @@ namespace http = boost::beast::http;
 
 std::string sign(const nlohmann::json& params);
 
-buffer to_buffer(http::response<http::dynamic_body>& resp);
+buffer to_buffer(http::response<http::dynamic_body>&& resp);
 
 enum class qrc_type { cloud, local };
 
 qqmusic::Result<std::string> qrc_decode(const qqmusic::utils::buffer& src,
                                         qqmusic::utils::qrc_type type);
+
+/*get hash value of utf-8 string*/
+uint64_t hash33(std::string_view str, uint64_t prev = 0);
 
 } // namespace qqmusic::utils
 

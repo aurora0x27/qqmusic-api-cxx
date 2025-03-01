@@ -15,7 +15,7 @@
 
 namespace qqmusic::utils {
 
-buffer to_buffer(http::response<http::dynamic_body>& resp) {
+buffer to_buffer(http::response<http::dynamic_body>&& resp) {
     /* TODO: I haven't found a better way to convert http::request to normal buffer*/
     auto* ptr = boost::asio::buffer_cast<const uint8_t*>(*resp.body().data().begin());
     auto size = resp.body().data().buffer_bytes();
@@ -299,6 +299,47 @@ static void qmc1_decrypt(buffer& src) {
     for (size_t i = 0; i < size; ++i) {
         head[i] ^= i > 0x7fff ? private_key[(i % 0x7fff) & 0x7f] : private_key[i & 0x7f];
     }
+}
+
+uint64_t hash33(std::string_view str, uint64_t prev) {
+    /* python code:
+     * ```
+     * def hash33(s: str, h: int = 0) -> int:
+     * for c in s:
+     *     h = (h << 5) + h + ord(c)
+     * return 2147483647 & h
+     * ```
+     * */
+    uint64_t h = prev;
+    size_t i = 0;
+
+    /* Get single characters in utf-8 string*/
+    while (i < str.length()) {
+        uint32_t codepoint = 0;
+
+        if ((str[i] & 0x80) == 0) {
+            // 1 byte character (ASCII)
+            codepoint = static_cast<unsigned char>(str[i]);
+            i += 1;
+        } else if ((str[i] & 0xE0) == 0xC0) {
+            // 2 byte character
+            codepoint = (str[i] & 0x1F) << 6 | (str[i + 1] & 0x3F);
+            i += 2;
+        } else if ((str[i] & 0xF0) == 0xE0) {
+            // 3 byte character
+            codepoint = (str[i] & 0x0F) << 12 | (str[i + 1] & 0x3F) << 6 | (str[i + 2] & 0x3F);
+            i += 3;
+        } else if ((str[i] & 0xF8) == 0xF0) {
+            // 4 byte character
+            codepoint = (str[i] & 0x07) << 18 | (str[i + 1] & 0x3F) << 12 | (str[i + 2] & 0x3F) << 6
+                        | (str[i + 3] & 0x3F);
+            i += 4;
+        }
+
+        h = (h << 5) + h + codepoint;
+    }
+
+    return 2147483647 & h;
 }
 
 } // namespace qqmusic::utils

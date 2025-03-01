@@ -7,11 +7,11 @@
 
 namespace qqmusic::details {
 
-qqmusic::Result<nlohmann::json> Api::parse_response(utils::buffer& response) {
+qqmusic::Result<nlohmann::json> Api::parse_response(utils::buffer&& response) {
     try {
         nlohmann::json resp_json = nlohmann::json::parse(response);
         nlohmann::json req_data;
-        uint64_t rc = resp_json["code"].get<uint64_t>();
+        int64_t rc = resp_json["code"].get<int64_t>();
         switch (rc) {
         case 0:
             /* FIXME: discarded req_data["code"] value*/
@@ -94,7 +94,7 @@ qqmusic::Task<qqmusic::Result<RequestParam>> Api::prepare_request(const nlohmann
         req.set(http::field::host, url.host());
         req.set(http::field::accept, "*/*");
         /*use raw buffer instead of compressed buffer when debuging*/
-        req.set(http::field::accept_encoding, "ideflate");
+        req.set(http::field::accept_encoding, "identity");
         req.set(http::field::connection, "keep-alive");
         req.set(http::field::referer, "y.qq.com");
         req.set(http::field::user_agent,

@@ -8,7 +8,6 @@ endif()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_TOOLCHAIN_FILE $ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake)
 
 project(qmapi LANGUAGES CXX)
@@ -30,8 +29,8 @@ target_include_directories(
 
 # set platform info
 if(WIN32)
-    target_compile_definitions(qmapi PRIVATE _WIN32_WINNT=0x0A00)
     set(PLATFORM PLATFORM_WINDOWS)
+    target_compile_definitions(qmapi PRIVATE _WIN32_WINNT=0x0A00)
     target_compile_options(qmapi PRIVATE /bigobj)
     set_target_properties(qmapi PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
     target_link_libraries(

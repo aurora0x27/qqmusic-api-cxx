@@ -324,7 +324,9 @@ static std::string random_beacon_id() {
 
     auto now = std::chrono::system_clock::now();
     auto time_t_now = std::chrono::system_clock::to_time_t(now);
-    std::tm tm_now = *std::localtime(&time_t_now);
+    std::tm tm_now{};
+    /*use a thread safe function*/
+    localtime_r(&time_t_now, &tm_now);
 
     std::ostringstream time_month;
     time_month << std::put_time(&tm_now, "%Y-%m-") << "01";
