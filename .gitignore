@@ -13,6 +13,9 @@ out/
 # vcpkg installed
 vcpkg_installed/
 
+# cache dir
+cache
+
 # log file
 *.log
 
