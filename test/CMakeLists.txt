@@ -11,10 +11,12 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_executable(test src/test-main.cc)
+file(GLOB_RECURSE QQMUSIC_API_TEST_BUILD_SOURCE CONFIGURE_DEPENDS src/*.cc)
+add_executable(test ${QQMUSIC_API_TEST_BUILD_SOURCE})
 target_include_directories(
     test PUBLIC
     ../include/
+    include/
 )
 target_link_libraries(
     test PUBLIC
