@@ -92,6 +92,7 @@ static qqmusic::Task<bool> qq_qr_login() {
             std::cout << "Check QR Code status error:" << std::endl;
             std::cout << "Type: " << err.kind() << std::endl;
             std::cout << "Reason: " << err.what() << std::endl;
+            co_return true;
         }
 
         auto check = check_res.unwrap();
@@ -109,12 +110,12 @@ static qqmusic::Task<bool> qq_qr_login() {
             std::cout << "Waiting for scanning" << std::endl;
             auto executor = boost::asio::get_associated_executor(boost::asio::this_coro::executor);
             boost::asio::steady_timer timer(executor.context(), std::chrono::seconds(5));
-            auto r = timer.async_wait();
+            co_await timer.async_wait(boost::asio::use_awaitable);
         } else {
             /*sleep 2s*/
             auto executor = boost::asio::get_associated_executor(boost::asio::this_coro::executor);
             boost::asio::steady_timer timer(executor.context(), std::chrono::seconds(2));
-            auto r = timer.async_wait();
+            co_await timer.async_wait(boost::asio::use_awaitable);
         }
     }
 }
@@ -148,6 +149,7 @@ static qqmusic::Task<bool> wx_qr_login() {
             std::cout << "Check QR Code status error:" << std::endl;
             std::cout << "Type: " << err.kind() << std::endl;
             std::cout << "Reason: " << err.what() << std::endl;
+            co_return true;
         }
 
         auto check = check_res.unwrap();
@@ -165,12 +167,12 @@ static qqmusic::Task<bool> wx_qr_login() {
             std::cout << "Waiting for scanning" << std::endl;
             auto executor = boost::asio::get_associated_executor(boost::asio::this_coro::executor);
             boost::asio::steady_timer timer(executor.context(), std::chrono::seconds(5));
-            auto r = timer.async_wait();
+            co_await timer.async_wait(boost::asio::use_awaitable);
         } else {
             /*sleep 2s*/
             auto executor = boost::asio::get_associated_executor(boost::asio::this_coro::executor);
             boost::asio::steady_timer timer(executor.context(), std::chrono::seconds(2));
-            auto r = timer.async_wait();
+            co_await timer.async_wait(boost::asio::use_awaitable);
         }
     }
     co_return false;
