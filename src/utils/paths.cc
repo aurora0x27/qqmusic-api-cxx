@@ -75,7 +75,7 @@ PathManager::PathManager() {
 
 #elif defined(PLATFORM_APPLE)
     /*MacOS Related Code*/
-    auto home = getenv("XDG_CACHE_HOME");
+    auto home = getenv("HOME");
     if (home == nullptr) {
         cache_path = fs::path(fs::current_path()) / fs::path("cache");
         log_path = fs::path(fs::current_path()) / fs::path("log");

@@ -17,6 +17,7 @@ vcpkg_installed/
 cache
 
 # log file
+log/
 *.log
 
 # executable
