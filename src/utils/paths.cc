@@ -48,7 +48,29 @@ void PathManager::set_download_path(const std::filesystem::path& path) {
 PathManager::PathManager() {
 #ifdef PLATFORM_WINDOWS
     /*Windows Related Code*/
-#error "Platform not supported yet"
+    auto local_app_data = getenv("%LOCALAPPDATA%");
+    if (local_app_data == nullptr) {
+        auto home = getenv("%USERPROFILE%");
+        if (home == nullptr) {
+            cache_path = fs::path(fs::current_path()) / fs::path("cache");
+            log_path = fs::path(fs::current_path()) / fs::path("log");
+            download_path = fs::path(fs::current_path()) / fs::path("download");
+        } else {
+            cache_path = fs::path(home) / fs::path(".cache/qqmusic-api-cxx/cache");
+            log_path = fs::path(home) / fs::path(".cache/qqmusic-api-cxx/log");
+            download_path = fs::path(home) / fs::path("Downloads/qqmusic-api-cxx");
+        }
+    } else {
+        cache_path = fs::path(local_app_data) / fs::path("qqmusic-api-cxx/cache");
+        log_path = fs::path(local_app_data) / fs::path("qqmusic-api-cxx/log");
+        auto home = getenv("%USERPROFILE%");
+        if (home == nullptr) {
+            download_path = fs::path(fs::current_path()) / fs::path("download");
+        } else {
+            download_path = fs::path(home) / fs::path("Downloads/qqmusic-api-cxx");
+        }
+    }
+
 #elif defined(PLATFORM_LINUX)
     auto xdg_cache_home = getenv("XDG_CACHE_HOME");
     if (xdg_cache_home == nullptr) {
