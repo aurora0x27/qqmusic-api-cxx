@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_TOOLCHAIN_FILE $ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake)
 
-project(qmapi LANGUAGES CXX)
+project(qqmusic_api_cxx LANGUAGES CXX)
 file(GLOB_RECURSE QQMUSIC_API_SOURCE CONFIGURE_DEPENDS src/*.cc src/utils/*.cc src/details/*.cc)
 find_package(ZLIB REQUIRED)
 find_package(nlohmann_json CONFIG REQUIRED)

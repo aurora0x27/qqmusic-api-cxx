@@ -1,12 +1,12 @@
-/*******************example/src/qrc-decoder.cc*********************
+/*-------------------------qqmusic/demo/qrc-decoder.h---------------------------
  * This example shows an example of qrc lyric decoder, which can 
  * decode *.qrc lyric file to human readable lyric format
- ******************************************************************/
+ *-----------------------------------------------------------------------------*/
 #include <format>
 #include <fstream>
 #include <iostream>
 #include <qqmusic/utils/buffer.h>
-#include <qqmusic/utils/qrc-decoder.h>
+#include <qqmusic/utils/common.h>
 
 int main(int argc, char** argv) {
     if (argc == 1) {

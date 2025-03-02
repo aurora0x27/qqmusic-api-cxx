@@ -1,0 +1,11 @@
+target("qrc-decoder")
+    set_kind("binary")
+    add_files("src/qrc-decoder.cc")
+    add_deps("qmapi")
+    add_includedirs("include/")
+
+target("qmdown")
+    set_kind("binary")
+    add_files("src/qmdown.cc")
+    add_deps("qmapi")
+    add_includedirs("include/")

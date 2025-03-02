@@ -1,0 +1,82 @@
+set_xmakever("2.9.7")
+set_project("qqmusic_api_cxx")
+
+set_allowedplats("windows", "linux", "macosx")
+set_allowedmodes("debug", "release")
+
+add_rules("mode.release", "mode.debug")
+set_languages("c++20")
+
+add_includedirs("include/")
+
+function vcpkg(name, configs)
+    if not configs then
+        configs = {external = false}
+    end
+
+    -- Must match a release commit from https://github.com/microsoft/vcpkg/
+    local baseline = "23b33f5a010e3d67132fa3c34ab6cd0009bb9296"
+
+    configs["baseline"] = baseline
+
+    -- Will cause trouble
+    -- configs["default_registries"] = {
+    --   kind = "git",
+    --   baseline = baseline,
+    --   repository = "https://github.com/microsoft/vcpkg"
+    -- }
+
+    configs["registries"] = {
+        {
+        kind = "artifact",
+        location = "https://github.com/microsoft/vcpkg-ce-catalog/archive/refs/heads/main.zip",
+        name = "microsoft"
+        }
+    }
+
+    add_requires("vcpkg::" .. name, {
+        alias = name,
+        configs = configs,
+    })
+end
+
+vcpkg("boost-asio")
+vcpkg("boost-beast")
+vcpkg("boost-uuid")
+vcpkg("boost-url")
+vcpkg("botan")
+vcpkg("zlib")
+vcpkg("openssl")
+vcpkg("nlohmann-json")
+
+target("qmapi")
+    set_kind("shared")
+    add_files("src/*.cc", 
+              "src/utils/*.cc", 
+              "src/details/*.cc", 
+              "src/crypto/*.cc")
+    if is_plat("linux") then
+    add_defines("PLATFORM_LINUX")
+    end
+    add_packages(
+        "boost-asio",
+        "boost-beast",
+        "boost-uuid",
+        "boost-url",
+        "zlib",
+        "nlohmann-json",
+        "botan",
+        "openssl"
+    )
+
+target("test")
+    set_kind("binary")
+    add_files("test/src/*.cc")
+    add_deps("qmapi")
+    add_packages("gtest[main]")
+    add_includedirs("test/include")
+
+target("demo")
+    set_kind("phony")
+    includes("demo/xmake.lua")
+    add_deps("qrc-decoder", "qmdown")

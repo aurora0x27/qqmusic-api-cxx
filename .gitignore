@@ -34,3 +34,6 @@ log/
 # shared lib
 *.dll
 *.so
+
+# xmake cache dir
+.xmake/
