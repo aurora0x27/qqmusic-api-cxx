@@ -11,7 +11,7 @@ add_includedirs("include/")
 
 function vcpkg(name, configs)
     if not configs then
-        configs = {external = false}
+        configs = {external = true}
     end
 
     -- Must match a release commit from https://github.com/microsoft/vcpkg/
@@ -20,17 +20,17 @@ function vcpkg(name, configs)
     configs["baseline"] = baseline
 
     -- Will cause trouble
-    -- configs["default_registries"] = {
-    --   kind = "git",
-    --   baseline = baseline,
-    --   repository = "https://github.com/microsoft/vcpkg"
-    -- }
+    configs["default_registries"] = {
+        kind = "git",
+        baseline = baseline,
+        repository = "https://github.com/microsoft/vcpkg"
+    }
 
     configs["registries"] = {
         {
-        kind = "artifact",
-        location = "https://github.com/microsoft/vcpkg-ce-catalog/archive/refs/heads/main.zip",
-        name = "microsoft"
+            kind = "artifact",
+            location = "https://github.com/microsoft/vcpkg-ce-catalog/archive/refs/heads/main.zip",
+            name = "microsoft"
         }
     }
 
@@ -56,7 +56,17 @@ target("qmapi")
               "src/details/*.cc", 
               "src/crypto/*.cc")
     if is_plat("linux") then
-    add_defines("PLATFORM_LINUX")
+        add_defines("PLATFORM_LINUX")
+    elseif is_plat("macosx") then
+        add_defines("PLATFORM_APPLE")
+        add_values("cmake.CMAKE_OSX_DEPLOYMENT_TARGET", "11.0")
+    elseif is_plat("windows") then
+        add_defines("PLATFORM_WINDOWS")
+        add_defines("_WIN32_WINNT=0xA00")
+        if is_toolchain("msvc") then
+            add_defines("/bigobj")
+        end
+        add_rules("utils.symbols.export_all")
     end
     add_packages(
         "boost-asio",
