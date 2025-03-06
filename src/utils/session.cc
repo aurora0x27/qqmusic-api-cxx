@@ -77,13 +77,13 @@ void Session::update_local() {
 }
 
 qqmusic::Task<qqmusic::Result<HttpResponse>> Session::perform_request(
-    boost::url_view url, http::request<http::string_body>& req) {
+    boost::url_view url, http::request<http::string_body>& req, bool auto_redirecting) {
     namespace beast = boost::beast;
     namespace asio = boost::asio;
 
     if (url.scheme() == "http") {
         /*handle http requests*/
-        auto res = co_await handle_http_request(url, req);
+        auto res = co_await handle_http_request(url, req, auto_redirecting);
         if (res.isOk()) {
             co_return Ok(res.unwrap());
         } else {
@@ -91,7 +91,7 @@ qqmusic::Task<qqmusic::Result<HttpResponse>> Session::perform_request(
         }
     } else if (url.scheme() == "https") {
         /*handle https requests*/
-        auto res = co_await handle_https_request(url, req);
+        auto res = co_await handle_https_request(url, req, auto_redirecting);
         if (res.isOk()) {
             co_return Ok(res.unwrap());
         } else {
@@ -106,7 +106,7 @@ qqmusic::Task<qqmusic::Result<HttpResponse>> Session::perform_request(
 }
 
 qqmusic::Task<qqmusic::Result<HttpResponse>> Session::handle_http_request(
-    boost::url_view url, http::request<http::string_body>& req) {
+    boost::url_view url, http::request<http::string_body>& req, bool auto_redirecting) {
     namespace beast = boost::beast;
     namespace asio = boost::asio;
 
@@ -173,47 +173,50 @@ qqmusic::Task<qqmusic::Result<HttpResponse>> Session::handle_http_request(
     boost::system::error_code ec = tcps.socket()
                                        .shutdown(boost::asio::ip::tcp::socket::shutdown_both, ec);
     if (!ec || ec == asio::error::eof || ec == boost::beast::error::timeout) {
-        if (res.base().find(http::field::set_cookie) != res.base().end()
-            || res.base().find(http::field::set_cookie2) != res.base().end()) {
+        /*here we got the request performed successfully*/
+        if (res.base().find(http::field::set_cookie) != res.base().end()) {
             /*set cookie*/
-            auto field = res.base().find(http::field::set_cookie);
-            if (field == res.base().end()) {
-                auto field = res.base().find(http::field::set_cookie2);
-            }
-            auto cookie_res = parse_cookie(field->value());
-            if (cookie_res.isErr()) {
-                co_return Err(
-                    Exception(Exception::JsonError,
-                              std::format("[Session::perform_request] -- Cookie parse error: `{}`",
-                                          cookie_res.unwrapErr().what())));
-            }
             CookieJar cookie_new;
-            auto cookie_dict = cookie_res.unwrap();
-            std::string domain, path = "/";
-            auto domain_field = req.base().find(http::field::host);
-            if (cookie_dict.contains("Domain")) {
-                domain = cookie_dict["Domain"].get<std::string>();
-                cookie_dict.erase("Domain");
-            }
-            if (cookie_dict.contains("Path")) {
-                path = cookie_dict["Path"].get<std::string>();
-                cookie_dict.erase("Path");
-            }
-            for (auto& i : cookie_dict.items()) {
-                cookie_new.set({
-                    .domain = domain,
-                    .path = path,
-                    .key = i.key(),
-                    .value = i.value().get<std::string>(),
-                });
+            std::ostringstream oss;
+            for (auto& field : res.base()) {
+                if (field.name() == http::field::set_cookie) {
+                    auto cookie_res = parse_cookie(field.value());
+                    if (cookie_res.isErr()) {
+                        co_return Err(Exception(
+                            Exception::JsonError,
+                            std::format("[Session::perform_request] -- Cookie parse error: `{}`",
+                                        cookie_res.unwrapErr().what())));
+                    }
+                    auto cookie_dict = cookie_res.unwrap();
+                    std::string domain, path = "/";
+                    auto domain_field = req.base().find(http::field::host);
+                    if (cookie_dict.contains("Domain")) {
+                        domain = cookie_dict["Domain"].get<std::string>();
+                        cookie_dict.erase("Domain");
+                    }
+                    if (cookie_dict.contains("Path")) {
+                        path = cookie_dict["Path"].get<std::string>();
+                        cookie_dict.erase("Path");
+                    }
+                    for (auto& i : cookie_dict.items()) {
+                        cookie_new.set({
+                            .domain = domain,
+                            .path = path,
+                            .key = i.key(),
+                            .value = i.value().get<std::string>(),
+                        });
+                    }
+                }
             }
             local_ctx.cookies.merge(cookie_new);
             /*write the change back to global context*/
             sync_global();
         }
 
-        if (res.result() == http::status::found || res.result() == http::status::moved_permanently
-            || res.result() == http::status::permanent_redirect) {
+        if (auto_redirecting
+            && (res.result() == http::status::found
+                || res.result() == http::status::moved_permanently
+                || res.result() == http::status::permanent_redirect)) {
             /*handle redirecting*/
 
             auto final_res = co_await handle_http_redirecting(*this, url, req, res);
@@ -223,17 +226,6 @@ qqmusic::Task<qqmusic::Result<HttpResponse>> Session::handle_http_request(
             co_return Ok(final_res.unwrap());
         }
 
-        // // For DEBUGING
-        // std::cout << "Response headers" << std::endl;
-        // std::cout << res.result_int() << std::endl;
-        // std::cout << res.result() << std::endl;
-        // std::cout << res.reason() << std::endl;
-        // for (auto& h : res.base()) {
-        //     std::cout << "Field: " << h.name() << "/text: " << h.name_string()
-        //               << ", Value: " << h.value() << "\n";
-        // }
-        // std::cout << "Response body: " << std::endl
-        //           << beast::buffers_to_string(res.body().data()) << std::endl;
         co_return Ok(res);
     }
 
@@ -244,7 +236,7 @@ qqmusic::Task<qqmusic::Result<HttpResponse>> Session::handle_http_request(
 }
 
 qqmusic::Task<qqmusic::Result<HttpResponse>> Session::handle_https_request(
-    boost::url_view url, http::request<http::string_body>& req) {
+    boost::url_view url, http::request<http::string_body>& req, bool auto_redirecting) {
     using executor_with_default
         = asio::use_awaitable_t<>::executor_with_default<asio::any_io_executor>;
     using tcp_stream =
@@ -344,48 +336,50 @@ qqmusic::Task<qqmusic::Result<HttpResponse>> Session::handle_https_request(
     if (!ec || ec == asio::error::eof
         || (local_ctx.ignore_ssl_error && ec == asio::ssl::error::stream_truncated)
         || ec == boost::beast::error::timeout || ec == boost::asio::ssl::error::stream_truncated) {
-        // If we get here then the connection is closed gracefully
-        if (res.base().find(http::field::set_cookie) != res.base().end()
-            || res.base().find(http::field::set_cookie2) != res.base().end()) {
+        /*here we got the request performed successfully*/
+        if (res.base().find(http::field::set_cookie) != res.base().end()) {
             /*set cookie*/
-            auto field = res.base().find(http::field::set_cookie);
-            if (field == res.base().end()) {
-                auto field = res.base().find(http::field::set_cookie2);
-            }
-            auto cookie_res = parse_cookie(field->value());
-            if (cookie_res.isErr()) {
-                co_return Err(
-                    Exception(Exception::JsonError,
-                              std::format("[Session::perform_request] -- Cookie parse error: `{}`",
-                                          cookie_res.unwrapErr().what())));
-            }
             CookieJar cookie_new;
-            auto cookie_dict = cookie_res.unwrap();
-            std::string domain, path = "/";
-            auto domain_field = req.base().find(http::field::host);
-            if (cookie_dict.contains("Domain")) {
-                domain = cookie_dict["Domain"].get<std::string>();
-                cookie_dict.erase("Domain");
-            }
-            if (cookie_dict.contains("Path")) {
-                path = cookie_dict["Path"].get<std::string>();
-                cookie_dict.erase("Path");
-            }
-            for (auto& i : cookie_dict.items()) {
-                cookie_new.set({
-                    .domain = domain,
-                    .path = path,
-                    .key = i.key(),
-                    .value = i.value().get<std::string>(),
-                });
+            std::ostringstream oss;
+            for (auto& field : res.base()) {
+                if (field.name() == http::field::set_cookie) {
+                    auto cookie_res = parse_cookie(field.value());
+                    if (cookie_res.isErr()) {
+                        co_return Err(Exception(
+                            Exception::JsonError,
+                            std::format("[Session::perform_request] -- Cookie parse error: `{}`",
+                                        cookie_res.unwrapErr().what())));
+                    }
+                    auto cookie_dict = cookie_res.unwrap();
+                    std::string domain, path = "/";
+                    auto domain_field = req.base().find(http::field::host);
+                    if (cookie_dict.contains("Domain")) {
+                        domain = cookie_dict["Domain"].get<std::string>();
+                        cookie_dict.erase("Domain");
+                    }
+                    if (cookie_dict.contains("Path")) {
+                        path = cookie_dict["Path"].get<std::string>();
+                        cookie_dict.erase("Path");
+                    }
+                    for (auto& i : cookie_dict.items()) {
+                        cookie_new.set({
+                            .domain = domain,
+                            .path = path,
+                            .key = i.key(),
+                            .value = i.value().get<std::string>(),
+                        });
+                    }
+                }
             }
             local_ctx.cookies.merge(cookie_new);
             /*write the change back to global context*/
             sync_global();
         }
 
-        if (res.result() == http::status::found || res.result() == http::status::moved_permanently
-            || res.result() == http::status::permanent_redirect) {
+        if (auto_redirecting
+            && (res.result() == http::status::found
+                || res.result() == http::status::moved_permanently
+                || res.result() == http::status::permanent_redirect)) {
             /*handle redirecting*/
             auto final_res = co_await handle_https_redirecting(*this, url, req, res, ssl_ctx);
             if (final_res.isErr()) {
@@ -418,7 +412,7 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_http_
             boost::beast::tcp_stream(co_await asio::this_coro::executor))};
         auto resolver = asio::use_awaitable_t<asio::any_io_executor>::as_default_on(
             asio::ip::tcp::resolver(co_await asio::this_coro::executor));
-        auto& ctx = self.get_context_ref();
+        auto& local_context = self.get_context_ref();
         /*filter location*/
         auto location = resp.base().find(http::field::location)->value();
 
@@ -454,11 +448,13 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_http_
             return url_new;
         };
 
-        auto prepare_header = [](http::request<http::string_body>& old,
+        auto prepare_header = [](boost::url_view url_new,
+                                 http::request<http::string_body>& old,
                                  http::request<http::string_body>& req_new) {
+            req_new.set(http::field::host, url_new.host());
             for (auto& i : old.base()) {
                 if (i.name_string() != "Authorization" || i.name_string() != "Content-Length"
-                    || i.name_string() != "Cookie") {
+                    || i.name_string() != "Cookie" || i.name_string() != "Host") {
                     req_new.set(i.name(), i.value());
                 }
             }
@@ -466,10 +462,18 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_http_
 
         boost::url url_next = prepare_url(url, location);
         http::request<http::string_body> req_next{prepare_verb(req, resp), url_next, 11};
-        prepare_header(req, req_next);
-        auto cookie_res = ctx.cookies.serialize(url.host(), url.path());
-        if (cookie_res.isOk()) {
-            req_next.set(http::field::cookie, cookie_res.unwrap());
+        prepare_header(url_next, req, req_next);
+        auto path = url_next.path();
+        if (path.size() != 0) {
+            auto cookie_res = local_context.cookies.serialize(url_next.host(), path);
+            if (cookie_res.isOk()) {
+                req_next.set(http::field::cookie, cookie_res.unwrap());
+            }
+        } else {
+            auto cookie_res = local_context.cookies.serialize(url_next.host());
+            if (cookie_res.isOk()) {
+                req_next.set(http::field::cookie, cookie_res.unwrap());
+            }
         }
 
         while (count < REDIRECT_MAX_COUNT) {
@@ -478,7 +482,7 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_http_
 
             /*send request*/
             auto resolv_res = co_await resolver.async_resolve(url_next.host(), "http");
-            boost::beast::get_lowest_layer(tcps).expires_after(ctx.timeout);
+            boost::beast::get_lowest_layer(tcps).expires_after(local_context.timeout);
             try {
                 /*Connect to endpoint*/
                 co_await boost::beast::get_lowest_layer(tcps).async_connect(resolv_res);
@@ -539,41 +543,41 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_http_
             boost::system::error_code ec
                 = tcps.socket().shutdown(boost::asio::ip::tcp::socket::shutdown_both, ec);
             if (!ec || ec == asio::error::eof || ec == boost::beast::error::timeout) {
-                if (res.base().find(http::field::set_cookie) != res.base().end()
-                    || res.base().find(http::field::set_cookie2) != res.base().end()) {
+                if (res.base().find(http::field::set_cookie) != res.base().end()) {
                     /*set cookie*/
-                    auto field = res.base().find(http::field::set_cookie);
-                    if (field == res.base().end()) {
-                        auto field = res.base().find(http::field::set_cookie2);
-                    }
-                    auto cookie_res = parse_cookie(field->value());
-                    if (cookie_res.isErr()) {
-                        co_return Err(Exception(
-                            Exception::JsonError,
-                            std::format("[handle_http_redirecting] -- Cookie parse error: `{}`",
-                                        cookie_res.unwrapErr().what())));
-                    }
                     CookieJar cookie_new;
-                    auto cookie_dict = cookie_res.unwrap();
-                    std::string domain, path = "/";
-                    auto domain_field = req.base().find(http::field::host);
-                    if (cookie_dict.contains("Domain")) {
-                        domain = cookie_dict["Domain"].get<std::string>();
-                        cookie_dict.erase("Domain");
+                    std::ostringstream oss;
+                    for (auto& field : res.base()) {
+                        if (field.name() == http::field::set_cookie) {
+                            auto cookie_res = parse_cookie(field.value());
+                            if (cookie_res.isErr()) {
+                                co_return Err(Exception(Exception::JsonError,
+                                                        std::format("[Session::perform_request] -- "
+                                                                    "Cookie parse error: `{}`",
+                                                                    cookie_res.unwrapErr().what())));
+                            }
+                            auto cookie_dict = cookie_res.unwrap();
+                            std::string domain, path = "/";
+                            auto domain_field = req.base().find(http::field::host);
+                            if (cookie_dict.contains("Domain")) {
+                                domain = cookie_dict["Domain"].get<std::string>();
+                                cookie_dict.erase("Domain");
+                            }
+                            if (cookie_dict.contains("Path")) {
+                                path = cookie_dict["Path"].get<std::string>();
+                                cookie_dict.erase("Path");
+                            }
+                            for (auto& i : cookie_dict.items()) {
+                                cookie_new.set({
+                                    .domain = domain,
+                                    .path = path,
+                                    .key = i.key(),
+                                    .value = i.value().get<std::string>(),
+                                });
+                            }
+                        }
                     }
-                    if (cookie_dict.contains("Path")) {
-                        path = cookie_dict["Path"].get<std::string>();
-                        cookie_dict.erase("Path");
-                    }
-                    for (auto& i : cookie_dict.items()) {
-                        cookie_new.set({
-                            .domain = domain,
-                            .path = path,
-                            .key = i.key(),
-                            .value = i.value().get<std::string>(),
-                        });
-                    }
-                    ctx.cookies.merge(cookie_new);
+                    local_context.cookies.merge(cookie_new);
                     /*write the change back to global context*/
                     self.sync_global();
                 }
@@ -589,10 +593,18 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_http_
                     req_next = http::request<http::string_body>{prepare_verb(req_old, res),
                                                                 url_next,
                                                                 11};
-                    prepare_header(req_old, req_next);
-                    auto cookie_res = ctx.cookies.serialize(url_prev.host(), url_prev.path());
-                    if (cookie_res.isOk()) {
-                        req_next.set(http::field::cookie, cookie_res.unwrap());
+                    prepare_header(url_next, req_old, req_next);
+                    auto path = url_next.path();
+                    if (path.size() != 0) {
+                        auto cookie_res = local_context.cookies.serialize(url_next.host(), path);
+                        if (cookie_res.isOk()) {
+                            req_next.set(http::field::cookie, cookie_res.unwrap());
+                        }
+                    } else {
+                        auto cookie_res = local_context.cookies.serialize(url_next.host());
+                        if (cookie_res.isOk()) {
+                            req_next.set(http::field::cookie, cookie_res.unwrap());
+                        }
                     }
 
                     count++;
@@ -663,11 +675,14 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_https
             return url_new;
         };
 
-        auto prepare_header = [](http::request<http::string_body>& old,
+        auto prepare_header = [](boost::url_view url_new,
+                                 http::request<http::string_body>& old,
                                  http::request<http::string_body>& req_new) {
+            req_new.set(http::field::host, url_new.host());
             for (auto& i : old.base()) {
-                if (i.name_string() != "Authorization" || i.name_string() != "Content-Length"
-                    || i.name_string() != "Cookie") {
+                if (i.name() != http::field::authorization
+                    && i.name() != http::field::content_length && i.name() != http::field::cookie
+                    && i.name() != http::field::host) {
                     req_new.set(i.name(), i.value());
                 }
             }
@@ -675,10 +690,18 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_https
 
         boost::url url_next = prepare_url(url, location);
         http::request<http::string_body> req_next{prepare_verb(req, resp), url_next, 11};
-        prepare_header(req, req_next);
-        auto cookie_res = local_ctx.cookies.serialize(url.host(), url.path());
-        if (cookie_res.isOk()) {
-            req_next.set(http::field::cookie, cookie_res.unwrap());
+        prepare_header(url_next, req, req_next);
+        auto path = url_next.path();
+        if (path.size() != 0) {
+            auto cookie_res = local_ctx.cookies.serialize(url_next.host(), path);
+            if (cookie_res.isOk()) {
+                req_next.set(http::field::cookie, cookie_res.unwrap());
+            }
+        } else {
+            auto cookie_res = local_ctx.cookies.serialize(url_next.host());
+            if (cookie_res.isOk()) {
+                req_next.set(http::field::cookie, cookie_res.unwrap());
+            }
         }
 
         unsigned int count = 0;
@@ -776,39 +799,39 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_https
                 || ec == boost::beast::error::timeout
                 || ec == boost::asio::ssl::error::stream_truncated) {
                 // If we get here then the connection is closed gracefully
-                if (res.base().find(http::field::set_cookie) != res.base().end()
-                    || res.base().find(http::field::set_cookie2) != res.base().end()) {
+                if (res.base().find(http::field::set_cookie) != res.base().end()) {
                     /*set cookie*/
-                    auto field = res.base().find(http::field::set_cookie);
-                    if (field == res.base().end()) {
-                        auto field = res.base().find(http::field::set_cookie2);
-                    }
-                    auto cookie_res = parse_cookie(field->value());
-                    if (cookie_res.isErr()) {
-                        co_return Err(Exception(
-                            Exception::JsonError,
-                            std::format("[handle_https_redirecting] -- Cookie parse error: `{}`",
-                                        cookie_res.unwrapErr().what())));
-                    }
                     CookieJar cookie_new;
-                    auto cookie_dict = cookie_res.unwrap();
-                    std::string domain, path = "/";
-                    auto domain_field = req.base().find(http::field::host);
-                    if (cookie_dict.contains("Domain")) {
-                        domain = cookie_dict["Domain"].get<std::string>();
-                        cookie_dict.erase("Domain");
-                    }
-                    if (cookie_dict.contains("Path")) {
-                        path = cookie_dict["Path"].get<std::string>();
-                        cookie_dict.erase("Path");
-                    }
-                    for (auto& i : cookie_dict.items()) {
-                        cookie_new.set({
-                            .domain = domain,
-                            .path = path,
-                            .key = i.key(),
-                            .value = i.value().get<std::string>(),
-                        });
+                    std::ostringstream oss;
+                    for (auto& field : res.base()) {
+                        if (field.name() == http::field::set_cookie) {
+                            auto cookie_res = parse_cookie(field.value());
+                            if (cookie_res.isErr()) {
+                                co_return Err(Exception(Exception::JsonError,
+                                                        std::format("[Session::perform_request] -- "
+                                                                    "Cookie parse error: `{}`",
+                                                                    cookie_res.unwrapErr().what())));
+                            }
+                            auto cookie_dict = cookie_res.unwrap();
+                            std::string domain, path = "/";
+                            auto domain_field = req.base().find(http::field::host);
+                            if (cookie_dict.contains("Domain")) {
+                                domain = cookie_dict["Domain"].get<std::string>();
+                                cookie_dict.erase("Domain");
+                            }
+                            if (cookie_dict.contains("Path")) {
+                                path = cookie_dict["Path"].get<std::string>();
+                                cookie_dict.erase("Path");
+                            }
+                            for (auto& i : cookie_dict.items()) {
+                                cookie_new.set({
+                                    .domain = domain,
+                                    .path = path,
+                                    .key = i.key(),
+                                    .value = i.value().get<std::string>(),
+                                });
+                            }
+                        }
                     }
                     local_ctx.cookies.merge(cookie_new);
                     /*write the change back to global context*/
@@ -826,10 +849,18 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_https
                     req_next = http::request<http::string_body>{prepare_verb(req_old, res),
                                                                 url_next,
                                                                 11};
-                    prepare_header(req_old, req_next);
-                    auto cookie_res = local_ctx.cookies.serialize(url_prev.host(), url_prev.path());
-                    if (cookie_res.isOk()) {
-                        req_next.set(http::field::cookie, cookie_res.unwrap());
+                    prepare_header(url_next, req_old, req_next);
+                    auto path = url_next.path();
+                    if (path.size() != 0) {
+                        auto cookie_res = local_ctx.cookies.serialize(url_next.host(), path);
+                        if (cookie_res.isOk()) {
+                            req_next.set(http::field::cookie, cookie_res.unwrap());
+                        }
+                    } else {
+                        auto cookie_res = local_ctx.cookies.serialize(url_next.host());
+                        if (cookie_res.isOk()) {
+                            req_next.set(http::field::cookie, cookie_res.unwrap());
+                        }
                     }
 
                     count++;

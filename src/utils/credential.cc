@@ -12,9 +12,32 @@
 namespace qqmusic::utils {
 
 /* NOTE: Assume that only loginType and musickey field can be defaulted*/
-Credential::Credential(const nlohmann::json& cookie)
+Credential::Credential(nlohmann::json& cookie)
     : Credential() {
-    nlohmann::from_json(cookie, *this);
+    /*Write back the update result*/
+    cookie.at("openid").get_to(openid);
+    cookie.erase("openid");
+    cookie.at("refresh_token").get_to(refresh_token);
+    cookie.erase("refresh_token");
+    cookie.at("access_token").get_to(access_token);
+    cookie.erase("access_token");
+    cookie.at("expired_at").get_to(expired_at);
+    cookie.erase("expired_at");
+    cookie.at("musicid").get_to(musicid);
+    cookie.erase("musicid");
+    cookie.at("unionid").get_to(unionid);
+    cookie.erase("unionid");
+    cookie.at("str_musicid").get_to(str_musicid);
+    cookie.erase("str_musicid");
+    cookie.at("musickey").get_to(musickey);
+    cookie.erase("musickey");
+    cookie.at("refresh_key").get_to(refresh_key);
+    cookie.erase("refresh_key");
+    cookie.at("encryptUin").get_to(encryptUin);
+    cookie.erase("encryptUin");
+    cookie.at("loginType").get_to(loginType);
+    cookie.erase("loginType");
+    extra_fields = cookie;
     if (cookie.contains("musickey")) {
         musickey = cookie["musickey"].get<std::string>();
 
@@ -41,6 +64,7 @@ qqmusic::Result<nlohmann::json> Credential::to_json() {
     try {
         nlohmann::json res;
         nlohmann::to_json(res, *this);
+        res["extra_fields"] = extra_fields;
         return Ok(res);
     } catch (const std::exception& e) {
         return Err(Exception(Exception::DataDestroy,
@@ -53,6 +77,7 @@ qqmusic::Result<std::string> Credential::to_string() {
     try {
         nlohmann::json res;
         nlohmann::to_json(res, *this);
+        res["extra_fields"] = extra_fields;
         return Ok(res.dump());
     } catch (const std::exception& e) {
         return Err(

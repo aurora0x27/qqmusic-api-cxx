@@ -252,11 +252,17 @@ qqmusic::Result<nlohmann::json> parse_cookie(std::string_view cookie_str) {
      * */
     try {
         nlohmann::json res;
-        std::regex cookie_pattern{R"REGEX((.*?)=(.*?)(?:;(?: |)|$))REGEX"};
+        // std::regex cookie_pattern{R"REGEX((.*?)=(.*?)(?:;(?: |)|$))REGEX"};
+        std::regex cookie_pattern{R"REGEX((\s*([^=;]+)(?:=([^;]*))?))REGEX"};
         std::smatch matches;
         std::string raw = std::string(cookie_str.begin(), cookie_str.end());
         while (std::regex_search(raw, matches, cookie_pattern)) {
-            res[matches[1].str()] = matches[2].str();
+            auto key = matches[2].str();
+            auto val = matches[3].str();
+            if (!(key == "Expires" || key == "Secure" || key == "HttpOnly" || key == "SameSite"
+                  || val.size() == 0)) {
+                res[key] = val;
+            }
             raw = matches.suffix().str();
         }
         return Ok(res);

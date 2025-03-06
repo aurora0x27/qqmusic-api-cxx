@@ -96,6 +96,7 @@ static qqmusic::Task<bool> qq_qr_login() {
         }
 
         auto check = check_res.unwrap();
+        std::cout << "Current status: " << check.status.name() << std::endl;
         if (check.status == QRCodeLoginEvent::Status::DONE) {
             std::cout << "Login success -- your musicid is: " << check.credential->musicid
                       << std::endl;
@@ -107,7 +108,6 @@ static qqmusic::Task<bool> qq_qr_login() {
             co_return true;
         } else if (check.status == QRCodeLoginEvent::Status::SCAN) {
             /*sleep 5s*/
-            std::cout << "Waiting for scanning" << std::endl;
             auto executor = boost::asio::get_associated_executor(boost::asio::this_coro::executor);
             boost::asio::steady_timer timer(executor.context(), std::chrono::seconds(5));
             co_await timer.async_wait(boost::asio::use_awaitable);

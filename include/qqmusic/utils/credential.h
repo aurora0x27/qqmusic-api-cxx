@@ -15,7 +15,7 @@ class Credential {
 public:
     Credential() = default;
     explicit Credential(std::string_view cookie);
-    explicit Credential(const nlohmann::json& cookie);
+    explicit Credential(nlohmann::json& cookie);
     bool is_valid() const;
     qqmusic::Task<qqmusic::Result<bool>> is_expired();
     qqmusic::Task<qqmusic::Result<void>> refresh();
@@ -46,8 +46,7 @@ public:
                                    musickey,
                                    refresh_key,
                                    encryptUin,
-                                   loginType,
-                                   extra_fields);
+                                   loginType);
 };
 
 } // namespace qqmusic::utils

@@ -557,9 +557,9 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::Credential>> auth_qq_qr(std
         params{{"response_type", "code"},
                {"client_id", "100497308"},
                {"redirect_uri",
-                "https://y.qq.com/portal/"
-                "wx_redirect.html?login_type=1&surl=https%3A%252F%252Fy.qq.com%252F"},
-               {"scope", "get_user_info,get_app_friends"},
+                "https%3A%2F%2Fy.qq.com%2Fportal%2Fwx_redirect.html%3Flogin_type%3D1%26surl%"
+                "3Dhttps%253A%25252F%25252Fy.qq.com%25252F"},
+               {"scope", "get_user_info%2Cget_app_friends"},
                {"state", "state"},
                {"switch", ""},
                {"from_ptlogin", "1"},
@@ -576,9 +576,8 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::Credential>> auth_qq_qr(std
     }
     auto data = oss.str();
     data.erase(data.end() - 1);
-
-    http::request<http::string_body> location_req{http::verb::get, location_url, 11};
-    location_req.set(http::field::host, p_skey_url.host());
+    http::request<http::string_body> location_req{http::verb::post, location_url, 11};
+    location_req.set(http::field::host, location_url.host());
     location_req.set(http::field::accept, "*/*");
     /*use raw buffer instead of compressed buffer when debuging*/
     location_req.set(http::field::accept_encoding, "identity");
@@ -588,9 +587,19 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::Credential>> auth_qq_qr(std
              "Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
              "Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.54");
     location_req.set(http::field::content_type, "application/x-www-form-urlencoded");
+    auto cookie1_dump = context.cookies.serialize("graph.qq.com");
+    auto cookie2_dump = context.cookies.serialize("qq.com");
+    if (cookie1_dump.isErr() || cookie2_dump.isErr()) {
+        co_return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::JsonError,
+                                                "[auth_qq_qr] -- Cannot set cookie"));
+    }
+    auto cookie_str = cookie1_dump.unwrap() + "; " + cookie2_dump.unwrap();
+    location_req.set(http::field::cookie, cookie_str);
     location_req.body() = data;
 
-    auto location_res = co_await session.perform_request(location_url, location_req);
+    location_req.prepare_payload();
+
+    auto location_res = co_await session.perform_request(location_url, location_req, false);
     if (location_res.isErr()) {
         co_return Err(qqmusic::utils::Exception(
             qqmusic::utils::Exception::NetworkError,
@@ -600,7 +609,7 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::Credential>> auth_qq_qr(std
 
     auto headers = location_res.unwrap().base();
     std::string location;
-    if (auto pos = headers.find("Location"); pos == headers.end()) {
+    if (auto pos = headers.find(http::field::location); pos == headers.end()) {
         /*Not find*/
         co_return Err(qqmusic::utils::Exception(
             qqmusic::utils::Exception::DataDestroy,

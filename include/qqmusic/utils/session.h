@@ -55,14 +55,14 @@ public:
     void update_local();
 
     qqmusic::Task<qqmusic::Result<HttpResponse>> perform_request(
-        boost::url_view url, http::request<http::string_body>& req);
+        boost::url_view url, http::request<http::string_body>& req, bool auto_redirecting = true);
 
 private:
     qqmusic::Task<qqmusic::Result<HttpResponse>> handle_http_request(
-        boost::url_view url, http::request<http::string_body>& req);
+        boost::url_view url, http::request<http::string_body>& req, bool auto_redirecting);
 
     qqmusic::Task<qqmusic::Result<HttpResponse>> handle_https_request(
-        boost::url_view url, http::request<http::string_body>& req);
+        boost::url_view url, http::request<http::string_body>& req, bool auto_redirecting);
 
     /*Global context lock*/
     std::mutex& lock;
