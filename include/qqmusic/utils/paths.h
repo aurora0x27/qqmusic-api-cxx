@@ -18,19 +18,20 @@
  *
  *
  *    - Windows:
- *         - cache:
+ *         - cache: %LOCALAPPDATA%\cache
+ *                  OR %USERPROFILE%\cahce
  *
- *         - log:
+ *         - log: %LOCALAPPDATA%\log  
+ *                OR %USERPROFILE%\log
  *
- *         - download:
+ *         - download:%USERPROFILE%\Download\qqmusic-api-cxx
  *
+ *    - MacOS:
+ *         - cache: $HOME/Library/Caches/qqmusic-api-cxx/cache
  *
- *    - MacOs:
- *         - cache:
+ *         - log: $HOME/Library/Caches/qqmusic-api-cxx/log
  *
- *         - log:
- *
- *         - download:
+ *         - download: $HOME/Downloads/qqmusic-api-cxx
  *
  * Applications can set the path by themselves
  * Usage:

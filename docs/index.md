@@ -40,6 +40,7 @@ set(QQMUSIC_API_BUILD_TYPE SharedLib)
 
 ```cmake
 add_subdirectory(path/to/qqmusic-api)
+
 target_include_library(
     demo PRIVATE
     path/to/qqmusic-api/include
@@ -81,7 +82,6 @@ target_link_library(
     │   ├── exception.h
     │   ├── paths.h
     │   ├── qimei.h
-    │   ├── requests.h
     │   └── session.h
     ├── album.h
     ├── login.h

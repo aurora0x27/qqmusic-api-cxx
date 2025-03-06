@@ -51,7 +51,9 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tilde
+  - pymdownx.details
   - attr_list
+  - admonition
 
 extra_css:
   - css/font.css

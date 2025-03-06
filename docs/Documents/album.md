@@ -1,3 +1,3 @@
-# album
+# Album
 
 专辑

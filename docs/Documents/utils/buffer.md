@@ -1,4 +1,6 @@
-# buffer
+---
+title: Buffer
+---
 
 `qqmusic::utils::buffer` 提供了二进制缓冲区的通用接口.
 
