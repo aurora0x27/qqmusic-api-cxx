@@ -16,7 +16,9 @@ namespace http = boost::beast::http;
 
 std::string sign(const nlohmann::json& params);
 
-buffer to_buffer(http::response<http::dynamic_body>&& resp);
+buffer resp2buf(http::response<http::dynamic_body>&& resp);
+
+buffer hex2buf(std::string_view hex);
 
 enum class qrc_type { cloud, local };
 

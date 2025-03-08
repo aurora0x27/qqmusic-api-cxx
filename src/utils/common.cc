@@ -15,11 +15,15 @@
 
 namespace qqmusic::utils {
 
-buffer to_buffer(http::response<http::dynamic_body>&& resp) {
+buffer resp2buf(http::response<http::dynamic_body>&& resp) {
     /* TODO: I haven't found a better way to convert http::request to normal buffer*/
     auto* ptr = boost::asio::buffer_cast<const uint8_t*>(*resp.body().data().begin());
     auto size = resp.body().data().buffer_bytes();
     return qqmusic::utils::buffer{ptr, size};
+}
+
+buffer hex2buf(std::string_view hex) {
+    return buffer{std::move(Botan::hex_decode(hex))};
 }
 
 static std::string head(std::span<uint8_t> data);

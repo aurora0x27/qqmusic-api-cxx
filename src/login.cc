@@ -72,7 +72,7 @@ qqmusic::Task<qqmusic::Result<QRCode>> get_qrcode(QRLoginType login_type) {
                 std::format("[get_qrcode] -- Error occurred when performing https request: `{}`",
                             res.unwrapErr().what())));
         }
-        auto data = utils::to_buffer(res.unwrap());
+        auto data = utils::resp2buf(res.unwrap());
         auto qrsig_res = context.cookies.get("qrsig");
         auto qrsig = qrsig_res.unwrap();
         if (qrsig_res.isErr()) {
@@ -148,7 +148,7 @@ qqmusic::Task<qqmusic::Result<QRCode>> get_qrcode(QRLoginType login_type) {
                 std::format("[get_qrcode] -- Error occurred when performing https request: `{}`",
                             qr_result.unwrapErr().what())));
         }
-        auto image = utils::to_buffer(qr_result.unwrap());
+        auto image = utils::resp2buf(qr_result.unwrap());
         co_return Ok(QRCode{.qr_type = QRLoginType::WX,
                             .identifier = uuid,
                             .mimie_type = "image/jpeg",
@@ -402,7 +402,7 @@ qqmusic::Task<qqmusic::Result<PhoneLoginResult>> send_authcode(std::string_view 
                         res.unwrapErr().what())));
     }
 
-    auto resp_parse_res = api.parse_response(utils::to_buffer(res.unwrap()));
+    auto resp_parse_res = api.parse_response(utils::resp2buf(res.unwrap()));
     if (resp_parse_res.isErr()) {
         co_return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::DataDestroy,
                                                 "[send_authcode] -- Cannot parse response"));
@@ -456,7 +456,7 @@ qqmusic::Task<qqmusic::Result<utils::Credential>> phone_authorize(std::string_vi
             std::format("[phone_authorize] -- Network Error when request for credential: `{}`",
                         res.unwrapErr().what())));
     }
-    auto resp_parse_res = api.parse_response(utils::to_buffer(res.unwrap()));
+    auto resp_parse_res = api.parse_response(utils::resp2buf(res.unwrap()));
     if (resp_parse_res.isErr()) {
         co_return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::DataDestroy,
                                                 "[phone_authorize] -- Cannot parse response"));
@@ -661,7 +661,7 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::Credential>> auth_qq_qr(std
                         credential_res.unwrapErr().what())));
     }
 
-    auto credential_raw_res = api.parse_response(qqmusic::utils::to_buffer(credential_res.unwrap()));
+    auto credential_raw_res = api.parse_response(qqmusic::utils::resp2buf(credential_res.unwrap()));
     if (credential_raw_res.isErr()) {
         co_return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::DataDestroy,
                                                 "[auth_qq_qr] -- Cannot parse response"));
@@ -713,7 +713,7 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::Credential>> auth_wx_qr(std
                         credential_res.unwrapErr().what())));
     }
 
-    auto credential_raw_res = api.parse_response(qqmusic::utils::to_buffer(credential_res.unwrap()));
+    auto credential_raw_res = api.parse_response(qqmusic::utils::resp2buf(credential_res.unwrap()));
     if (credential_raw_res.isErr()) {
         co_return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::DataDestroy,
                                                 "[auth_wx_qr] -- Cannot parse response"));
