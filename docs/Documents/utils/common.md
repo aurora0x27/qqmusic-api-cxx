@@ -15,12 +15,24 @@ std::string sign(const nlohmann::json& params);
 将原始的请求转换成通用buffer
 
 ```cpp
-buffer to_buffer(http::response<http::dynamic_body>&& resp);
+buffer resp2buf(http::response<http::dynamic_body>&& resp);
+```
+
+## ***fn*** hex2buf
+
+将十六进制的字符串转换成二进制buffer
+
+```cpp
+buffer hex2buf(std::string_view hex);
 ```
 
 ## ***fn*** qrc_decode
 
 解码加密的QRC歌词
+
+!!! note "枚举值cloud和local"
+
+    其中local与cloud的区别是local需要进行qmc1解码, 并丢弃前11个字节, cloud是直接处理
 
 ```cpp
 enum class qrc_type { cloud, local };

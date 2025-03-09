@@ -1,3 +1,5 @@
-# Album
+---
+title: Album
+---
 
 专辑
