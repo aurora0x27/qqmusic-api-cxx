@@ -1,10 +1,14 @@
-#include <qqmusic/utils/common.h>
-#include <iostream>
 #include <qmtest/test-login.h>
 #include <qqmusic/utils/async-executor.h>
+#include <qqmusic/utils/common.h>
 #include <qqmusic/utils/cookie.h>
 
 int main(int argc, char** argv) {
+     /* "name": "嘘つきは恋のはじまり"
+     * "vid": "0144lJK0051IdY", "010t16G52AiN8Y", "011xz2ZN2qYxMs"
+     * "id" : 61386,
+     * "mid": "003ktdcg3E4kaG"
+     */
     if (argc != 2) {
         std::cout << "Usage: " << argv[0] << " [qq|wx|ph]" << std::endl;
         return 1;

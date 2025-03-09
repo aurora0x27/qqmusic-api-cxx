@@ -1,7 +1,7 @@
-#include "qqmusic/utils/buffer.h"
 #include <qqmusic/details/api.h>
 #include <qqmusic/lyric.h>
 #include <qqmusic/result.h>
+#include <qqmusic/utils/buffer.h>
 #include <qqmusic/utils/common.h>
 #include <qqmusic/utils/session.h>
 
@@ -33,7 +33,6 @@ Task<Result<Lyric>> get_lyric(std::string_view mid, bool qrc, bool trans, bool r
 
     auto url = req_res.unwrap().url;
     auto req = req_res.unwrap().req;
-    req.prepare_payload();
     auto response_res = co_await session.perform_request(url, req);
     if (response_res.isErr()) {
         co_return Err(utils::Exception(
