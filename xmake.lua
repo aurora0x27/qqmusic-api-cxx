@@ -49,6 +49,10 @@ vcpkg("zlib")
 vcpkg("openssl")
 vcpkg("nlohmann-json")
 
+if is_mode("debug") then
+    add_rules("plugin.vsxmake.autoupdate")
+end
+
 target("qmapi")
     set_kind("shared")
     add_files("src/*.cc", 

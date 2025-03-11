@@ -1,7 +1,9 @@
 #include <boost/asio/buffer.hpp>
 #include <boost/uuid/detail/md5.hpp>
+#include <botan/auto_rng.h>
 #include <botan/base64.h>
 #include <botan/hex.h>
+#include <cmath>
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
@@ -11,6 +13,7 @@
 #include <qqmusic/utils/buffer.h>
 #include <qqmusic/utils/common.h>
 #include <span>
+#include <string>
 #include <zlib.h>
 
 namespace qqmusic::utils {
@@ -344,6 +347,46 @@ uint64_t hash33(std::string_view str, uint64_t prev) {
     }
 
     return 2147483647 & h;
+}
+
+std::string get_search_id() {
+    Botan::AutoSeeded_RNG rng;
+
+    /*random unsigned long long generator*/
+    auto randull = [&rng]() -> uint64_t {
+        uint64_t res = 0;
+        std::vector<uint8_t> buffer(sizeof(res));
+        rng.randomize(buffer);
+        memcpy(&res, buffer.data(), sizeof(res));
+        return res;
+    };
+
+    auto e = randull() % 20;
+    auto t = e * 18014398509481984;
+    auto n = (randull() % 4194304) * 4294967296;
+
+#ifdef PLATFORM_APPLE
+    auto now = std::chrono::system_clock::now();
+    auto now_time_t = std::chrono::system_clock::to_time_t(now);
+    auto duration = now.time_since_epoch() % 1000;
+    auto millis = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(duration)
+                      .count();
+    std::tm local_tm{};
+    localtime_r(&now_time_t, &local_tm);
+    auto seconds = mktime(&local_tm);
+    double ts = static_cast<double>(seconds) * 1000.0 + millis;
+#else
+    std::chrono::time_point<std::chrono::system_clock> tp{std::chrono::system_clock::now()};
+    auto zoned_time = std::chrono::zoned_time{std::chrono::current_zone(), tp};
+    double ts = std::chrono::duration<double, std::milli>(
+                    zoned_time.get_local_time().time_since_epoch())
+                    .count();
+#endif
+
+    uint64_t a = lround(ts);
+    auto r = a % (24 * 60 * 60 * 1000);
+
+    return std::to_string(t + n + r);
 }
 
 } // namespace qqmusic::utils

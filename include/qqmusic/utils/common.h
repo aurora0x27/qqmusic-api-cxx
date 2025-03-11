@@ -28,6 +28,8 @@ qqmusic::Result<std::string> qrc_decode(const qqmusic::utils::buffer& src,
 /*get hash value of utf-8 string*/
 uint64_t hash33(std::string_view str, uint64_t prev = 0);
 
+std::string get_search_id();
+
 } // namespace qqmusic::utils
 
 #endif // !QQMUSIC_UTILS_COMMON_H
