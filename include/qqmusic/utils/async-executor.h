@@ -78,25 +78,25 @@ public:
     AsyncExecutor& operator=(const AsyncExecutor&) = delete;
     static AsyncExecutor& get_instance();
 
-    template<typename T, BOOST_ASIO_COMPLETION_TOKEN_FOR(void(T&)) CompletionCallback>
+    template<typename T, BOOST_ASIO_COMPLETION_TOKEN_FOR(void(T&&)) CompletionCallback>
     void async_exec(qqmusic::Task<T> task, CompletionCallback&& callback) {
+        std::optional<T> result;
+        std::exception_ptr exception;
+
+        std::function<void(std::exception_ptr, std::optional<T>)> handler =
+            [&](std::exception_ptr e, std::optional<T> value) {
+                if (e) {
+                    exception = e;
+                } else {
+                    result.emplace(std::move(*value));
+                }
+            };
+
         boost::asio::co_spawn(ioc,
-                              std::move(task),
-                              [callback = std::forward<CompletionCallback>(
-                                   callback)](std::exception_ptr e, T value) {
-                                  if (!e) {
-                                      callback(std::move(value));
-                                  } else {
-                                      try {
-                                          std::rethrow_exception(e);
-                                      } catch (const std::exception& ex) {
-                                          /* TODO: get a logger*/
-                                          std::cout << std::format("Exception in async task: {}",
-                                                                   ex.what())
-                                                    << std::endl;
-                                      }
-                                  }
-                              });
+                              custom_co_spawn_entry_point(std::move(task), handler),
+                              boost::asio::detached);
+
+        callback(std::move(result.value()));
     }
 
     /*void specialization*/
@@ -123,7 +123,7 @@ public:
 
     /*async execute task with time limit*/
     template<typename T,
-             BOOST_ASIO_COMPLETION_TOKEN_FOR(void(T&)) CompletionCallback,
+             BOOST_ASIO_COMPLETION_TOKEN_FOR(void(T&&)) CompletionCallback,
              BOOST_ASIO_COMPLETION_TOKEN_FOR(void()) TimeoutCallback>
     void async_exec(qqmusic::Task<T> task,
                     CompletionCallback&& callback,
@@ -198,6 +198,43 @@ public:
                 std::cout << std::format("Exception in async task: {}", ec.what()) << std::endl;
             }
         });
+    }
+
+    template<typename T>
+    auto when_all(std::vector<boost::asio::awaitable<T>> tasks)
+        -> boost::asio::awaitable<std::vector<T>> {
+        std::vector<std::shared_ptr<std::promise<T>>> promises;
+        std::vector<std::future<T>> futures;
+
+        promises.reserve(tasks.size());
+        futures.reserve(tasks.size());
+
+        for (auto& task : tasks) {
+            auto promise = std::make_shared<std::promise<T>>();
+            futures.push_back(promise->get_future());
+
+            boost::asio::co_spawn(
+                ioc,
+                [task = std::move(task), promise]() mutable -> boost::asio::awaitable<void> {
+                    try {
+                        T result = co_await std::move(task);
+                        promise->set_value(std::move(result));
+                    } catch (...) {
+                        promise->set_exception(std::current_exception());
+                    }
+                },
+                boost::asio::detached);
+
+            promises.push_back(std::move(promise));
+        }
+
+        std::vector<T> results;
+        results.reserve(tasks.size());
+        for (auto& fut : futures) {
+            results.push_back(std::move(fut.get()));
+        }
+
+        co_return results;
     }
 
     void shutdown();

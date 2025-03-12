@@ -9,6 +9,8 @@
 
 namespace qqmusic {
 
+/**
+ * */
 enum class SearchType : unsigned {
     SONG = 0,
     SINGER = 1,
