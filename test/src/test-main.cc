@@ -1,4 +1,3 @@
-#include "qqmusic/singer.h"
 #include <qmtest/test-login.h>
 #include <qqmusic/search.h>
 #include <qqmusic/utils/async-executor.h>

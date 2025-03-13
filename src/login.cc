@@ -5,6 +5,7 @@
 #include <boost/uuid/uuid_io.hpp>
 #include <botan/auto_rng.h>
 #include <chrono>
+#include <cmath>
 #include <ctime>
 #include <qqmusic/details/api.h>
 #include <qqmusic/login.h>
@@ -303,11 +304,12 @@ qqmusic::Task<qqmusic::Result<QRCodeLoginResult>> check_wx_qr(QRCode& qrc) {
     auto zoned_time = std::chrono::zoned_time{std::chrono::current_zone(), tp};
     double ts = std::chrono::duration<double, std::milli>(
                     zoned_time.get_local_time().time_since_epoch())
-                    .count();
+                    .count()
+                / 1000;
 #endif
 
     boost::url url{"https://lp.open.weixin.qq.com/connect/l/qrconnect"};
-    url.set_params({{"uuid", uuid}, {"_", std::to_string(ts)}});
+    url.set_params({{"uuid", uuid}, {"_", std::to_string(lround(ts) * 1000)}});
 
     http::request<http::string_body> req{http::verb::get, url, 11};
     req.set(http::field::host, url.host());
@@ -343,7 +345,7 @@ qqmusic::Task<qqmusic::Result<QRCodeLoginResult>> check_wx_qr(QRCode& qrc) {
 
     int wx_errcode = 0;
     try {
-        int wx_errcode = std::stoi(match[1].str());
+        wx_errcode = std::stoi(match[1].str());
     } catch (const std::exception&) {
         /*Not a number*/
         co_return Ok(QRCodeLoginResult{QRCodeLoginEvent::Status::OTHER, std::nullopt});
@@ -367,7 +369,7 @@ qqmusic::Task<qqmusic::Result<QRCodeLoginResult>> check_wx_qr(QRCode& qrc) {
         co_return Ok(QRCodeLoginResult{event, credential_res.unwrap()});
     }
 
-    co_return Err(utils::Exception(utils::Exception::UnknownError, "Not implemented yet"));
+    co_return Ok(QRCodeLoginResult({event, std::nullopt}));
 }
 
 qqmusic::Task<qqmusic::Result<PhoneLoginResult>> send_authcode(std::string_view phone,

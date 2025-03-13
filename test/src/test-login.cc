@@ -67,6 +67,7 @@ static qqmusic::Task<bool> qq_qr_login() {
     auto qr_res = co_await get_qrcode(QRLoginType::QQ);
     if (qr_res.isErr()) {
         std::cout << "Cannot get QR Code" << std::endl;
+        std::cout << qr_res.unwrapErr().what() << std::endl;
         co_return true;
     }
 
@@ -124,6 +125,7 @@ static qqmusic::Task<bool> wx_qr_login() {
     auto qr_res = co_await get_qrcode(QRLoginType::WX);
     if (qr_res.isErr()) {
         std::cout << "Cannot get QR Code" << std::endl;
+        std::cout << qr_res.unwrapErr().what() << std::endl;
         co_return true;
     }
 
