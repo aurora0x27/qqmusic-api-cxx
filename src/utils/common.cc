@@ -26,7 +26,7 @@ buffer resp2buf(http::response<http::dynamic_body>&& resp) {
 }
 
 buffer hex2buf(std::string_view hex) {
-    return buffer{std::move(Botan::hex_decode(hex))};
+    return buffer{Botan::hex_decode(hex)};
 }
 
 static std::string head(std::span<uint8_t> data);
@@ -151,7 +151,7 @@ static std::string middle(std::span<uint8_t> data) {
     size_t size = data.size();
     std::vector<unsigned char> res;
     unsigned int j = 0;
-    for (int i = 0; i < size; i += 2) {
+    for (size_t i = 0; i < size; i += 2) {
         unsigned char one = zd(data[i]);
         unsigned char two = zd(data[i + 1]);
         unsigned char r = one * 16 ^ two;
@@ -229,7 +229,7 @@ qqmusic::Result<std::string> qrc_decode(const buffer& src, qrc_type type) {
 static int decompress(const buffer& src, buffer& dest) {
     // prepare receive buffer
     size_t tmp_dest_size = src.size() * 4;
-    uint8_t* tmp_dest_head = (uint8_t*) malloc(tmp_dest_size);
+    auto tmp_dest_head = (uint8_t*) malloc(tmp_dest_size);
 
     // prepare input buffer
     size_t src_size = src.size();

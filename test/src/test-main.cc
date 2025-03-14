@@ -1,5 +1,6 @@
 #include <qmtest/test-login.h>
 #include <qqmusic/search.h>
+#include <qqmusic/song.h>
 #include <qqmusic/utils/async-executor.h>
 #include <qqmusic/utils/common.h>
 #include <qqmusic/utils/cookie.h>

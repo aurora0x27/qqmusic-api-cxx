@@ -164,7 +164,6 @@ qqmusic::Task<qqmusic::Result<QRCodeLoginResult>> check_qq_qr(QRCode& qrc) {
                                        "[check_qq_qr] -- Not a QQ login QRCode"));
     }
     auto session = utils::SessionManager::get_instance().get_session();
-    auto& context = session.get_context_ref();
     auto qrsig = qrc.identifier;
 
     /*zoned time cannot be used on MacOS platform yet*/
@@ -237,7 +236,7 @@ qqmusic::Task<qqmusic::Result<QRCodeLoginResult>> check_qq_qr(QRCode& qrc) {
         std::regex item_pat{R"REGEX(\'([^,']*)\')REGEX"};
         std::smatch item_match;
         while (std::regex_search(list1, item_match, item_pat)) {
-            items.push_back(std::move(item_match[1].str()));
+            items.push_back(item_match[1].str());
             list1 = item_match.suffix().str();
         }
     } else {
@@ -286,7 +285,6 @@ qqmusic::Task<qqmusic::Result<QRCodeLoginResult>> check_wx_qr(QRCode& qrc) {
                                        "[check_qq_qr] -- Not a WX login QRCode"));
     }
     auto session = utils::SessionManager::get_instance().get_session();
-    auto& context = session.get_context_ref();
     auto uuid = qrc.identifier;
 
 #ifdef PLATFORM_APPLE
@@ -375,7 +373,6 @@ qqmusic::Task<qqmusic::Result<QRCodeLoginResult>> check_wx_qr(QRCode& qrc) {
 qqmusic::Task<qqmusic::Result<PhoneLoginResult>> send_authcode(std::string_view phone,
                                                                std::string_view country_code) {
     auto session = utils::SessionManager::get_instance().get_session();
-    auto& context = session.get_context_ref();
     auto api = details::Api(session,
                             "music.login.LoginServer",
                             "SendPhoneAuthCode",
@@ -435,7 +432,6 @@ qqmusic::Task<qqmusic::Result<utils::Credential>> phone_authorize(std::string_vi
                                                                   std::string_view auth_code,
                                                                   std::string_view country_code) {
     auto session = utils::SessionManager::get_instance().get_session();
-    auto& context = session.get_context_ref();
     auto api = details::Api(session,
                             "music.login.LoginServer",
                             "Login",
@@ -678,7 +674,6 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::Credential>> auth_qq_qr(std
 
 static qqmusic::Task<qqmusic::Result<qqmusic::utils::Credential>> auth_wx_qr(std::string_view code) {
     auto session = qqmusic::utils::SessionManager::get_instance().get_session();
-    auto& context = session.get_context_ref();
     auto api = qqmusic::details::Api(session,
                                      "music.login.LoginServer",
                                      "Login",

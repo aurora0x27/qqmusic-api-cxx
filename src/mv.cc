@@ -6,7 +6,6 @@
 #include <qqmusic/utils/common.h>
 #include <qqmusic/utils/session.h>
 #include <string>
-#include <utility>
 
 namespace qqmusic {
 
@@ -122,7 +121,7 @@ Task<Result<std::vector<MvUrl>>> get_mv_urls(std::span<std::string> vids) {
                 res[type] = url_info["freeflow_url"][0].get<std::string>();
             }
         }
-        return std::move(res);
+        return res;
     };
     auto data = data_res.unwrap();
     for (auto& i : data.items()) {
@@ -134,8 +133,8 @@ Task<Result<std::vector<MvUrl>>> get_mv_urls(std::span<std::string> vids) {
 
         MvUrl item;
         item.vid = i.key();
-        item.mp4 = std::move(get_play_urls(i.value()["mp4"]));
-        item.hls = std::move(get_play_urls(i.value()["hls"]));
+        item.mp4 = get_play_urls(i.value()["mp4"]);
+        item.hls = get_play_urls(i.value()["hls"]);
         res.push_back(item);
     }
     co_return Ok(res);

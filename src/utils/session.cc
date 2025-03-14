@@ -28,9 +28,9 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_https
 namespace qqmusic::utils {
 
 SessionManager::SessionManager()
-    : ssl_ctx(std::make_shared<asio::ssl::context>(asio::ssl::context::tlsv12_client))
+    : ctx(qqmusic::details::NetworkContext())
     , ioc(std::make_shared<asio::io_context>())
-    , ctx(qqmusic::details::NetworkContext()) {
+    , ssl_ctx(std::make_shared<asio::ssl::context>(asio::ssl::context::tlsv12_client)) {
     ssl_ctx->set_default_verify_paths();
 }
 
@@ -42,7 +42,7 @@ SessionManager& SessionManager::get_instance() {
 }
 
 Session SessionManager::get_session() {
-    return std::move(Session(ctx, ioc, ssl_ctx, lock));
+    return {ctx, ioc, ssl_ctx, lock};
 }
 
 void SessionManager::set_context(const qqmusic::details::NetworkContext& context) {
@@ -189,7 +189,6 @@ qqmusic::Task<qqmusic::Result<HttpResponse>> Session::handle_http_request(
                     }
                     auto cookie_dict = cookie_res.unwrap();
                     std::string domain, path = "/";
-                    auto domain_field = req.base().find(http::field::host);
                     if (cookie_dict.contains("Domain")) {
                         domain = cookie_dict["Domain"].get<std::string>();
                         cookie_dict.erase("Domain");
@@ -352,7 +351,6 @@ qqmusic::Task<qqmusic::Result<HttpResponse>> Session::handle_https_request(
                     }
                     auto cookie_dict = cookie_res.unwrap();
                     std::string domain, path = "/";
-                    auto domain_field = req.base().find(http::field::host);
                     if (cookie_dict.contains("Domain")) {
                         domain = cookie_dict["Domain"].get<std::string>();
                         cookie_dict.erase("Domain");
@@ -558,7 +556,6 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_http_
                             }
                             auto cookie_dict = cookie_res.unwrap();
                             std::string domain, path = "/";
-                            auto domain_field = req.base().find(http::field::host);
                             if (cookie_dict.contains("Domain")) {
                                 domain = cookie_dict["Domain"].get<std::string>();
                                 cookie_dict.erase("Domain");
@@ -814,7 +811,6 @@ static qqmusic::Task<qqmusic::Result<qqmusic::utils::HttpResponse>> handle_https
                             }
                             auto cookie_dict = cookie_res.unwrap();
                             std::string domain, path = "/";
-                            auto domain_field = req.base().find(http::field::host);
                             if (cookie_dict.contains("Domain")) {
                                 domain = cookie_dict["Domain"].get<std::string>();
                                 cookie_dict.erase("Domain");

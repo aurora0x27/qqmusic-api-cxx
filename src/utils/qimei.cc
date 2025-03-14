@@ -60,7 +60,6 @@ qqmusic::Result<qqmusic::utils::QimeiResult> qqmusic::utils::get_qimei(
             std::vector<uint8_t> buffer(sizeof(randi));
             rng.randomize(buffer);
             memcpy(&randi, buffer.data(), sizeof(randi));
-            uint64_t idx = randi % 16;
             std::vector<char> res(len);
             for (auto& i : res) {
                 rng.randomize(buffer);

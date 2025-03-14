@@ -39,9 +39,9 @@ struct NetworkContext {
 
     /*constructor*/
     NetworkContext()
-        : timeout(20)
+        : verify(false)
         , ignore_ssl_error(false)
-        , verify(false) {
+        , timeout(20) {
         api_config = ApiConfig();
         auto device_res = qqmusic::utils::get_device_info();
         if (device_res.isErr()) {

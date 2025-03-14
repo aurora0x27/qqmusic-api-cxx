@@ -127,7 +127,7 @@ Task<Result<nlohmann::json>> get_singer_list_index_all(AreaType area,
     unsigned pages = total / 80;
     std::vector<Task<Result<nlohmann::json>>> tasks;
     for (unsigned i = 2, sin = 80; i < pages + 2; ++i, sin += 80) {
-        tasks.push_back(std::move(get_singer_list_index(area, gender, genre, index, sin, i)));
+        tasks.push_back(get_singer_list_index(area, gender, genre, index, sin, i));
     }
 
     auto& async_executor = utils::AsyncExecutor::get_instance();
@@ -234,7 +234,7 @@ Task<Result<nlohmann::json>> get_tab_detail(std::string_view mid,
     }
 }
 
-Task<Result<nlohmann::json>> get_singer_desc(std::vector<std::string> mids, unsigned number) {
+Task<Result<nlohmann::json>> get_singer_desc(std::span<std::string> mids, unsigned number) {
     auto session = utils::SessionManager::get_instance().get_session();
     auto api = details::Api(session, "music.musichallSinger.SingerInfoInter", "GetSingerDetail");
     nlohmann::json params = {{"singer_mids", mids}, {"groups", 1}, {"wikis", 1}};
@@ -377,7 +377,7 @@ Task<Result<nlohmann::json>> get_songs_list_all(std::string_view mid) {
 
     std::vector<Task<Result<nlohmann::json>>> tasks;
     for (unsigned i = 30; i < total; i += 30) {
-        tasks.push_back(std::move(get_songs_list(mid, 30, i)));
+        tasks.push_back(get_songs_list(mid, 30, i));
     }
 
     auto& async_executor = utils::AsyncExecutor::get_instance();
@@ -464,7 +464,7 @@ Task<Result<nlohmann::json>> get_album_list_all(std::string_view mid) {
 
     std::vector<Task<Result<nlohmann::json>>> tasks;
     for (unsigned i = 30; i < total; i += 30) {
-        tasks.push_back(std::move(get_album_list(mid, 30, i)));
+        tasks.push_back(get_album_list(mid, 30, i));
     }
 
     auto& async_executor = utils::AsyncExecutor::get_instance();
@@ -543,7 +543,7 @@ Task<Result<nlohmann::json>> get_mv_list_all(std::string_view mid) {
 
     std::vector<Task<Result<nlohmann::json>>> tasks;
     for (unsigned i = 100; i < total; i += 100) {
-        tasks.push_back(std::move(get_mv_list(mid, 100, i)));
+        tasks.push_back(get_mv_list(mid, 100, i));
     }
 
     auto& async_executor = utils::AsyncExecutor::get_instance();

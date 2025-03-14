@@ -19,16 +19,16 @@ Task<Result<nlohmann::json>> get_album_detail(std::string_view album_mid) {
     auto api = details::Api(session, "music.musichallAlbum.AlbumInfoServer", "GetAlbumDetail");
     nlohmann::json params = {{"albumMId", album_mid}};
 
-    auto req_param_res = co_await api.prepare_request(params);
-    if (req_param_res.isErr()) {
+    auto req_data = co_await api.prepare_request(params);
+    if (req_data.isErr()) {
         co_return Err(utils::Exception(
-            utils::Exception::Kind(req_param_res.unwrapErr().get_error_enum()),
+            utils::Exception::Kind(req_data.unwrapErr().get_error_enum()),
             std::format("[get_album_detail] -- Error occurred when preparing request: `{}`",
-                        req_param_res.unwrapErr().what())));
+                        req_data.unwrapErr().what())));
     }
 
-    auto url = req_param_res.unwrap().url;
-    auto req = req_param_res.unwrap().req;
+    auto url = req_data.unwrap().url;
+    auto req = req_data.unwrap().req;
     auto response_res = co_await session.perform_request(url, req);
     if (response_res.isErr()) {
         co_return Err(utils::Exception(
@@ -37,15 +37,15 @@ Task<Result<nlohmann::json>> get_album_detail(std::string_view album_mid) {
                         response_res.unwrapErr().what())));
     }
 
-    auto response_json_res = api.parse_response(utils::resp2buf(response_res.unwrap()));
-    if (response_json_res.isErr()) {
+    auto resp = api.parse_response(utils::resp2buf(response_res.unwrap()));
+    if (resp.isErr()) {
         co_return Err(utils::Exception(
             utils::Exception::DataDestroy,
             std::format("[get_album_detail] -- Error occurred when parsing reponse: `{}`",
-                        response_json_res.unwrapErr().what())));
+                        resp.unwrapErr().what())));
     }
-    auto response_json = response_json_res.unwrap();
-    co_return Ok(response_json);
+    auto data = resp.unwrap();
+    co_return Ok(data);
 }
 
 Task<Result<nlohmann::json>> get_album_detail(uint64_t album_id) {
@@ -54,33 +54,33 @@ Task<Result<nlohmann::json>> get_album_detail(uint64_t album_id) {
 
     nlohmann::json params = {{"albumId", album_id}};
 
-    auto req_param_res = co_await api.prepare_request(params);
-    if (req_param_res.isErr()) {
+    auto req_data = co_await api.prepare_request(params);
+    if (req_data.isErr()) {
         co_return Err(utils::Exception(
-            utils::Exception::Kind(req_param_res.unwrapErr().get_error_enum()),
+            utils::Exception::Kind(req_data.unwrapErr().get_error_enum()),
             std::format("[get_album_detail] -- Error occurred when preparing request: `{}`",
-                        req_param_res.unwrapErr().what())));
+                        req_data.unwrapErr().what())));
     }
 
-    auto url = req_param_res.unwrap().url;
-    auto req = req_param_res.unwrap().req;
-    auto response_res = co_await session.perform_request(url, req);
-    if (response_res.isErr()) {
+    auto url = req_data.unwrap().url;
+    auto req = req_data.unwrap().req;
+    auto response = co_await session.perform_request(url, req);
+    if (response.isErr()) {
         co_return Err(utils::Exception(
             utils::Exception::NetworkError,
             std::format("[get_album_detail] -- Error occurred when performing request: `{}`",
-                        response_res.unwrapErr().what())));
+                        response.unwrapErr().what())));
     }
 
-    auto response_json_res = api.parse_response(utils::resp2buf(response_res.unwrap()));
-    if (response_json_res.isErr()) {
+    auto resp = api.parse_response(utils::resp2buf(response.unwrap()));
+    if (resp.isErr()) {
         co_return Err(utils::Exception(
             utils::Exception::DataDestroy,
             std::format("[get_album_detail] -- Error occurred when parsing reponse: `{}`",
-                        response_json_res.unwrapErr().what())));
+                        resp.unwrapErr().what())));
     }
-    auto response_json = response_json_res.unwrap();
-    co_return Ok(response_json);
+    auto data = resp.unwrap();
+    co_return Ok(data);
 }
 
 Task<Result<nlohmann::json>> get_album_songs(std::string_view album_mid,
@@ -95,16 +95,16 @@ Task<Result<nlohmann::json>> get_album_songs(std::string_view album_mid,
         {"albumMid", album_mid},
     };
 
-    auto req_param_res = co_await api.prepare_request(params);
-    if (req_param_res.isErr()) {
+    auto req_data = co_await api.prepare_request(params);
+    if (req_data.isErr()) {
         co_return Err(utils::Exception(
-            utils::Exception::Kind(req_param_res.unwrapErr().get_error_enum()),
+            utils::Exception::Kind(req_data.unwrapErr().get_error_enum()),
             std::format("[get_album_songs] -- Error occurred when preparing request: `{}`",
-                        req_param_res.unwrapErr().what())));
+                        req_data.unwrapErr().what())));
     }
 
-    auto url = req_param_res.unwrap().url;
-    auto req = req_param_res.unwrap().req;
+    auto url = req_data.unwrap().url;
+    auto req = req_data.unwrap().req;
     auto response_res = co_await session.perform_request(url, req);
     if (response_res.isErr()) {
         co_return Err(utils::Exception(
@@ -113,12 +113,12 @@ Task<Result<nlohmann::json>> get_album_songs(std::string_view album_mid,
                         response_res.unwrapErr().what())));
     }
 
-    auto response_json_res = api.parse_response(utils::resp2buf(response_res.unwrap()));
-    if (response_json_res.isErr()) {
+    auto resp = api.parse_response(utils::resp2buf(response_res.unwrap()));
+    if (resp.isErr()) {
         co_return Err(utils::Exception(response_res.unwrapErr()));
     }
-    auto response_json = response_json_res.unwrap();
-    co_return Ok(response_json["songList"]);
+    auto data = resp.unwrap();
+    co_return Ok(data["songList"]);
 }
 
 Task<Result<nlohmann::json>> get_album_songs(uint64_t album_id,
@@ -133,16 +133,16 @@ Task<Result<nlohmann::json>> get_album_songs(uint64_t album_id,
         {"albumId", album_id},
     };
 
-    auto req_param_res = co_await api.prepare_request(params);
-    if (req_param_res.isErr()) {
+    auto req_data = co_await api.prepare_request(params);
+    if (req_data.isErr()) {
         co_return Err(utils::Exception(
-            utils::Exception::Kind(req_param_res.unwrapErr().get_error_enum()),
+            utils::Exception::Kind(req_data.unwrapErr().get_error_enum()),
             std::format("[get_album_songs] -- Error occurred when preparing request: `{}`",
-                        req_param_res.unwrapErr().what())));
+                        req_data.unwrapErr().what())));
     }
 
-    auto url = req_param_res.unwrap().url;
-    auto req = req_param_res.unwrap().req;
+    auto url = req_data.unwrap().url;
+    auto req = req_data.unwrap().req;
     auto response_res = co_await session.perform_request(url, req);
     if (response_res.isErr()) {
         co_return Err(utils::Exception(
@@ -151,12 +151,12 @@ Task<Result<nlohmann::json>> get_album_songs(uint64_t album_id,
                         response_res.unwrapErr().what())));
     }
 
-    auto response_json_res = api.parse_response(utils::resp2buf(response_res.unwrap()));
-    if (response_json_res.isErr()) {
+    auto resp = api.parse_response(utils::resp2buf(response_res.unwrap()));
+    if (resp.isErr()) {
         co_return Err(utils::Exception(response_res.unwrapErr()));
     }
-    auto response_json = response_json_res.unwrap();
-    co_return Ok(response_json["songList"]);
+    auto data = resp.unwrap();
+    co_return Ok(data["songList"]);
 }
 
 } // namespace qqmusic

@@ -58,7 +58,7 @@ Task<Result<Lyric>> get_lyric(std::string_view mid, bool qrc, bool trans, bool r
 
     Lyric res{};
 
-    utils::buffer lyric_buf{std::move(utils::hex2buf(data["lyric"].get<std::string>()))};
+    utils::buffer lyric_buf{utils::hex2buf(data["lyric"].get<std::string>())};
     if (lyric_buf.size() == 0) {
         co_return Err(utils::Exception(
             utils::Exception::DataDestroy,
@@ -72,7 +72,7 @@ Task<Result<Lyric>> get_lyric(std::string_view mid, bool qrc, bool trans, bool r
     }
     res.lyric = lyric_res.unwrap();
 
-    utils::buffer trans_buf{std::move(utils::hex2buf(data["trans"].get<std::string>()))};
+    utils::buffer trans_buf{utils::hex2buf(data["trans"].get<std::string>())};
     if (trans && trans_buf.size()) {
         auto trans_res = utils::qrc_decode(trans_buf, utils::qrc_type::cloud);
         if (trans_res.isErr()) {
@@ -83,7 +83,7 @@ Task<Result<Lyric>> get_lyric(std::string_view mid, bool qrc, bool trans, bool r
         res.trans = trans_res.unwrap();
     }
 
-    utils::buffer roma_buf{std::move(utils::hex2buf(data["roma"].get<std::string>()))};
+    utils::buffer roma_buf{utils::hex2buf(data["roma"].get<std::string>())};
     if (roma && roma_buf.size()) {
         auto roma_res = utils::qrc_decode(roma_buf, utils::qrc_type::cloud);
         if (roma_res.isErr()) {
@@ -149,7 +149,7 @@ Task<Result<Lyric>> get_lyric(uint64_t id, bool qrc, bool trans, bool roma) {
 
     Lyric res{};
 
-    utils::buffer lyric_buf{std::move(utils::hex2buf(data["lyric"].get<std::string>()))};
+    utils::buffer lyric_buf{utils::hex2buf(data["lyric"].get<std::string>())};
     if (lyric_buf.size() == 0) {
         co_return Err(utils::Exception(
             utils::Exception::DataDestroy,
@@ -163,7 +163,7 @@ Task<Result<Lyric>> get_lyric(uint64_t id, bool qrc, bool trans, bool roma) {
     }
     res.lyric = lyric_res.unwrap();
 
-    utils::buffer trans_buf{std::move(utils::hex2buf(data["trans"].get<std::string>()))};
+    utils::buffer trans_buf{utils::hex2buf(data["trans"].get<std::string>())};
     if (trans && trans_buf.size()) {
         auto trans_res = utils::qrc_decode(trans_buf, utils::qrc_type::cloud);
         if (trans_res.isErr()) {
@@ -174,7 +174,7 @@ Task<Result<Lyric>> get_lyric(uint64_t id, bool qrc, bool trans, bool roma) {
         res.trans = trans_res.unwrap();
     }
 
-    utils::buffer roma_buf{std::move(utils::hex2buf(data["roma"].get<std::string>()))};
+    utils::buffer roma_buf{utils::hex2buf(data["roma"].get<std::string>())};
     if (roma && roma_buf.size()) {
         auto roma_res = utils::qrc_decode(roma_buf, utils::qrc_type::cloud);
         if (roma_res.isErr()) {

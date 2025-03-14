@@ -113,7 +113,7 @@ qqmusic::Task<qqmusic::Result<bool>> Credential::is_expired() {
         case Exception::CredendialExpiredError:
             co_return Ok(true);
         case Exception::SignInvalidError:
-            co_return Err(std::move(json_res.unwrapErr()));
+            co_return Err(json_res.unwrapErr());
         default:
             co_return Ok(false);
         }
@@ -153,7 +153,7 @@ qqmusic::Task<qqmusic::Result<void>> Credential::refresh() {
 
     auto json_res = api.parse_response(resp2buf(response_res.unwrap()));
     if (json_res.isErr()) {
-        co_return Err(std::move(json_res.unwrapErr()));
+        co_return Err(json_res.unwrapErr());
     }
 
     auto json = json_res.unwrap();

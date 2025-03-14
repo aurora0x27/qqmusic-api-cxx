@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_TOOLCHAIN_FILE $ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake)
+set(CMAKE_CXX_FLAGS "-Wall ${CMAKE_CXX_FLAGS}")
 
 project(qqmusic_api_cxx LANGUAGES CXX)
 file(GLOB_RECURSE QQMUSIC_API_SOURCE CONFIGURE_DEPENDS src/*.cc src/utils/*.cc src/details/*.cc)

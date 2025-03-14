@@ -91,6 +91,8 @@ enum class IndexType : int {
 };
 
 /**
+ * @class TabType
+ *
  * @brief 标签类
  */
 class TabType {
@@ -114,11 +116,11 @@ public:
      * @brief 使用枚举值初始化标签类
      *
      * @param type 标签类型枚举
+     *
      * @throws 若提供的枚举值不合法, 则抛出`std::runtime_error`
      */
     TabType() = delete;
-    TabType(Type type)
-        : type(type) {
+    TabType(Type type) {
         auto it = tab_data.find(type);
         if (it == tab_data.end()) {
             throw std::runtime_error("Unexpected TabType enum");
@@ -141,8 +143,6 @@ public:
     std::string get_name() const { return inner.tab_name; }
 
 private:
-    Type type; ///< 标签类型枚举
-
     /**
      * @brief 标签信息结构
      */
@@ -270,7 +270,7 @@ Task<Result<nlohmann::json>> get_tab_detail(std::string_view mid,
  * @see TabType
  * @note 异步函数, 返回`Task`
  * */
-Task<Result<nlohmann::json>> get_singer_desc(std::vector<std::string> mids, unsigned number = 10);
+Task<Result<nlohmann::json>> get_singer_desc(std::span<std::string> mids, unsigned number = 10);
 
 /**
  * @brief 获取相似歌手信息

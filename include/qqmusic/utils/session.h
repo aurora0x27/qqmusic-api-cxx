@@ -40,11 +40,11 @@ public:
             std::shared_ptr<asio::io_context> ioc_ptr,
             std::shared_ptr<asio::ssl::context> ssl_ctx_ptr,
             std::mutex& lock)
-        : global_ctx(nc)
+        : lock(lock)
+        , global_ctx(nc)
         , local_ctx(nc)
         , ioc(std::move(ioc_ptr))
-        , ssl_ctx(std::move(ssl_ctx_ptr))
-        , lock(lock){};
+        , ssl_ctx(std::move(ssl_ctx_ptr)) {};
 
     /*get local context reference*/
     qqmusic::details::NetworkContext& get_context_ref();
