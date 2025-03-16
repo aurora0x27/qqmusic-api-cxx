@@ -1,4 +1,3 @@
-#include <fstream>
 #include <qmtest/test-login.h>
 #include <qqmusic/search.h>
 #include <qqmusic/song.h>
@@ -59,17 +58,20 @@ int main(int argc, char** argv) {
 //         return 1;
 //     }
 //     auto credential = qqmusic::utils::Credential(oss.str());
-//     std::vector<uint64_t> songids = {
-//         102176361, 104797698, 333975089, 230393569, 557104539, 201118980, 235176425, 293676135,
-//         105503807, 105302677, 104701120, 201431302, 105392046, 468977148, 202791044, 368406201,
-//         551086959, 238837519, 557104494, 556784880, 488446536, 235208691, 433114352, 553433944,
-//         468977147, 545778586, 403884461, 405443755, 326274773
-//     };
-//     auto res = qqmusic::utils::sync_exec(qqmusic::songlist_add_songs(2, songids, credential));
-//     if (res.isErr()) {
-//         std::cout << "Error: " << res.unwrapErr().what() << std::endl;
-//         return 1;
-//     }
-//     std::cout << res.unwrap() << std::endl;
+//     std::cout << oss.str() << std::endl;
+//     std::cout << credential.to_string().unwrap() << std::endl;
+// 
+//     // std::vector<uint64_t> songids = {
+//     //     102176361, 104797698, 333975089, 230393569, 557104539, 201118980, 235176425, 293676135,
+//     //     105503807, 105302677, 104701120, 201431302, 105392046, 468977148, 202791044, 368406201,
+//     //     551086959, 238837519, 557104494, 556784880, 488446536, 235208691, 433114352, 553433944,
+//     //     468977147, 545778586, 403884461, 405443755, 326274773
+//     // };
+//     // auto res = qqmusic::utils::sync_exec(qqmusic::songlist_add_songs(2, songids, credential));
+//     // if (res.isErr()) {
+//     //     std::cout << "Error: " << res.unwrapErr().what() << std::endl;
+//     //     return 1;
+//     // }
+//     // std::cout << res.unwrap() << std::endl;
 //     return 0;
 // }

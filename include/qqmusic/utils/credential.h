@@ -14,8 +14,19 @@ namespace qqmusic::utils {
 class Credential {
 public:
     Credential() = default;
+
+    /* construct from cookie string */
     explicit Credential(std::string_view cookie);
+
+    /* construct from cookie string */
     explicit Credential(nlohmann::json& cookie);
+
+    /* construct from cached string */
+    bool from_cache(std::string_view cache);
+
+    /* construct from cached json */
+    bool from_cache(nlohmann::json& cache);
+
     bool is_valid() const;
     qqmusic::Task<qqmusic::Result<bool>> is_expired();
     qqmusic::Task<qqmusic::Result<void>> refresh();

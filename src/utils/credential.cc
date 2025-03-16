@@ -86,6 +86,49 @@ Credential::Credential(std::string_view cookie) {
     }
 }
 
+bool Credential::from_cache(std::string_view cache) {
+    /*Write back the update result*/
+    try {
+        auto data = nlohmann::json::parse(cache);
+        data.at("openid").get_to(openid);
+        data.at("refresh_token").get_to(refresh_token);
+        data.at("access_token").get_to(access_token);
+        data.at("expired_at").get_to(expired_at);
+        data.at("musicid").get_to(musicid);
+        data.at("unionid").get_to(unionid);
+        data.at("str_musicid").get_to(str_musicid);
+        data.at("musickey").get_to(musickey);
+        data.at("refresh_key").get_to(refresh_key);
+        data.at("encryptUin").get_to(encryptUin);
+        data.at("loginType").get_to(loginType);
+        data.at("extra_fields").get_to(extra_fields);
+    } catch (const std::exception& e) {
+        return true;
+    }
+    return false;
+}
+
+bool Credential::from_cache(nlohmann::json& cache) {
+    /*Write back the update result*/
+    try {
+        cache.at("openid").get_to(openid);
+        cache.at("refresh_token").get_to(refresh_token);
+        cache.at("access_token").get_to(access_token);
+        cache.at("expired_at").get_to(expired_at);
+        cache.at("musicid").get_to(musicid);
+        cache.at("unionid").get_to(unionid);
+        cache.at("str_musicid").get_to(str_musicid);
+        cache.at("musickey").get_to(musickey);
+        cache.at("refresh_key").get_to(refresh_key);
+        cache.at("encryptUin").get_to(encryptUin);
+        cache.at("loginType").get_to(loginType);
+        cache.at("extra_fields").get_to(extra_fields);
+    } catch (const std::exception& e) {
+        return true;
+    }
+    return false;
+}
+
 bool Credential::is_valid() const {
     if (musickey.size() == 0 || musicid == 0) {
         /*credential have no musickey or musicid is not valid*/
