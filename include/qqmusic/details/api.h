@@ -43,10 +43,16 @@ public:
         nlohmann::json common = {{}})
         : session(session)
         , module(std::move(module))
-        , method(std::move(method)){};
+        , method(std::move(method)){
+        if (credential.is_valid()) {
+            this->credential = credential;
+        } else if (session.get_context_ref().credential.is_valid()) {
+            this->credential = session.get_context_ref().credential;
+        }
+    };
 
     /*prepare request by given infomation*/
-    qqmusic::Task<qqmusic::Result<RequestParam>> prepare_request(const nlohmann::json& params);
+    qqmusic::Task<qqmusic::Result<RequestParam>> prepare_request(const nlohmann::json& params, bool verify = false);
 
     /*parse result buffer to json format*/
     qqmusic::Result<nlohmann::json> parse_response(utils::buffer&& response);

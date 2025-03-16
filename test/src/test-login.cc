@@ -25,6 +25,7 @@ qqmusic::Task<bool> test_qr_login(qqmusic::QRLoginType type) {
 
 qqmusic::Task<bool> test_phone_login() {
     std::string phone_num;
+    std::cout << "Input Your Phone Number: +86 ";
     std::cin >> phone_num;
     auto res = co_await send_authcode(phone_num);
     if (res.isErr()) {
@@ -36,6 +37,7 @@ qqmusic::Task<bool> test_phone_login() {
     if (event == PhoneLoginEvent::CAPTCHA) {
         std::cout << "Need captcha, please open this url in browser: " << phone_login_result.msg
                   << std::endl;
+        co_return true;
     } else if (event == PhoneLoginEvent::FREQUENCY) {
         std::cout << "Operation too frequetly" << std::endl;
         co_return true;

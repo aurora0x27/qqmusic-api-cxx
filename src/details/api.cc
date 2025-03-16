@@ -1,4 +1,5 @@
 #include <boost/beast/http/message.hpp>
+#include <cstdlib>
 #include <nlohmann/json.hpp>
 #include <qqmusic/details/api.h>
 #include <qqmusic/result.h>
@@ -35,7 +36,8 @@ qqmusic::Result<nlohmann::json> Api::parse_response(utils::buffer&& response) {
     }
 }
 
-qqmusic::Task<qqmusic::Result<RequestParam>> Api::prepare_request(const nlohmann::json& params) {
+qqmusic::Task<qqmusic::Result<RequestParam>> Api::prepare_request(const nlohmann::json& params,
+                                                                  bool verify) {
     try {
         auto& context = session.get_context_ref();
         common = {
@@ -50,14 +52,21 @@ qqmusic::Task<qqmusic::Result<RequestParam>> Api::prepare_request(const nlohmann
             {"uid", "3931641530"},
         };
 
-        /*load this->credential first, if invalid, choose the one in context*/
-        if (!credential.is_valid()) {
-            credential = context.credential;
-
-            /*set credential relative fields*/
-            common["qq"] = std::to_string(credential.musicid);
-            common["authst"] = credential.musickey;
-            common["tmeLoginType"] = std::to_string(credential.loginType);
+        /* need credential only if verify is true */
+        if (verify) {
+            std::cout << "Setting credential related values" << std::endl;
+            if (credential.is_valid()) {
+                std::cout << "the credential is valid" << std::endl;
+                /* set credential relative fields */
+                common.push_back({"qq", std::to_string(credential.musicid)});
+                common.push_back({"authst", credential.musickey});
+                common.push_back({"tmeLoginType", std::to_string(credential.loginType)});
+            } else {
+                /* Error: Not given valid credential */
+                co_return Err(utils::Exception(utils::Exception::CredentialInvalidError,
+                                               "[Api::prepare_request] -- `verify` is set, but not "
+                                               "provided with valid credential"));
+            }
         }
 
         /*Build request data*/

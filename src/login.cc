@@ -393,6 +393,7 @@ qqmusic::Task<qqmusic::Result<PhoneLoginResult>> send_authcode(std::string_view 
 
     auto url = req_res.unwrap().url;
     auto req = req_res.unwrap().req;
+    req.base().erase(boost::beast::http::field::cookie);
     auto res = co_await session.perform_request(url, req);
     if (res.isErr()) {
         co_return Err(qqmusic::utils::Exception(
@@ -407,19 +408,21 @@ qqmusic::Task<qqmusic::Result<PhoneLoginResult>> send_authcode(std::string_view 
                                                 "[send_authcode] -- Cannot parse response"));
     }
 
-    auto resp = resp_parse_res.unwrap();
+    auto raw_result = nlohmann::json::parse(
+        utils::resp2buf(res.unwrap()))["music.login.LoginServer.SendPhoneAuthCode"];
     try {
-        int64_t code = resp["code"].get<int64_t>();
+        int64_t code = raw_result["code"].get<int64_t>();
         switch (code) {
         case 0:
             co_return Ok(PhoneLoginResult{PhoneLoginEvent::SEND, ""});
         case 20276:
-            co_return Ok(PhoneLoginResult{PhoneLoginEvent::CAPTCHA, resp["data"]["securityURL"]});
+            co_return Ok(
+                PhoneLoginResult{PhoneLoginEvent::CAPTCHA, raw_result["data"]["securityURL"]});
         case 100001:
             co_return Ok(PhoneLoginResult{PhoneLoginEvent::FREQUENCY, ""});
         default:
             /*Error*/
-            co_return Ok(PhoneLoginResult{PhoneLoginEvent::OTHER, resp["data"]["errMsg"]});
+            co_return Ok(PhoneLoginResult{PhoneLoginEvent::OTHER, raw_result["data"]["errMsg"]});
         }
     } catch (const std::exception& e) {
         co_return Err(utils::Exception(
@@ -437,8 +440,11 @@ qqmusic::Task<qqmusic::Result<utils::Credential>> phone_authorize(std::string_vi
                             "Login",
                             {},
                             {{"tmeLoginMethod", "3"}, {"tmeLoginType", "0"}});
-    auto req_res = co_await api.prepare_request(
-        {{"code", auth_code}, {"phoneNo", phone}, {"areaCode", country_code}, {"loginMode", 1}});
+    auto req_res = co_await api.prepare_request(nlohmann::json{{"code", auth_code},
+                                                               {"phoneNo", phone},
+                                                               {"areaCode", country_code},
+                                                               {"loginMode", 1}});
+
     if (req_res.isErr()) {
         co_return Err(utils::Exception(
             qqmusic::utils::Exception::DataDestroy,
@@ -447,6 +453,7 @@ qqmusic::Task<qqmusic::Result<utils::Credential>> phone_authorize(std::string_vi
     }
     auto url = req_res.unwrap().url;
     auto req = req_res.unwrap().req;
+    req.base().erase(boost::beast::http::field::cookie);
     auto res = co_await session.perform_request(url, req);
     if (res.isErr()) {
         co_return Err(qqmusic::utils::Exception(
@@ -454,17 +461,14 @@ qqmusic::Task<qqmusic::Result<utils::Credential>> phone_authorize(std::string_vi
             std::format("[phone_authorize] -- Network Error when request for credential: `{}`",
                         res.unwrapErr().what())));
     }
-    auto resp_parse_res = api.parse_response(utils::resp2buf(res.unwrap()));
-    if (resp_parse_res.isErr()) {
-        co_return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::DataDestroy,
-                                                "[phone_authorize] -- Cannot parse response"));
-    }
-    auto resp = resp_parse_res.unwrap();
+
     try {
-        int64_t code = resp["code"].get<int64_t>();
+        auto raw_result = nlohmann::json::parse(
+            utils::resp2buf(res.unwrap()))["music.login.LoginServer.Login"];
+        int64_t code = raw_result["code"].get<int64_t>();
         switch (code) {
         case 0:
-            co_return Ok(utils::Credential(resp["data"]));
+            co_return Ok(utils::Credential(raw_result["data"]));
         case 20271:
             co_return Err(
                 utils::Exception(utils::Exception::LoginError,
@@ -476,11 +480,10 @@ qqmusic::Task<qqmusic::Result<utils::Credential>> phone_authorize(std::string_vi
                                  "[phone_authorize] -- Authorize failed for unknown error"));
         }
     } catch (const std::exception& e) {
-        co_return Err(utils::Exception(
-            utils::Exception::JsonError,
-            "[send_authcode] -- Cannot parse security url or error message from json"));
+        co_return Err(
+            utils::Exception(utils::Exception::JsonError,
+                             "[phone_authorize] -- Cannot parse Credential from response data"));
     }
-    co_return Err(utils::Exception(utils::Exception::UnknownError, "Not implemented yet"));
 }
 
 } // namespace qqmusic

@@ -12,8 +12,7 @@
 namespace qqmusic::utils {
 
 /* NOTE: Assume that only loginType and musickey field can be defaulted*/
-Credential::Credential(nlohmann::json& cookie)
-    : Credential() {
+Credential::Credential(nlohmann::json& cookie) {
     /*Write back the update result*/
     cookie.at("openid").get_to(openid);
     cookie.erase("openid");
@@ -49,8 +48,43 @@ Credential::Credential(nlohmann::json& cookie)
     }
 }
 
-Credential::Credential(std::string_view cookie)
-    : Credential(nlohmann::json::parse(cookie)) {}
+// TODO: is there a way to delete the repeat code here ?
+Credential::Credential(std::string_view cookie) {
+    auto data = nlohmann::json::parse(cookie);
+    /*Write back the update result*/
+    data.at("openid").get_to(openid);
+    data.erase("openid");
+    data.at("refresh_token").get_to(refresh_token);
+    data.erase("refresh_token");
+    data.at("access_token").get_to(access_token);
+    data.erase("access_token");
+    data.at("expired_at").get_to(expired_at);
+    data.erase("expired_at");
+    data.at("musicid").get_to(musicid);
+    data.erase("musicid");
+    data.at("unionid").get_to(unionid);
+    data.erase("unionid");
+    data.at("str_musicid").get_to(str_musicid);
+    data.erase("str_musicid");
+    data.at("musickey").get_to(musickey);
+    data.erase("musickey");
+    data.at("refresh_key").get_to(refresh_key);
+    data.erase("refresh_key");
+    data.at("encryptUin").get_to(encryptUin);
+    data.erase("encryptUin");
+    data.at("loginType").get_to(loginType);
+    data.erase("loginType");
+    extra_fields = data;
+    if (data.contains("musickey")) {
+        musickey = data["musickey"].get<std::string>();
+
+        if (!data.contains("loginType") && musickey.substr(0, 3) == "W_X") {
+            loginType = 1;
+        } else {
+            loginType = 2;
+        }
+    }
+}
 
 bool Credential::is_valid() const {
     if (musickey.size() == 0 || musicid == 0) {
