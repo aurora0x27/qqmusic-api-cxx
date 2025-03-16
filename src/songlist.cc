@@ -1,7 +1,7 @@
 #include <format>
 #include <qqmusic/details/api.h>
 #include <qqmusic/result.h>
-#include <qqmusic/song_lists.h>
+#include <qqmusic/songlist.h>
 #include <qqmusic/utils/async-executor.h>
 #include <qqmusic/utils/common.h>
 #include <qqmusic/utils/session.h>

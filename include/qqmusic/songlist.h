@@ -1,5 +1,5 @@
-/**--------------------------qqmusic/song_lists.h-------------------------------
- * @file include/qqmusic/song_lists.h
+/**----------------------------qqmusic/songlist.h-------------------------------
+ * @file include/qqmusic/songlists.h
  *
  * @brief 歌单相关API
  *
@@ -8,8 +8,8 @@
  * @warn 歌单名称不应该包含表情包等特殊字符, 否则会导致实际操作完成, 
  * 但是json解析返回值错误
  *----------------------------------------------------------------------------*/
-#ifndef QQMUSIC_SONG_LISTS_H
-#define QQMUSIC_SONG_LISTS_H
+#ifndef QQMUSIC_SONG_LIST_H
+#define QQMUSIC_SONG_LIST_H
 
 #include <cstdint>
 #include <qqmusic/result.h>
@@ -41,4 +41,4 @@ Task<Result<bool>> songlist_delete_songs(uint64_t dirid,
                                          std::optional<utils::Credential> credential);
 } // namespace qqmusic
 
-#endif // !QQMUSIC_SONG_LISTS_H
+#endif // !QQMUSIC_SONG_LIST_H

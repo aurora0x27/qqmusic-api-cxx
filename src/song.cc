@@ -551,7 +551,6 @@ Task<Result<nlohmann::json>> get_related_mv(uint64_t songid, std::optional<std::
         co_return Err(utils::Exception(utils::Exception::JsonError,
                                        "[get_related_mv] -- Cannot get `list` from data"));
     }
-    co_return Err(utils::Exception(utils::Exception::UnknownError, "Not implemented"));
 }
 
 Task<Result<nlohmann::json>> get_other_version(std::string_view mid) {
