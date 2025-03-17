@@ -27,18 +27,19 @@ Task<Result<nlohmann::json>> get_songlist_detail(uint64_t songlist_id,
 
 Task<Result<nlohmann::json>> get_songlist(uint64_t songlist_id, unsigned dirid);
 
-Task<Result<nlohmann::json>> songlist_create(std::string_view dirname,
-                                             std::optional<utils::Credential> credential);
+Task<Result<nlohmann::json>> songlist_create(
+    std::string_view dirname, std::optional<utils::Credential> credential = std::nullopt);
 
-Task<Result<bool>> songlist_delete(uint64_t dirid, std::optional<utils::Credential> credential);
+Task<Result<bool>> songlist_delete(uint64_t dirid,
+                                   std::optional<utils::Credential> credential = std::nullopt);
 
 Task<Result<bool>> songlist_add_songs(uint64_t dirid,
                                       std::span<uint64_t> song_ids,
-                                      std::optional<utils::Credential> credential);
+                                      std::optional<utils::Credential> credential = std::nullopt);
 
 Task<Result<bool>> songlist_delete_songs(uint64_t dirid,
                                          std::span<uint64_t> song_ids,
-                                         std::optional<utils::Credential> credential);
+                                         std::optional<utils::Credential> credential = std::nullopt);
 } // namespace qqmusic
 
 #endif // !QQMUSIC_SONG_LIST_H

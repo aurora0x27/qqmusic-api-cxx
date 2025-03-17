@@ -54,9 +54,7 @@ qqmusic::Task<qqmusic::Result<RequestParam>> Api::prepare_request(const nlohmann
 
         /* need credential only if verify is true */
         if (verify) {
-            std::cout << "Setting credential related values" << std::endl;
             if (credential.is_valid()) {
-                std::cout << "the credential is valid" << std::endl;
                 /* set credential relative fields */
                 common.push_back({"qq", std::to_string(credential.musicid)});
                 common.push_back({"authst", credential.musickey});
