@@ -13,10 +13,11 @@ out/
 # vcpkg installed
 vcpkg_installed/
 
-# debug data
-demo/main.cc
+# cache dir
+cache
 
 # log file
+log/
 *.log
 
 # executable
@@ -33,3 +34,6 @@ demo/main.cc
 # shared lib
 *.dll
 *.so
+
+# xmake cache dir
+.xmake/

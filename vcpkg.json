@@ -1,14 +1,13 @@
 {
-	"name": "qmapi",
-	"dependencies": [
-		{
-			"name": "zlib"
-		},
-		{
-		    "name": "curl"
-		},
-		{
-		    "name": "jsoncpp"
-		}
-	]
+    "name": "qmapi",
+    "dependencies": [
+        "zlib",
+        "boost-asio",
+        "boost-beast",
+        "boost-url",
+        "boost-uuid",
+        "nlohmann-json",
+        "openssl",
+        "botan"
+    ]
 }
