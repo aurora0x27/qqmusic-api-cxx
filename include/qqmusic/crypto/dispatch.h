@@ -15,6 +15,7 @@
 #include <functional>
 #include <qqmusic/crypto/qmc.h>
 #include <string>
+#include <string_view>
 #include <vector>
 
 namespace qqmusic::crypto {
@@ -22,13 +23,14 @@ namespace qqmusic::crypto {
 class Decoder;
 
 using DecoderFactory = struct {
-    std::string suffix;                                                 ///< 目标后缀
+    std::string_view suffix;                                            ///< 目标后缀
     std::function<std::unique_ptr<Decoder>(const std::string&)> create; ///< 工厂函数
 };
 
-inline std::vector<DecoderFactory> decoder_registry;                 ///< 全局注册表
-inline void registry_decoder(std::stirng suffix, auto create_func) { ///< 注册函数
-    decoder_registry.emplace_back(std::move(suffix), create_func);
+inline std::vector<DecoderFactory> decoder_registry;                        ///< 全局注册表
+inline void registry_decoder(std::stirng_view suffix, auto&& create_func) { ///< 注册函数
+    decoder_registry.emplace_back(
+        DecoderFactory{suffix, std::forward < decltype(create_func > (create_func))});
 }
 
 } // namespace qqmusic::crypto
