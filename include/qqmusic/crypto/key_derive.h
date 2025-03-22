@@ -88,4 +88,4 @@ private:
 
 } // namespace qqmusic::crypto
 
-#endif // QQMUSIC_CRYPTO_KEY_DERIVE_H
+#endif // !QQMUSIC_CRYPTO_KEY_DERIVE_H

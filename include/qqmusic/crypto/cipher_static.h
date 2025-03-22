@@ -80,4 +80,4 @@ private:
 
 } // namespace qqmusic::crypto
 
-#endif // QQ_MUSIC_CIPHER_STATIC_H
+#endif // !QQ_MUSIC_CIPHER_STATIC_H

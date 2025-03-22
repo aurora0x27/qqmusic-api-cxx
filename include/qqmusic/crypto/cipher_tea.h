@@ -33,7 +33,7 @@ namespace qqmusic::crypto {
 /**
  * @brief TEA解密核心实现类
  * 
- * 封装符合QQ音乐规范的TEA解密操作，支持自定义解密轮次。解密过程修改输入缓冲区内容，
+ * 封装符合QQ音乐规范的TEA解密操作，支持自定义解密轮次。解密过程修改输入缓冲区内容
  */
 class TeaCipher {
 public:
@@ -55,10 +55,6 @@ public:
      * @brief 执行块解密操作
      * @param inout 输入输出缓冲区
      * @return qqmusic::Result<void> 解密结果
-     * 
-     * 要求输入缓冲区长度为8的倍数，原地修改缓冲区内容。解密失败时返回错误码：
-     * - DataDestroy: 输入长度无效
-     * - CryptoError: 解密校验失败
      */
     qqmusic::Task<qqmusic::Result<void>> decrypt(const uint8_t* src, uint8_t* dest) const {
         uint32_t v0 = load_u32(dest);
@@ -97,4 +93,4 @@ private:
 
 } // namespace qqmusic::crypto
 
-#endif // QQ_MUSIC_CIPHER_TEA_H
+#endif // !QQ_MUSIC_CIPHER_TEA_H

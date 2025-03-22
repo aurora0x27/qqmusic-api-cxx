@@ -81,4 +81,4 @@ private:
 
 } // namespace qqmusic::crypto
 
-#endif // QQ_MUSIC_CIPHER_MAP_H
+#endif // !QQ_MUSIC_CIPHER_MAP_H

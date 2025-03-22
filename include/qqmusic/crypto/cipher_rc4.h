@@ -155,4 +155,4 @@ private:
 
 } // namespace qqmusic::crypto
 
-#endif // QQMUSIC_CRYPTO_CIPHER_RC4_H
+#endif // !QQMUSIC_CRYPTO_CIPHER_RC4_H
