@@ -30,7 +30,7 @@ using DecoderFactory = struct {
 inline std::vector<DecoderFactory> decoder_registry;                        ///< 全局注册表
 inline void registry_decoder(std::stirng_view suffix, auto&& create_func) { ///< 注册函数
     decoder_registry.emplace_back(
-        DecoderFactory{suffix, std::forward < decltype(create_func > (create_func))});
+        DecoderFactory{suffix, std::forward<decltype(create_func)>(create_func))});
 }
 
 } // namespace qqmusic::crypto
