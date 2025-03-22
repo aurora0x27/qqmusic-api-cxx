@@ -40,7 +40,7 @@ public:
         box.resize(size_);
         std::iota(box.begin(), box.end(), 0);
 
-        // KSA 密钥调度算法
+        // KSA key scheduling algorithm
         [this]() {
             size_t j = 0;
             for (size_t i = 0; i < size_; ++i) {
@@ -49,7 +49,7 @@ public:
             }
         }();
 
-        // 计算哈希值
+        // Calculate hash value
         hash_base = 1;
         [this]() {
             for (auto k : key) {
@@ -81,7 +81,7 @@ public:
             return buf.empty();
         };
 
-        // 处理首个特殊段
+        // process first segment
         if (offset < FirstSegmentSize) {
             if (process_block([this](auto* buf,
                                      auto len,
@@ -90,7 +90,6 @@ public:
                 return;
         }
 
-        // 处理对齐段
         if (offset % SegmentSize != 0) {
             const auto remain = SegmentSize - (offset % SegmentSize);
             if (process_block([this](auto* buf,
@@ -100,14 +99,13 @@ public:
                 return;
         }
 
-        // 处理完整段
         while (process_block([this](auto* buf,
                                     auto len,
                                     auto off) { this->enc_a_segment(buf, len, off); },
                              SegmentSize)) {
         }
 
-        // 处理剩余数据
+        // process last segment
         if (!data.empty()) {
             enc_a_segment(buf.data(), buf.size(), offset);
         }
@@ -116,19 +114,19 @@ public:
     }
 
 private:
-    // 首个特殊段加密
+    // Encrypt first special segment
     void enc_first_segment(qqmusic::utils::buffer& buf, size_t len, size_t offset) const {
         for (size_t i = 0; i < len; ++i) {
             buf[i] ^= key[calc_segment_skip(offset + i)];
         }
     }
 
-    // 常规段加密
+    // Encrypt regular segment
     void enc_a_segment(qqmusic::utils::buffer& buf, size_t len, size_t offset) const {
         auto local_box = box;
         size_t j = 0, k = 0;
         const auto skip_len = (offset % SegmentSize) + calc_segment_skip(offset / SegmentSize);
-        // 前向跳跃
+        // Forward skipping
         for (int i = -skip_len; i < static_cast<int>(len); ++i) {
             j = (j + i) % size_;
             k = (local_box[j] + k) % size_;
@@ -139,7 +137,7 @@ private:
         }
     }
 
-    // 跳跃值计算
+    // Skip value calculation
     size_t calc_segment_skip(size_t id) const noexcept {
         const auto seed = key[id % size_];
         const auto idx = static_cast<size_t>((hash_base / ((id + 1) * seed)) * 100.0);

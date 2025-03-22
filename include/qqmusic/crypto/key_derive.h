@@ -15,7 +15,7 @@
  * @copyright Copyright (c) 2025
  * @see https://git.unlock-music.dev/um/cli/src/branch/main/algo/qmc/key_derive.go
  * @code{.cc}
- * std::vector<uint8_t> encrypted_key = {...}; // 原始加密密钥
+ * SecureByteVector encrypted_key = {...}; // 原始加密密钥
  * auto real_key = qqmusic::crypto::KeyDrive::derive(encrypted_key);
  * @endcode
  */

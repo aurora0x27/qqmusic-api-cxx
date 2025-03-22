@@ -3,7 +3,7 @@
  * @author kingpoem
  * @brief TEA算法解密实现
  * @version 0.1
- * @date 2025-03-16
+ * @date 2025-03-22
  * 
  * 实现QQ音乐加密格式使用的TEA变种算法，支持32轮解密操作。包含密钥派生体系的核心解密逻辑。
  * 与工程中现有的RC4/mapCipher解密器共享相同的内存管理策略和异常处理机制。
@@ -11,7 +11,6 @@
  * @copyright Copyright (c) 2025
  * @see https://git.unlock-music.dev/um/cli/src/branch/main/algo/qmc/key_derive.go
  * @code{.cc}
- * // 示例：解密V2密钥
  * std::vector<uint8_t> encrypted = GetEncryptedKey();
  * auto tea = qqmusic::crypto::TeaCipher(deriveV2Key1, 32);
  * auto stage1 = tea.decrypt(encrypted);

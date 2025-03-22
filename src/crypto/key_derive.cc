@@ -3,7 +3,7 @@
  * @author kingpoem
  * @brief QQ音乐密钥派生算法实现
  * @version 0.1
- * @date 2025-03-16
+ * @date 2025-03-22
  * 包含V1/V2两种密钥派生方案，使用TEA算法进行数据解密
  *
  * 原始输入 → rawKey (base64编码)
@@ -67,21 +67,12 @@ qqmusic::Task<qqmusic::Result<SecureByteVector>> KeyDerive::derive(const SecureB
  * 4. 使用TEA算法解密核心数据块（原始密钥8字节之后的数据）
  * 5. 拼接原始密钥头(8字节) + 解密数据（可变长度） → 最终音频密钥 raw_key_dec + decrypt_res
  * 
- * @param raw_key_dec 经过Base64解码的中间密钥数据，可能包含：
+ * @param raw_key_dec 经过Base64解码的中间密钥数据，包含：
  *                    - V2流程处理后的解密数据
  *                    - 直接输入的V1密钥数据
  *                    @b 最小长度：16字节
  * 
- * @return qqmusic::Result<SecureByteVector> 返回结果包含：
- *         - Ok状态：包含最终音频密钥的SecureByteVector
- *         - Err状态：包含以下可能的错误类型：
- *           * DataDestroy::KeyTooShort 密钥长度不足
- *           * DataDestroy::TEADecryptFailed TEA解密失败
- * 
- * @note 安全特性：
- * - 使用SecureByteVector保障密钥内存安全
- * - 密钥头保留用于完整性校验
- * - TEA算法迭代轮数固定为32轮
+ * @return qqmusic::Result<SecureByteVector>
  */
 qqmusic::Result<SecureByteVector> KeyDerive::derive_V1(const SecureByteVector& raw_key_dec) {
     // Check key length (minimum 16 bytes)
