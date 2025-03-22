@@ -1,7 +1,7 @@
 /**
  * @file cipher_rc4.h
  * @author kingpoem
- * @brief 
+ * @brief cipher_rc4
  * @version 0.1
  * @date 2025-03-16
  * 

@@ -52,10 +52,10 @@ public:
      * 直接对缓冲区里的数据进行解密，解密出来的歌词结果和元数据存在一个结构体里
      * @param buf 输入/输出缓冲区
      * @param offset 数据在文件中的起始偏移量
-     * @return qqmusic::Task<qqmusic::Result<void>>
+     * @return qqmusic::Task<void>
      * @todo 返回值应该是一个包含解密数据和元数据的结构体
      */
-    static qqmusic::Task<qqmusic::Result<void>> decrypt(qqmusic::utils::buffer& buf, size_t offset) {
+    static qqmusic::Task<void> decrypt(qqmusic::utils::buffer& buf, size_t offset) {
         const auto rotate = [](uint8_t value, uint8_t bits) {
             const uint8_t r = (bits + 4) % 8;
             return (value << r) | (value >> (8 - r));

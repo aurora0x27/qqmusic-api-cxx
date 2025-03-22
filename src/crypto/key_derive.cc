@@ -176,7 +176,7 @@ qqmusic::Result<SecureByteVector> KeyDerive::decrypt_tencent_tea(const SecureByt
 
     // Decrypt first block
     SecureByteVector dest_buf(8);
-    auto _res = tea.decrypt(in_buf.data(), dest_buf.data());
+    auto res = tea.decrypt(in_buf.data(), dest_buf.data());
     const uint8_t pad_len = dest_buf[0] & 0x7;
     const size_t out_len = in_buf.size() - 1 - pad_len - salt_len - zero_len;
 

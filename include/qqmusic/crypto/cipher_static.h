@@ -27,7 +27,7 @@ class StaticCipher {
 public:
     StaticCipher() = default;
 
-    qqmusic::Task<qqmusic::Result<void>> decrypt(qqmusic::utils::buffer& buf, size_t offset) const {
+    qqmusic::Task<void> decrypt(qqmusic::utils::buffer& buf, size_t offset) const {
         for (size_t i = 0; i < buf.size(); ++i) {
             const auto calc_offset = offset + i;
             const auto mask = [&] {

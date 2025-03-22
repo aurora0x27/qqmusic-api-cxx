@@ -53,10 +53,9 @@ public:
 
     /**
      * @brief 执行块解密操作
-     * @param inout 输入输出缓冲区
      * @return qqmusic::Result<void> 解密结果
      */
-    qqmusic::Task<qqmusic::Result<void>> decrypt(const uint8_t* src, uint8_t* dest) const {
+    qqmusic::Task<void> decrypt(const uint8_t* src, uint8_t* dest) const {
         uint32_t v0 = load_u32(dest);
         uint32_t v1 = load_u32(dest + 4);
         uint32_t sum = 0x9E3779B9 * m_rounds;
@@ -71,7 +70,7 @@ public:
 
         store_u32(dest, v0);
         store_u32(dest + 4, v1);
-        co_return Ok();
+        co_return;
     }
 
 private:
