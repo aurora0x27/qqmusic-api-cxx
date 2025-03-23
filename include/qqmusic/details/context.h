@@ -1,7 +1,12 @@
-/*------------------------qqmusic/details/context.h-----------------------------
- * class NetworkContext provide global shared api info.
- * Also provide global default context
- *-----------------------------------------------------------------------------*/
+/**----------------------------------qqmusic/details/context.h--------------------------------------
+ *
+ * @file qqmusic/details/context.h
+ *
+ * @brief Api上下文定义
+ *
+ * @date 2025-3-25
+ *
+ *------------------------------------------------------------------------------------------------*/
 #ifndef QQMUSIC_DETAILS_CONTEXT_H
 #define QQMUSIC_DETAILS_CONTEXT_H
 
@@ -15,17 +20,42 @@
 
 namespace qqmusic::details {
 
+/**
+ * @brief Api版本号
+ * */
 const char VERSION[] = "13.2.5.8";
+
+/**
+ * @brief 版本代码
+ * */
 const uint64_t VERSION_CODE = 13020508;
 
+/**
+ * @brief Api相关常量
+ * */
 struct ApiConfig {
     std::string version = VERSION;
     uint64_t version_code = VERSION_CODE;
+
+    /**
+     * @brief 请求参数是否需要签名
+     * */
     bool enable_sign = false;
+
+    /**
+     * @brief 未加密接口url
+     * */
     std::string endpoint = "https://u.y.qq.com/cgi-bin/musicu.fcg";
+
+    /**
+     * @brief 加密接口url
+     * */
     std::string enc_endpoint = "https://u.y.qq.com/cgi-bin/musics.fcg";
 };
 
+/**
+ * @brief 打包的上下文
+ * */
 struct NetworkContext {
     /*Globally shared vars*/
     qqmusic::utils::CookieJar cookies;

@@ -1,9 +1,12 @@
-/*--------------------------utils/async-executor.h------------------------------
- * Provide a simple scheduler by default, if your project has ui loop or other
- * event loop, implement a scheduler yourself.
+/**----------------------------------qqmusic/utils/async-executor.h---------------------------------
  *
- * Asynchronously execute asynchronous api and handle callbacks
- *-----------------------------------------------------------------------------*/
+ * @file qqmusic/utils/async-executor.h
+ *
+ * @brief 提供了一个默认的简单协程调度器, 以及同步执行异步函数的方法.
+ *
+ * @date 2025-3-21
+ *
+ *------------------------------------------------------------------------------------------------*/
 #ifndef QQMUSIC_UTILS_ASYNC_EXECUTOR_H
 #define QQMUSIC_UTILS_ASYNC_EXECUTOR_H
 
@@ -14,11 +17,24 @@
 #include <boost/asio/use_future.hpp>
 #include <exception>
 #include <qqmusic/result.h>
+#include <stdexcept>
 #include <thread>
 #include <utility>
 
 namespace qqmusic::utils {
 
+/**
+ * @brief Result<>不能进行拷贝, 也没有默认构造函数. boost::asio::co_spawn中会调用默认构造函数.
+ *        所以需要包装原本的异步任务, 使用移动构造函数来构造result
+ *
+ * @param aw 异步任务
+ * @param handler 回调函数
+ *
+ * @note 回调函数的签名是`void(std::exception_ptr, std::optional<T>)`, 前一个参数是处理异常的,
+ *       后一个参数是正常的返回结果. 如果出错, 则返回结果的`std::optional`置空
+ *
+ * @see qqmusic::Result
+ * */
 /*custom co_spawn entry point to avoid using deleted default Result<T> constructor*/
 template<typename T, typename Executor>
 boost::asio::awaitable<void> custom_co_spawn_entry_point(
@@ -32,9 +48,19 @@ boost::asio::awaitable<void> custom_co_spawn_entry_point(
     }
 }
 
-/*synchronously execute the task and get reslt, need io_context*/
+/**
+ * @brief 同步执行异步函数
+ *
+ * @param ioc 当前io_context引用
+ * @param task 异步任务
+ *
+ * @return 返回执行结果
+ *
+ * @throw std::runtime_error, 当执行出现异常或没有返回预期值
+ * */
 template<typename T>
 T sync_exec(boost::asio::io_context& ioc, qqmusic::Task<T> task) {
+    /*synchronously execute the task and get reslt, need io_context*/
     std::optional<T> result;
     std::exception_ptr exception;
 
@@ -58,26 +84,51 @@ T sync_exec(boost::asio::io_context& ioc, qqmusic::Task<T> task) {
     }
 
     if (!result.has_value()) {
-        throw std::runtime_error("Result has no value");
+        throw std::runtime_error("Expect result has a value");
     }
 
     return std::move(*result);
 }
 
-/*sync get result*/
+/**
+ * @brief 同步执行异步函数
+ *
+ * @param task 异步任务
+ *
+ * @return 返回执行结果
+ * */
 template<typename T>
 T sync_exec(qqmusic::Task<T> task) {
+    /*sync get result*/
     boost::asio::io_context ioc;
     return sync_exec(ioc, std::move(task));
 }
 
-/*Global AsyncExecutor class*/
+/**
+ * @class qqmusic::utils::AsyncExecutor
+ *
+ * @brief全局调度器类
+ * */
 class AsyncExecutor {
+    /*Global AsyncExecutor class*/
 public:
     AsyncExecutor(const AsyncExecutor&) = delete;
     AsyncExecutor& operator=(const AsyncExecutor&) = delete;
+
+    /**
+     * @brief 获取全局单例引用
+     *
+     * @return 全局调度器实例引用
+     * */
     static AsyncExecutor& get_instance();
 
+    /**
+     * @brief 异步执行任务, 并在任务结束后触发回调
+     *
+     * @param task 异步任务
+     * @param callback 回调函数, 会将`task`的执行结果传递给回调函数
+     *                 回调函数不返回任何值
+     * */
     template<typename T, BOOST_ASIO_COMPLETION_TOKEN_FOR(void(T&&)) CompletionCallback>
     void async_exec(qqmusic::Task<T> task, CompletionCallback&& callback) {
         std::optional<T> result;
@@ -99,7 +150,13 @@ public:
         callback(std::move(result.value()));
     }
 
-    /*void specialization*/
+    /**
+     * @brief 异步执行任务函数的void特化, 并在任务结束后触发回调
+     *
+     * @param task 异步任务
+     * @param callback 回调函数, 会将`task`的执行结果传递给回调函数
+     *                 回调函数不返回任何值
+     * */
     template<BOOST_ASIO_COMPLETION_TOKEN_FOR(void()) CompletionCallback>
     void async_exec(qqmusic::Task<void> task, CompletionCallback&& callback) {
         boost::asio::co_spawn(ioc,
@@ -121,7 +178,15 @@ public:
                               });
     }
 
-    /*async execute task with time limit*/
+    /**
+     * @brief 异步执行任务函数, 带有超时限制, 并在任务结束后触发回调
+     *
+     * @param task 异步任务
+     * @param callback 回调函数, 会将`task`的执行结果传递给回调函数
+     *                 回调函数不返回任何值
+     * @param timeout 超时时间限制
+     * @param timeout_callback 超时之后需要执行的回调函数
+     * */
     template<typename T,
              BOOST_ASIO_COMPLETION_TOKEN_FOR(void(T&&)) CompletionCallback,
              BOOST_ASIO_COMPLETION_TOKEN_FOR(void()) TimeoutCallback>
@@ -161,7 +226,15 @@ public:
         });
     }
 
-    /*void specialization*/
+    /**
+     * @brief 异步执行任务函数void特化, 带有超时限制. 并在任务结束后触发回调
+     *
+     * @param task 异步任务
+     * @param callback 回调函数, 会将`task`的执行结果传递给回调函数
+     *                 回调函数不返回任何值
+     * @param timeout 超时时间限制
+     * @param timeout_callback 超时之后需要执行的回调函数
+     * */
     template<BOOST_ASIO_COMPLETION_TOKEN_FOR(void()) CompletionCallback,
              BOOST_ASIO_COMPLETION_TOKEN_FOR(void()) TimeoutCallback>
     void async_exec(qqmusic::Task<void> task,
@@ -200,6 +273,25 @@ public:
         });
     }
 
+    /**
+     * @brief 等待任务列表中所有的任务执行完毕之后返回结果列表
+     *
+     * @code{cpp}
+     * // 使用示例:
+     * std::vector<Task<nlohmann::json>> tasks{}; // 给定任务列表
+     * auto& executor = qqmusic::utils::AsyncExecutor::get_instance();
+     * auto results = executor.when_all(std::move(tasks));
+     * for (auto& result : results) {
+     *     // handle the result ...
+     * }
+     * @endcode
+     *
+     * @param tasks 异步任务列表
+     *
+     * @return 包含结果列表的任务`boost::asio::awaitable<std::vector<T>>`
+     *
+     * @warn 原本任务的顺序和结果顺序不一定一致
+     * */
     template<typename T>
     auto when_all(std::vector<boost::asio::awaitable<T>> tasks)
         -> boost::asio::awaitable<std::vector<T>> {

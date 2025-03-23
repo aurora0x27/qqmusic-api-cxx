@@ -1,8 +1,10 @@
-/*--------------------------qqmusic/details/device.h-----------------------------
- * Provide random device info generator
+/**-----------------------------------qqmusic/details/device.h--------------------------------------
  *
- * Generate random IMEI number, OS version and device info
- *-----------------------------------------------------------------------------*/
+ * @brief 设备信息提供设备信息描述, 随机生成设备信息
+ *
+ * @date 2025-3-21
+ *
+ *------------------------------------------------------------------------------------------------*/
 #ifndef QQMUSIC_UTILS_DEVICE_H
 #define QQMUSIC_UTILS_DEVICE_H
 
@@ -23,6 +25,9 @@ struct OSVersion {
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(OSVersion, incremental, release, codename, sdk);
 };
 
+/**
+ * @brief 设备信息
+ * */
 struct Device {
     Device();
 
@@ -79,8 +84,18 @@ struct Device {
                                    qimei);
 };
 
-/*Prioritize loading cached device information*/
+/**
+ * @brief 获取随机设备信息
+ *
+ * @return 包含正确结果或异常的`Result<Device>`
+ * */
 qqmusic::Result<Device> get_device_info();
+
+/**
+ * @brief 将设备信息缓存到文件缓存路径下的`device.json`
+ *
+ * @see qqmusic::utils::PathManager
+ * */
 qqmusic::Result<void> cache_device(const Device& device);
 
 } // namespace qqmusic::utils
