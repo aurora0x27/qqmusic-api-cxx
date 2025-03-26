@@ -66,10 +66,10 @@ plugins:
   - search
   - mkdoxy:
       projects:
-        QQMUSIC_API_CXX:
+        dictionary:
           doxy-cfg-file: ./docs/doxyfile.cc.ini
           src-dirs: src/ include/
-          full-doc: False
+          full-doc: True
           doxy-cfg:
             FILE_PATTERNS: "*.cc *.h"
             RECURSIVE: True

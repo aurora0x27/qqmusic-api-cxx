@@ -85,11 +85,14 @@ target_link_library(
     │   └── session.h
     ├── album.h
     ├── login.h
+    ├── lyric.h
+    ├── mv.h
     ├── result.h
     ├── search.h
     ├── singer.h
     ├── song.h
-    ├── song_lists.h
+    ├── songlist.h
+    ├── toplist.h
     └── user.h
 ```
 
