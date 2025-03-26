@@ -4,7 +4,6 @@ cmake_minimum_required(VERSION 3.20)
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
-
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -32,7 +31,15 @@ target_include_directories(
 if(WIN32)
     set(PLATFORM PLATFORM_WINDOWS)
     target_compile_definitions(qmapi PRIVATE _WIN32_WINNT=0x0A00)
-    target_compile_options(qmapi PRIVATE /bigobj)
+    
+    # 区分MSVC和Clang编译器
+    if(MSVC)
+        target_compile_options(qmapi PRIVATE /bigobj)
+    elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+        # Clang在Windows平台上的等效选项
+        target_compile_options(qmapi PRIVATE -Wno-microsoft-enum-value)
+    endif()
+    
     set_target_properties(qmapi PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
     target_link_libraries(
         qmapi PUBLIC

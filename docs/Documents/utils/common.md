@@ -1,50 +1,40 @@
-# Common
+---
+title: Common
+---
 
 一组工具函数
 
-## ***fn*** sign
+::: doxy.dictionary.namespace.function
+    namespace: qqmusic::utils
+    name: resp2buf
 
-对请求参数进行签名
+::: doxy.dictionary.namespace.function
+    namespace: qqmusic::utils
+    name: std::string sign(const nlohmann::json &params)
 
-```cpp
-std::string sign(const nlohmann::json& params);
-```
+::: doxy.dictionary.namespace.function
+    namespace: qqmusic::utils
+    name: hex2buf
 
-## ***fn*** to_buffer
+### ***enum qrc_type***
 
-将原始的请求转换成通用buffer
+- `cloud`
 
-```cpp
-buffer resp2buf(http::response<http::dynamic_body>&& resp);
-```
+- `local`
 
-## ***fn*** hex2buf
+::: doxy.dictionary.namespace.function
+    namespace: qqmusic::utils
+    name: qrc_decode
 
-将十六进制的字符串转换成二进制buffer
+!!! note 关于选项
 
-```cpp
-buffer hex2buf(std::string_view hex);
-```
+    `cloud`和`local`的区别: `cloud`直接处理, 而`local`需要进行qmc1_decryt之后
+    去掉前11字节再处理
 
-## ***fn*** qrc_decode
+::: doxy.dictionary.namespace.function
+    namespace: qqmusic::utils
+    name: hash33
 
-解码加密的QRC歌词
-
-!!! note "枚举值cloud和local"
-
-    其中local与cloud的区别是local需要进行qmc1解码, 并丢弃前11个字节, cloud是直接处理
-
-```cpp
-enum class qrc_type { cloud, local };
-
-qqmusic::Result<std::string> qrc_decode(const qqmusic::utils::buffer& src,
-                                        qqmusic::utils::qrc_type type);
-```
-
-## ***fn*** hash33
-
-求utf-8字符串的哈希值, prev是多次求取的时候上一次计算的结果.
-
-```cpp
-uint64_t hash33(std::string_view str, uint64_t prev = 0);
-```
+::: doxy.dictionary.namespace.function
+    namespace: qqmusic::utils
+    name: get_search_id

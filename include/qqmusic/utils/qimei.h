@@ -1,9 +1,9 @@
-/*---------------------------qqmusic/utils/qimei.h------------------------------
+/*-------------------------------------qqmusic/utils/qimei.h----------------------------------------
  * Provide interface to manage q-imei.
  *
  * Q-IMEI is IMEI used in qqmusic and other tencent services, it is required in
  * some interfaces which need device identification or have device limits
- *-----------------------------------------------------------------------------*/
+ *------------------------------------------------------------------------------------------------*/
 #ifndef QQMUSIC_UTILS_QIMEI_H
 #define QQMUSIC_UTILS_QIMEI_H
 
