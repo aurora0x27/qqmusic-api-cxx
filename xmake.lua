@@ -3,6 +3,7 @@ set_project("qqmusic_api_cxx")
 
 set_allowedplats("windows", "linux", "macosx")
 set_allowedmodes("debug", "release")
+set_policy("build.warning", true)
 
 add_rules("mode.release", "mode.debug")
 set_languages("c++20")
@@ -50,7 +51,21 @@ vcpkg("openssl")
 vcpkg("nlohmann-json")
 
 if is_mode("debug") then
-    add_rules("plugin.vsxmake.autoupdate")
+    add_rules("plugin.compile_commands.autoupdate", {outputdir="./build/"})
+end
+
+if is_plat("linux") then
+    add_defines("PLATFORM_LINUX")
+elseif is_plat("macosx") then
+    add_defines("PLATFORM_APPLE")
+    add_values("cmake.CMAKE_OSX_DEPLOYMENT_TARGET", "11.0")
+elseif is_plat("windows") then
+    add_defines("PLATFORM_WINDOWS")
+    add_defines("_WIN32_WINNT=0xA00")
+    if is_toolchain("msvc") then
+        add_defines("/bigobj")
+    end
+    add_rules("utils.symbols.export_all")
 end
 
 target("qmapi")
@@ -59,19 +74,6 @@ target("qmapi")
               "src/utils/*.cc", 
               "src/details/*.cc", 
               "src/crypto/*.cc")
-    if is_plat("linux") then
-        add_defines("PLATFORM_LINUX")
-    elseif is_plat("macosx") then
-        add_defines("PLATFORM_APPLE")
-        add_values("cmake.CMAKE_OSX_DEPLOYMENT_TARGET", "11.0")
-    elseif is_plat("windows") then
-        add_defines("PLATFORM_WINDOWS")
-        add_defines("_WIN32_WINNT=0xA00")
-        if is_toolchain("msvc") then
-            add_defines("/bigobj")
-        end
-        add_rules("utils.symbols.export_all")
-    end
     add_packages(
         "boost-asio",
         "boost-beast",
@@ -87,10 +89,30 @@ target("test")
     set_kind("binary")
     add_files("test/src/*.cc")
     add_deps("qmapi")
-    add_packages("gtest[main]")
+    add_packages(
+        "gtest[main]",
+        "boost-asio",
+        "boost-beast",
+        "boost-uuid",
+        "boost-url",
+        "zlib",
+        "nlohmann-json",
+        "botan",
+        "openssl"
+    )
     add_includedirs("test/include")
 
 target("demo")
     set_kind("phony")
     includes("demo/xmake.lua")
     add_deps("qrc-decoder", "qmdown")
+    add_packages(
+        "boost-asio",
+        "boost-beast",
+        "boost-uuid",
+        "boost-url",
+        "zlib",
+        "nlohmann-json",
+        "botan",
+        "openssl"
+    )
