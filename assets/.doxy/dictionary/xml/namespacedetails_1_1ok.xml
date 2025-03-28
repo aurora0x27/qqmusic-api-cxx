@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespacedetails_1_1ok" kind="namespace" language="C++">
+    <compoundname>details::ok</compoundname>
+    <innerclass refid="structdetails_1_1ok_1_1Map" prot="public">details::ok::Map</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1Map_3_01Ret_07_5_08_07Args_8_8_8_08_4" prot="public">details::ok::Map&lt; Ret(*)(Args...)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1Map_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" prot="public">details::ok::Map&lt; Ret(Cls::*)(Args...) const &gt;</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1Map_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" prot="public">details::ok::Map&lt; Ret(Cls::*)(Args...)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1Map_3_01std_1_1function_3_01Ret_07Args_8_8_8_08_4_01_4" prot="public">details::ok::Map&lt; std::function&lt; Ret(Args...)&gt; &gt;</innerclass>
+    <innernamespace refid="namespacedetails_1_1ok_1_1impl">details::ok::impl</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="120" column="1"/>
+  </compounddef>
+</doxygen>

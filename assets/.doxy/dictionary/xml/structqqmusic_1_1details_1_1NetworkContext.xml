@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1details_1_1NetworkContext" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::details::NetworkContext</compoundname>
+    <includes refid="context_8h" local="no">context.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1NetworkContext_1a0d948e7c3209315101b69a8bf525b386" prot="public" static="no" mutable="no">
+        <type><ref refid="classqqmusic_1_1utils_1_1CookieJar" kindref="compound">qqmusic::utils::CookieJar</ref></type>
+        <definition>qqmusic::utils::CookieJar qqmusic::details::NetworkContext::cookies</definition>
+        <argsstring></argsstring>
+        <name>cookies</name>
+        <qualifiedname>qqmusic::details::NetworkContext::cookies</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="61" column="31" bodyfile="include/qqmusic/details/context.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1NetworkContext_1ace72820f4d35701adaa779001ce18bdc" prot="public" static="no" mutable="no">
+        <type><ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">qqmusic::utils::Credential</ref></type>
+        <definition>qqmusic::utils::Credential qqmusic::details::NetworkContext::credential</definition>
+        <argsstring></argsstring>
+        <name>credential</name>
+        <qualifiedname>qqmusic::details::NetworkContext::credential</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="62" column="32" bodyfile="include/qqmusic/details/context.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1NetworkContext_1a8a8affb854c40c44cb80e3097545950c" prot="public" static="no" mutable="no">
+        <type><ref refid="structqqmusic_1_1details_1_1ApiConfig" kindref="compound">ApiConfig</ref></type>
+        <definition>ApiConfig qqmusic::details::NetworkContext::api_config</definition>
+        <argsstring></argsstring>
+        <name>api_config</name>
+        <qualifiedname>qqmusic::details::NetworkContext::api_config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="63" column="15" bodyfile="include/qqmusic/details/context.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1NetworkContext_1a6dea41385dd7019dd97bb97b25e69376" prot="public" static="no" mutable="no">
+        <type><ref refid="structqqmusic_1_1utils_1_1Device" kindref="compound">qqmusic::utils::Device</ref></type>
+        <definition>qqmusic::utils::Device qqmusic::details::NetworkContext::device</definition>
+        <argsstring></argsstring>
+        <name>device</name>
+        <qualifiedname>qqmusic::details::NetworkContext::device</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="64" column="28" bodyfile="include/qqmusic/details/context.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1NetworkContext_1ab249576a0de021d17d1593143a243d8b" prot="public" static="no" mutable="no">
+        <type><ref refid="structqqmusic_1_1utils_1_1QimeiResult" kindref="compound">qqmusic::utils::QimeiResult</ref></type>
+        <definition>qqmusic::utils::QimeiResult qqmusic::details::NetworkContext::qimei</definition>
+        <argsstring></argsstring>
+        <name>qimei</name>
+        <qualifiedname>qqmusic::details::NetworkContext::qimei</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="65" column="33" bodyfile="include/qqmusic/details/context.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1NetworkContext_1a5a6a13e9292d5a3e5377f5a55ce4c076" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool qqmusic::details::NetworkContext::ignore_ssl_error</definition>
+        <argsstring></argsstring>
+        <name>ignore_ssl_error</name>
+        <qualifiedname>qqmusic::details::NetworkContext::ignore_ssl_error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="66" column="10" bodyfile="include/qqmusic/details/context.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1NetworkContext_1a1445f0dbfca981bd12c9cf4bc0a61036" prot="public" static="no" mutable="no">
+        <type>std::chrono::seconds</type>
+        <definition>std::chrono::seconds qqmusic::details::NetworkContext::timeout</definition>
+        <argsstring></argsstring>
+        <name>timeout</name>
+        <qualifiedname>qqmusic::details::NetworkContext::timeout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="67" column="26" bodyfile="include/qqmusic/details/context.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structqqmusic_1_1details_1_1NetworkContext_1af460eeb0c9590526acbbf502e59d04f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::details::NetworkContext::NetworkContext</definition>
+        <argsstring>()</argsstring>
+        <name>NetworkContext</name>
+        <qualifiedname>qqmusic::details::NetworkContext::NetworkContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="70" column="5" bodyfile="include/qqmusic/details/context.h" bodystart="70" bodyend="90"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>打包的上下文 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>qqmusic::details::ApiConfig</label>
+        <link refid="structqqmusic_1_1details_1_1ApiConfig"/>
+      </node>
+      <node id="1">
+        <label>qqmusic::details::NetworkContext</label>
+        <link refid="structqqmusic_1_1details_1_1NetworkContext"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>cookies</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>credential</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>api_config</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>device</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>qimei</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>qqmusic::utils::CookieJar</label>
+        <link refid="classqqmusic_1_1utils_1_1CookieJar"/>
+      </node>
+      <node id="3">
+        <label>qqmusic::utils::Credential</label>
+        <link refid="classqqmusic_1_1utils_1_1Credential"/>
+      </node>
+      <node id="5">
+        <label>qqmusic::utils::Device</label>
+        <link refid="structqqmusic_1_1utils_1_1Device"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>version</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>qqmusic::utils::OSVersion</label>
+        <link refid="structqqmusic_1_1utils_1_1OSVersion"/>
+      </node>
+      <node id="7">
+        <label>qqmusic::utils::QimeiResult</label>
+        <link refid="structqqmusic_1_1utils_1_1QimeiResult"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/details/context.h" line="59" column="1" bodyfile="include/qqmusic/details/context.h" bodystart="59" bodyend="91"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1details_1_1NetworkContext_1a8a8affb854c40c44cb80e3097545950c" prot="public" virt="non-virtual"><scope>qqmusic::details::NetworkContext</scope><name>api_config</name></member>
+      <member refid="structqqmusic_1_1details_1_1NetworkContext_1a0d948e7c3209315101b69a8bf525b386" prot="public" virt="non-virtual"><scope>qqmusic::details::NetworkContext</scope><name>cookies</name></member>
+      <member refid="structqqmusic_1_1details_1_1NetworkContext_1ace72820f4d35701adaa779001ce18bdc" prot="public" virt="non-virtual"><scope>qqmusic::details::NetworkContext</scope><name>credential</name></member>
+      <member refid="structqqmusic_1_1details_1_1NetworkContext_1a6dea41385dd7019dd97bb97b25e69376" prot="public" virt="non-virtual"><scope>qqmusic::details::NetworkContext</scope><name>device</name></member>
+      <member refid="structqqmusic_1_1details_1_1NetworkContext_1a5a6a13e9292d5a3e5377f5a55ce4c076" prot="public" virt="non-virtual"><scope>qqmusic::details::NetworkContext</scope><name>ignore_ssl_error</name></member>
+      <member refid="structqqmusic_1_1details_1_1NetworkContext_1af460eeb0c9590526acbbf502e59d04f8" prot="public" virt="non-virtual"><scope>qqmusic::details::NetworkContext</scope><name>NetworkContext</name></member>
+      <member refid="structqqmusic_1_1details_1_1NetworkContext_1ab249576a0de021d17d1593143a243d8b" prot="public" virt="non-virtual"><scope>qqmusic::details::NetworkContext</scope><name>qimei</name></member>
+      <member refid="structqqmusic_1_1details_1_1NetworkContext_1a1445f0dbfca981bd12c9cf4bc0a61036" prot="public" virt="non-virtual"><scope>qqmusic::details::NetworkContext</scope><name>timeout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

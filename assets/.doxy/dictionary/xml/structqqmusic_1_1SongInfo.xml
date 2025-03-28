@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1SongInfo" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::SongInfo</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1SongInfo_1a9556f9943461b3cc645e1066e6664985" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::SongInfo::mid</definition>
+        <argsstring></argsstring>
+        <name>mid</name>
+        <qualifiedname>qqmusic::SongInfo::mid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="259" column="17" bodyfile="include/qqmusic/song.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1SongInfo_1afec002a2f6a505875c8e77cb952c80d9" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; qqmusic::SongInfo::url</definition>
+        <argsstring></argsstring>
+        <name>url</name>
+        <qualifiedname>qqmusic::SongInfo::url</qualifiedname>
+        <initializer>= std::nullopt</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="260" column="19" bodyfile="include/qqmusic/song.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1SongInfo_1a7b4cc7c2cc51e337a5ba1ac540756fc1" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; qqmusic::SongInfo::ekey</definition>
+        <argsstring></argsstring>
+        <name>ekey</name>
+        <qualifiedname>qqmusic::SongInfo::ekey</qualifiedname>
+        <initializer>= std::nullopt</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="261" column="19" bodyfile="include/qqmusic/song.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/song.h" line="258" column="1" bodyfile="include/qqmusic/song.h" bodystart="258" bodyend="262"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1SongInfo_1a7b4cc7c2cc51e337a5ba1ac540756fc1" prot="public" virt="non-virtual"><scope>qqmusic::SongInfo</scope><name>ekey</name></member>
+      <member refid="structqqmusic_1_1SongInfo_1a9556f9943461b3cc645e1066e6664985" prot="public" virt="non-virtual"><scope>qqmusic::SongInfo</scope><name>mid</name></member>
+      <member refid="structqqmusic_1_1SongInfo_1afec002a2f6a505875c8e77cb952c80d9" prot="public" virt="non-virtual"><scope>qqmusic::SongInfo</scope><name>url</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

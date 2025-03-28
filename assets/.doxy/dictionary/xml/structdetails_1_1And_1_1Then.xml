@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1And_1_1Then" kind="struct" language="C++" prot="public">
+    <compoundname>details::And::Then</compoundname>
+    <basecompoundref refid="structdetails_1_1And_1_1impl_1_1Then" prot="public" virt="non-virtual">details::And::impl::Then&lt; decltype(&amp;Func::operator())&gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename Func</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>details::And::impl::Then&lt; decltype(&amp;Func::operator())&gt;</label>
+        <link refid="structdetails_1_1And_1_1impl_1_1Then"/>
+      </node>
+      <node id="1">
+        <label>details::And::Then&lt; Func &gt;</label>
+        <link refid="structdetails_1_1And_1_1Then"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>details::And::impl::Then&lt; decltype(&amp;Func::operator())&gt;</label>
+        <link refid="structdetails_1_1And_1_1impl_1_1Then"/>
+      </node>
+      <node id="1">
+        <label>details::And::Then&lt; Func &gt;</label>
+        <link refid="structdetails_1_1And_1_1Then"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/details/result.h" line="345" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="345" bodyend="345"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

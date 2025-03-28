@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="dir_313caf1132e152dd9b58bea13a4052ca" kind="dir">
+    <compoundname>utils</compoundname>
+    <innerfile refid="async-executor_8cc">async-executor.cc</innerfile>
+    <innerfile refid="common_8cc">common.cc</innerfile>
+    <innerfile refid="cookie_8cc">cookie.cc</innerfile>
+    <innerfile refid="credential_8cc">credential.cc</innerfile>
+    <innerfile refid="device_8cc">device.cc</innerfile>
+    <innerfile refid="paths_8cc">paths.cc</innerfile>
+    <innerfile refid="qimei_8cc">qimei.cc</innerfile>
+    <innerfile refid="session_8cc">session.cc</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/utils/"/>
+  </compounddef>
+</doxygen>

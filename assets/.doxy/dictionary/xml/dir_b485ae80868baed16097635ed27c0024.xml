@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="dir_b485ae80868baed16097635ed27c0024" kind="dir">
+    <compoundname>details</compoundname>
+    <innerfile refid="api_8cc">api.cc</innerfile>
+    <innerfile refid="tripledes_8cc">tripledes.cc</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/details/"/>
+  </compounddef>
+</doxygen>

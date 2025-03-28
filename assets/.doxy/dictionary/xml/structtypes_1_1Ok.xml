@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structtypes_1_1Ok" kind="struct" language="C++" prot="public">
+    <compoundname>types::Ok</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtypes_1_1Ok_1a64ad615f810c220cc41cc869a9cbccaf" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T types::Ok&lt; T &gt;::val</definition>
+        <argsstring></argsstring>
+        <name>val</name>
+        <qualifiedname>types::Ok::val</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="26" column="7" bodyfile="include/qqmusic/details/result.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtypes_1_1Ok_1a51a17efeebc165cd42c07824f29953f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>types::Ok&lt; T &gt;::Ok</definition>
+        <argsstring>(const T &amp;val)</argsstring>
+        <name>Ok</name>
+        <qualifiedname>types::Ok::Ok</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="20" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="20" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="structtypes_1_1Ok_1a1749fd0d008f382b71b3fbfe98e5b895" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>types::Ok&lt; T &gt;::Ok</definition>
+        <argsstring>(T &amp;&amp;val)</argsstring>
+        <name>Ok</name>
+        <qualifiedname>types::Ok::Ok</qualifiedname>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="23" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="23" bodyend="24"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="19" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="19" bodyend="27"/>
+    <listofallmembers>
+      <member refid="structtypes_1_1Ok_1a51a17efeebc165cd42c07824f29953f7" prot="public" virt="non-virtual"><scope>types::Ok</scope><name>Ok</name></member>
+      <member refid="structtypes_1_1Ok_1a1749fd0d008f382b71b3fbfe98e5b895" prot="public" virt="non-virtual"><scope>types::Ok</scope><name>Ok</name></member>
+      <member refid="structtypes_1_1Ok_1a64ad615f810c220cc41cc869a9cbccaf" prot="public" virt="non-virtual"><scope>types::Ok</scope><name>val</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1utils_1_1PathManager" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::utils::PathManager</compoundname>
+    <includes refid="paths_8h" local="no">paths.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1PathManager_1aebe7a9b0bfbbc6de4a125bc6c900988a" prot="private" static="no" mutable="no">
+        <type>fs::path</type>
+        <definition>fs::path qqmusic::utils::PathManager::cache_path</definition>
+        <argsstring></argsstring>
+        <name>cache_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::cache_path</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="98" column="14" bodyfile="include/qqmusic/utils/paths.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1PathManager_1a7902439cc5784a9fb15deed1a3917c86" prot="private" static="no" mutable="no">
+        <type>fs::path</type>
+        <definition>fs::path qqmusic::utils::PathManager::log_path</definition>
+        <argsstring></argsstring>
+        <name>log_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::log_path</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="99" column="14" bodyfile="include/qqmusic/utils/paths.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1PathManager_1ac86d239729aae96693a47e17fd89aeb8" prot="private" static="no" mutable="no">
+        <type>fs::path</type>
+        <definition>fs::path qqmusic::utils::PathManager::download_path</definition>
+        <argsstring></argsstring>
+        <name>download_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::download_path</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="100" column="14" bodyfile="include/qqmusic/utils/paths.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1PathManager_1a1a64b30a96781cd11f5f89416a0cf65c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1PathManager" kindref="compound">PathManager</ref> &amp;</type>
+        <definition>PathManager &amp; qqmusic::utils::PathManager::get_instance</definition>
+        <argsstring>()</argsstring>
+        <name>get_instance</name>
+        <qualifiedname>qqmusic::utils::PathManager::get_instance</qualifiedname>
+        <briefdescription>
+<para>获取实例引用 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="60" column="24" bodyfile="src/utils/paths.cc" bodystart="7" bodyend="10"/>
+        <referencedby refid="namespaceqqmusic_1_1utils_1a0e4582ca294982acc156d976ee5d7ea9" compoundref="device_8cc" startline="66" endline="82">qqmusic::utils::cache_device</referencedby>
+        <referencedby refid="namespaceqqmusic_1_1utils_1ac0b8958b4f89d786d2bd6883cdceb635" compoundref="device_8cc" startline="18" endline="64">qqmusic::utils::get_device_info</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1PathManager_1a693cd422a26943d9316a0efa37252f52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::utils::PathManager::set_download_path</definition>
+        <argsstring>(std::string_view path)</argsstring>
+        <name>set_download_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::set_download_path</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>设置下载路径 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="65" column="10" bodyfile="src/utils/paths.cc" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1PathManager_1a9252bb643b6964ca888f3f42646ad096" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::utils::PathManager::set_download_path</definition>
+        <argsstring>(const fs::path &amp;path)</argsstring>
+        <name>set_download_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::set_download_path</qualifiedname>
+        <param>
+          <type>const fs::path &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="66" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1PathManager_1ad30fa0e42bf89006eca19034e222436d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::utils::PathManager::set_cache_path</definition>
+        <argsstring>(std::string_view path)</argsstring>
+        <name>set_cache_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::set_cache_path</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>设置缓存路径 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="71" column="10" bodyfile="src/utils/paths.cc" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1PathManager_1a87da555d36991f57ce4f072b2a8577d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::utils::PathManager::set_cache_path</definition>
+        <argsstring>(const fs::path &amp;path)</argsstring>
+        <name>set_cache_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::set_cache_path</qualifiedname>
+        <param>
+          <type>const fs::path &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="72" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1PathManager_1a1607160fdd963aa66d83b83652fc44a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::utils::PathManager::set_log_path</definition>
+        <argsstring>(std::string_view path)</argsstring>
+        <name>set_log_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::set_log_path</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>设置日志路径 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="78" column="10" bodyfile="src/utils/paths.cc" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1PathManager_1a748b7d312c886c1308d9bd28cf267328" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::utils::PathManager::set_log_path</definition>
+        <argsstring>(const fs::path &amp;path)</argsstring>
+        <name>set_log_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::set_log_path</qualifiedname>
+        <param>
+          <type>const fs::path &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="79" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1PathManager_1a3af65f173e5c25e5333c41fd589c6cb5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>fs::path</type>
+        <definition>std::filesystem::path qqmusic::utils::PathManager::get_cache_path</definition>
+        <argsstring>() const</argsstring>
+        <name>get_cache_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::get_cache_path</qualifiedname>
+        <briefdescription>
+<para>获取缓存路径 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="84" column="15" bodyfile="src/utils/paths.cc" bodystart="16" bodyend="18"/>
+        <referencedby refid="namespaceqqmusic_1_1utils_1a0e4582ca294982acc156d976ee5d7ea9" compoundref="device_8cc" startline="66" endline="82">qqmusic::utils::cache_device</referencedby>
+        <referencedby refid="namespaceqqmusic_1_1utils_1ac0b8958b4f89d786d2bd6883cdceb635" compoundref="device_8cc" startline="18" endline="64">qqmusic::utils::get_device_info</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1PathManager_1a314d4d03e328434a1d7b1503e2d1c6e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>fs::path</type>
+        <definition>std::filesystem::path qqmusic::utils::PathManager::get_download_path</definition>
+        <argsstring>() const</argsstring>
+        <name>get_download_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::get_download_path</qualifiedname>
+        <briefdescription>
+<para>获取下载路径 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="89" column="15" bodyfile="src/utils/paths.cc" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1PathManager_1ab45d65d8bb0e18e607ccb8bbe25ed30f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>fs::path</type>
+        <definition>std::filesystem::path qqmusic::utils::PathManager::get_log_path</definition>
+        <argsstring>() const</argsstring>
+        <name>get_log_path</name>
+        <qualifiedname>qqmusic::utils::PathManager::get_log_path</qualifiedname>
+        <briefdescription>
+<para>获取日志路径 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="94" column="15" bodyfile="src/utils/paths.cc" bodystart="12" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1PathManager_1a3c4ebef8866c5f66cea6eb879faadca6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::PathManager::PathManager</definition>
+        <argsstring>()</argsstring>
+        <name>PathManager</name>
+        <qualifiedname>qqmusic::utils::PathManager::PathManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/paths.h" line="97" column="5" bodyfile="src/utils/paths.cc" bodystart="48" bodyend="125"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>返回默认路径 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/utils/paths.h" line="55" column="1" bodyfile="include/qqmusic/utils/paths.h" bodystart="55" bodyend="101"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1aebe7a9b0bfbbc6de4a125bc6c900988a" prot="private" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>cache_path</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1ac86d239729aae96693a47e17fd89aeb8" prot="private" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>download_path</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1a3af65f173e5c25e5333c41fd589c6cb5" prot="public" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>get_cache_path</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1a314d4d03e328434a1d7b1503e2d1c6e8" prot="public" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>get_download_path</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1a1a64b30a96781cd11f5f89416a0cf65c" prot="public" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>get_instance</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1ab45d65d8bb0e18e607ccb8bbe25ed30f" prot="public" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>get_log_path</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1a7902439cc5784a9fb15deed1a3917c86" prot="private" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>log_path</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1a3c4ebef8866c5f66cea6eb879faadca6" prot="private" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>PathManager</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1ad30fa0e42bf89006eca19034e222436d" prot="public" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>set_cache_path</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1a87da555d36991f57ce4f072b2a8577d6" prot="public" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>set_cache_path</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1a693cd422a26943d9316a0efa37252f52" prot="public" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>set_download_path</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1a9252bb643b6964ca888f3f42646ad096" prot="public" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>set_download_path</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1a1607160fdd963aa66d83b83652fc44a4" prot="public" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>set_log_path</name></member>
+      <member refid="classqqmusic_1_1utils_1_1PathManager_1a748b7d312c886c1308d9bd28cf267328" prot="public" virt="non-virtual"><scope>qqmusic::utils::PathManager</scope><name>set_log_path</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

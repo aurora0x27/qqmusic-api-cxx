@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1And_1_1impl_1_1Then_3_01Ret_07void_08_4" kind="struct" language="C++" prot="public">
+    <compoundname>details::And::impl::Then&lt; Ret(void)&gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename Ret</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structdetails_1_1And_1_1impl_1_1Then_3_01Ret_07void_08_4_1a7a88bc2892555befb57e9f6e77cae256" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename E</type>
+          </param>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt;</type>
+        <definition>static Result&lt; T, E &gt; details::And::impl::Then&lt; Ret(void)&gt;::then</definition>
+        <argsstring>(const Result&lt; T, E &gt; &amp;result, Func func)</argsstring>
+        <name>then</name>
+        <qualifiedname>details::And::impl::Then&lt; Ret(void)&gt;::then</qualifiedname>
+        <param>
+          <type>const <ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt; &amp;</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="330" column="19" bodyfile="include/qqmusic/details/result.h" bodystart="330" bodyend="339"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="325" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="325" bodyend="340"/>
+    <listofallmembers>
+      <member refid="structdetails_1_1And_1_1impl_1_1Then_3_01Ret_07void_08_4_1a7a88bc2892555befb57e9f6e77cae256" prot="public" virt="non-virtual"><scope>details::And::impl::Then&lt; Ret(void)&gt;</scope><name>then</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

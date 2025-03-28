@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Cls_1_1_5_08_07Arg_08_01const_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>details::ok::impl::Map&lt; Ret(Cls::*)(Arg) const &gt;</compoundname>
+    <basecompoundref refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Arg_08_4" prot="public" virt="non-virtual">details::ok::impl::Map&lt; Ret(Arg)&gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename Ret</type>
+      </param>
+      <param>
+        <type>typename Cls</type>
+      </param>
+      <param>
+        <type>typename Arg</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>details::ok::impl::Map&lt; Ret(Arg)&gt;</label>
+        <link refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Arg_08_4"/>
+      </node>
+      <node id="1">
+        <label>details::ok::impl::Map&lt; Ret(Cls::*)(Arg) const &gt;</label>
+        <link refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Cls_1_1_5_08_07Arg_08_01const_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>details::ok::impl::Map&lt; Ret(Arg)&gt;</label>
+        <link refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Arg_08_4"/>
+      </node>
+      <node id="1">
+        <label>details::ok::impl::Map&lt; Ret(Cls::*)(Arg) const &gt;</label>
+        <link refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Cls_1_1_5_08_07Arg_08_01const_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/details/result.h" line="128" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="128" bodyend="128"/>
+    <listofallmembers>
+      <member refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Arg_08_4_1a309775c25f58c8d80b4781187e865536" prot="public" virt="non-virtual"><scope>details::ok::impl::Map&lt; Ret(Cls::*)(Arg) const &gt;</scope><name>map</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

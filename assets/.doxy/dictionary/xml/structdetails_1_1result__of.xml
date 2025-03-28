@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1result__of" kind="struct" language="C++" prot="public">
+    <compoundname>details::result_of</compoundname>
+    <basecompoundref refid="structdetails_1_1impl_1_1result__of" prot="public" virt="non-virtual">details::impl::result_of&lt; decltype(&amp;Func::operator())&gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename Func</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>details::result_of&lt; Func &gt;</label>
+        <link refid="structdetails_1_1result__of"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>details::impl::result_of&lt; decltype(&amp;Func::operator())&gt;</label>
+        <link refid="structdetails_1_1impl_1_1result__of"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>details::result_of&lt; Func &gt;</label>
+        <link refid="structdetails_1_1result__of"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>details::impl::result_of&lt; decltype(&amp;Func::operator())&gt;</label>
+        <link refid="structdetails_1_1impl_1_1result__of"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/details/result.h" line="82" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="82" bodyend="82"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

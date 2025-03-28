@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1And_1_1Then_3_01Ret_07_5_08_07Args_8_8_8_08_4" kind="struct" language="C++" prot="public">
+    <compoundname>details::And::Then&lt; Ret(*)(Args...)&gt;</compoundname>
+    <basecompoundref refid="structdetails_1_1And_1_1impl_1_1Then" prot="public" virt="non-virtual">details::And::impl::Then&lt; Ret(Args...)&gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename Ret</type>
+      </param>
+      <param>
+        <type>typename...</type>
+        <declname>Args</declname>
+        <defname>Args</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>details::And::impl::Then&lt; Ret(Args...)&gt;</label>
+        <link refid="structdetails_1_1And_1_1impl_1_1Then"/>
+      </node>
+      <node id="1">
+        <label>details::And::Then&lt; Ret(*)(Args...)&gt;</label>
+        <link refid="structdetails_1_1And_1_1Then_3_01Ret_07_5_08_07Args_8_8_8_08_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>details::And::impl::Then&lt; Ret(Args...)&gt;</label>
+        <link refid="structdetails_1_1And_1_1impl_1_1Then"/>
+      </node>
+      <node id="1">
+        <label>details::And::Then&lt; Ret(*)(Args...)&gt;</label>
+        <link refid="structdetails_1_1And_1_1Then_3_01Ret_07_5_08_07Args_8_8_8_08_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/details/result.h" line="348" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="348" bodyend="348"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

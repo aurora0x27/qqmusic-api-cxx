@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1utils_1_1OSVersion" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::utils::OSVersion</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1OSVersion_1a7354e7e76b6933ba246bf8dbc9a24a87" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::OSVersion::incremental</definition>
+        <argsstring></argsstring>
+        <name>incremental</name>
+        <qualifiedname>qqmusic::utils::OSVersion::incremental</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="20" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1OSVersion_1ab5bebc675eacc80330d87e2c39728c8a" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::OSVersion::release</definition>
+        <argsstring></argsstring>
+        <name>release</name>
+        <qualifiedname>qqmusic::utils::OSVersion::release</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="21" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1OSVersion_1aaf16a5644c3c93a75e099e96638d65eb" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::OSVersion::codename</definition>
+        <argsstring></argsstring>
+        <name>codename</name>
+        <qualifiedname>qqmusic::utils::OSVersion::codename</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="22" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1OSVersion_1a1dc5e95b89f44f3c044d5db68012ed62" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int qqmusic::utils::OSVersion::sdk</definition>
+        <argsstring></argsstring>
+        <name>sdk</name>
+        <qualifiedname>qqmusic::utils::OSVersion::sdk</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="23" column="9" bodyfile="include/qqmusic/utils/device.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structqqmusic_1_1utils_1_1OSVersion_1a24a3d7e3e5a6213376908fd870a92d7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::OSVersion::OSVersion</definition>
+        <argsstring>()</argsstring>
+        <name>OSVersion</name>
+        <qualifiedname>qqmusic::utils::OSVersion::OSVersion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="18" column="5" bodyfile="src/utils/device.cc" bodystart="84" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="structqqmusic_1_1utils_1_1OSVersion_1a4c67fa93ee08920b571c2d09d2322aa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::OSVersion::NLOHMANN_DEFINE_TYPE_INTRUSIVE</definition>
+        <argsstring>(OSVersion, incremental, release, codename, sdk)</argsstring>
+        <name>NLOHMANN_DEFINE_TYPE_INTRUSIVE</name>
+        <qualifiedname>qqmusic::utils::OSVersion::NLOHMANN_DEFINE_TYPE_INTRUSIVE</qualifiedname>
+        <param>
+          <type><ref refid="structqqmusic_1_1utils_1_1OSVersion" kindref="compound">OSVersion</ref></type>
+        </param>
+        <param>
+          <type>incremental</type>
+        </param>
+        <param>
+          <type>release</type>
+        </param>
+        <param>
+          <type>codename</type>
+        </param>
+        <param>
+          <type>sdk</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="25" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/utils/device.h" line="17" column="1" bodyfile="include/qqmusic/utils/device.h" bodystart="17" bodyend="26"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1utils_1_1OSVersion_1aaf16a5644c3c93a75e099e96638d65eb" prot="public" virt="non-virtual"><scope>qqmusic::utils::OSVersion</scope><name>codename</name></member>
+      <member refid="structqqmusic_1_1utils_1_1OSVersion_1a7354e7e76b6933ba246bf8dbc9a24a87" prot="public" virt="non-virtual"><scope>qqmusic::utils::OSVersion</scope><name>incremental</name></member>
+      <member refid="structqqmusic_1_1utils_1_1OSVersion_1a4c67fa93ee08920b571c2d09d2322aa8" prot="public" virt="non-virtual"><scope>qqmusic::utils::OSVersion</scope><name>NLOHMANN_DEFINE_TYPE_INTRUSIVE</name></member>
+      <member refid="structqqmusic_1_1utils_1_1OSVersion_1a24a3d7e3e5a6213376908fd870a92d7f" prot="public" virt="non-virtual"><scope>qqmusic::utils::OSVersion</scope><name>OSVersion</name></member>
+      <member refid="structqqmusic_1_1utils_1_1OSVersion_1ab5bebc675eacc80330d87e2c39728c8a" prot="public" virt="non-virtual"><scope>qqmusic::utils::OSVersion</scope><name>release</name></member>
+      <member refid="structqqmusic_1_1utils_1_1OSVersion_1a1dc5e95b89f44f3c044d5db68012ed62" prot="public" virt="non-virtual"><scope>qqmusic::utils::OSVersion</scope><name>sdk</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

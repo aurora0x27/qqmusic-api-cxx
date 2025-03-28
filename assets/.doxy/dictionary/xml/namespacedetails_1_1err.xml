@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespacedetails_1_1err" kind="namespace" language="C++">
+    <compoundname>details::err</compoundname>
+    <innerclass refid="structdetails_1_1err_1_1Map" prot="public">details::err::Map</innerclass>
+    <innernamespace refid="namespacedetails_1_1err_1_1impl">details::err::impl</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="254" column="1"/>
+  </compounddef>
+</doxygen>

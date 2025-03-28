@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1utils_1_1SessionGuard" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::utils::SessionGuard</compoundname>
+    <includes refid="session_8h" local="no">session.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1SessionGuard_1aa650f3cc4af05e0111a53a6244db643b" prot="private" static="no" mutable="no">
+        <type><ref refid="classqqmusic_1_1utils_1_1SessionManager" kindref="compound">SessionManager</ref> &amp;</type>
+        <definition>SessionManager&amp; qqmusic::utils::SessionGuard::session_manager</definition>
+        <argsstring></argsstring>
+        <name>session_manager</name>
+        <qualifiedname>qqmusic::utils::SessionGuard::session_manager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="191" column="20" bodyfile="include/qqmusic/utils/session.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1SessionGuard_1ae72a25440759ec2fe0c365f8f8c362eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::SessionGuard::SessionGuard</definition>
+        <argsstring>(SessionManager &amp;sm, Session s)</argsstring>
+        <name>SessionGuard</name>
+        <qualifiedname>qqmusic::utils::SessionGuard::SessionGuard</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1SessionManager" kindref="compound">SessionManager</ref> &amp;</type>
+          <declname>sm</declname>
+        </param>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1Session" kindref="compound">Session</ref></type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="180" column="5" bodyfile="include/qqmusic/utils/session.h" bodystart="180" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1SessionGuard_1a7763b3b3856c52cc232ccbddd288e220" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::SessionGuard::SessionGuard</definition>
+        <argsstring>(SessionManager &amp;sm, details::NetworkContext ctx)</argsstring>
+        <name>SessionGuard</name>
+        <qualifiedname>qqmusic::utils::SessionGuard::SessionGuard</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1SessionManager" kindref="compound">SessionManager</ref> &amp;</type>
+          <declname>sm</declname>
+        </param>
+        <param>
+          <type><ref refid="structqqmusic_1_1details_1_1NetworkContext" kindref="compound">details::NetworkContext</ref></type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="184" column="5" bodyfile="include/qqmusic/utils/session.h" bodystart="184" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1SessionGuard_1af561e4b278ccf492dafb5ad613d8addb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::SessionGuard::~SessionGuard</definition>
+        <argsstring>()</argsstring>
+        <name>~SessionGuard</name>
+        <qualifiedname>qqmusic::utils::SessionGuard::~SessionGuard</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="188" column="5" bodyfile="include/qqmusic/utils/session.h" bodystart="188" bodyend="188"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>一个<computeroutput>RAII</computeroutput>风格的Session切换器 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/utils/session.h" line="178" column="1" bodyfile="include/qqmusic/utils/session.h" bodystart="178" bodyend="192"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1utils_1_1SessionGuard_1aa650f3cc4af05e0111a53a6244db643b" prot="private" virt="non-virtual"><scope>qqmusic::utils::SessionGuard</scope><name>session_manager</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionGuard_1ae72a25440759ec2fe0c365f8f8c362eb" prot="public" virt="non-virtual"><scope>qqmusic::utils::SessionGuard</scope><name>SessionGuard</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionGuard_1a7763b3b3856c52cc232ccbddd288e220" prot="public" virt="non-virtual"><scope>qqmusic::utils::SessionGuard</scope><name>SessionGuard</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionGuard_1af561e4b278ccf492dafb5ad613d8addb" prot="public" virt="non-virtual"><scope>qqmusic::utils::SessionGuard</scope><name>~SessionGuard</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

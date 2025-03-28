@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1utils_1_1Exception" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::utils::Exception</compoundname>
+    <includes refid="exception_8h" local="no">exception.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61ed" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Kind</name>
+        <qualifiedname>qqmusic::utils::Exception::Kind</qualifiedname>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda740b03317ad7756d5227a4dd950444e1" prot="public">
+          <name>ResponseCodeError</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda230590ea8c016d4cd6c002d2301698ef" prot="public">
+          <name>CredendialExpiredError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edabc63855ddec67b1f55ee3c6b85999660" prot="public">
+          <name>CredentialInvalidError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda7a4d889d82fcb141a4d432a2eb202f36" prot="public">
+          <name>LoginError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda9b6594f656d54889fad15a03efe4d098" prot="public">
+          <name>SignInvalidError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edaf678393aba9ad90b7dec7a7fe957eb8b" prot="public">
+          <name>DataDestroy</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda70d9547f596baea216d692b4fefebb72" prot="public">
+          <name>RuntimeError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edada9e09104845c00314685f79d4d64953" prot="public">
+          <name>NetworkError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda780f3e59c6786d5c96687aedbd3e2abb" prot="public">
+          <name>JsonError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edae6e659ca310121f4e7349b04111aa725" prot="public">
+          <name>OperationOutOfTime</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edadd967bb56ccfc4304106930b811abe03" prot="public">
+          <name>SslError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edad89787c2717118eb4e8daffefa29fab1" prot="public">
+          <name>UnknownError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>错误类型枚举 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/exception.h" line="22" column="5" bodyfile="include/qqmusic/utils/exception.h" bodystart="22" bodyend="35"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1Exception_1a5b14ee82a3c415c0fe12636f3e945f96" prot="private" static="no" mutable="no">
+        <type>enum <ref refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61ed" kindref="member">Kind</ref></type>
+        <definition>enum Kind qqmusic::utils::Exception::kind_code</definition>
+        <argsstring></argsstring>
+        <name>kind_code</name>
+        <qualifiedname>qqmusic::utils::Exception::kind_code</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/exception.h" line="79" column="14" bodyfile="include/qqmusic/utils/exception.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1Exception_1a0342d601c2e2de8edd2f0520e9316216" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Exception::reason</definition>
+        <argsstring></argsstring>
+        <name>reason</name>
+        <qualifiedname>qqmusic::utils::Exception::reason</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/exception.h" line="80" column="17" bodyfile="include/qqmusic/utils/exception.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1Exception_1aec37f28c1d58fd27fb416ebc92c8aae6" prot="private" static="yes" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Exception::ReasonKindMap[UnknownError+1]</definition>
+        <argsstring>[UnknownError+1]</argsstring>
+        <name>ReasonKindMap</name>
+        <qualifiedname>qqmusic::utils::Exception::ReasonKindMap</qualifiedname>
+        <initializer>= {&quot;ResponseCodeError&quot;,
+                                                                 &quot;CredendialExpiredError&quot;,
+                                                                 &quot;CredentialInvalidError&quot;,
+                                                                 &quot;LoginError&quot;,
+                                                                 &quot;SignInvalidError&quot;,
+                                                                 &quot;DataDestroy&quot;,
+                                                                 &quot;RuntimeError&quot;,
+                                                                 &quot;NetworkError&quot;,
+                                                                 &quot;JsonError&quot;,
+                                                                 &quot;OperationOutOfTime&quot;,
+                                                                 &quot;SslError&quot;,
+                                                                 &quot;Unknown Error&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/exception.h" line="82" column="31" bodyfile="include/qqmusic/utils/exception.h" bodystart="82" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1Exception_1a1dac7af3f35288599f383809d7c9b03b" prot="private" static="yes" mutable="no">
+        <type>std::unordered_map&lt; unsigned, std::string &gt;</type>
+        <definition>std::unordered_map&lt;unsigned, std::string&gt; qqmusic::utils::Exception::HttpResponseCodeMap</definition>
+        <argsstring></argsstring>
+        <name>HttpResponseCodeMap</name>
+        <qualifiedname>qqmusic::utils::Exception::HttpResponseCodeMap</qualifiedname>
+        <initializer>= {
+        {400u, &quot;400 Bad Request&quot;},
+        {401u, &quot;401 Unauthorized&quot;},
+        {403u, &quot;403 Forbidden&quot;},
+        {404u, &quot;404 Not Found&quot;},
+        {500u, &quot;500 Internal Server Error&quot;},
+        {502u, &quot;502 Bad Gateway&quot;},
+        {503u, &quot;503 Service Unavailable&quot;},
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/exception.h" line="95" column="38" bodyfile="include/qqmusic/utils/exception.h" bodystart="95" bodyend="103"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1Exception_1a58ea126d9545139b73facb552fdc1ee9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::Exception::Exception</definition>
+        <argsstring>(Kind kind)</argsstring>
+        <name>Exception</name>
+        <qualifiedname>qqmusic::utils::Exception::Exception</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61ed" kindref="member">Kind</ref></type>
+          <declname>kind</declname>
+        </param>
+        <briefdescription>
+<para>从枚举构造 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/exception.h" line="40" column="5" bodyfile="include/qqmusic/utils/exception.h" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1Exception_1abbfeb5373bc5b6b37bd5aea6196e0873" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::Exception::Exception</definition>
+        <argsstring>(Kind kind, std::string_view reason)</argsstring>
+        <name>Exception</name>
+        <qualifiedname>qqmusic::utils::Exception::Exception</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61ed" kindref="member">Kind</ref></type>
+          <declname>kind</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>reason</declname>
+        </param>
+        <briefdescription>
+<para>从枚举构造并给出理由 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/exception.h" line="47" column="5" bodyfile="include/qqmusic/utils/exception.h" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1Exception_1a10c3e5f7ee5ad9d9bb41e06335115c98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::Exception::Exception</definition>
+        <argsstring>(unsigned int http_rc)</argsstring>
+        <name>Exception</name>
+        <qualifiedname>qqmusic::utils::Exception::Exception</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>http_rc</declname>
+        </param>
+        <briefdescription>
+<para>从HTTP协议状态码构造 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/exception.h" line="54" column="5" bodyfile="include/qqmusic/utils/exception.h" bodystart="54" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1Exception_1af25a4fb741f85d3e6e30cb46512a043e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int qqmusic::utils::Exception::get_error_enum</definition>
+        <argsstring>() const</argsstring>
+        <name>get_error_enum</name>
+        <qualifiedname>qqmusic::utils::Exception::get_error_enum</qualifiedname>
+        <briefdescription>
+<para>获取当前错误类型枚举 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/exception.h" line="66" column="19" bodyfile="include/qqmusic/utils/exception.h" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1Exception_1a15c335f1802fa23d33d45bad70144bd3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Exception::kind</definition>
+        <argsstring>() const</argsstring>
+        <name>kind</name>
+        <qualifiedname>qqmusic::utils::Exception::kind</qualifiedname>
+        <briefdescription>
+<para>返回当前错误类型描述 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/exception.h" line="71" column="18" bodyfile="include/qqmusic/utils/exception.h" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1Exception_1a0d5f0c37269e87893c080b83cdba56df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Exception::what</definition>
+        <argsstring>() const</argsstring>
+        <name>what</name>
+        <qualifiedname>qqmusic::utils::Exception::what</qualifiedname>
+        <briefdescription>
+<para>返回错误原因 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/exception.h" line="76" column="18" bodyfile="include/qqmusic/utils/exception.h" bodystart="76" bodyend="76"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>全局异常类 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/utils/exception.h" line="16" column="1" bodyfile="include/qqmusic/utils/exception.h" bodystart="16" bodyend="104"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda230590ea8c016d4cd6c002d2301698ef" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>CredendialExpiredError</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edabc63855ddec67b1f55ee3c6b85999660" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>CredentialInvalidError</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edaf678393aba9ad90b7dec7a7fe957eb8b" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>DataDestroy</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a58ea126d9545139b73facb552fdc1ee9" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>Exception</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1abbfeb5373bc5b6b37bd5aea6196e0873" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>Exception</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a10c3e5f7ee5ad9d9bb41e06335115c98" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>Exception</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1af25a4fb741f85d3e6e30cb46512a043e" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>get_error_enum</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a1dac7af3f35288599f383809d7c9b03b" prot="private" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>HttpResponseCodeMap</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda780f3e59c6786d5c96687aedbd3e2abb" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>JsonError</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61ed" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>Kind</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a15c335f1802fa23d33d45bad70144bd3" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>kind</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a5b14ee82a3c415c0fe12636f3e945f96" prot="private" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>kind_code</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda7a4d889d82fcb141a4d432a2eb202f36" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>LoginError</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edada9e09104845c00314685f79d4d64953" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>NetworkError</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edae6e659ca310121f4e7349b04111aa725" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>OperationOutOfTime</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a0342d601c2e2de8edd2f0520e9316216" prot="private" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>reason</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1aec37f28c1d58fd27fb416ebc92c8aae6" prot="private" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>ReasonKindMap</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda740b03317ad7756d5227a4dd950444e1" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>ResponseCodeError</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda70d9547f596baea216d692b4fefebb72" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>RuntimeError</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda9b6594f656d54889fad15a03efe4d098" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>SignInvalidError</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edadd967bb56ccfc4304106930b811abe03" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>SslError</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edad89787c2717118eb4e8daffefa29fab1" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>UnknownError</name></member>
+      <member refid="classqqmusic_1_1utils_1_1Exception_1a0d5f0c37269e87893c080b83cdba56df" prot="public" virt="non-virtual"><scope>qqmusic::utils::Exception</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

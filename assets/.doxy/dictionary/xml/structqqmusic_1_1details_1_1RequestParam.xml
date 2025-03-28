@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1details_1_1RequestParam" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::details::RequestParam</compoundname>
+    <includes refid="api_8h" local="no">api.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1RequestParam_1a795b019af4d9755033be7709ed58123c" prot="public" static="no" mutable="no">
+        <type>boost::url</type>
+        <definition>boost::url qqmusic::details::RequestParam::url</definition>
+        <argsstring></argsstring>
+        <name>url</name>
+        <qualifiedname>qqmusic::details::RequestParam::url</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/api.h" line="33" column="16" bodyfile="include/qqmusic/details/api.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1RequestParam_1a355e33e7a83a36e68399a1a0e4e9e0bc" prot="public" static="no" mutable="no">
+        <type>http::request&lt; http::string_body &gt;</type>
+        <definition>http::request&lt;http::string_body&gt; qqmusic::details::RequestParam::req</definition>
+        <argsstring></argsstring>
+        <name>req</name>
+        <qualifiedname>qqmusic::details::RequestParam::req</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/api.h" line="34" column="19" bodyfile="include/qqmusic/details/api.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>包装请求所需的参数 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/api.h" line="32" column="1" bodyfile="include/qqmusic/details/api.h" bodystart="32" bodyend="35"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1details_1_1RequestParam_1a355e33e7a83a36e68399a1a0e4e9e0bc" prot="public" virt="non-virtual"><scope>qqmusic::details::RequestParam</scope><name>req</name></member>
+      <member refid="structqqmusic_1_1details_1_1RequestParam_1a795b019af4d9755033be7709ed58123c" prot="public" virt="non-virtual"><scope>qqmusic::details::RequestParam</scope><name>url</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

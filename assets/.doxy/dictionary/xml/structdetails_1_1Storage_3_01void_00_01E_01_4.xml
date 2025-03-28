@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1Storage_3_01void_00_01E_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>details::Storage&lt; void, E &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename E</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structdetails_1_1Storage_3_01void_00_01E_01_4_1a32a6b725aabb8419ca0452a470ba05dc" prot="public" static="no">
+        <type>std::aligned_storage&lt; sizeof(E), alignof(E)&gt;::type</type>
+        <definition>typedef std::aligned_storage&lt;sizeof(E),alignof(E)&gt;::type details::Storage&lt; void, E &gt;::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>details::Storage&lt; void, E &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="590" column="50" bodyfile="include/qqmusic/details/result.h" bodystart="590" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structdetails_1_1Storage_3_01void_00_01E_01_4_1ab36e4740bdf1288fd33d0d7593ec9294" prot="public" static="no" mutable="no">
+        <type>type</type>
+        <definition>type details::Storage&lt; void, E &gt;::storage_</definition>
+        <argsstring></argsstring>
+        <name>storage_</name>
+        <qualifiedname>details::Storage&lt; void, E &gt;::storage_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="626" column="10" bodyfile="include/qqmusic/details/result.h" bodystart="626" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdetails_1_1Storage_3_01void_00_01E_01_4_1a7b0c28f7aaeccd09cfa815d95903e5cf" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool details::Storage&lt; void, E &gt;::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>details::Storage&lt; void, E &gt;::initialized_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="627" column="10" bodyfile="include/qqmusic/details/result.h" bodystart="627" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structdetails_1_1Storage_3_01void_00_01E_01_4_1aefbb72da6c9a48f77e307b793a083dfb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void details::Storage&lt; void, E &gt;::construct</definition>
+        <argsstring>(types::Ok&lt; void &gt;)</argsstring>
+        <name>construct</name>
+        <qualifiedname>details::Storage&lt; void, E &gt;::construct</qualifiedname>
+        <param>
+          <type><ref refid="structtypes_1_1Ok" kindref="compound">types::Ok</ref>&lt; void &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="592" column="10" bodyfile="include/qqmusic/details/result.h" bodystart="592" bodyend="592"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetails_1_1Storage_3_01void_00_01E_01_4_1adc8de2414e6060f7a143d1c9528adc43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void details::Storage&lt; void, E &gt;::construct</definition>
+        <argsstring>(types::Err&lt; E &gt; err)</argsstring>
+        <name>construct</name>
+        <qualifiedname>details::Storage&lt; void, E &gt;::construct</qualifiedname>
+        <param>
+          <type><ref refid="structtypes_1_1Err" kindref="compound">types::Err</ref>&lt; E &gt;</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="594" column="10" bodyfile="include/qqmusic/details/result.h" bodystart="594" bodyend="597"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetails_1_1Storage_3_01void_00_01E_01_4_1a850fd4ecce6aae3ebcb7284a1e6aacf1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void details::Storage&lt; void, E &gt;::rawConstruct</definition>
+        <argsstring>(U &amp;&amp;val)</argsstring>
+        <name>rawConstruct</name>
+        <qualifiedname>details::Storage&lt; void, E &gt;::rawConstruct</qualifiedname>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="600" column="10" bodyfile="include/qqmusic/details/result.h" bodystart="600" bodyend="605"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetails_1_1Storage_3_01void_00_01E_01_4_1a498d2e2106e10e23cbdbfbe30184283e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void details::Storage&lt; void, E &gt;::destroy</definition>
+        <argsstring>(ok_tag)</argsstring>
+        <name>destroy</name>
+        <qualifiedname>details::Storage&lt; void, E &gt;::destroy</qualifiedname>
+        <param>
+          <type><ref refid="structdetails_1_1ok__tag" kindref="compound">ok_tag</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="607" column="10" bodyfile="include/qqmusic/details/result.h" bodystart="607" bodyend="607"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetails_1_1Storage_3_01void_00_01E_01_4_1a9d435e46b0ab9a5f61a3574ca9c45936" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void details::Storage&lt; void, E &gt;::destroy</definition>
+        <argsstring>(err_tag)</argsstring>
+        <name>destroy</name>
+        <qualifiedname>details::Storage&lt; void, E &gt;::destroy</qualifiedname>
+        <param>
+          <type><ref refid="structdetails_1_1err__tag" kindref="compound">err_tag</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="609" column="10" bodyfile="include/qqmusic/details/result.h" bodystart="609" bodyend="614"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetails_1_1Storage_3_01void_00_01E_01_4_1ae5f1acc69b83bcc62d487de0b8014eb4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>const U &amp;</type>
+        <definition>const U &amp; details::Storage&lt; void, E &gt;::get</definition>
+        <argsstring>() const</argsstring>
+        <name>get</name>
+        <qualifiedname>details::Storage&lt; void, E &gt;::get</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="617" column="13" bodyfile="include/qqmusic/details/result.h" bodystart="617" bodyend="619"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetails_1_1Storage_3_01void_00_01E_01_4_1a3c3977b0fe6491dddec427f79c388095" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>U &amp;</type>
+        <definition>U &amp; details::Storage&lt; void, E &gt;::get</definition>
+        <argsstring>()</argsstring>
+        <name>get</name>
+        <qualifiedname>details::Storage&lt; void, E &gt;::get</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="622" column="7" bodyfile="include/qqmusic/details/result.h" bodystart="622" bodyend="624"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="589" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="589" bodyend="628"/>
+    <listofallmembers>
+      <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1aefbb72da6c9a48f77e307b793a083dfb" prot="public" virt="non-virtual"><scope>details::Storage&lt; void, E &gt;</scope><name>construct</name></member>
+      <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1adc8de2414e6060f7a143d1c9528adc43" prot="public" virt="non-virtual"><scope>details::Storage&lt; void, E &gt;</scope><name>construct</name></member>
+      <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a498d2e2106e10e23cbdbfbe30184283e" prot="public" virt="non-virtual"><scope>details::Storage&lt; void, E &gt;</scope><name>destroy</name></member>
+      <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a9d435e46b0ab9a5f61a3574ca9c45936" prot="public" virt="non-virtual"><scope>details::Storage&lt; void, E &gt;</scope><name>destroy</name></member>
+      <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1ae5f1acc69b83bcc62d487de0b8014eb4" prot="public" virt="non-virtual"><scope>details::Storage&lt; void, E &gt;</scope><name>get</name></member>
+      <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a3c3977b0fe6491dddec427f79c388095" prot="public" virt="non-virtual"><scope>details::Storage&lt; void, E &gt;</scope><name>get</name></member>
+      <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a7b0c28f7aaeccd09cfa815d95903e5cf" prot="public" virt="non-virtual"><scope>details::Storage&lt; void, E &gt;</scope><name>initialized_</name></member>
+      <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a850fd4ecce6aae3ebcb7284a1e6aacf1" prot="public" virt="non-virtual"><scope>details::Storage&lt; void, E &gt;</scope><name>rawConstruct</name></member>
+      <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1ab36e4740bdf1288fd33d0d7593ec9294" prot="public" virt="non-virtual"><scope>details::Storage&lt; void, E &gt;</scope><name>storage_</name></member>
+      <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a32a6b725aabb8419ca0452a470ba05dc" prot="public" virt="non-virtual"><scope>details::Storage&lt; void, E &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

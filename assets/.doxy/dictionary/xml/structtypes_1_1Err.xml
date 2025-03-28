@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structtypes_1_1Err" kind="struct" language="C++" prot="public">
+    <compoundname>types::Err</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename E</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtypes_1_1Err_1adc01aa1e2d865aecbbaa5a39e7621429" prot="public" static="no" mutable="no">
+        <type>E</type>
+        <definition>E types::Err&lt; E &gt;::val</definition>
+        <argsstring></argsstring>
+        <name>val</name>
+        <qualifiedname>types::Err::val</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="40" column="7" bodyfile="include/qqmusic/details/result.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtypes_1_1Err_1ac61c58384609acc17ecb8294e7f111e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>types::Err&lt; E &gt;::Err</definition>
+        <argsstring>(const E &amp;val)</argsstring>
+        <name>Err</name>
+        <qualifiedname>types::Err::Err</qualifiedname>
+        <param>
+          <type>const E &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="34" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="34" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structtypes_1_1Err_1a09c01c29269da183f00d12ead46da764" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>types::Err&lt; E &gt;::Err</definition>
+        <argsstring>(E &amp;&amp;val)</argsstring>
+        <name>Err</name>
+        <qualifiedname>types::Err::Err</qualifiedname>
+        <param>
+          <type>E &amp;&amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="37" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="37" bodyend="38"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="33" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="33" bodyend="41"/>
+    <listofallmembers>
+      <member refid="structtypes_1_1Err_1ac61c58384609acc17ecb8294e7f111e6" prot="public" virt="non-virtual"><scope>types::Err</scope><name>Err</name></member>
+      <member refid="structtypes_1_1Err_1a09c01c29269da183f00d12ead46da764" prot="public" virt="non-virtual"><scope>types::Err</scope><name>Err</name></member>
+      <member refid="structtypes_1_1Err_1adc01aa1e2d865aecbbaa5a39e7621429" prot="public" virt="non-virtual"><scope>types::Err</scope><name>val</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

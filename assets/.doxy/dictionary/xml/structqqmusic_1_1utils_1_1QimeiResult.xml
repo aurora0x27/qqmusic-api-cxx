@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1utils_1_1QimeiResult" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::utils::QimeiResult</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1QimeiResult_1a92ce9fc41677d8424343f296f51b1137" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::QimeiResult::q16</definition>
+        <argsstring></argsstring>
+        <name>q16</name>
+        <qualifiedname>qqmusic::utils::QimeiResult::q16</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/qimei.h" line="18" column="17" bodyfile="include/qqmusic/utils/qimei.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1QimeiResult_1abf7a36c379a4ba8da8234e6216c0179e" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::QimeiResult::q36</definition>
+        <argsstring></argsstring>
+        <name>q36</name>
+        <qualifiedname>qqmusic::utils::QimeiResult::q36</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/qimei.h" line="19" column="17" bodyfile="include/qqmusic/utils/qimei.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structqqmusic_1_1utils_1_1QimeiResult_1a174effcfc82d85d35978091c83fd18fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::QimeiResult::NLOHMANN_DEFINE_TYPE_INTRUSIVE</definition>
+        <argsstring>(QimeiResult, q16, q36)</argsstring>
+        <name>NLOHMANN_DEFINE_TYPE_INTRUSIVE</name>
+        <qualifiedname>qqmusic::utils::QimeiResult::NLOHMANN_DEFINE_TYPE_INTRUSIVE</qualifiedname>
+        <param>
+          <type><ref refid="structqqmusic_1_1utils_1_1QimeiResult" kindref="compound">QimeiResult</ref></type>
+        </param>
+        <param>
+          <type>q16</type>
+        </param>
+        <param>
+          <type>q36</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/qimei.h" line="21" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/utils/qimei.h" line="17" column="1" bodyfile="include/qqmusic/utils/qimei.h" bodystart="17" bodyend="22"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1utils_1_1QimeiResult_1a174effcfc82d85d35978091c83fd18fa" prot="public" virt="non-virtual"><scope>qqmusic::utils::QimeiResult</scope><name>NLOHMANN_DEFINE_TYPE_INTRUSIVE</name></member>
+      <member refid="structqqmusic_1_1utils_1_1QimeiResult_1a92ce9fc41677d8424343f296f51b1137" prot="public" virt="non-virtual"><scope>qqmusic::utils::QimeiResult</scope><name>q16</name></member>
+      <member refid="structqqmusic_1_1utils_1_1QimeiResult_1abf7a36c379a4ba8da8234e6216c0179e" prot="public" virt="non-virtual"><scope>qqmusic::utils::QimeiResult</scope><name>q36</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

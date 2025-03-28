@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1details_1_1ApiConfig" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::details::ApiConfig</compoundname>
+    <includes refid="context_8h" local="no">context.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1ApiConfig_1a3ceac8166ada3326255cb5a6ed0fb897" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::details::ApiConfig::version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <qualifiedname>qqmusic::details::ApiConfig::version</qualifiedname>
+        <initializer>= <ref refid="namespaceqqmusic_1_1details_1a36c518832b3efbebc5ad37b68bd8fd9b" kindref="member">VERSION</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="37" column="17" bodyfile="include/qqmusic/details/context.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1ApiConfig_1ae353cbca6a79deffa8eecff2e54ef0f3" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t qqmusic::details::ApiConfig::version_code</definition>
+        <argsstring></argsstring>
+        <name>version_code</name>
+        <qualifiedname>qqmusic::details::ApiConfig::version_code</qualifiedname>
+        <initializer>= <ref refid="namespaceqqmusic_1_1details_1a476c7e52ed46db89730fce9effe6ec38" kindref="member">VERSION_CODE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="38" column="14" bodyfile="include/qqmusic/details/context.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1ApiConfig_1aec1d0d8bf4179639d85534d134e99d27" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool qqmusic::details::ApiConfig::enable_sign</definition>
+        <argsstring></argsstring>
+        <name>enable_sign</name>
+        <qualifiedname>qqmusic::details::ApiConfig::enable_sign</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>请求参数是否需要签名 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="43" column="10" bodyfile="include/qqmusic/details/context.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1ApiConfig_1a5b271978435c58e976fd48db2ce47eed" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::details::ApiConfig::endpoint</definition>
+        <argsstring></argsstring>
+        <name>endpoint</name>
+        <qualifiedname>qqmusic::details::ApiConfig::endpoint</qualifiedname>
+        <initializer>= &quot;https://u.y.qq.com/cgi-bin/musicu.fcg&quot;</initializer>
+        <briefdescription>
+<para>未加密接口url </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="48" column="17" bodyfile="include/qqmusic/details/context.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1details_1_1ApiConfig_1a9aba23e1dc133b59c4e72f498fec5534" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::details::ApiConfig::enc_endpoint</definition>
+        <argsstring></argsstring>
+        <name>enc_endpoint</name>
+        <qualifiedname>qqmusic::details::ApiConfig::enc_endpoint</qualifiedname>
+        <initializer>= &quot;https://u.y.qq.com/cgi-bin/musics.fcg&quot;</initializer>
+        <briefdescription>
+<para>加密接口url </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="53" column="17" bodyfile="include/qqmusic/details/context.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Api相关常量 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/context.h" line="36" column="1" bodyfile="include/qqmusic/details/context.h" bodystart="36" bodyend="54"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1details_1_1ApiConfig_1aec1d0d8bf4179639d85534d134e99d27" prot="public" virt="non-virtual"><scope>qqmusic::details::ApiConfig</scope><name>enable_sign</name></member>
+      <member refid="structqqmusic_1_1details_1_1ApiConfig_1a9aba23e1dc133b59c4e72f498fec5534" prot="public" virt="non-virtual"><scope>qqmusic::details::ApiConfig</scope><name>enc_endpoint</name></member>
+      <member refid="structqqmusic_1_1details_1_1ApiConfig_1a5b271978435c58e976fd48db2ce47eed" prot="public" virt="non-virtual"><scope>qqmusic::details::ApiConfig</scope><name>endpoint</name></member>
+      <member refid="structqqmusic_1_1details_1_1ApiConfig_1a3ceac8166ada3326255cb5a6ed0fb897" prot="public" virt="non-virtual"><scope>qqmusic::details::ApiConfig</scope><name>version</name></member>
+      <member refid="structqqmusic_1_1details_1_1ApiConfig_1ae353cbca6a79deffa8eecff2e54ef0f3" prot="public" virt="non-virtual"><scope>qqmusic::details::ApiConfig</scope><name>version_code</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

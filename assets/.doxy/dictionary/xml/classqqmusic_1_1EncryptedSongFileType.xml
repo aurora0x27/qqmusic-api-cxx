@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1EncryptedSongFileType" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::EncryptedSongFileType</compoundname>
+    <basecompoundref refid="classqqmusic_1_1BaseMediaFileType" prot="public" virt="non-virtual">qqmusic::BaseMediaFileType</basecompoundref>
+    <includes refid="song_8h" local="no">song.h</includes>
+    <innerclass refid="structqqmusic_1_1EncryptedSongFileType_1_1CoreData" prot="private">qqmusic::EncryptedSongFileType::CoreData</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Type</name>
+        <qualifiedname>qqmusic::EncryptedSongFileType::Type</qualifiedname>
+        <enumvalue id="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a54c76ac6f78f06fa0ac26d5aa054aa40" prot="public">
+          <name>MASTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132ab2233f2921ba7e83d64a814f96f14899" prot="public">
+          <name>ATMOS_2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a2774ab5986fa335a801e68f11aa365e7" prot="public">
+          <name>ATMOS_51</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a9175a969d836d88422b0a3ede8cb59a3" prot="public">
+          <name>FLAC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132ab1243795ba9a40e7f7737369c695d9bb" prot="public">
+          <name>OGG_640</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a0529c0692203029f296e5070dfbd9375" prot="public">
+          <name>OGG_320</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132ad3553e35506af9cb11f18ba66c8633c2" prot="public">
+          <name>OGG_192</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a676f32d751ca75498a00d5006f1bcbd3" prot="public">
+          <name>OGG_96</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>加密歌曲类型枚举 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="151" column="5" bodyfile="include/qqmusic/song.h" bodystart="151" bodyend="160"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1EncryptedSongFileType_1a3eab04066ffc08aaeec77ade9d7a243b" prot="private" static="no" mutable="no">
+        <type>struct qqmusic::EncryptedSongFileType::CoreData</type>
+        <definition>struct qqmusic::EncryptedSongFileType::CoreData qqmusic::EncryptedSongFileType::inner</definition>
+        <argsstring></argsstring>
+        <name>inner</name>
+        <qualifiedname>qqmusic::EncryptedSongFileType::inner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="213" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1EncryptedSongFileType_1a46749185da546b306e329dcffc5d4912" prot="private" static="yes" mutable="no">
+        <type>const std::map&lt; <ref refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132" kindref="member">Type</ref>, CoreData &gt;</type>
+        <definition>const std::map&lt;Type, CoreData&gt; qqmusic::EncryptedSongFileType::table</definition>
+        <argsstring></argsstring>
+        <name>table</name>
+        <qualifiedname>qqmusic::EncryptedSongFileType::table</qualifiedname>
+        <initializer>= {
+        {MASTER, {&quot;AIM0&quot;, &quot;.mflac&quot;}},
+        {ATMOS_2, {&quot;Q0M0&quot;, &quot;.mflac&quot;}},
+        {ATMOS_51, {&quot;Q0M1&quot;, &quot;.mflac&quot;}},
+        {FLAC, {&quot;F0M0&quot;, &quot;.mflac&quot;}},
+        {OGG_640, {&quot;O801&quot;, &quot;.mgg&quot;}},
+        {OGG_320, {&quot;O800&quot;, &quot;.mgg&quot;}},
+        {OGG_192, {&quot;O6M0&quot;, &quot;.mgg&quot;}},
+        {OGG_96, {&quot;O4M0&quot;, &quot;.mgg&quot;}},
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="215" column="34" bodyfile="include/qqmusic/song.h" bodystart="215" bodyend="224"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1EncryptedSongFileType_1ae904f1cfbc331df6cec2417852837bbd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::EncryptedSongFileType::EncryptedSongFileType</definition>
+        <argsstring>(Type type)</argsstring>
+        <name>EncryptedSongFileType</name>
+        <qualifiedname>qqmusic::EncryptedSongFileType::EncryptedSongFileType</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132" kindref="member">Type</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>通过类型枚举初始化 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>类型枚举</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132" kindref="member">EncryptedSongFileType::Type</ref></para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>若提供的枚举不合法</parametername>
+<parametername>就抛出&lt;tt&gt;std::runtime_error&lt;/tt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="171" column="5" bodyfile="include/qqmusic/song.h" bodystart="171" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1EncryptedSongFileType_1ad8d17fc6dc9b817375ebae199ee4ae7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::EncryptedSongFileType::EncryptedSongFileType</definition>
+        <argsstring>()</argsstring>
+        <name>EncryptedSongFileType</name>
+        <qualifiedname>qqmusic::EncryptedSongFileType::EncryptedSongFileType</qualifiedname>
+        <briefdescription>
+<para>默认初始化函数, 默认格式: FLAC格式 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069" kindref="member">SongFileType::Type</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="183" column="5" bodyfile="include/qqmusic/song.h" bodystart="183" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1EncryptedSongFileType_1a2caf7a247b741f3f50f97b8734332749" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::EncryptedSongFileType::~EncryptedSongFileType</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~EncryptedSongFileType</name>
+        <qualifiedname>qqmusic::EncryptedSongFileType::~EncryptedSongFileType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="186" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1EncryptedSongFileType_1a3fbc6b8f99511dde35767e578088b296" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view qqmusic::EncryptedSongFileType::prefix</definition>
+        <argsstring>() override</argsstring>
+        <name>prefix</name>
+        <qualifiedname>qqmusic::EncryptedSongFileType::prefix</qualifiedname>
+        <reimplements refid="classqqmusic_1_1BaseMediaFileType_1a23664a172e188fbcb5af4c80d39bb87b">prefix</reimplements>
+        <briefdescription>
+<para>获取歌曲类ID前缀 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>返回<computeroutput>std::string</computeroutput>格式的类型前缀 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="193" column="22" bodyfile="include/qqmusic/song.h" bodystart="193" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1EncryptedSongFileType_1a0dc9de2a9d887267cd2df873b02a01cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view qqmusic::EncryptedSongFileType::expandation</definition>
+        <argsstring>() override</argsstring>
+        <name>expandation</name>
+        <qualifiedname>qqmusic::EncryptedSongFileType::expandation</qualifiedname>
+        <reimplements refid="classqqmusic_1_1BaseMediaFileType_1a869424d2bfc385b3a8e34987590f9a57">expandation</reimplements>
+        <briefdescription>
+<para>获取歌曲类ID扩展 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>返回<computeroutput>std::string</computeroutput>格式的类型扩展名 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="200" column="22" bodyfile="include/qqmusic/song.h" bodystart="200" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1EncryptedSongFileType_1a619a1abb96168eaae876eb8122a0407e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool qqmusic::EncryptedSongFileType::encrypted</definition>
+        <argsstring>() override</argsstring>
+        <name>encrypted</name>
+        <qualifiedname>qqmusic::EncryptedSongFileType::encrypted</qualifiedname>
+        <reimplements refid="classqqmusic_1_1BaseMediaFileType_1a6a82fc4bbc1c5fdf0eda209709579317">encrypted</reimplements>
+        <briefdescription>
+<para>该格式是否加密 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>总是返回<computeroutput>true</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="207" column="10" bodyfile="include/qqmusic/song.h" bodystart="207" bodyend="207"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>加密歌曲文件类型 </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classqqmusic_1_1BaseMediaFileType" kindref="compound">BaseMediaFileType</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>qqmusic::BaseMediaFileType</label>
+        <link refid="classqqmusic_1_1BaseMediaFileType"/>
+      </node>
+      <node id="1">
+        <label>qqmusic::EncryptedSongFileType</label>
+        <link refid="classqqmusic_1_1EncryptedSongFileType"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>qqmusic::BaseMediaFileType</label>
+        <link refid="classqqmusic_1_1BaseMediaFileType"/>
+      </node>
+      <node id="1">
+        <label>qqmusic::EncryptedSongFileType</label>
+        <link refid="classqqmusic_1_1EncryptedSongFileType"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/song.h" line="146" column="1" bodyfile="include/qqmusic/song.h" bodystart="146" bodyend="225"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132ab2233f2921ba7e83d64a814f96f14899" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>ATMOS_2</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a2774ab5986fa335a801e68f11aa365e7" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>ATMOS_51</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a619a1abb96168eaae876eb8122a0407e" prot="public" virt="virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>encrypted</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1ae904f1cfbc331df6cec2417852837bbd" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>EncryptedSongFileType</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1ad8d17fc6dc9b817375ebae199ee4ae7f" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>EncryptedSongFileType</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a0dc9de2a9d887267cd2df873b02a01cf" prot="public" virt="virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>expandation</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a9175a969d836d88422b0a3ede8cb59a3" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>FLAC</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a3eab04066ffc08aaeec77ade9d7a243b" prot="private" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>inner</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a54c76ac6f78f06fa0ac26d5aa054aa40" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>MASTER</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132ad3553e35506af9cb11f18ba66c8633c2" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>OGG_192</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a0529c0692203029f296e5070dfbd9375" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>OGG_320</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132ab1243795ba9a40e7f7737369c695d9bb" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>OGG_640</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a676f32d751ca75498a00d5006f1bcbd3" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>OGG_96</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a3fbc6b8f99511dde35767e578088b296" prot="public" virt="virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>prefix</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a46749185da546b306e329dcffc5d4912" prot="private" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>table</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>Type</name></member>
+      <member refid="classqqmusic_1_1BaseMediaFileType_1a2049748414337f7068ebe12b86a20e9e" prot="public" virt="virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>~BaseMediaFileType</name></member>
+      <member refid="classqqmusic_1_1EncryptedSongFileType_1a2caf7a247b741f3f50f97b8734332749" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType</scope><name>~EncryptedSongFileType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

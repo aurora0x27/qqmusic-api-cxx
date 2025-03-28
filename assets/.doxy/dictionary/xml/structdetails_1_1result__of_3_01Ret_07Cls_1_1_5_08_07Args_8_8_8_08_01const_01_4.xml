@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1result__of_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>details::result_of&lt; Ret(Cls::*)(Args...) const &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename Ret</type>
+      </param>
+      <param>
+        <type>typename Cls</type>
+      </param>
+      <param>
+        <type>typename...</type>
+        <declname>Args</declname>
+        <defname>Args</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structdetails_1_1result__of_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4_1aebc83fab2247c7f5b372bbac54b2f7d8" prot="public" static="no">
+        <type>Ret</type>
+        <definition>typedef Ret details::result_of&lt; Ret(Cls::*)(Args...) const &gt;::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>details::result_of&lt; Ret(Cls::*)(Args...) const &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="86" column="17" bodyfile="include/qqmusic/details/result.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="85" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="85" bodyend="87"/>
+    <listofallmembers>
+      <member refid="structdetails_1_1result__of_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4_1aebc83fab2247c7f5b372bbac54b2f7d8" prot="public" virt="non-virtual"><scope>details::result_of&lt; Ret(Cls::*)(Args...) const &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1TabType_1_1Tab" kind="struct" language="C++" prot="private">
+    <compoundname>qqmusic::TabType::Tab</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1TabType_1_1Tab_1a3561dd5f96fee874ea96f1e5d3c28bb0" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::TabType::Tab::tab_id</definition>
+        <argsstring></argsstring>
+        <name>tab_id</name>
+        <qualifiedname>qqmusic::TabType::Tab::tab_id</qualifiedname>
+        <briefdescription>
+<para>tab ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="151" column="21" bodyfile="include/qqmusic/singer.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1TabType_1_1Tab_1a2ddaf2219fdcbf20b14b70e4a6c31195" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::TabType::Tab::tab_name</definition>
+        <argsstring></argsstring>
+        <name>tab_name</name>
+        <qualifiedname>qqmusic::TabType::Tab::tab_name</qualifiedname>
+        <briefdescription>
+<para>tab 名称 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="152" column="21" bodyfile="include/qqmusic/singer.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>标签信息结构 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/singer.h" line="150" column="5" bodyfile="include/qqmusic/singer.h" bodystart="150" bodyend="153"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1TabType_1_1Tab_1a3561dd5f96fee874ea96f1e5d3c28bb0" prot="public" virt="non-virtual"><scope>qqmusic::TabType::Tab</scope><name>tab_id</name></member>
+      <member refid="structqqmusic_1_1TabType_1_1Tab_1a2ddaf2219fdcbf20b14b70e4a6c31195" prot="public" virt="non-virtual"><scope>qqmusic::TabType::Tab</scope><name>tab_name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

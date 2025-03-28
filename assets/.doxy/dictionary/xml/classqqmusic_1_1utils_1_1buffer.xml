@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1utils_1_1buffer" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::utils::buffer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::vector&lt; uint8_t &gt;</basecompoundref>
+    <includes refid="buffer_8h" local="no">buffer.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1a908e0e022319ec472d81b6bf01674e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::buffer::buffer</definition>
+        <argsstring>()=default</argsstring>
+        <name>buffer</name>
+        <qualifiedname>qqmusic::utils::buffer::buffer</qualifiedname>
+        <briefdescription>
+<para>默认初始化 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="29" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1adcf9de5135399d98af966c70169de469" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::buffer::buffer</definition>
+        <argsstring>(size_t size)</argsstring>
+        <name>buffer</name>
+        <qualifiedname>qqmusic::utils::buffer::buffer</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>预先分配异丁醇长度 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>预先分配长度 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="36" column="5" bodyfile="include/qqmusic/utils/buffer.h" bodystart="36" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1a4dc3563a76dbf97cc8beee1c86b716e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::buffer::buffer</definition>
+        <argsstring>(const uint8_t *src_head, size_t src_size)</argsstring>
+        <name>buffer</name>
+        <qualifiedname>qqmusic::utils::buffer::buffer</qualifiedname>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>src_head</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>src_size</declname>
+        </param>
+        <briefdescription>
+<para>直接从内存区域进行构造 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src_head</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>内存区域的首地址 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>内存区域长度</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>是拷贝初始化 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="47" column="5" bodyfile="include/qqmusic/utils/buffer.h" bodystart="47" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1a081741cda5ced9a78a7ec8f53fc01ccc" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::buffer::buffer</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;&amp;other) noexcept</argsstring>
+        <name>buffer</name>
+        <qualifiedname>qqmusic::utils::buffer::buffer</qualifiedname>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>从std::vector&lt;uint8_t&gt;移动构造 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="55" column="5" bodyfile="include/qqmusic/utils/buffer.h" bodystart="55" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1a7b0058bf348c1fafbfb29c155bcae72a" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::buffer::buffer</definition>
+        <argsstring>(buffer &amp;&amp;other) noexcept</argsstring>
+        <name>buffer</name>
+        <qualifiedname>qqmusic::utils::buffer::buffer</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>移动构造 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="63" column="5" bodyfile="include/qqmusic/utils/buffer.h" bodystart="63" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1aebd3b926b2d874e343d34c9caff039e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::buffer::buffer</definition>
+        <argsstring>(size_t size, char c)</argsstring>
+        <name>buffer</name>
+        <qualifiedname>qqmusic::utils::buffer::buffer</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>初始化为特定字符 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>预先初始化长度 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>需要填充的字符 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="72" column="5" bodyfile="include/qqmusic/utils/buffer.h" bodystart="72" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1aa444c1dadd1e6bd0194f19034f098048" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::buffer::~buffer</definition>
+        <argsstring>()=default</argsstring>
+        <name>~buffer</name>
+        <qualifiedname>qqmusic::utils::buffer::~buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="75" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1a8c7f031a55a06dcbf97fcf18cf23c76e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::utils::buffer::append</definition>
+        <argsstring>(const void *src_data_buf, size_t data_buf_size)</argsstring>
+        <name>append</name>
+        <qualifiedname>qqmusic::utils::buffer::append</qualifiedname>
+        <param>
+          <type>const void *</type>
+          <declname>src_data_buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>data_buf_size</declname>
+        </param>
+        <briefdescription>
+<para>将一段内存插到这段buffer后面 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src_data_buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待插入数据的首地址 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data_buf_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待插入数据的长度 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="83" column="10" bodyfile="include/qqmusic/utils/buffer.h" bodystart="83" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1af35e7c9aab7fbb00bb93c4fc8d3ac867" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::buffer::buffer</definition>
+        <argsstring>(const buffer &amp;other)=default</argsstring>
+        <name>buffer</name>
+        <qualifiedname>qqmusic::utils::buffer::buffer</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>拷贝构造函数 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="92" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1a011d1f46190f662b31c70b6d08a43c32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref> &amp;</type>
+        <definition>buffer &amp; qqmusic::utils::buffer::operator=</definition>
+        <argsstring>(const buffer &amp;other)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>qqmusic::utils::buffer::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>拷贝构造函数, 重载<computeroutput>=</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="99" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1a51e9321c3a5fccb73ba71d99c17a08b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref></type>
+        <definition>buffer qqmusic::utils::buffer::operator+=</definition>
+        <argsstring>(const buffer &amp;a)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>qqmusic::utils::buffer::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>将一段buffer插入本段buffer末尾 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="106" column="12" bodyfile="include/qqmusic/utils/buffer.h" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1buffer_1a1dd7397987f0a8f363e7c25018d8417b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref></type>
+        <definition>buffer qqmusic::utils::buffer::operator+</definition>
+        <argsstring>(const buffer &amp;a)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>qqmusic::utils::buffer::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>两段buffer拼接, 并返回构造新的buffer </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/buffer.h" line="116" column="12" bodyfile="include/qqmusic/utils/buffer.h" bodystart="116" bodyend="119"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>二进制缓冲区的统一表示 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>qqmusic::utils::buffer</label>
+        <link refid="classqqmusic_1_1utils_1_1buffer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; uint8_t &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>qqmusic::utils::buffer</label>
+        <link refid="classqqmusic_1_1utils_1_1buffer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; uint8_t &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/utils/buffer.h" line="23" column="1" bodyfile="include/qqmusic/utils/buffer.h" bodystart="23" bodyend="120"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1a8c7f031a55a06dcbf97fcf18cf23c76e" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>append</name></member>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1a908e0e022319ec472d81b6bf01674e5c" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>buffer</name></member>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1adcf9de5135399d98af966c70169de469" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>buffer</name></member>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1a4dc3563a76dbf97cc8beee1c86b716e7" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>buffer</name></member>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1a081741cda5ced9a78a7ec8f53fc01ccc" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>buffer</name></member>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1a7b0058bf348c1fafbfb29c155bcae72a" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>buffer</name></member>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1aebd3b926b2d874e343d34c9caff039e3" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>buffer</name></member>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1af35e7c9aab7fbb00bb93c4fc8d3ac867" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>buffer</name></member>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1a1dd7397987f0a8f363e7c25018d8417b" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>operator+</name></member>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1a51e9321c3a5fccb73ba71d99c17a08b3" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>operator+=</name></member>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1a011d1f46190f662b31c70b6d08a43c32" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>operator=</name></member>
+      <member refid="classqqmusic_1_1utils_1_1buffer_1aa444c1dadd1e6bd0194f19034f098048" prot="public" virt="non-virtual"><scope>qqmusic::utils::buffer</scope><name>~buffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

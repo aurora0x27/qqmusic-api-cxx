@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1QRCodeLoginEvent" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::QRCodeLoginEvent</compoundname>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Status</name>
+        <qualifiedname>qqmusic::QRCodeLoginEvent::Status</qualifiedname>
+        <enumvalue id="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a2ba22e58ca17bb728d522bba36cf8350" prot="public">
+          <name>DONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689ae0740abfbc61bc2be0bfa78af61106ae" prot="public">
+          <name>SCAN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a8d428c502adec040b6a51e880034b9f4" prot="public">
+          <name>CONF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a499a6c694b83db642a374bbc7cb07711" prot="public">
+          <name>REFUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a070a0fb40f6c308ab544b227660aadff" prot="public">
+          <name>TIMEOUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a03570470bad94692ce93e32700d2e1cb" prot="public">
+          <name>OTHER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="36" column="5" bodyfile="include/qqmusic/login.h" bodystart="36" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1QRCodeLoginEvent_1a4712b6818b2af778e1a293e4d2163a16" prot="private" static="no" mutable="no">
+        <type>Status</type>
+        <definition>Status qqmusic::QRCodeLoginEvent::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>qqmusic::QRCodeLoginEvent::status</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="77" column="12" bodyfile="include/qqmusic/login.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1QRCodeLoginEvent_1a7d8056b7f7577a74f1fbe3d794642618" prot="private" static="yes" mutable="no">
+        <type>const std::map&lt; Status, std::string &gt;</type>
+        <definition>const std::map&lt;Status, std::string&gt; qqmusic::QRCodeLoginEvent::name_map</definition>
+        <argsstring></argsstring>
+        <name>name_map</name>
+        <qualifiedname>qqmusic::QRCodeLoginEvent::name_map</qualifiedname>
+        <initializer>= {
+        {Status::DONE, &quot;DONE&quot;},
+        {Status::SCAN, &quot;SCAN&quot;},
+        {Status::CONF, &quot;CONF&quot;},
+        {Status::TIMEOUT, &quot;TIMEOUT&quot;},
+        {Status::REFUSE, &quot;REFUSE&quot;},
+        {Status::OTHER, &quot;OTHER&quot;},
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="78" column="34" bodyfile="include/qqmusic/login.h" bodystart="78" bodyend="85"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1QRCodeLoginEvent_1ac5df038d39e4b9a58625d32ed106476e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::QRCodeLoginEvent::QRCodeLoginEvent</definition>
+        <argsstring>(Status stat)</argsstring>
+        <name>QRCodeLoginEvent</name>
+        <qualifiedname>qqmusic::QRCodeLoginEvent::QRCodeLoginEvent</qualifiedname>
+        <param>
+          <type>Status</type>
+          <declname>stat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="38" column="5" bodyfile="include/qqmusic/login.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1QRCodeLoginEvent_1af1f0224fc3c370b8020b4986debb6a1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::QRCodeLoginEvent::QRCodeLoginEvent</definition>
+        <argsstring>(unsigned int code)</argsstring>
+        <name>QRCodeLoginEvent</name>
+        <qualifiedname>qqmusic::QRCodeLoginEvent::QRCodeLoginEvent</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="40" column="5" bodyfile="include/qqmusic/login.h" bodystart="40" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1QRCodeLoginEvent_1ad3030239af1e0b0f64f20a4137d50529" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool qqmusic::QRCodeLoginEvent::operator==</definition>
+        <argsstring>(const QRCodeLoginEvent &amp;e)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>qqmusic::QRCodeLoginEvent::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1QRCodeLoginEvent" kindref="compound">QRCodeLoginEvent</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="66" column="17" bodyfile="include/qqmusic/login.h" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1QRCodeLoginEvent_1a73a19988749761086db795ebf0c16640" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool qqmusic::QRCodeLoginEvent::operator!=</definition>
+        <argsstring>(const QRCodeLoginEvent &amp;e)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>qqmusic::QRCodeLoginEvent::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1QRCodeLoginEvent" kindref="compound">QRCodeLoginEvent</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="68" column="17" bodyfile="include/qqmusic/login.h" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1QRCodeLoginEvent_1a7e7f8ea7d1d36145ca3fa0a143b923ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool qqmusic::QRCodeLoginEvent::operator==</definition>
+        <argsstring>(Status stat)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>qqmusic::QRCodeLoginEvent::operator==</qualifiedname>
+        <param>
+          <type>Status</type>
+          <declname>stat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="70" column="17" bodyfile="include/qqmusic/login.h" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1QRCodeLoginEvent_1a3f331da5f77cb1041ee199471a17548d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool qqmusic::QRCodeLoginEvent::operator!=</definition>
+        <argsstring>(Status stat)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>qqmusic::QRCodeLoginEvent::operator!=</qualifiedname>
+        <param>
+          <type>Status</type>
+          <declname>stat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="72" column="17" bodyfile="include/qqmusic/login.h" bodystart="72" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1QRCodeLoginEvent_1a446efdd058fd92ca99519e6a84b52a40" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view qqmusic::QRCodeLoginEvent::name</definition>
+        <argsstring>() const</argsstring>
+        <name>name</name>
+        <qualifiedname>qqmusic::QRCodeLoginEvent::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="74" column="29" bodyfile="include/qqmusic/login.h" bodystart="74" bodyend="74"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/login.h" line="34" column="1" bodyfile="include/qqmusic/login.h" bodystart="34" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1QRCodeLoginEvent_1a446efdd058fd92ca99519e6a84b52a40" prot="public" virt="non-virtual"><scope>qqmusic::QRCodeLoginEvent</scope><name>name</name></member>
+      <member refid="classqqmusic_1_1QRCodeLoginEvent_1a7d8056b7f7577a74f1fbe3d794642618" prot="private" virt="non-virtual"><scope>qqmusic::QRCodeLoginEvent</scope><name>name_map</name></member>
+      <member refid="classqqmusic_1_1QRCodeLoginEvent_1a73a19988749761086db795ebf0c16640" prot="public" virt="non-virtual"><scope>qqmusic::QRCodeLoginEvent</scope><name>operator!=</name></member>
+      <member refid="classqqmusic_1_1QRCodeLoginEvent_1a3f331da5f77cb1041ee199471a17548d" prot="public" virt="non-virtual"><scope>qqmusic::QRCodeLoginEvent</scope><name>operator!=</name></member>
+      <member refid="classqqmusic_1_1QRCodeLoginEvent_1ad3030239af1e0b0f64f20a4137d50529" prot="public" virt="non-virtual"><scope>qqmusic::QRCodeLoginEvent</scope><name>operator==</name></member>
+      <member refid="classqqmusic_1_1QRCodeLoginEvent_1a7e7f8ea7d1d36145ca3fa0a143b923ce" prot="public" virt="non-virtual"><scope>qqmusic::QRCodeLoginEvent</scope><name>operator==</name></member>
+      <member refid="classqqmusic_1_1QRCodeLoginEvent_1ac5df038d39e4b9a58625d32ed106476e" prot="public" virt="non-virtual"><scope>qqmusic::QRCodeLoginEvent</scope><name>QRCodeLoginEvent</name></member>
+      <member refid="classqqmusic_1_1QRCodeLoginEvent_1af1f0224fc3c370b8020b4986debb6a1a" prot="public" virt="non-virtual"><scope>qqmusic::QRCodeLoginEvent</scope><name>QRCodeLoginEvent</name></member>
+      <member refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689" prot="public" virt="non-virtual"><scope>qqmusic::QRCodeLoginEvent</scope><name>Status</name></member>
+      <member refid="classqqmusic_1_1QRCodeLoginEvent_1a4712b6818b2af778e1a293e4d2163a16" prot="private" virt="non-virtual"><scope>qqmusic::QRCodeLoginEvent</scope><name>status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

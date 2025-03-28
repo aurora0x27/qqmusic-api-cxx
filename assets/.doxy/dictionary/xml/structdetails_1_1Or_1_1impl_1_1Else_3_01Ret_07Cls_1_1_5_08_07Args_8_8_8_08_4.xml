@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1Or_1_1impl_1_1Else_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" kind="struct" language="C++" prot="public">
+    <compoundname>details::Or::impl::Else&lt; Ret(Cls::*)(Args...)&gt;</compoundname>
+    <basecompoundref refid="structdetails_1_1Or_1_1impl_1_1Else" prot="public" virt="non-virtual">details::Or::impl::Else&lt; Ret(Args...)&gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename Ret</type>
+      </param>
+      <param>
+        <type>typename Cls</type>
+      </param>
+      <param>
+        <type>typename...</type>
+        <declname>Args</declname>
+        <defname>Args</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>details::Or::impl::Else&lt; Ret(Args...)&gt;</label>
+        <link refid="structdetails_1_1Or_1_1impl_1_1Else"/>
+      </node>
+      <node id="1">
+        <label>details::Or::impl::Else&lt; Ret(Cls::*)(Args...)&gt;</label>
+        <link refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>details::Or::impl::Else&lt; Ret(Args...)&gt;</label>
+        <link refid="structdetails_1_1Or_1_1impl_1_1Else"/>
+      </node>
+      <node id="1">
+        <label>details::Or::impl::Else&lt; Ret(Cls::*)(Args...)&gt;</label>
+        <link refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/details/result.h" line="369" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="369" bodyend="369"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

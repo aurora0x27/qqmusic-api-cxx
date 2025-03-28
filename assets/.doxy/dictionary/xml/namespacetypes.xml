@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespacetypes" kind="namespace" language="C++">
+    <compoundname>types</compoundname>
+    <innerclass refid="structtypes_1_1Err" prot="public">types::Err</innerclass>
+    <innerclass refid="structtypes_1_1Ok" prot="public">types::Ok</innerclass>
+    <innerclass refid="structtypes_1_1Ok_3_01void_01_4" prot="public">types::Ok&lt; void &gt;</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="17" column="1"/>
+  </compounddef>
+</doxygen>
