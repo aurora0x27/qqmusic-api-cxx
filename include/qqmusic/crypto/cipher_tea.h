@@ -23,9 +23,7 @@
 #include <botan/secmem.h>
 #include <cstdint>
 #include <qqmusic/result.h>
-#include <ranges>
 #include <stdexcept>
-#include <vector>
 using SecureByteVector = Botan::secure_vector<uint8_t>;
 
 namespace qqmusic::crypto {
@@ -74,8 +72,8 @@ public:
     }
 
 private:
-    std::array<uint8_t, 16> m_key; ///< 解密密钥存储
-    int m_rounds;                  ///< 解密轮次计数器
+    std::array<uint8_t, 16> m_key{}; ///< 解密密钥存储
+    int m_rounds;                    ///< 解密轮次计数器
 
     static uint32_t load_u32(const uint8_t* p) {
         return (static_cast<uint32_t>(p[3]) << 24) | (static_cast<uint32_t>(p[2]) << 16)

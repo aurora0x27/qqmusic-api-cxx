@@ -22,11 +22,9 @@
 #ifndef QQMUSIC_CRYPTO_KEY_DERIVE_H
 #define QQMUSIC_CRYPTO_KEY_DERIVE_H
 
-#include <array>
 #include <botan/secmem.h>
 #include <cstdint>
 #include <qqmusic/result.h>
-#include <vector>
 using SecureByteVector = Botan::secure_vector<uint8_t>;
 
 namespace qqmusic::crypto {

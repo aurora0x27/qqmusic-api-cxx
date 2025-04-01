@@ -26,7 +26,6 @@
 #include <qqmusic/crypto/cipher_tea.h>
 #include <qqmusic/crypto/key_derive.h>
 #include <qqmusic/result.h>
-#include <ranges>
 #include <vector>
 
 namespace qqmusic::crypto {
@@ -117,8 +116,8 @@ qqmusic::Result<SecureByteVector> KeyDerive::derive_V1(const SecureByteVector& r
  * @return qqmusic::Result<std::vector<uint8_t>> 
  */
 qqmusic::Result<SecureByteVector> KeyDerive::derive_V2(SecureByteVector raw) {
-    auto first_buf = decrypt_tencent_tea(std::move(raw), DeriveV2Key1);
-    auto second_buf = decrypt_tencent_tea(std::move(first_buf.unwrap()), DeriveV2Key2);
+    auto first_buf = decrypt_tencent_tea(raw, DeriveV2Key1);
+    auto second_buf = decrypt_tencent_tea(first_buf.unwrap(), DeriveV2Key2);
 
     // Base64
     auto decode_buf = second_buf.unwrap();
@@ -196,7 +195,7 @@ qqmusic::Result<SecureByteVector> KeyDerive::decrypt_tencent_tea(const SecureByt
 
     auto crypto_block = [&] {
         iv_prev = ivCur;
-        std::copy_n(in_buf.begin() + in_buf_pos, 8, ivCur.begin());
+        std::copy_n(in_buf.begin() + static_cast<long>(in_buf_pos), 8, ivCur.begin());
 
         xor8Bytes(dest_buf, dest_buf, in_buf.data() + in_buf_pos);
         auto res = tea.decrypt(dest_buf.data(), dest_buf.data());
