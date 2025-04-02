@@ -49,7 +49,7 @@ public:
     * 如果没有V2前缀，则直接进行V1解密
     * @param raw_key 
     */
-    static qqmusic::utils::buffer derive(qqmusic::utils::buffer& raw_key);
+    static qqmusic::utils::buffer derive(qqmusic::utils::buffer&& raw_key);
 
 private:
     /**

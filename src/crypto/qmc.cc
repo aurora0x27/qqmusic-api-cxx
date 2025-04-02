@@ -1,4 +1,3 @@
-#include <botan/secmem.h>
 #include <format>
 #include <qqmusic/crypto/cipher_map.h>
 #include <qqmusic/crypto/cipher_rc4.h>
@@ -10,10 +9,9 @@
 #include <qqmusic/utils/buffer.h>
 #include <utility>
 
-using SecureByteVector = Botan::secure_vector<uint8_t>;
 size_t qqmusic::crypto::Decoder::songID = 0;
 size_t qqmusic::crypto::Decoder::rawMetaExtra2 = 0;
-SecureByteVector qqmusic::crypto::Decoder::decoded_key;
+std::vector<uint8_t> qqmusic::crypto::Decoder::decoded_key;
 
 namespace qqmusic::crypto {
 
@@ -119,9 +117,9 @@ bool Decoder::parse_qtag_meta(qqmusic::utils::buffer& buf_in) {
         return false;
 
     // 赋值给Decoder成员变量
-    // key_part 2 SecureByteVector
-    SecureByteVector key_part_(key_part.begin(), key_part.end());
-    auto decoded_key = qqmusic::crypto::KeyDerive::derive(key_part_);
+    auto key_part_ = qqmusic::utils::buffer(reinterpret_cast<const uint8_t*>(key_part.data()),
+                                            key_part.size());
+    auto decoded_key = qqmusic::crypto::KeyDerive::derive(std::move(key_part_));
 
     songID = std::stoi(std::string(song_id));
     rawMetaExtra2 = std::stoi(std::string(extra));
@@ -143,8 +141,8 @@ bool Decoder::read_raw_key(size_t rawKeyLen, const qqmusic::utils::buffer& buf_i
             return false;
 
         // 密钥派生
-        SecureByteVector keyMaterial(cleanData.begin(), cleanData.end());
-        auto derivedKey = qqmusic::crypto::KeyDerive::derive(keyMaterial);
+        qqmusic::utils::buffer keyMaterial(std::move(cleanData));
+        auto derivedKey = qqmusic::crypto::KeyDerive::derive(std::move(keyMaterial));
         if (derivedKey.empty())
             return false;
 

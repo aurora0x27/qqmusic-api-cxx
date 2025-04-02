@@ -12,7 +12,7 @@
 
 namespace qqmusic::crypto {
 
-qqmusic::utils::buffer KeyDerive::derive(qqmusic::utils::buffer& raw_key) {
+qqmusic::utils::buffer KeyDerive::derive(qqmusic::utils::buffer&& raw_key) {
     auto base64_raw = Botan::base64_decode(std::string(raw_key.begin(), raw_key.end()));
     std::vector<uint8_t> raw_key_dec(base64_raw.begin(), base64_raw.end());
 

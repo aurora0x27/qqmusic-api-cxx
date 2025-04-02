@@ -87,9 +87,8 @@ public:
 
     /**
      * @brief 获取解密后的音频数据
-     * @return 安全内存缓冲区（Botan::secure_vector）
      */
-    Botan::secure_vector<uint8_t> decrypt(std::vector<uint8_t>& buf, size_t offset) const;
+    void decrypt(std::vector<uint8_t>& buf, size_t offset);
 
     /**
      * @brief 执行完整解密验证流程
@@ -109,13 +108,13 @@ public:
     std::pair<size_t, qqmusic::utils::buffer> read2buf(qqmusic::utils::buffer&& buf_);
 
 private:
-    std::vector<uint8_t> key;             ///< 密钥
-    size_t audio_len;                     ///< 音频长度
-    static size_t songID;                 ///< parse_qtag_meta 中修改
-    static size_t rawMetaExtra2;          ///< parse_qtag_meta 中修改
-    qqmusic::utils::buffer buf_in{1024};  ///< 输入解密数据,应为一个类的实例
-    qqmusic::utils::buffer buf_out{1024}; ///< 输出解密数据
-    static SecureByteVector decoded_key;  ///< 新密钥
+    std::vector<uint8_t> key;                ///< 密钥
+    size_t audio_len;                        ///< 音频长度
+    static size_t songID;                    ///< parse_qtag_meta 中修改
+    static size_t rawMetaExtra2;             ///< parse_qtag_meta 中修改
+    qqmusic::utils::buffer buf_in{1024};     ///< 输入解密数据,应为一个类的实例
+    qqmusic::utils::buffer buf_out{1024};    ///< 输出解密数据
+    static std::vector<uint8_t> decoded_key; ///< 新密钥
     size_t current_offset = 0;
     template<typename T>
     static std::unique_ptr<T> cipher;
