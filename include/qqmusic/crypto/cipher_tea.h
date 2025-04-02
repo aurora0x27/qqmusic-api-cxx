@@ -4,14 +4,13 @@
  * @brief TEA算法解密实现
  * @version 0.1
  * @date 2025-03-22
- * 
- * 实现QQ音乐加密格式使用的TEA变种算法，支持32轮解密操作。包含密钥派生体系的核心解密逻辑。
- * 与工程中现有的RC4/mapCipher解密器共享相同的内存管理策略和异常处理机制。
- * 
+ * 实现QQ音乐加密格式使用的TEA变种算法，支持32轮解密，每次解密8字节
  * @copyright Copyright (c) 2025
- * @see https://git.unlock-music.dev/um/cli/src/branch/main/algo/qmc/key_derive.go
+ * @see https://pkg.go.dev/golang.org/x/crypto/tea
  * @code{.cc}
- * qqmusic::crypto::TeaCipher::decrypt(buf, 0, deriveV2Key1);
+ * for (size_t offset = 0; offset < buf.size(); offset += 8) {
+ *     qqmusic::crypto::TeaCipher::decrypt(buf, offset, key);
+ * }
  * @endcode
  */
 #ifndef QQ_MUSIC_CIPHER_TEA_H
@@ -19,24 +18,15 @@
 
 #include <botan/secmem.h>
 #include <cstdint>
-#include <format>
-#include <iostream>
-#include <qqmusic/result.h>
 #include <qqmusic/utils/buffer.h>
-using SecureByteVector = Botan::secure_vector<uint8_t>;
 
 namespace qqmusic::crypto::TeaCipher {
 
-inline void decrypt(qqmusic::utils::buffer& buf_in, size_t offset, const SecureByteVector& key) {
+/**
+ * @brief tea解密，每次解密8字节
+ */
+inline void decrypt(qqmusic::utils::buffer& buf, size_t offset, const std::vector<uint8_t>& key) {
     constexpr int rounds = 32;
-
-    if (key.size() != 16) {
-        std::cout << std::format("Invalid key size: {}\n", key.size());
-    }
-
-    if (buf_in.size() < offset + 8) {
-        std::cout << std::format("Buffer size is too small: {}\n", buf_in.size());
-    }
 
     auto load_u32 = [](const uint8_t* p) {
         return (static_cast<uint32_t>(p[3]) << 24) | (static_cast<uint32_t>(p[2]) << 16)
@@ -50,7 +40,7 @@ inline void decrypt(qqmusic::utils::buffer& buf_in, size_t offset, const SecureB
         p[3] = (v >> 24) & 0xFF;
     };
 
-    uint8_t* block = buf_in.data() + offset;
+    uint8_t* block = buf.data() + offset;
     uint32_t v0 = load_u32(block);
     uint32_t v1 = load_u32(block + 4);
     uint32_t sum = 0x9E3779B9 * rounds;
