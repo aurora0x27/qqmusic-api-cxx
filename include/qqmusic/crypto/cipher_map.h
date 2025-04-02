@@ -8,7 +8,8 @@
  * @copyright Copyright (c) 2025
  * @see https://git.unlock-music.dev/um/cli/src/branch/main/algo/qmc/cipher_map.go
  * @code{.cc}
- * qqmusic::crypto::MapCipher::decrypt(buf, 0, key);
+ * qqmusic::crypto::MapCipher cipher(key);
+ * cipher.decrypt(buf, 0);
  * @endcode
  */
 #ifndef QQ_MUSIC_CIPHER_MAP_H
@@ -18,26 +19,35 @@
 #include <qqmusic/utils/buffer.h>
 #include <vector>
 
-namespace qqmusic::crypto::MapCipher {
+namespace qqmusic::crypto {
 
-inline void decrypt(qqmusic::utils::buffer& buf, size_t offset, std::vector<uint8_t>& key) {
-    const auto rotate = [](uint8_t value, uint8_t bits) {
-        const uint8_t r = (bits + 4) % 8;
-        return (value << r) | (value >> (8 - r));
-    };
+class MapCipher {
+public:
+    explicit MapCipher(const std::vector<uint8_t>& key_)
+        : key(key_) {}
 
-    for (size_t i = 0; i < buf.size(); ++i) {
-        const size_t cur_offset = offset + i;
-        size_t final_offset = cur_offset;
-        if (cur_offset > 0x7FFF) {
-            final_offset %= 0x7FFF;
+    void decrypt(qqmusic::utils::buffer& buf, size_t offset) {
+        const auto rotate = [](uint8_t value, uint8_t bits) {
+            const uint8_t r = (bits + 4) % 8;
+            return (value << r) | (value >> (8 - r));
+        };
+
+        for (size_t i = 0; i < buf.size(); ++i) {
+            const size_t cur_offset = offset + i;
+            size_t final_offset = cur_offset;
+            if (cur_offset > 0x7FFF) {
+                final_offset %= 0x7FFF;
+            }
+            const auto idx = (final_offset * final_offset + 71214) % key.size();
+            const uint8_t mask = rotate(key[idx], static_cast<uint8_t>(idx) & 0x07);
+            buf[i] ^= mask;
         }
-        const auto idx = (final_offset * final_offset + 71214) % key.size();
-        const uint8_t mask = rotate(key[idx], static_cast<uint8_t>(idx) & 0x07);
-        buf[i] ^= mask;
     }
-}
 
-} // namespace qqmusic::crypto::MapCipher
+private:
+    std::vector<uint8_t> key;
+};
+
+} // namespace qqmusic::crypto
 
 #endif // !QQ_MUSIC_CIPHER_MAP_H
