@@ -15,7 +15,7 @@
  * 最终数据 → 再次base64解码 → 最终密钥
  * @copyright Copyright (c) 2025
  * @code{.cc}
- * auto key = co_await keyDerive::derive(encryptedKey);
+ * auto key = qqmusic::crypto::keyDerive::derive(encryptedKey);
  * @endcode
  */
 #include <algorithm>
@@ -23,6 +23,7 @@
 #include <botan/secmem.h>
 #include <cmath>
 #include <format>
+#include <iostream>
 #include <qqmusic/crypto/cipher_tea.h>
 #include <qqmusic/crypto/key_derive.h>
 #include <qqmusic/result.h>
@@ -37,7 +38,7 @@ namespace qqmusic::crypto {
  * @param rawKey 
  * @return qqmusic::Task<qqmusic::Result<std::vector<uint8_t>>> 
  */
-qqmusic::Task<qqmusic::Result<SecureByteVector>> KeyDerive::derive(const SecureByteVector& raw_key) {
+SecureByteVector KeyDerive::derive(const SecureByteVector& raw_key) {
     auto raw_key_dec = Botan::base64_decode(std::string(raw_key.begin(), raw_key.end()));
 
     // V2 前缀处理
@@ -45,15 +46,10 @@ qqmusic::Task<qqmusic::Result<SecureByteVector>> KeyDerive::derive(const SecureB
     if (std::string_view(reinterpret_cast<const char*>(raw_key_dec.data()), raw_key_dec.size())
             .starts_with(V2_prefix)) {
         auto V2_res = derive_V2({raw_key_dec.begin() + V2_prefix.size(), raw_key_dec.end()});
-        if (V2_res.isErr()) {
-            co_return Err(utils::Exception(utils::Exception::DataDestroy,
-                                           std::format("[derive] V2 processing failed: {}",
-                                                       V2_res.unwrapErr().what())));
-        }
-        raw_key_dec = V2_res.unwrap();
+        raw_key_dec = V2_res;
     }
 
-    co_return derive_V1(raw_key_dec);
+    return derive_V1(raw_key_dec);
 }
 
 /**
@@ -73,12 +69,13 @@ qqmusic::Task<qqmusic::Result<SecureByteVector>> KeyDerive::derive(const SecureB
  * 
  * @return qqmusic::Result<SecureByteVector>
  */
-qqmusic::Result<SecureByteVector> KeyDerive::derive_V1(const SecureByteVector& raw_key_dec) {
+SecureByteVector KeyDerive::derive_V1(const SecureByteVector& raw_key_dec) {
     // Check key length (minimum 16 bytes)
     if (raw_key_dec.size() < 16) {
-        return Err(utils::Exception(utils::Exception::DataDestroy,
-                                    std::format("[derive_V1] Key length {} too short",
-                                                raw_key_dec.size())));
+        std::cout << std::format("[KeyDerive::derive_V1] -- raw_key_dec size {} < 16",
+                                 raw_key_dec.size())
+                  << std::endl;
+        return {};
     }
 
     const auto simple_key = makeSimpleKey(106, 8);
@@ -94,19 +91,17 @@ qqmusic::Result<SecureByteVector> KeyDerive::derive_V1(const SecureByteVector& r
     const auto decrypt_res = decrypt_tencent_tea({raw_key_dec.begin() + 8, raw_key_dec.end()},
                                                  tea_key);
 
-    if (decrypt_res.isErr()) {
-        return Err(utils::Exception(utils::Exception::DataDestroy,
-                                    std::format("[derive_key_V1] TEA decrypt failed: {}",
-                                                decrypt_res.unwrapErr().what())));
+    if (decrypt_res.empty()) {
+        // throw error
     }
 
     // Concatenate final result
     SecureByteVector res;
-    res.reserve(8 + decrypt_res.unwrap().size());
+    res.reserve(8 + decrypt_res.size());
     res.insert(res.end(), raw_key_dec.begin(), raw_key_dec.begin() + 8);
-    res.insert(res.end(), decrypt_res.unwrap().begin(), decrypt_res.unwrap().end());
+    res.insert(res.end(), decrypt_res.begin(), decrypt_res.end());
 
-    return Ok(res);
+    return res;
 }
 
 /**
@@ -115,15 +110,15 @@ qqmusic::Result<SecureByteVector> KeyDerive::derive_V1(const SecureByteVector& r
  * @param raw 
  * @return qqmusic::Result<std::vector<uint8_t>> 
  */
-qqmusic::Result<SecureByteVector> KeyDerive::derive_V2(SecureByteVector raw) {
+SecureByteVector KeyDerive::derive_V2(SecureByteVector raw) {
     auto first_buf = decrypt_tencent_tea(raw, DeriveV2Key1);
-    auto second_buf = decrypt_tencent_tea(first_buf.unwrap(), DeriveV2Key2);
+    auto second_buf = decrypt_tencent_tea(first_buf, DeriveV2Key2);
 
     // Base64
-    auto decode_buf = second_buf.unwrap();
+    auto decode_buf = second_buf;
     const std::string encoded(decode_buf.begin(), decode_buf.end());
     auto res = Botan::base64_decode(encoded);
-    return Ok(SecureByteVector(res.begin(), res.end()));
+    return res;
 }
 
 /**
@@ -160,14 +155,17 @@ qqmusic::Result<SecureByteVector> KeyDerive::derive_V2(SecureByteVector raw) {
  * - 包含盐值和零值校验机制
  * - 输出长度 = 输入长度 -1(填充头) - pad_len(填充长度) - 2(盐值) -7(零值)
  */
-qqmusic::Result<SecureByteVector> KeyDerive::decrypt_tencent_tea(const SecureByteVector& in_buf,
-                                                                 const SecureByteVector& key) {
+SecureByteVector KeyDerive::decrypt_tencent_tea(const SecureByteVector& in_buf,
+                                                const SecureByteVector& key) {
     constexpr size_t salt_len = 2;
     constexpr size_t zero_len = 7;
 
     // Block validation
     if (in_buf.size() % 8 != 0 || in_buf.size() < 16) {
-        return Err(utils::Exception(utils::Exception::DataDestroy, "Invalid TEA input size"));
+        std::cout << std::format("[KeyDerive::decrypt_tencent_tea] -- in_buf len {} < 16",
+                                 in_buf.size())
+                  << std::endl;
+        return {};
     }
 
     // Initialize TEA
@@ -175,7 +173,7 @@ qqmusic::Result<SecureByteVector> KeyDerive::decrypt_tencent_tea(const SecureByt
 
     // Decrypt first block
     SecureByteVector dest_buf(8);
-    auto res = tea.decrypt(in_buf.data(), dest_buf.data());
+    tea.decrypt(in_buf.data(), dest_buf.data());
     const uint8_t pad_len = dest_buf[0] & 0x7;
     const size_t out_len = in_buf.size() - 1 - pad_len - salt_len - zero_len;
 
@@ -198,7 +196,7 @@ qqmusic::Result<SecureByteVector> KeyDerive::decrypt_tencent_tea(const SecureByt
         std::copy_n(in_buf.begin() + static_cast<long>(in_buf_pos), 8, ivCur.begin());
 
         xor8Bytes(dest_buf, dest_buf, in_buf.data() + in_buf_pos);
-        auto res = tea.decrypt(dest_buf.data(), dest_buf.data());
+        tea.decrypt(dest_buf.data(), dest_buf.data());
 
         in_buf_pos += 8;
         dest_idx = 0;
@@ -226,13 +224,13 @@ qqmusic::Result<SecureByteVector> KeyDerive::decrypt_tencent_tea(const SecureByt
     // Zero check
     for (size_t i = 0; i < zero_len; ++i) {
         if (dest_buf[dest_idx] != iv_prev[dest_idx]) {
-            return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::DataDestroy,
-                                                 "[decrypt_tencent_tea] -- zero check failed"));
+            std::cout << "[KeyDerive::decrypt_tencent_tea] -- zero check failed" << std::endl;
+            return {};
         }
         ++dest_idx;
     }
 
-    return Ok(std::move(out));
+    return out;
 }
 
 } // namespace qqmusic::crypto

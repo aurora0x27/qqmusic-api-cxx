@@ -31,14 +31,14 @@ namespace qqmusic::crypto {
 
 class KeyDerive {
 public:
-    static qqmusic::Task<qqmusic::Result<SecureByteVector>> derive(const SecureByteVector& raw_key);
+    static SecureByteVector derive(const SecureByteVector& raw_key);
 
 private:
-    static qqmusic::Result<SecureByteVector> derive_V1(const SecureByteVector& raw_key_dec);
-    static qqmusic::Result<SecureByteVector> derive_V2(SecureByteVector raw);
+    static SecureByteVector derive_V1(const SecureByteVector& raw_key_dec);
+    static SecureByteVector derive_V2(SecureByteVector raw);
 
-    static qqmusic::Result<SecureByteVector> decrypt_tencent_tea(const SecureByteVector& in_buf,
-                                                                 const SecureByteVector& key);
+    static SecureByteVector decrypt_tencent_tea(const SecureByteVector& in_buf,
+                                                const SecureByteVector& key);
 
     static SecureByteVector makeSimpleKey(uint8_t salt, size_t len) {
         SecureByteVector key(len); // 修改容器类型

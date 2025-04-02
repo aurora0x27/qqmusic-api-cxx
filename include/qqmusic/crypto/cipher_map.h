@@ -37,27 +37,25 @@ namespace qqmusic::crypto {
 class MapCipher {
 public:
     /**
-     * @brief Construct a new Map Cipher object
+     * @brief MapCipher构造函数
      * 传入密钥来构建解码器
-     * @param key 
+     * @param key 密钥
      */
     explicit MapCipher(std::vector<uint8_t>&& key)
-        : key_(std::move(key))
-        , box_(key.size())
-        , size_(key.size()) {}
+        : key(std::move(key))
+        , box(key.size()) {}
 
     MapCipher(const MapCipher&) = delete;
     MapCipher& operator=(const MapCipher&) = delete;
 
     /**
      * @brief 执行解密操作
-     * 直接对缓冲区里的数据进行解密，解密出来的歌词结果和元数据存在一个结构体里
+     * 直接对缓冲区里的数据进行解密，解密出来的歌词结果和元数据存放到一个新的缓冲区里
      * @param buf 输入/输出缓冲区
      * @param offset 数据在文件中的起始偏移量
-     * @return
      * @todo 返回值应该是一个包含解密数据和元数据的结构体
      */
-    void decrypt(qqmusic::utils::buffer& buf, size_t offset) {
+    qqmusic::utils::buffer decrypt(qqmusic::utils::buffer& buf, size_t offset) {
         const auto rotate = [](uint8_t value, uint8_t bits) {
             const uint8_t r = (bits + 4) % 8;
             return (value << r) | (value >> (8 - r));
@@ -68,16 +66,16 @@ public:
             if (cur_offset > 0x7FFF) {
                 final_offset %= 0x7FFF;
             }
-            const auto idx = (final_offset * final_offset + 71214) % size_;
-            const uint8_t mask = rotate(key_[idx], static_cast<uint8_t>(idx) & 0x07);
+            const auto idx = (final_offset * final_offset + 71214) % key.size();
+            const uint8_t mask = rotate(key[idx], static_cast<uint8_t>(idx) & 0x07);
             buf[i] ^= mask;
         }
+        return buf;
     }
 
 private:
-    std::vector<uint8_t> key_; // 存储原始解密密钥
-    std::vector<uint8_t> box_; // 可能用于缓存预处理后的密钥，在该文件中仅初始化，长度为size_
-    size_t size_; // key 的长度
+    std::vector<uint8_t> key; // 存储原始解密密钥
+    std::vector<uint8_t> box; // 可能用于缓存预处理后的密钥，在该文件中仅初始化，长度为size_
 };
 
 } // namespace qqmusic::crypto

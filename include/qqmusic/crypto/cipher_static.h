@@ -27,14 +27,14 @@ class StaticCipher {
 public:
     StaticCipher() = default;
 
-    static qqmusic::Task<void> decrypt(qqmusic::utils::buffer& buf, size_t offset) {
+    static qqmusic::Task<void> decrypt(qqmusic::utils::buffer& buf, size_t offset_) {
         for (size_t i = 0; i < buf.size(); ++i) {
-            const auto calc_offset = offset + i;
+            const auto calc_offset = offset_ + i;
             const auto mask = [&] {
-                size_t o = calc_offset;
-                if (o > 0x7FFF)
-                    o %= 0x7FFF;
-                return box[(o * o + 27) & 0xFF];
+                size_t offset = calc_offset;
+                if (offset > 0x7FFF)
+                    offset %= 0x7FFF;
+                return box[(offset * offset + 27) & 0xFF];
             }();
             buf[i] ^= mask;
         };
