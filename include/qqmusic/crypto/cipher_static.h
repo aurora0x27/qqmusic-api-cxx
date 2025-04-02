@@ -17,16 +17,17 @@
 
 #include <array>
 #include <cstdint>
+#include <qqmusic/crypto/cipher.h>
 #include <qqmusic/result.h>
 #include <qqmusic/utils/buffer.h>
 #include <vector>
 
-namespace qqmusic::crypto::StaticCipher {
+namespace qqmusic::crypto {
 
-class StaticCipher {
+class StaticCipher : public Cipher {
 public:
     explicit StaticCipher() = default;
-    static void decrypt(qqmusic::utils::buffer& buf, size_t offset) {
+    void decrypt(qqmusic::utils::buffer& buf, size_t offset) override {
         for (size_t i = 0; i < buf.size(); ++i) {
             const auto calc_offset = offset + i;
             const auto mask = [&] {
@@ -77,5 +78,5 @@ private:
 
 }; // namespace qqmusic::crypto
 
-} // namespace qqmusic::crypto::StaticCipher
+} // namespace qqmusic::crypto
 #endif // !QQ_MUSIC_CIPHER_STATIC_H

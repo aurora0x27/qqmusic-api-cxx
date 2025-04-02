@@ -16,17 +16,18 @@
 #define QQ_MUSIC_CIPHER_MAP_H
 
 #include <cstdint>
+#include <qqmusic/crypto/cipher.h>
 #include <qqmusic/utils/buffer.h>
 #include <vector>
 
 namespace qqmusic::crypto {
 
-class MapCipher {
+class MapCipher : public Cipher {
 public:
     explicit MapCipher(const std::vector<uint8_t>& key_)
         : key(key_) {}
 
-    void decrypt(qqmusic::utils::buffer& buf, size_t offset) {
+    void decrypt(qqmusic::utils::buffer& buf, size_t offset) override {
         const auto rotate = [](uint8_t value, uint8_t bits) {
             const uint8_t r = (bits + 4) % 8;
             return (value << r) | (value >> (8 - r));

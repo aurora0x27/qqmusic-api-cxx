@@ -81,8 +81,9 @@ bool Decoder::search_key() {
  */
 bool Decoder::parse_qtag_meta(qqmusic::utils::buffer& buf_in) {
     size_t len = buf_in.size();
-    if (len < 8)
+    if (len < 8) {
         return false;
+    }
 
     // 大端序解析元数据长度
     const uint32_t meta_len = [&] {
@@ -92,8 +93,9 @@ bool Decoder::parse_qtag_meta(qqmusic::utils::buffer& buf_in) {
 
     // 验证元数据区域有效性
     const size_t meta_start = len - 8 - meta_len;
-    if (meta_len == 0 || meta_start >= len)
+    if (meta_len == 0 || meta_start >= len) {
         return false;
+    }
 
     // 分割元数据字段
     std::string_view meta(reinterpret_cast<const char*>(buf_in.data() + meta_start), meta_len);
@@ -113,8 +115,9 @@ bool Decoder::parse_qtag_meta(qqmusic::utils::buffer& buf_in) {
     }();
 
     // 数据有效性检查
-    if (key_part.empty() || song_id.empty() || extra.empty())
+    if (key_part.empty() || song_id.empty() || extra.empty()) {
         return false;
+    }
 
     // 赋值给Decoder成员变量
     auto key_part_ = qqmusic::utils::buffer(reinterpret_cast<const uint8_t*>(key_part.data()),
@@ -137,14 +140,16 @@ bool Decoder::read_raw_key(size_t rawKeyLen, const qqmusic::utils::buffer& buf_i
                             .base(),
                         cleanData.end());
 
-        if (cleanData.empty())
+        if (cleanData.empty()) {
             return false;
+        }
 
         // 密钥派生
         qqmusic::utils::buffer keyMaterial(std::move(cleanData));
         auto derivedKey = qqmusic::crypto::KeyDerive::derive(std::move(keyMaterial));
-        if (derivedKey.empty())
+        if (derivedKey.empty()) {
             return false;
+        }
 
         decoded_key = std::move(derivedKey);
         return true;
@@ -153,8 +158,9 @@ bool Decoder::read_raw_key(size_t rawKeyLen, const qqmusic::utils::buffer& buf_i
     // 验证缓冲区有效性
     const size_t totalLen = buf_in.size();
     const size_t keyDataStart = totalLen - (4 + rawKeyLen);
-    if (rawKeyLen <= 0 || keyDataStart >= totalLen)
+    if (rawKeyLen <= 0 || keyDataStart >= totalLen) {
         return false;
+    }
 
     // 提取密钥数据
     const uint8_t* keyData = buf_in.data() + keyDataStart;
@@ -162,25 +168,29 @@ bool Decoder::read_raw_key(size_t rawKeyLen, const qqmusic::utils::buffer& buf_i
 }
 
 bool Decoder::validate() {
-    if (!search_key())
+    if (!search_key()) {
         return false;
+    }
 
     // 初始化解密算法
-    // if (decoded_key.size() > 300) {
-    //     cipher = std::make_unique<RC4Cipher>();
-    // } else if (!decoded_key.empty()) {
-    //     cipher = std::make_unique<MapCipher>();
-    // } else {
-    //     cipher = std::make_unique<StaticCipher>();
-    // }
-    //
-    if (buf_in.size() < 64)
-        return false;
+    if (decoded_key.size() > 300) {
+        cipher = std::make_unique<RC4Cipher>(key);
+    } else if (!decoded_key.empty()) {
+        cipher = std::make_unique<MapCipher>(key);
+    } else {
+        cipher = std::make_unique<StaticCipher>();
+    }
 
-    // auto header = {buf_in.data() + offset, length};
+    constexpr size_t validate_size = 64;
+    if (buf_in.size() < validate_size) {
+        return false;
+    }
+
+    // auto header = std::span(buf_in).subspan(0, validate_size);
     // cipher->decrypt(header, 0);
 
     // TODO
+    // 音频头检测
     // if(!sniff_audio_header(header)) {
     //     return false;
     // }

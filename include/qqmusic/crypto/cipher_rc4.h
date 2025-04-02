@@ -16,18 +16,19 @@
 
 #include <cstdint>
 #include <numeric>
+#include <qqmusic/crypto/cipher.h>
 #include <qqmusic/result.h>
 #include <qqmusic/utils/buffer.h>
 #include <vector>
 
 namespace qqmusic::crypto {
 
-class RC4Cipher {
+class RC4Cipher : public Cipher {
 public:
     explicit RC4Cipher(const std::vector<uint8_t>& key_)
         : key(key_) {}
 
-    void decrypt(qqmusic::utils::buffer& buf, size_t offset) {
+    void decrypt(qqmusic::utils::buffer& buf, size_t offset) override {
         // 初始化S盒
         std::vector<uint8_t> box(key.size());
         std::iota(box.begin(), box.end(), 0);

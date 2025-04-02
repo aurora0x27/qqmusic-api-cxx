@@ -116,8 +116,7 @@ private:
     qqmusic::utils::buffer buf_out{1024};    ///< 输出解密数据
     static std::vector<uint8_t> decoded_key; ///< 新密钥
     size_t current_offset = 0;
-    template<typename T>
-    static std::unique_ptr<T> cipher;
+    static std::unique_ptr<qqmusic::crypto::Cipher> cipher;
 
     // 密钥处理系统
     /**
@@ -145,9 +144,6 @@ private:
 
     // 文件验证
     void validate_header();
-
-    struct Impl;
-    std::unique_ptr<Impl> pimpl_;
 };
 
 } // namespace qqmusic::crypto
