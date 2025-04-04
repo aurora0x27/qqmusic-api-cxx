@@ -7,7 +7,7 @@
 
 namespace qqmusic {
 
-std::string get_album_cover_url(std::string_view mid, cover_size size) {
+std::string get_album_cover_url(std::string_view mid, CoverSize size) {
     return std::format("https://y.gtimg.cn/music/photo_new/T002R{}x{}M000{}.jpg",
                        (int) size,
                        (int) size,

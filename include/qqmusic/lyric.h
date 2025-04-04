@@ -75,17 +75,46 @@
 
 namespace qqmusic {
 
+/**
+ * @struct Lyric
+ *
+ * @brief 歌词
+ * */
 struct Lyric {
-    std::string lyric;
-    std::string trans;
-    std::string roma;
+    std::string lyric; ///< 原始歌词
+    std::string trans; ///< 翻译
+    std::string roma;  ///< 罗马音
 };
 
+/**
+ * @brief 获取歌曲的歌词
+ *
+ * @param mid 歌曲mid
+ * @param qrc lyric是否是xml格式, 默认false
+ * @param trans 是否附带翻译
+ * @param roma 是否附带罗马音
+ *
+ * @return 原始的歌词字符串, qrc歌词仅经过解码, 还是原始的xml格式
+ *
+ * @note 异步函数, 返回`Task`
+ * */
 Task<Result<Lyric>> get_lyric(std::string_view mid,
                               bool qrc = false,
                               bool trans = false,
                               bool roma = false);
 
+/**
+ * @brief 获取歌曲的歌词
+ *
+ * @param id 歌曲id
+ * @param qrc lyric是否是xml格式, 默认false
+ * @param trans 是否附带翻译
+ * @param roma 是否附带罗马音
+ *
+ * @return 原始的歌词字符串, qrc歌词仅经过解码, 还是原始的xml格式
+ *
+ * @note 异步函数, 返回`Task`
+ * */
 Task<Result<Lyric>> get_lyric(uint64_t id, bool qrc = false, bool trans = false, bool roma = false);
 
 } // namespace qqmusic
