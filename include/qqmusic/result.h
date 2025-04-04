@@ -22,10 +22,31 @@
 
 namespace qqmusic {
 
+/**
+ * @brief Rust风格的返回结果封装, 正确结果和异常共用同一个渠道返回
+ *
+ * 使用方法:
+ * @code{cpp}
+ * Result<int> func(int a);
+ *
+ * int main() {
+ *     auto res = func(114514);
+ *     if (res.isErr()) {
+ *         // error occurred in func, unwrap the error
+ *         std::cout << res.unwrapErr().what() << std::endl;
+ *     }
+ *     // func returned normally, unwrap the result
+ *     int x = res.unwrap();
+ *     return 0;
+ * }
+ * @endcode
+ * */
 template<typename T>
 using Result = Result<T, qqmusic::utils::Exception>;
 
-/*task used to asynchronous execution*/
+/**
+ * @brief 通用异步任务
+ * */
 template<typename T>
 using Task = boost::asio::awaitable<T>;
 

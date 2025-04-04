@@ -19,6 +19,13 @@ Task<Result<nlohmann::json>> get_toplist_category();
 
 /**
  * @brief 获取排行榜条目信息
+ *
+ * @param top_id 排行榜ID
+ * @param num 返回数量, 默认为`10`
+ * @param page 页码, 默认为`0`
+ * @param tag 是否返回歌曲标签, 默认为`true`
+ *
+ * @return 
  * */
 Task<Result<nlohmann::json>> get_toplist_item_detail(unsigned top_id,
                                                      unsigned num = 10,
