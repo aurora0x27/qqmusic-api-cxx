@@ -1,23 +1,17 @@
 /**
  * @file key_derive.h
  * @author kingpoem
- * @brief QQ音乐密钥派生算法实现
+ * @brief QQ音乐密钥解密算法实现
  * @version 0.1
  * @date 2025-03-16
- * 解码器初始化时需要一个key，该文件的作用是根据需要解码的数据判断并生成需要提供给相应解码器的密钥
- * 
  * 该文件实现QQ音乐加密格式的密钥派生体系，通过解析Base64编码的输入密钥，区分V1/V2两种加密版本，
  * 使用TEA算法进行多层解密（V2需两次TEA+Base64嵌套解密），最终生成用于RC4/mapCipher等音频解密算法的有效密钥。
  * 内部包含数学变换密钥生成、块解密时盐值处理（2字节随机盐+7字节零校验）、以及跨平台兼容的字节序处理等安全机制。
  * 
- * 传入的是从加密文件头部提取的Base64编码的密钥字符串
+ * 传入的是从ekey提取的Base64编码的密钥字符串
  * 输出的密钥直接用于初始化音频解码器
  *
- *
- *
- * 包含V1/V2两种密钥派生方案，使用TEA算法进行数据解密
- *
- * 原始输入 → rawKey (base64编码)
+ * 原始输入ekey → rawKey (base64编码)
  *      ↓ 解码
  * 中间数据 → rawKeyDec (可能含V2头)
  *      ↓ 去头处理（如果是V2）
@@ -28,7 +22,8 @@
  * @see https://git.unlock-music.dev/um/cli/src/branch/main/algo/qmc/key_derive.go
  * @code{.cc}
  * std::vector<uint8_t> encrypted_key = {...}; // 原始加密密钥
- * auto key = qqmusic::crypto::KeyDrive::derive(encrypted_key);
+ * qqmusic::crypto::Decoder Decoder(ekey); // 用ekey初始化解码器，ekey存取为解码器的公有变量
+ * auto key = qqmusic::crypto::KeyDrive::derive(Decoder.ekey);
  * @endcode
  */
 #ifndef QQMUSIC_CRYPTO_KEY_DERIVE_H

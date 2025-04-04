@@ -36,7 +36,8 @@ namespace qqmusic::crypto {
 
 class Decoder {
 public:
-    explicit Decoder(std::string_view ekey);
+    explicit Decoder(std::string&& ekey)
+        : ekey((uint8_t*) ekey.data(), ekey.size()){};
 
     /**
      * @brief 解码器完整解码过程
@@ -51,17 +52,15 @@ public:
      * @param buf_ 缓冲区（存放未解密的数据）
      * @return 缓冲区大小和 buf_in
      */
-    std::pair<size_t, qqmusic::utils::buffer> read2buf(qqmusic::utils::buffer&& buf_);
+    std::pair<size_t, qqmusic::utils::buffer> read2buf(qqmusic::utils::buffer&& buf);
 
 private:
-    qqmusic::utils::buffer ekey;          ///< 加密密钥
-    std::vector<uint8_t> key;             ///< 解密后的密钥
-    qqmusic::utils::buffer buf_in{1024};  ///< 待解密数据
-    qqmusic::utils::buffer buf_out{1024}; ///< 成功解密的数据
-    size_t current_offset = 0;
-    std::unique_ptr<qqmusic::crypto::Cipher> cipher;
+    qqmusic::utils::buffer ekey;                     ///< 加密密钥
+    std::vector<uint8_t> key;                        ///< 解密后的密钥
+    qqmusic::utils::buffer buf_in{1024};             ///< 待解密数据
+    qqmusic::utils::buffer buf_out{1024};            ///< 成功解密的数据
+    std::unique_ptr<qqmusic::crypto::Cipher> cipher; ///< 解密算法
 };
-
 } // namespace qqmusic::crypto
 
 #endif // !QQMUSIC_CRYPTO_QMC_H

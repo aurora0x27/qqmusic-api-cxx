@@ -25,8 +25,8 @@ namespace qqmusic::crypto {
 
 class RC4Cipher : public Cipher {
 public:
-    explicit RC4Cipher(const std::vector<uint8_t>& key_)
-        : key(key_) {}
+    explicit RC4Cipher(const std::vector<uint8_t>& key)
+        : key(key) {}
 
     void decrypt(qqmusic::utils::buffer& buf, size_t offset) override {
         // 初始化S盒
@@ -55,33 +55,16 @@ public:
         constexpr size_t SegmentSize = 5120;
         constexpr size_t FirstSegmentSize = 128;
 
-        auto process_segment = [&](size_t block_size, auto enc_func) {
-            const size_t chunk = std::min(block_size, buf.size());
-            if (chunk == 0)
-                return true;
-
-            enc_func(buf, chunk, offset);
-            offset += chunk;
-            buf.erase(buf.begin(), buf.begin() + static_cast<long>(chunk));
-            return buf.empty();
+        auto enc_first = [&](auto& buf, auto len, auto off) {
+            for (size_t i = 0; i < len; ++i) {
+                const auto seg_id = (off + i) / SegmentSize;
+                const auto seed = key[seg_id % key.size()];
+                const auto idx = static_cast<double>(hash_base) / ((seg_id + 1) * seed) * 100.0;
+                const auto skip = static_cast<size_t>(idx) % key.size();
+                buf[i] ^= key[skip];
+            }
         };
 
-        // 处理第一段
-        if (offset < FirstSegmentSize) {
-            auto enc_first = [&](auto& buf, auto len, auto off) {
-                for (size_t i = 0; i < len; ++i) {
-                    const auto seg_id = (off + i) / SegmentSize;
-                    const auto seed = key[seg_id % key.size()];
-                    const auto idx = static_cast<double>(hash_base) / ((seg_id + 1) * seed) * 100.0;
-                    const auto skip = static_cast<size_t>(idx) % key.size();
-                    buf[i] ^= key[skip];
-                }
-            };
-            if (process_segment(FirstSegmentSize - offset, enc_first))
-                return;
-        }
-
-        // 处理常规段
         auto enc_regular = [&](auto& buf, auto len, auto off) {
             auto local_box = box;
             int j = 0, k = 0;
@@ -99,8 +82,38 @@ public:
                 }
             }
         };
+        // 修改后的处理逻辑
+        auto process_segment = [&](size_t block_size, auto enc_func) -> size_t {
+            const size_t chunk = std::min(block_size, buf.size());
+            if (chunk == 0)
+                return true;
 
-        while (!process_segment(SegmentSize, enc_regular)) {
+            enc_func(buf, chunk, offset);
+            return chunk;
+        };
+
+        // 自动处理所有数据段
+        size_t total_processed = 0;
+        const size_t total_size = buf.size();
+
+        while (total_processed < total_size) {
+            size_t processed = 0;
+
+            // 处理第一段
+            if (offset < FirstSegmentSize) {
+                const size_t remaining = FirstSegmentSize - offset;
+                processed = process_segment(remaining, enc_first);
+                total_processed += processed;
+                offset += processed;
+                if (processed < remaining)
+                    break; // 数据不足时退出
+            }
+
+            // 处理常规段
+            const size_t remaining = total_size - total_processed;
+            processed = process_segment(std::min(remaining, SegmentSize), enc_regular);
+            total_processed += processed;
+            offset += processed;
         }
     }
 
