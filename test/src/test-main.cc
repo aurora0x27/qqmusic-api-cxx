@@ -1,3 +1,4 @@
+#include "qqmusic/mv.h"
 #include <qmtest/test-login.h>
 #include <qqmusic/search.h>
 #include <qqmusic/song.h>
