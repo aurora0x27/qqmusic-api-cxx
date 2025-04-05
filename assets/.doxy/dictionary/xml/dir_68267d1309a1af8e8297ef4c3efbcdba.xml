@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_4261af1259721e3e39e0d2dd7354b511">crypto</innerdir>
+    <innerdir refid="dir_b485ae80868baed16097635ed27c0024">details</innerdir>
+    <innerdir refid="dir_313caf1132e152dd9b58bea13a4052ca">utils</innerdir>
+    <innerfile refid="album_8cc">album.cc</innerfile>
+    <innerfile refid="login_8cc">login.cc</innerfile>
+    <innerfile refid="lyric_8cc">lyric.cc</innerfile>
+    <innerfile refid="mv_8cc">mv.cc</innerfile>
+    <innerfile refid="search_8cc">search.cc</innerfile>
+    <innerfile refid="singer_8cc">singer.cc</innerfile>
+    <innerfile refid="song_8cc">song.cc</innerfile>
+    <innerfile refid="songlist_8cc">songlist.cc</innerfile>
+    <innerfile refid="toplist_8cc">toplist.cc</innerfile>
+    <innerfile refid="user_8cc">user.cc</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

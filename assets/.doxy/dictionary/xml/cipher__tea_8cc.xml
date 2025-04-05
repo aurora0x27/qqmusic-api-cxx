@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="cipher__tea_8cc" kind="file" language="C++">
+    <compoundname>cipher_tea.cc</compoundname>
+    <includes refid="cipher__tea_8h" local="no">qqmusic/crypto/cipher_tea.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>qqmusic/crypto/cipher_tea.h</label>
+        <link refid="cipher__tea_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>qqmusic/utils/buffer.h</label>
+        <link refid="buffer_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>cipher_tea.cc</label>
+        <link refid="cipher__tea_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>botan/secmem.h</label>
+      </node>
+      <node id="6">
+        <label>cstddef</label>
+      </node>
+      <node id="4">
+        <label>cstdint</label>
+      </node>
+      <node id="7">
+        <label>cstdlib</label>
+      </node>
+      <node id="8">
+        <label>cstring</label>
+      </node>
+      <node id="9">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceqqmusic">qqmusic</innernamespace>
+    <innernamespace refid="namespaceqqmusic_1_1crypto">qqmusic::crypto</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;qqmusic/crypto/cipher_tea.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">qqmusic::crypto<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TeaCipher::decrypt(<ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref>&amp;<sp/>buf,</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>offset,</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>key)<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rounds<sp/>=<sp/>32;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>load_u32<sp/>=<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>p)<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(p[3])<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(p[2])<sp/>&lt;&lt;<sp/>16)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(p[1])<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(p[0]);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>store_u32<sp/>=<sp/>[](uint8_t*<sp/>p,<sp/>uint32_t<sp/>v)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p[0]<sp/>=<sp/>v<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p[1]<sp/>=<sp/>(v<sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p[2]<sp/>=<sp/>(v<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p[3]<sp/>=<sp/>(v<sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t*<sp/>block<sp/>=<sp/>buf.data()<sp/>+<sp/>offset;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>v0<sp/>=<sp/>load_u32(block);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>v1<sp/>=<sp/>load_u32(block<sp/>+<sp/>4);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>sum<sp/>=<sp/>0x9E3779B9<sp/>*<sp/>rounds;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>rounds;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v1<sp/>-=<sp/>((v0<sp/>&lt;&lt;<sp/>4)<sp/>+<sp/>key[8<sp/>+<sp/>(sum<sp/>&gt;&gt;<sp/>11<sp/>&amp;<sp/>3)])<sp/>^<sp/>(v0<sp/>+<sp/>sum)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>^<sp/>((v0<sp/>&gt;&gt;<sp/>5)<sp/>+<sp/>key[12<sp/>+<sp/>(sum<sp/>&gt;&gt;<sp/>11<sp/>&amp;<sp/>3)]);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v0<sp/>-=<sp/>((v1<sp/>&lt;&lt;<sp/>4)<sp/>+<sp/>key[0<sp/>+<sp/>(sum<sp/>&amp;<sp/>3)])<sp/>^<sp/>(v1<sp/>+<sp/>sum)<sp/>^<sp/>((v1<sp/>&gt;&gt;<sp/>5)<sp/>+<sp/>key[4<sp/>+<sp/>(sum<sp/>&amp;<sp/>3)]);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sum<sp/>-=<sp/>0x9E3779B9;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>store_u32(block,<sp/>v0);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>store_u32(block<sp/>+<sp/>4,<sp/>v1);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>qqmusic::crypto</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/crypto/cipher_tea.cc"/>
+  </compounddef>
+</doxygen>

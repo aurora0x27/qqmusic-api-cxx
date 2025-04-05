@@ -1,0 +1,373 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespaceqqmusic_1_1details" kind="namespace" language="C++">
+    <compoundname>qqmusic::details</compoundname>
+    <innerclass refid="classqqmusic_1_1details_1_1Api" prot="public">qqmusic::details::Api</innerclass>
+    <innerclass refid="structqqmusic_1_1details_1_1ApiConfig" prot="public">qqmusic::details::ApiConfig</innerclass>
+    <innerclass refid="structqqmusic_1_1details_1_1NetworkContext" prot="public">qqmusic::details::NetworkContext</innerclass>
+    <innerclass refid="structqqmusic_1_1details_1_1RequestParam" prot="public">qqmusic::details::RequestParam</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceqqmusic_1_1details_1a56735209614b6a1c6c76f1f636bdd341" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>tripledes_crypt_mode</name>
+        <qualifiedname>qqmusic::details::tripledes_crypt_mode</qualifiedname>
+        <enumvalue id="namespaceqqmusic_1_1details_1a56735209614b6a1c6c76f1f636bdd341a53c82eba31f6d416f331de9162ebe997" prot="public">
+          <name>encrypt</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceqqmusic_1_1details_1a56735209614b6a1c6c76f1f636bdd341a9a2d8ce3ffdcdf2123bddd94d79ef200" prot="public">
+          <name>decrypt</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/tripledes.h" line="12" column="1" bodyfile="include/qqmusic/details/tripledes.h" bodystart="12" bodyend="12"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceqqmusic_1_1details_1a6a9cf82baf9473b7e9321862f2afd25d" prot="public" static="no">
+        <type>std::vector&lt; std::vector&lt; std::vector&lt; uint32_t &gt; &gt; &gt;</type>
+        <definition>using qqmusic::details::tripledes_key_schedule = typedef std::vector&lt;std::vector&lt;std::vector&lt;uint32_t&gt; &gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>tripledes_key_schedule</name>
+        <qualifiedname>qqmusic::details::tripledes_key_schedule</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/tripledes.h" line="14" column="1" bodyfile="include/qqmusic/details/tripledes.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceqqmusic_1_1details_1a36c518832b3efbebc5ad37b68bd8fd9b" prot="public" static="no" mutable="no">
+        <type>const char</type>
+        <definition>const char qqmusic::details::VERSION[]</definition>
+        <argsstring>[]</argsstring>
+        <name>VERSION</name>
+        <qualifiedname>qqmusic::details::VERSION</qualifiedname>
+        <initializer>= &quot;13.2.5.8&quot;</initializer>
+        <briefdescription>
+<para>Api版本号 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="26" column="12" bodyfile="include/qqmusic/details/context.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceqqmusic_1_1details_1a476c7e52ed46db89730fce9effe6ec38" prot="public" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t qqmusic::details::VERSION_CODE</definition>
+        <argsstring></argsstring>
+        <name>VERSION_CODE</name>
+        <qualifiedname>qqmusic::details::VERSION_CODE</qualifiedname>
+        <initializer>= 13020508</initializer>
+        <briefdescription>
+<para>版本代码 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/context.h" line="31" column="16" bodyfile="include/qqmusic/details/context.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceqqmusic_1_1details_1a5411bc95e843d7e582bcbb17887153c6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::vector&lt; uint32_t &gt; &gt;</type>
+        <definition>static std::vector&lt; std::vector&lt; uint32_t &gt; &gt; qqmusic::details::key_schedule</definition>
+        <argsstring>(const uint8_t *key_head, size_t key_size, tripledes_crypt_mode mode)</argsstring>
+        <name>key_schedule</name>
+        <qualifiedname>qqmusic::details::key_schedule</qualifiedname>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>key_head</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>key_size</declname>
+        </param>
+        <param>
+          <type>tripledes_crypt_mode</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/details/tripledes.cc" line="57" column="20" bodyfile="src/details/tripledes.cc" bodystart="57" bodyend="97" declfile="src/details/tripledes.cc" declline="6" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1details_1acdace206d13210029126a95f1d27e612" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t qqmusic::details::bitnum</definition>
+        <argsstring>(const uint8_t *head, size_t size, uint32_t b, uint32_t c)</argsstring>
+        <name>bitnum</name>
+        <qualifiedname>qqmusic::details::bitnum</qualifiedname>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>head</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/details/tripledes.cc" line="99" column="17" bodyfile="src/details/tripledes.cc" bodystart="99" bodyend="101" declfile="src/details/tripledes.cc" declline="10" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1details_1ac926eb74a3559a294ac2d4a0f1da3a2d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t qqmusic::details::bitnum_intl</definition>
+        <argsstring>(uint32_t a, uint32_t b, uint32_t c)</argsstring>
+        <name>bitnum_intl</name>
+        <qualifiedname>qqmusic::details::bitnum_intl</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/details/tripledes.cc" line="103" column="17" bodyfile="src/details/tripledes.cc" bodystart="103" bodyend="105" declfile="src/details/tripledes.cc" declline="12" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1details_1a08dcb68237a9daa502ebde875f8065fa" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t qqmusic::details::bitnum_intr</definition>
+        <argsstring>(uint32_t a, uint32_t b, uint32_t c)</argsstring>
+        <name>bitnum_intr</name>
+        <qualifiedname>qqmusic::details::bitnum_intr</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/details/tripledes.cc" line="107" column="17" bodyfile="src/details/tripledes.cc" bodystart="107" bodyend="109" declfile="src/details/tripledes.cc" declline="14" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1details_1a11e4cdcc6b34236f8ba2ac859fbf1db7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void qqmusic::details::crypt</definition>
+        <argsstring>(utils::buffer &amp;buf, std::vector&lt; std::vector&lt; uint32_t &gt; &gt; key)</argsstring>
+        <name>crypt</name>
+        <qualifiedname>qqmusic::details::crypt</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">utils::buffer</ref> &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::vector&lt; uint32_t &gt; &gt;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/details/tripledes.cc" line="111" column="13" bodyfile="src/details/tripledes.cc" bodystart="111" bodyend="123" declfile="src/details/tripledes.cc" declline="16" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1details_1a41e86cc000c2a1f15c9a11e63953ae9e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void qqmusic::details::initial_permutation</definition>
+        <argsstring>(uint32_t *a, uint32_t *b, utils::buffer &amp;buf)</argsstring>
+        <name>initial_permutation</name>
+        <qualifiedname>qqmusic::details::initial_permutation</qualifiedname>
+        <param>
+          <type>uint32_t *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">utils::buffer</ref> &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/details/tripledes.cc" line="125" column="13" bodyfile="src/details/tripledes.cc" bodystart="125" bodyend="162" declfile="src/details/tripledes.cc" declline="18" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1details_1a271487d4a04a97c45ce12cc35e1a2192" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void qqmusic::details::inverse_permutation</definition>
+        <argsstring>(uint32_t a, uint32_t b, utils::buffer &amp;buf)</argsstring>
+        <name>inverse_permutation</name>
+        <qualifiedname>qqmusic::details::inverse_permutation</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">utils::buffer</ref> &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/details/tripledes.cc" line="164" column="13" bodyfile="src/details/tripledes.cc" bodystart="164" bodyend="201" declfile="src/details/tripledes.cc" declline="20" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1details_1a0f78feef11c1bc58347fcd174d64478f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t qqmusic::details::transform</definition>
+        <argsstring>(uint32_t state, std::vector&lt; uint32_t &gt; key)</argsstring>
+        <name>transform</name>
+        <qualifiedname>qqmusic::details::transform</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint32_t &gt;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/details/tripledes.cc" line="203" column="17" bodyfile="src/details/tripledes.cc" bodystart="203" bodyend="293" declfile="src/details/tripledes.cc" declline="22" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1details_1aa6a28f75a5f80620b75715e563a35326" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t qqmusic::details::sbox_bit</definition>
+        <argsstring>(uint32_t a)</argsstring>
+        <name>sbox_bit</name>
+        <qualifiedname>qqmusic::details::sbox_bit</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/details/tripledes.cc" line="295" column="17" bodyfile="src/details/tripledes.cc" bodystart="295" bodyend="297" declfile="src/details/tripledes.cc" declline="24" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1details_1a01e8651d22481d48e625faf1bcbc1daf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tripledes_key_schedule</type>
+        <definition>tripledes_key_schedule qqmusic::details::tripledes_key_setup</definition>
+        <argsstring>(const uint8_t *key_head, size_t key_size, tripledes_crypt_mode mode)</argsstring>
+        <name>tripledes_key_setup</name>
+        <qualifiedname>qqmusic::details::tripledes_key_setup</qualifiedname>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>key_head</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>key_size</declname>
+        </param>
+        <param>
+          <type>tripledes_crypt_mode</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/details/tripledes.cc" line="27" column="24" bodyfile="src/details/tripledes.cc" bodystart="27" bodyend="43" declfile="include/qqmusic/details/tripledes.h" declline="21" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1details_1ae9f7afce2b88d64ba1b8ff3ddc2decc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::details::tripledes_crypt</definition>
+        <argsstring>(utils::buffer &amp;buf_in, utils::buffer &amp;buf_out, tripledes_key_schedule key_schedule)</argsstring>
+        <name>tripledes_crypt</name>
+        <qualifiedname>qqmusic::details::tripledes_crypt</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">utils::buffer</ref> &amp;</type>
+          <declname>buf_in</declname>
+        </param>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">utils::buffer</ref> &amp;</type>
+          <declname>buf_out</declname>
+        </param>
+        <param>
+          <type>tripledes_key_schedule</type>
+          <declname>key_schedule</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/details/tripledes.cc" line="46" column="6" bodyfile="src/details/tripledes.cc" bodystart="46" bodyend="55" declfile="include/qqmusic/details/tripledes.h" declline="17" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>----------------------------<mdash/><ref refid="tripledes_8h_source" kindref="compound">qqmusic/details/tripledes.h</ref>------------------------------------<mdash/> </para>
+<sect2 id="namespaceqqmusic_1_1details_1autotoc_md3">
+<title>3des decrypt functions, for qrc-decoder.</title>
+</sect2>
+    </detaileddescription>
+    <location file="src/details/api.cc" line="9" column="1"/>
+  </compounddef>
+</doxygen>

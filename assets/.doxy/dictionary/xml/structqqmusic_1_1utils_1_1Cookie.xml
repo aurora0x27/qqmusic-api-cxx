@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1utils_1_1Cookie" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::utils::Cookie</compoundname>
+    <includes refid="cookie_8h" local="no">cookie.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Cookie_1a8452e33abf079ce507b1310f51d240be" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Cookie::domain</definition>
+        <argsstring></argsstring>
+        <name>domain</name>
+        <qualifiedname>qqmusic::utils::Cookie::domain</qualifiedname>
+        <briefdescription>
+<para>域名 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/cookie.h" line="25" column="17" bodyfile="include/qqmusic/utils/cookie.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classqqmusic_1_1utils_1_1CookieJar_1aa657e60eec243f17c158a4b18cbaf46f" compoundref="cookie_8cc" startline="18" endline="21">qqmusic::utils::CookieJar::set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Cookie_1a1dcbfa18a495309dbe34fd2157f0394d" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Cookie::path</definition>
+        <argsstring></argsstring>
+        <name>path</name>
+        <qualifiedname>qqmusic::utils::Cookie::path</qualifiedname>
+        <initializer>= &quot;/&quot;</initializer>
+        <briefdescription>
+<para>路径 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/cookie.h" line="30" column="17" bodyfile="include/qqmusic/utils/cookie.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classqqmusic_1_1utils_1_1CookieJar_1aa657e60eec243f17c158a4b18cbaf46f" compoundref="cookie_8cc" startline="18" endline="21">qqmusic::utils::CookieJar::set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Cookie_1aebf1c07b17aaf62c6e7f90e89d8e81cb" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Cookie::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <qualifiedname>qqmusic::utils::Cookie::key</qualifiedname>
+        <briefdescription>
+<para>键 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/cookie.h" line="35" column="17" bodyfile="include/qqmusic/utils/cookie.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classqqmusic_1_1utils_1_1CookieJar_1aa657e60eec243f17c158a4b18cbaf46f" compoundref="cookie_8cc" startline="18" endline="21">qqmusic::utils::CookieJar::set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Cookie_1acdca996920ea6a532dda7c74253e49c5" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Cookie::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>qqmusic::utils::Cookie::value</qualifiedname>
+        <briefdescription>
+<para>值 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/cookie.h" line="40" column="17" bodyfile="include/qqmusic/utils/cookie.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classqqmusic_1_1utils_1_1CookieJar_1aa657e60eec243f17c158a4b18cbaf46f" compoundref="cookie_8cc" startline="18" endline="21">qqmusic::utils::CookieJar::set</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>代表一条Cookie </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/utils/cookie.h" line="21" column="1" bodyfile="include/qqmusic/utils/cookie.h" bodystart="21" bodyend="41"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1utils_1_1Cookie_1a8452e33abf079ce507b1310f51d240be" prot="public" virt="non-virtual"><scope>qqmusic::utils::Cookie</scope><name>domain</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Cookie_1aebf1c07b17aaf62c6e7f90e89d8e81cb" prot="public" virt="non-virtual"><scope>qqmusic::utils::Cookie</scope><name>key</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Cookie_1a1dcbfa18a495309dbe34fd2157f0394d" prot="public" virt="non-virtual"><scope>qqmusic::utils::Cookie</scope><name>path</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Cookie_1acdca996920ea6a532dda7c74253e49c5" prot="public" virt="non-virtual"><scope>qqmusic::utils::Cookie</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

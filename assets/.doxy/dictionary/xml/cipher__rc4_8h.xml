@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="cipher__rc4_8h" kind="file" language="C++">
+    <compoundname>cipher_rc4.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes refid="cipher_8h" local="no">qqmusic/crypto/cipher.h</includes>
+    <includes refid="result_8h" local="no">qqmusic/result.h</includes>
+    <includes refid="buffer_8h" local="no">qqmusic/utils/buffer.h</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="cipher__rc4_8cc" local="no">cipher_rc4.cc</includedby>
+    <includedby refid="qmc_8cc" local="no">qmc.cc</includedby>
+    <includedby refid="qmc_8h" local="no">qmc.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>qqmusic/crypto/cipher.h</label>
+        <link refid="cipher_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>cipher_rc4.h</label>
+        <link refid="cipher__rc4_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>qqmusic/details/result.h</label>
+        <link refid="details_2result_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>qqmusic/result.h</label>
+        <link refid="result_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>qqmusic/utils/buffer.h</label>
+        <link refid="buffer_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>qqmusic/utils/exception.h</label>
+        <link refid="exception_8h_source"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>boost/asio/awaitable.hpp</label>
+      </node>
+      <node id="5">
+        <label>cstddef</label>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="6">
+        <label>cstdlib</label>
+      </node>
+      <node id="7">
+        <label>cstring</label>
+      </node>
+      <node id="13">
+        <label>functional</label>
+      </node>
+      <node id="14">
+        <label>iostream</label>
+      </node>
+      <node id="11">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="17">
+        <label>string</label>
+      </node>
+      <node id="15">
+        <label>type_traits</label>
+      </node>
+      <node id="18">
+        <label>unordered_map</label>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>cipher_rc4.h</label>
+        <link refid="cipher__rc4_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>qmc.h</label>
+        <link refid="qmc_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classqqmusic_1_1crypto_1_1RC4Cipher" prot="public">qqmusic::crypto::RC4Cipher</innerclass>
+    <innernamespace refid="namespaceqqmusic">qqmusic</innernamespace>
+    <innernamespace refid="namespaceqqmusic_1_1crypto">qqmusic::crypto</innernamespace>
+    <briefdescription>
+<para>cipher_rc4 </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>kingpoem </para>
+</simplesect>
+<simplesect kind="version"><para>0.1 </para>
+</simplesect>
+<simplesect kind="date"><para>2025-03-16 </para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2025 </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://git.unlock-music.dev/um/cli/src/branch/main/algo/qmc/cipher_rc4.go">https://git.unlock-music.dev/um/cli/src/branch/main/algo/qmc/cipher_rc4.go</ulink> <programlisting filename=".cc"><codeline><highlight class="normal"><ref refid="classqqmusic_1_1crypto_1_1RC4Cipher" kindref="compound">qqmusic::crypto::RC4Cipher</ref><sp/>cipher(key);</highlight></codeline>
+<codeline><highlight class="normal">cipher.decrypt(buf,<sp/>0);</highlight></codeline>
+</programlisting> </para>
+</simplesect>
+<simplesect kind="note"><para>该接口未测试，暂不可用 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>QQMUSIC_CRYPTO_CIPHER_RC4_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QQMUSIC_CRYPTO_CIPHER_RC4_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qqmusic/crypto/cipher.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qqmusic/result.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qqmusic/utils/buffer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">qqmusic::crypto<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classqqmusic_1_1crypto_1_1RC4Cipher" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classqqmusic_1_1crypto_1_1RC4Cipher" kindref="compound">RC4Cipher</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1crypto_1_1Cipher" kindref="compound">Cipher</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1crypto_1_1RC4Cipher" kindref="compound">RC4Cipher</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1crypto_1_1RC4Cipher_1a8a465e31399c38ef1efe0e75ee4324b8" kindref="member">decrypt</ref>(<ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref>&amp;<sp/>buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>offset)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>key;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>qqmusic::crypto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!QQMUSIC_CRYPTO_CIPHER_RC4_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/qqmusic/crypto/cipher_rc4.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,4085 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespaceqqmusic" kind="namespace" language="C++">
+    <compoundname>qqmusic</compoundname>
+    <innerclass refid="classqqmusic_1_1BaseMediaFileType" prot="public">qqmusic::BaseMediaFileType</innerclass>
+    <innerclass refid="classqqmusic_1_1EncryptedSongFileType" prot="public">qqmusic::EncryptedSongFileType</innerclass>
+    <innerclass refid="structqqmusic_1_1Lyric" prot="public">qqmusic::Lyric</innerclass>
+    <innerclass refid="structqqmusic_1_1MvUrl" prot="public">qqmusic::MvUrl</innerclass>
+    <innerclass refid="structqqmusic_1_1PhoneLoginResult" prot="public">qqmusic::PhoneLoginResult</innerclass>
+    <innerclass refid="structqqmusic_1_1QRCode" prot="public">qqmusic::QRCode</innerclass>
+    <innerclass refid="classqqmusic_1_1QRCodeLoginEvent" prot="public">qqmusic::QRCodeLoginEvent</innerclass>
+    <innerclass refid="structqqmusic_1_1QRCodeLoginResult" prot="public">qqmusic::QRCodeLoginResult</innerclass>
+    <innerclass refid="classqqmusic_1_1SongFileType" prot="public">qqmusic::SongFileType</innerclass>
+    <innerclass refid="structqqmusic_1_1SongInfo" prot="public">qqmusic::SongInfo</innerclass>
+    <innerclass refid="classqqmusic_1_1TabType" prot="public">qqmusic::TabType</innerclass>
+    <innernamespace refid="namespaceqqmusic_1_1crypto">qqmusic::crypto</innernamespace>
+    <innernamespace refid="namespaceqqmusic_1_1details">qqmusic::details</innernamespace>
+    <innernamespace refid="namespaceqqmusic_1_1utils">qqmusic::utils</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="album_8h_1a51db264092be9c3ff64069864a5afdbd" prot="public" static="no" strong="yes">
+        <type>int</type>
+        <name>CoverSize</name>
+        <qualifiedname>qqmusic::CoverSize</qualifiedname>
+        <enumvalue id="album_8h_1a51db264092be9c3ff64069864a5afdbda9b9c17e13f0e3dc9860a26e08b59b2a7" prot="public">
+          <name>SMALL</name>
+          <initializer>= 150</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="album_8h_1a51db264092be9c3ff64069864a5afdbda5b39c8b553c821e7cddc6da64b5bd2ee" prot="public">
+          <name>DEFAULT</name>
+          <initializer>= 300</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="album_8h_1a51db264092be9c3ff64069864a5afdbda714d40c49a4d3127097951042ed9f7e5" prot="public">
+          <name>MIDIUM</name>
+          <initializer>= 500</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="album_8h_1a51db264092be9c3ff64069864a5afdbda71726adf0ff60cd03eaf3c515883eeb8" prot="public">
+          <name>LARGE</name>
+          <initializer>= 800</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>封面类型枚举 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/album.h" line="25" column="1" bodyfile="include/qqmusic/album.h" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="enum" id="login_8h_1a3cb444ca9c8abe7cb599d88af731cbcb" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>QRLoginType</name>
+        <qualifiedname>qqmusic::QRLoginType</qualifiedname>
+        <enumvalue id="login_8h_1a3cb444ca9c8abe7cb599d88af731cbcba7e56035a736d269ad670f312496a0846" prot="public">
+          <name>QQ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="login_8h_1a3cb444ca9c8abe7cb599d88af731cbcbaf597273dbad55bb6ae9b40ec8dfd7655" prot="public">
+          <name>WX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>登陆类型枚举 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="22" column="1" bodyfile="include/qqmusic/login.h" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="enum" id="login_8h_1aafd3dc585b16ba4327a777f8d20ad857" prot="public" static="no" strong="yes">
+        <type>int</type>
+        <name>PhoneLoginEvent</name>
+        <qualifiedname>qqmusic::PhoneLoginEvent</qualifiedname>
+        <enumvalue id="login_8h_1aafd3dc585b16ba4327a777f8d20ad857a548e51fa67d541384e9585adf0db95dc" prot="public">
+          <name>SEND</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>已发送 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="login_8h_1aafd3dc585b16ba4327a777f8d20ad857a291d6945a9da1c9a56be64a04e003112" prot="public">
+          <name>CAPTCHA</name>
+          <initializer>= 20276</initializer>
+          <briefdescription>
+<para>需要滑块验证 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="login_8h_1aafd3dc585b16ba4327a777f8d20ad857a1e3e433edd76f91457ea26d0ae88ec2f" prot="public">
+          <name>FREQUENCY</name>
+          <initializer>= 100001</initializer>
+          <briefdescription>
+<para>操作过于频繁 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="login_8h_1aafd3dc585b16ba4327a777f8d20ad857a03570470bad94692ce93e32700d2e1cb" prot="public">
+          <name>OTHER</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+<para>其他 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>手机号登陆状态枚举 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="27" column="1" bodyfile="include/qqmusic/login.h" bodystart="27" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="enum" id="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cb" prot="public" static="no" strong="yes">
+        <type>unsigned</type>
+        <name>SearchType</name>
+        <qualifiedname>qqmusic::SearchType</qualifiedname>
+        <enumvalue id="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cbac184d7ee5f39c2a4112a9c14640488fa" prot="public">
+          <name>SONG</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>歌曲 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cba491d280d8e42777c128164f7a998c1a8" prot="public">
+          <name>SINGER</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>歌手 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cbaeaa4b00b7c00e8fb9c185fdbb83b36a0" prot="public">
+          <name>ALBUM</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>专辑 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cbacfff83c20a0c9926145496a688fd3d98" prot="public">
+          <name>SONG_LIST</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>歌单 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cba77d96fc8e5c080038b043ead02dadfc3" prot="public">
+          <name>MV</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>MV </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cba2000a9ce226a4807e37c32b32a4ab258" prot="public">
+          <name>LYRIC</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+<para>歌词 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cba2e40ad879e955201df4dedbf8d479a12" prot="public">
+          <name>USER</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+<para>用户 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cba003e5193cfd42211f8eee54e6d518891" prot="public">
+          <name>AUDIO_ALBUM</name>
+          <initializer>= 15</initializer>
+          <briefdescription>
+<para>节目专辑 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cbae423b8bde9bfbfd7e9409b23b23aed91" prot="public">
+          <name>AUDIO</name>
+          <initializer>= 18</initializer>
+          <briefdescription>
+<para>节目 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>搜索类型枚举 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/search.h" line="21" column="1" bodyfile="include/qqmusic/search.h" bodystart="21" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="enum" id="singer_8h_1a1070e3375afdb885f1eace1eddac86a3" prot="public" static="no" strong="yes">
+        <type>int</type>
+        <name>AreaType</name>
+        <qualifiedname>qqmusic::AreaType</qualifiedname>
+        <enumvalue id="singer_8h_1a1070e3375afdb885f1eace1eddac86a3a5fb1f955b45e38e31789286a1790398d" prot="public">
+          <name>ALL</name>
+          <initializer>= -100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a1070e3375afdb885f1eace1eddac86a3a8a035bfda6c16c222a9edbcf7666a6ba" prot="public">
+          <name>CHINA</name>
+          <initializer>= 200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a1070e3375afdb885f1eace1eddac86a3a0cb33ad1b82531916cfa68d9eadaa2a8" prot="public">
+          <name>TAIWAN</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a1070e3375afdb885f1eace1eddac86a3adda7f5a793b54dfab5b942e1953901f2" prot="public">
+          <name>AMERICA</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a1070e3375afdb885f1eace1eddac86a3a676de5ba893af6bbc683c93306aaf769" prot="public">
+          <name>JAPAN</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a1070e3375afdb885f1eace1eddac86a3ab9ae410939500d10dde7fe827b9d5db1" prot="public">
+          <name>KOREA</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>区域类型枚举 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="21" column="1" bodyfile="include/qqmusic/singer.h" bodystart="21" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="enum" id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910a" prot="public" static="no" strong="yes">
+        <type>int</type>
+        <name>GenreType</name>
+        <qualifiedname>qqmusic::GenreType</qualifiedname>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa5fb1f955b45e38e31789286a1790398d" prot="public">
+          <name>ALL</name>
+          <initializer>= -100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aaefdb39a4c7286afcecf0e8a7435fce6a" prot="public">
+          <name>POP</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aabb0014f2e34a1a63c199eb717fe3accf" prot="public">
+          <name>RAP</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aaf60aac4ca4d2cc63ad76d38b686116b5" prot="public">
+          <name>CHINESE_STYLE</name>
+          <initializer>= 19</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aaafeb717aa2a101f7f64840e0be38c171" prot="public">
+          <name>ROCK</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aaffb24a29f8c9c4ff4accf3782963e016" prot="public">
+          <name>ELECTRONIC</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa0219e95299a2a5a2393ef66a4e5816fd" prot="public">
+          <name>FOLK</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa0598e7a5219ba9cb79c243ec0b978230" prot="public">
+          <name>R_AND_B</name>
+          <initializer>= 11</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa4e5221e93807401c86420e24cbc32646" prot="public">
+          <name>ETHNIC</name>
+          <initializer>= 37</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa8285894c66ca02748285a8742ef204b7" prot="public">
+          <name>LIGHT_MUSIC</name>
+          <initializer>= 93</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aaf94e4ce531cc2ee5e7987a51cf96cf30" prot="public">
+          <name>JAZZ</name>
+          <initializer>= 14</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa264dccdf58359133ca3346bb8f8e4a97" prot="public">
+          <name>CLASSICAL</name>
+          <initializer>= 33</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa6ddc09dc456001d9854e9fe670374eb2" prot="public">
+          <name>COUNTRY</name>
+          <initializer>= 13</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa3838affc0d47a5ca0d23bc99e09805df" prot="public">
+          <name>BLUES</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>风格类型枚举 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="33" column="1" bodyfile="include/qqmusic/singer.h" bodystart="33" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="enum" id="singer_8h_1af9ed5360fdc5aadda229701831f902c1" prot="public" static="no" strong="yes">
+        <type>int</type>
+        <name>GenderType</name>
+        <qualifiedname>qqmusic::GenderType</qualifiedname>
+        <enumvalue id="singer_8h_1af9ed5360fdc5aadda229701831f902c1a5fb1f955b45e38e31789286a1790398d" prot="public">
+          <name>ALL</name>
+          <initializer>= -100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1af9ed5360fdc5aadda229701831f902c1a797e877326f44c5763d1458d7f56d87a" prot="public">
+          <name>MALE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1af9ed5360fdc5aadda229701831f902c1a4bf2e31c60d6a605954e399524cae56b" prot="public">
+          <name>FEMALE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1af9ed5360fdc5aadda229701831f902c1a720909a4b948fc9e33633b61960d6b3c" prot="public">
+          <name>GROUP</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>性别类型枚举 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="53" column="1" bodyfile="include/qqmusic/singer.h" bodystart="53" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="enum" id="singer_8h_1a600f7514d5c24d277eb8a657c026de03" prot="public" static="no" strong="yes">
+        <type>int</type>
+        <name>IndexType</name>
+        <qualifiedname>qqmusic::IndexType</qualifiedname>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a7fc56270e7a70fa81a5935b72eacbe29" prot="public">
+          <name>A</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a9d5ed678fe57bcca610140957afab571" prot="public">
+          <name>B</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a0d61f8370cad1d412f80b84d143e1257" prot="public">
+          <name>C</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03af623e75af30e62bbd73d6df5b50bb7b5" prot="public">
+          <name>D</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a3a3ea00cfc35332cedf6e5e9a32e94da" prot="public">
+          <name>E</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a800618943025315f869e4e1f09471012" prot="public">
+          <name>F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03adfcf28d0734569a6a693bc8194de62bf" prot="public">
+          <name>G</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03ac1d9f50f86825a1a2302ec2449c17196" prot="public">
+          <name>H</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03add7536794b63bf90eccfd37f9b147d7f" prot="public">
+          <name>I</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03aff44570aca8241914870afbc310cdb85" prot="public">
+          <name>J</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03aa5f3c6a11b03839d46af9fb43c97c188" prot="public">
+          <name>K</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03ad20caec3b48a1eef164cb4ca81ba2587" prot="public">
+          <name>L</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a69691c7bdcc3ce6d5d8a1361f22d04ac" prot="public">
+          <name>M</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a8d9c307cb7f3c4a32822a51922d1ceaa" prot="public">
+          <name>N</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03af186217753c37b9b9f958d906208506e" prot="public">
+          <name>O</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a44c29edb103a2872f519ad0c9a0fdaaa" prot="public">
+          <name>P</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03af09564c9ca56850d4cd6b3319e541aee" prot="public">
+          <name>Q</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03ae1e1d3d40573127e9ee0480caf1283d6" prot="public">
+          <name>R</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a5dbc98dcc983a70728bd082d1a47546e" prot="public">
+          <name>S</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03ab9ece18c950afbfa6b0fdbfa4ff731d3" prot="public">
+          <name>T</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a4c614360da93c0a041b22e537de151eb" prot="public">
+          <name>U</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a5206560a306a2e085a437fd258eb57ce" prot="public">
+          <name>V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a61e9c06ea9a85a5088a499df6458d276" prot="public">
+          <name>W</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a02129bb861061d1a052c592e2dc6b383" prot="public">
+          <name>X</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a57cec4137b614c87cb4e24a3d003a3e0" prot="public">
+          <name>Y</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a21c2e59531c8710156d34a3c30ac81d5" prot="public">
+          <name>Z</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a50b7748612b28db487d115f220bb77ab" prot="public">
+          <name>HASH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="singer_8h_1a600f7514d5c24d277eb8a657c026de03a5fb1f955b45e38e31789286a1790398d" prot="public">
+          <name>ALL</name>
+          <initializer>= -100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>索引类型枚举, 按首字母筛选时需要 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="63" column="1" bodyfile="include/qqmusic/singer.h" bodystart="63" bodyend="92"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="result_8h_1a9b4b068d9532115402b634b30568b0d3" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structResult" kindref="compound">Result</ref>&lt; T, <ref refid="classqqmusic_1_1utils_1_1Exception" kindref="compound">qqmusic::utils::Exception</ref> &gt;</type>
+        <definition>using qqmusic::Result = typedef Result&lt;T, qqmusic::utils::Exception&gt;</definition>
+        <argsstring></argsstring>
+        <name>Result</name>
+        <qualifiedname>qqmusic::Result</qualifiedname>
+        <briefdescription>
+<para>Rust风格的返回结果封装, 正确结果和异常共用同一个渠道返回 </para>
+        </briefdescription>
+        <detaileddescription>
+<para>使用方法: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="structResult" kindref="compound">Result&lt;int&gt;</ref><sp/>func(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>res<sp/>=<sp/>func(114514);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(res.isErr())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>error<sp/>occurred<sp/>in<sp/>func,<sp/>unwrap<sp/>the<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>res.unwrapErr().what()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>func<sp/>returned<sp/>normally,<sp/>unwrap<sp/>the<sp/>result</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>res.unwrap();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/result.h" line="45" column="1" bodyfile="include/qqmusic/result.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="result_8h_1a47fc0658fec640e3bd29c7826017f96c" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>boost::asio::awaitable&lt; T &gt;</type>
+        <definition>using qqmusic::Task = typedef boost::asio::awaitable&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>Task</name>
+        <qualifiedname>qqmusic::Task</qualifiedname>
+        <briefdescription>
+<para>通用异步任务 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/result.h" line="51" column="1" bodyfile="include/qqmusic/result.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="album_8cc_1a73830376e67c1908325c8770ea238ba4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string qqmusic::get_album_cover_url</definition>
+        <argsstring>(std::string_view mid, CoverSize size)</argsstring>
+        <name>get_album_cover_url</name>
+        <qualifiedname>qqmusic::get_album_cover_url</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <param>
+          <type>CoverSize</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>获取专辑封面url </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲mid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲封面尺寸</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string格式歌曲封面的url </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/album.cc" line="10" column="13" bodyfile="src/album.cc" bodystart="10" bodyend="15" declfile="include/qqmusic/album.h" declline="36" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="album_8cc_1a75ab6487cfa2d6bef2ed8c76076fd5ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>qqmusic::Task&lt; qqmusic::Result&lt; nlohmann::json &gt; &gt; qqmusic::get_album_detail</definition>
+        <argsstring>(std::string_view album_mid)</argsstring>
+        <name>get_album_detail</name>
+        <qualifiedname>qqmusic::get_album_detail</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>album_mid</declname>
+        </param>
+        <briefdescription>
+<para>从mid获取专辑信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>album_mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>专辑mid</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/album.cc" line="17" column="6" bodyfile="src/album.cc" bodystart="17" bodyend="49" declfile="include/qqmusic/album.h" declline="48" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="album_8cc_1aa204c7b2b432b3c6c73a880be6d49a02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>qqmusic::Task&lt; qqmusic::Result&lt; nlohmann::json &gt; &gt; qqmusic::get_album_detail</definition>
+        <argsstring>(uint64_t album_id)</argsstring>
+        <name>get_album_detail</name>
+        <qualifiedname>qqmusic::get_album_detail</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>album_id</declname>
+        </param>
+        <briefdescription>
+<para>从id获取专辑信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>album_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>专辑id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/album.cc" line="51" column="6" bodyfile="src/album.cc" bodystart="51" bodyend="84" declfile="include/qqmusic/album.h" declline="60" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="album_8cc_1a7dd68b88ceb1e32172a9f49b7ca5d11a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>qqmusic::Task&lt; qqmusic::Result&lt; nlohmann::json &gt; &gt; qqmusic::get_album_songs</definition>
+        <argsstring>(std::string_view album_mid, unsigned int num=10, unsigned int page=1)</argsstring>
+        <name>get_album_songs</name>
+        <qualifiedname>qqmusic::get_album_songs</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>album_mid</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>从mid获取专辑歌曲列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>album_mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>专辑mid</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/album.cc" line="86" column="6" bodyfile="src/album.cc" bodystart="86" bodyend="122" declfile="include/qqmusic/album.h" declline="72" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="album_8cc_1a2f5ea1adb002aabde4deacda71e4c992" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>qqmusic::Task&lt; qqmusic::Result&lt; nlohmann::json &gt; &gt; qqmusic::get_album_songs</definition>
+        <argsstring>(uint64_t album_id, unsigned int num=10, unsigned int page=1)</argsstring>
+        <name>get_album_songs</name>
+        <qualifiedname>qqmusic::get_album_songs</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>album_id</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>从id获取专辑歌曲列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>album_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>专辑id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/album.cc" line="124" column="6" bodyfile="src/album.cc" bodystart="124" bodyend="160" declfile="include/qqmusic/album.h" declline="86" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="login_8cc_1a9b207a608632103f12b50177d6ae692d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Task&lt; qqmusic::Result&lt; <ref refid="structqqmusic_1_1QRCode" kindref="compound">QRCode</ref> &gt; &gt;</type>
+        <definition>qqmusic::Task&lt; qqmusic::Result&lt; QRCode &gt; &gt; qqmusic::get_qrcode</definition>
+        <argsstring>(QRLoginType login_type)</argsstring>
+        <name>get_qrcode</name>
+        <qualifiedname>qqmusic::get_qrcode</qualifiedname>
+        <param>
+          <type>QRLoginType</type>
+          <declname>login_type</declname>
+        </param>
+        <briefdescription>
+<para>获取登陆二维码 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>login_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>登陆类型</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;<ref refid="structqqmusic_1_1QRCode" kindref="compound">QRCode</ref>&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/login.cc" line="28" column="15" bodyfile="src/login.cc" bodystart="28" bodyend="158" declfile="include/qqmusic/login.h" declline="163" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="login_8cc_1a48f47718e92af6b9407354e02315cb71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Task&lt; qqmusic::Result&lt; <ref refid="structqqmusic_1_1QRCodeLoginResult" kindref="compound">QRCodeLoginResult</ref> &gt; &gt;</type>
+        <definition>qqmusic::Task&lt; qqmusic::Result&lt; QRCodeLoginResult &gt; &gt; qqmusic::check_qq_qr</definition>
+        <argsstring>(QRCode &amp;qrc)</argsstring>
+        <name>check_qq_qr</name>
+        <qualifiedname>qqmusic::check_qq_qr</qualifiedname>
+        <param>
+          <type><ref refid="structqqmusic_1_1QRCode" kindref="compound">QRCode</ref> &amp;</type>
+          <declname>qrc</declname>
+        </param>
+        <briefdescription>
+<para>检查QQ二维码状态 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>qrc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>QQ二维码</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;<ref refid="structqqmusic_1_1QRCodeLoginResult" kindref="compound">QRCodeLoginResult</ref>&gt;&gt;</computeroutput>. 如果登陆成功会包含Credential</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/login.cc" line="160" column="15" bodyfile="src/login.cc" bodystart="160" bodyend="279" declfile="include/qqmusic/login.h" declline="175" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="login_8cc_1a16856c623630b7216dbe0e7909d82288" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Task&lt; qqmusic::Result&lt; <ref refid="structqqmusic_1_1QRCodeLoginResult" kindref="compound">QRCodeLoginResult</ref> &gt; &gt;</type>
+        <definition>qqmusic::Task&lt; qqmusic::Result&lt; QRCodeLoginResult &gt; &gt; qqmusic::check_wx_qr</definition>
+        <argsstring>(QRCode &amp;qrc)</argsstring>
+        <name>check_wx_qr</name>
+        <qualifiedname>qqmusic::check_wx_qr</qualifiedname>
+        <param>
+          <type><ref refid="structqqmusic_1_1QRCode" kindref="compound">QRCode</ref> &amp;</type>
+          <declname>qrc</declname>
+        </param>
+        <briefdescription>
+<para>检查微信二维码状态 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>qrc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>微信二维码</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;<ref refid="structqqmusic_1_1QRCodeLoginResult" kindref="compound">QRCodeLoginResult</ref>&gt;&gt;</computeroutput>. 如果登陆成功会包含Credential</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/login.cc" line="281" column="15" bodyfile="src/login.cc" bodystart="281" bodyend="371" declfile="include/qqmusic/login.h" declline="187" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="login_8cc_1a5bdbc43c710ba15d3bf9f31b589e0c1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Task&lt; qqmusic::Result&lt; <ref refid="structqqmusic_1_1PhoneLoginResult" kindref="compound">PhoneLoginResult</ref> &gt; &gt;</type>
+        <definition>qqmusic::Task&lt; qqmusic::Result&lt; PhoneLoginResult &gt; &gt; qqmusic::send_authcode</definition>
+        <argsstring>(std::string_view phone, std::string_view country_code=&quot;86&quot;)</argsstring>
+        <name>send_authcode</name>
+        <qualifiedname>qqmusic::send_authcode</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>phone</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>country_code</declname>
+          <defval>&quot;86&quot;</defval>
+        </param>
+        <briefdescription>
+<para>向指定手机号发送验证码 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>phone</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>手机号 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>country_code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>地区前缀</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>qqmusic::Task&lt;qqmusic::Result&lt;<ref refid="structqqmusic_1_1PhoneLoginResult" kindref="compound">PhoneLoginResult</ref>&gt;&gt;</computeroutput> 出错就会返回<computeroutput>Err</computeroutput></para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput></para>
+</simplesect>
+<simplesect kind="warning"><para>该函数仍有问题, 不应使用 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/login.cc" line="373" column="15" bodyfile="src/login.cc" bodystart="373" bodyend="432" declfile="include/qqmusic/login.h" declline="202" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="login_8cc_1a9746551aa8bedfb7439317e334d0c61a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Task&lt; qqmusic::Result&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt; &gt;</type>
+        <definition>qqmusic::Task&lt; qqmusic::Result&lt; utils::Credential &gt; &gt; qqmusic::phone_authorize</definition>
+        <argsstring>(std::string_view phone, std::string_view auth_code, std::string_view country_code=&quot;86&quot;)</argsstring>
+        <name>phone_authorize</name>
+        <qualifiedname>qqmusic::phone_authorize</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>phone</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>auth_code</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>country_code</declname>
+          <defval>&quot;86&quot;</defval>
+        </param>
+        <briefdescription>
+<para>手机号认证 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>phone</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>手机号 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>auth_code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>验证码 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>country_code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>地区前缀</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>qqmusic::Task&lt;qqmusic::Result&lt;<ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">qqmusic::utils::Credential</ref>&gt;&gt;</computeroutput> 出错就会返回<computeroutput>Err</computeroutput></para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput></para>
+</simplesect>
+<simplesect kind="warning"><para>该函数仍有问题, 不应使用 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/login.cc" line="434" column="15" bodyfile="src/login.cc" bodystart="434" bodyend="487" declfile="include/qqmusic/login.h" declline="219" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="lyric_8cc_1ac0e83ac2da6145ac2ba27c6824844e59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; <ref refid="structqqmusic_1_1Lyric" kindref="compound">Lyric</ref> &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; Lyric &gt; &gt; qqmusic::get_lyric</definition>
+        <argsstring>(std::string_view mid, bool qrc=false, bool trans=false, bool roma=false)</argsstring>
+        <name>get_lyric</name>
+        <qualifiedname>qqmusic::get_lyric</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>qrc</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>trans</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>roma</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>获取歌曲的歌词 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲mid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qrc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lyric是否是xml格式, 默认false </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>trans</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>是否附带翻译 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>roma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>是否附带罗马音</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>原始的歌词字符串, qrc歌词仅经过解码, 还是原始的xml格式</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/lyric.cc" line="10" column="6" bodyfile="src/lyric.cc" bodystart="10" bodyend="98" declfile="include/qqmusic/lyric.h" declline="101" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="lyric_8cc_1acc7b429fb5719e783b4a4c99a424b1de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; <ref refid="structqqmusic_1_1Lyric" kindref="compound">Lyric</ref> &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; Lyric &gt; &gt; qqmusic::get_lyric</definition>
+        <argsstring>(uint64_t id, bool qrc=false, bool trans=false, bool roma=false)</argsstring>
+        <name>get_lyric</name>
+        <qualifiedname>qqmusic::get_lyric</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>qrc</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>trans</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>roma</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>获取歌曲的歌词 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲id </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qrc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lyric是否是xml格式, 默认false </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>trans</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>是否附带翻译 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>roma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>是否附带罗马音</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>原始的歌词字符串, qrc歌词仅经过解码, 还是原始的xml格式</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/lyric.cc" line="100" column="6" bodyfile="src/lyric.cc" bodystart="100" bodyend="190" declfile="include/qqmusic/lyric.h" declline="118" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="mv_8cc_1aa329314d535879dc134901b4f262d447" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_mv_detail</definition>
+        <argsstring>(std::span&lt; std::string &gt; vids)</argsstring>
+        <name>get_mv_detail</name>
+        <qualifiedname>qqmusic::get_mv_detail</qualifiedname>
+        <param>
+          <type>std::span&lt; std::string &gt;</type>
+          <declname>vids</declname>
+        </param>
+        <briefdescription>
+<para>获取一组MV的信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待查询的MV vid列表</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>MV信息json</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mv.cc" line="12" column="6" bodyfile="src/mv.cc" bodystart="12" bodyend="71" declfile="include/qqmusic/mv.h" declline="38" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="mv_8cc_1a04e8cde9166a1cf46d6345192133635a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; std::vector&lt; <ref refid="structqqmusic_1_1MvUrl" kindref="compound">MvUrl</ref> &gt; &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; std::vector&lt; MvUrl &gt; &gt; &gt; qqmusic::get_mv_urls</definition>
+        <argsstring>(std::span&lt; std::string &gt; vids)</argsstring>
+        <name>get_mv_urls</name>
+        <qualifiedname>qqmusic::get_mv_urls</qualifiedname>
+        <param>
+          <type>std::span&lt; std::string &gt;</type>
+          <declname>vids</declname>
+        </param>
+        <briefdescription>
+<para>获取mv url </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待查询的MV vid列表</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>MvUrl列表</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mv.cc" line="73" column="6" bodyfile="src/mv.cc" bodystart="73" bodyend="141" declfile="include/qqmusic/mv.h" declline="49" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="search_8cc_1a016d982ddd5556f1e546fad33f8d81af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::hotkey</definition>
+        <argsstring>()</argsstring>
+        <name>hotkey</name>
+        <qualifiedname>qqmusic::hotkey</qualifiedname>
+        <briefdescription>
+<para>获取搜索热词 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Json格式的搜索热词</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/search.cc" line="11" column="6" bodyfile="src/search.cc" bodystart="11" bodyend="44" declfile="include/qqmusic/search.h" declline="40" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="search_8cc_1ae505573339cf5c3338efb67f6514e72a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::keyword_complete</definition>
+        <argsstring>(std::string_view keyword)</argsstring>
+        <name>keyword_complete</name>
+        <qualifiedname>qqmusic::keyword_complete</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>keyword</declname>
+        </param>
+        <briefdescription>
+<para>搜索词联想补全 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>当前搜索词</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>带有高亮的补全结果</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/search.cc" line="46" column="6" bodyfile="src/search.cc" bodystart="46" bodyend="82" declfile="include/qqmusic/search.h" declline="51" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="search_8cc_1a100765c1a6001fcd3268b4eca1b7f217" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::quick_search</definition>
+        <argsstring>(std::string_view keyword)</argsstring>
+        <name>quick_search</name>
+        <qualifiedname>qqmusic::quick_search</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>keyword</declname>
+        </param>
+        <briefdescription>
+<para>快速搜索 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>搜索词</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Json格式搜索结果</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/search.cc" line="84" column="6" bodyfile="src/search.cc" bodystart="84" bodyend="132" declfile="include/qqmusic/search.h" declline="62" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="search_8cc_1a2bd1f98306e0394e78e548bf8127e8e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::general_search</definition>
+        <argsstring>(std::string_view keyword, unsigned num=15, unsigned page=1, bool highlight=true)</argsstring>
+        <name>general_search</name>
+        <qualifiedname>qqmusic::general_search</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>keyword</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>15</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>highlight</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>综合搜索 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>搜索词 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>每页结果数, 默认<computeroutput>15</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页数, 默认<computeroutput>1</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>highlight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>是否高亮, 默认<computeroutput>true</computeroutput></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Json格式搜索结果</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/search.cc" line="134" column="6" bodyfile="src/search.cc" bodystart="134" bodyend="178" declfile="include/qqmusic/search.h" declline="76" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="search_8cc_1a8af394fc46973a38cad5d961c57eed99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::search_by_type</definition>
+        <argsstring>(std::string_view keyword, SearchType type=SearchType::SONG, unsigned num_per_page=10, unsigned page=1, bool highlight=true)</argsstring>
+        <name>search_by_type</name>
+        <qualifiedname>qqmusic::search_by_type</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>keyword</declname>
+        </param>
+        <param>
+          <type>SearchType</type>
+          <declname>type</declname>
+          <defval>SearchType::SONG</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num_per_page</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>highlight</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>按类型搜索 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keybord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>搜索词 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>搜索类型 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num_per_page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>每页结果数 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页数</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Json格式搜索结果</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/search.cc" line="180" column="6" bodyfile="src/search.cc" bodystart="180" bodyend="263" declfile="include/qqmusic/search.h" declline="93" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1aff93e39373b0696b5a5697abc5fa7b57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_singer_list</definition>
+        <argsstring>(AreaType area=AreaType::ALL, GenderType gender=GenderType::ALL, GenreType genre=GenreType::ALL)</argsstring>
+        <name>get_singer_list</name>
+        <qualifiedname>qqmusic::get_singer_list</qualifiedname>
+        <param>
+          <type>AreaType</type>
+          <declname>area</declname>
+          <defval>AreaType::ALL</defval>
+        </param>
+        <param>
+          <type>GenderType</type>
+          <declname>gender</declname>
+          <defval>GenderType::ALL</defval>
+        </param>
+        <param>
+          <type>GenreType</type>
+          <declname>genre</declname>
+          <defval>GenreType::ALL</defval>
+        </param>
+        <briefdescription>
+<para>获取符合筛选条件的歌手信息表单 </para>
+        </briefdescription>
+        <detaileddescription>
+<para>获取JSON格式的歌手信息, 可以使用area, gender和genre筛选</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>区域信息筛选, 默认<computeroutput>AreaType::ALL</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>性别信息筛选, 默认<computeroutput>GenderType::ALL</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>genre</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>风格信息筛选, 默认<computeroutput>GenreType::ALL</computeroutput>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="see"><para>AreaType, GenderType, GenreType </para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="12" column="6" bodyfile="src/singer.cc" bodystart="12" bodyend="53" declfile="include/qqmusic/singer.h" declline="186" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1aae6fa8b2c5f8da6842874ae699ad197c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_singer_list_index</definition>
+        <argsstring>(AreaType area=AreaType::ALL, GenderType gender=GenderType::ALL, GenreType genre=GenreType::ALL, IndexType index=IndexType::ALL, unsigned sin=0, unsigned cur_page=1)</argsstring>
+        <name>get_singer_list_index</name>
+        <qualifiedname>qqmusic::get_singer_list_index</qualifiedname>
+        <param>
+          <type>AreaType</type>
+          <declname>area</declname>
+          <defval>AreaType::ALL</defval>
+        </param>
+        <param>
+          <type>GenderType</type>
+          <declname>gender</declname>
+          <defval>GenderType::ALL</defval>
+        </param>
+        <param>
+          <type>GenreType</type>
+          <declname>genre</declname>
+          <defval>GenreType::ALL</defval>
+        </param>
+        <param>
+          <type>IndexType</type>
+          <declname>index</declname>
+          <defval>IndexType::ALL</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>sin</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>cur_page</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>筛选获得歌曲歌单原始数据 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>区域信息筛选, 默认<computeroutput>AreaType::ALL</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>性别信息筛选, 默认<computeroutput>GenderType::ALL</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>genre</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>风格信息筛选, 默认<computeroutput>GenreType::ALL</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>跳过的条目数量, 默认<computeroutput>0</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cur_page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>当前页面的索引, 默认<computeroutput>1</computeroutput></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="see"><para>AreaType, GenderType, GenreType, IndexType </para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="55" column="6" bodyfile="src/singer.cc" bodystart="55" bodyend="97" declfile="include/qqmusic/singer.h" declline="205" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1a57c1235e6f830d390c4fef2f313ec3df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_singer_list_index_all</definition>
+        <argsstring>(AreaType area=AreaType::ALL, GenderType gender=GenderType::ALL, GenreType genre=GenreType::ALL, IndexType index=IndexType::ALL)</argsstring>
+        <name>get_singer_list_index_all</name>
+        <qualifiedname>qqmusic::get_singer_list_index_all</qualifiedname>
+        <param>
+          <type>AreaType</type>
+          <declname>area</declname>
+          <defval>AreaType::ALL</defval>
+        </param>
+        <param>
+          <type>GenderType</type>
+          <declname>gender</declname>
+          <defval>GenderType::ALL</defval>
+        </param>
+        <param>
+          <type>GenreType</type>
+          <declname>genre</declname>
+          <defval>GenreType::ALL</defval>
+        </param>
+        <param>
+          <type>IndexType</type>
+          <declname>index</declname>
+          <defval>IndexType::ALL</defval>
+        </param>
+        <briefdescription>
+<para>获取所有符合条件的歌单原始数据 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>区域信息筛选, 默认<computeroutput>AreaType::ALL</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>性别信息筛选, 默认<computeroutput>GenderType::ALL</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>genre</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>风格信息筛选, 默认<computeroutput>GenreType::ALL</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>索引信息筛选, 默认<computeroutput>IndexType::ALL</computeroutput>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="see"><para>AreaType, GenderType, GenreType, IndexType </para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="99" column="6" bodyfile="src/singer.cc" bodystart="99" bodyend="149" declfile="include/qqmusic/singer.h" declline="226" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1a951de06c3744f2934a2b3f686c07f671" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_singer_info</definition>
+        <argsstring>(std::string_view mid)</argsstring>
+        <name>get_singer_info</name>
+        <qualifiedname>qqmusic::get_singer_info</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <briefdescription>
+<para>获取歌手基本信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>歌手mid</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="151" column="6" bodyfile="src/singer.cc" bodystart="151" bodyend="184" declfile="include/qqmusic/singer.h" declline="241" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1aa445d245b1e54dd1b11eb10d905a0e28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_tab_detail</definition>
+        <argsstring>(std::string_view mid, TabType type, unsigned page=1, unsigned num=10)</argsstring>
+        <name>get_tab_detail</name>
+        <qualifiedname>qqmusic::get_tab_detail</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <param>
+          <type><ref refid="classqqmusic_1_1TabType" kindref="compound">TabType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+<para>返回标签详细信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌手mid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>标签信息 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页码 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>每页返回数量</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classqqmusic_1_1TabType" kindref="compound">TabType</ref> </para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="186" column="6" bodyfile="src/singer.cc" bodystart="186" bodyend="235" declfile="include/qqmusic/singer.h" declline="257" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1a7f9174527598b6227320e2da1f492889" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_singer_desc</definition>
+        <argsstring>(std::span&lt; std::string &gt; mids, unsigned number=10)</argsstring>
+        <name>get_singer_desc</name>
+        <qualifiedname>qqmusic::get_singer_desc</qualifiedname>
+        <param>
+          <type>std::span&lt; std::string &gt;</type>
+          <declname>mids</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>number</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+<para>获取多个歌手的简介 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌手mid列表 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>相似歌手数量, 默认为<computeroutput>0</computeroutput></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classqqmusic_1_1TabType" kindref="compound">TabType</ref> </para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="237" column="6" bodyfile="src/singer.cc" bodystart="237" bodyend="274" declfile="include/qqmusic/singer.h" declline="274" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1aea53ce06d45a2b9cfffc3366c56e0969" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_similar_singers</definition>
+        <argsstring>(std::string_view mid, unsigned number=10)</argsstring>
+        <name>get_similar_singers</name>
+        <qualifiedname>qqmusic::get_similar_singers</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>number</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+<para>获取相似歌手信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌手mid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>相似歌手数量, 默认为<computeroutput>0</computeroutput></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classqqmusic_1_1TabType" kindref="compound">TabType</ref> </para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="276" column="6" bodyfile="src/singer.cc" bodystart="276" bodyend="313" declfile="include/qqmusic/singer.h" declline="288" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1a14750a1283344356f7251bbc4c3370ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_songs_list</definition>
+        <argsstring>(std::string_view mid, unsigned num=10, unsigned begin=0)</argsstring>
+        <name>get_songs_list</name>
+        <qualifiedname>qqmusic::get_songs_list</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>begin</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>获取歌手歌曲原始数据 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌手mid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>每次获取的最大数量, 默认<computeroutput>10</computeroutput>, 最大<computeroutput>30</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>从第几个开始</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="315" column="6" bodyfile="src/singer.cc" bodystart="315" bodyend="351" declfile="include/qqmusic/singer.h" declline="302" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1acd7c49d8e0b38bfd68221e99348516bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_songs_list_all</definition>
+        <argsstring>(std::string_view mid)</argsstring>
+        <name>get_songs_list_all</name>
+        <qualifiedname>qqmusic::get_songs_list_all</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <briefdescription>
+<para>获取歌手的所有歌曲 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌手mid</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="353" column="6" bodyfile="src/singer.cc" bodystart="353" bodyend="402" declfile="include/qqmusic/singer.h" declline="316" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1a6c31cb059be0490dd194d5efe4914f70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_album_list</definition>
+        <argsstring>(std::string_view mid, unsigned number=10, unsigned begin=0)</argsstring>
+        <name>get_album_list</name>
+        <qualifiedname>qqmusic::get_album_list</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>number</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>begin</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>获取歌手专辑列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌手mid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>单次获取数据量, 默认<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>从第几个开始</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="404" column="6" bodyfile="src/singer.cc" bodystart="404" bodyend="440" declfile="include/qqmusic/singer.h" declline="330" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1af7d8c5969aa694638df42fedd9d429d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_album_list_all</definition>
+        <argsstring>(std::string_view mid)</argsstring>
+        <name>get_album_list_all</name>
+        <qualifiedname>qqmusic::get_album_list_all</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <briefdescription>
+<para>获取歌手所有专辑 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌手mid</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="442" column="6" bodyfile="src/singer.cc" bodystart="442" bodyend="487" declfile="include/qqmusic/singer.h" declline="344" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1a8fa53257abefbb66f4257fd3e5139531" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_mv_list</definition>
+        <argsstring>(std::string_view mid, unsigned number=10, unsigned begin=0)</argsstring>
+        <name>get_mv_list</name>
+        <qualifiedname>qqmusic::get_mv_list</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>number</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>begin</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>获取歌手MV列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌手mid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>单次获取数据量, 默认<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>从第几个开始</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="489" column="6" bodyfile="src/singer.cc" bodystart="489" bodyend="520" declfile="include/qqmusic/singer.h" declline="358" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="singer_8cc_1a2d1a019dedbec114a312b590506a56db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_mv_list_all</definition>
+        <argsstring>(std::string_view mid)</argsstring>
+        <name>get_mv_list_all</name>
+        <qualifiedname>qqmusic::get_mv_list_all</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <briefdescription>
+<para>获取歌手所有MV </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌手mid</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singer.cc" line="522" column="6" bodyfile="src/singer.cc" bodystart="522" bodyend="566" declfile="include/qqmusic/singer.h" declline="372" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1a4ee88b9ad1f651e9be88e922a37d8c14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::query_song</definition>
+        <argsstring>(std::span&lt; std::string &gt; mids)</argsstring>
+        <name>query_song</name>
+        <qualifiedname>qqmusic::query_song</qualifiedname>
+        <param>
+          <type>std::span&lt; std::string &gt;</type>
+          <declname>mids</declname>
+        </param>
+        <briefdescription>
+<para>批量查询歌曲信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待查询歌曲mid列表</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="16" column="6" bodyfile="src/song.cc" bodystart="16" bodyend="59" declfile="include/qqmusic/song.h" declline="237" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1ab986285677e72f270f972763b1345924" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::query_song</definition>
+        <argsstring>(std::span&lt; uint64_t &gt; ids)</argsstring>
+        <name>query_song</name>
+        <qualifiedname>qqmusic::query_song</qualifiedname>
+        <param>
+          <type>std::span&lt; uint64_t &gt;</type>
+          <declname>ids</declname>
+        </param>
+        <briefdescription>
+<para>批量查询歌曲信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待查询歌曲id列表</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="61" column="6" bodyfile="src/song.cc" bodystart="61" bodyend="105" declfile="include/qqmusic/song.h" declline="249" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1a00135463cf6db4a96f17ea0cc0156649" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; std::vector&lt; <ref refid="structqqmusic_1_1SongInfo" kindref="compound">SongInfo</ref> &gt; &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; std::vector&lt; SongInfo &gt; &gt; &gt; qqmusic::get_song_urls</definition>
+        <argsstring>(std::span&lt; std::string &gt; mids, std::unique_ptr&lt; BaseMediaFileType &gt; file_type=std::make_unique&lt; SongFileType &gt;(), std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_song_urls</name>
+        <qualifiedname>qqmusic::get_song_urls</qualifiedname>
+        <param>
+          <type>std::span&lt; std::string &gt;</type>
+          <declname>mids</declname>
+        </param>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classqqmusic_1_1BaseMediaFileType" kindref="compound">BaseMediaFileType</ref> &gt;</type>
+          <declname>file_type</declname>
+          <defval>std::make_unique&lt; <ref refid="classqqmusic_1_1SongFileType" kindref="compound">SongFileType</ref> &gt;()</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>批量获取歌曲播放链接 </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@params mids 歌曲mid列表 @params file_type 歌曲文件类型, 默认MP3_128类型 @params credential 凭证信息</para>
+<para>调用示例: <programlisting filename=".cpp"><codeline><highlight class="normal">std::vector&lt;std::string&gt;<sp/>mids{</highlight><highlight class="stringliteral">&quot;002n5zzy3VVGau&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>未加密类型</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>res<sp/>=<sp/></highlight><highlight class="keyword">co_await</highlight><highlight class="normal"><sp/>get_song_urls(mids,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::make_unique&lt;SongFileType&gt;(<ref refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069a02dd71f0eaa4516befd77ed48904870a" kindref="member">SongFileType::ACC_192</ref>));</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>加密文件类型<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>res<sp/>=<sp/></highlight><highlight class="keyword">co_await</highlight><highlight class="normal"><sp/>get_song_urls(mids,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::make_unique&lt;EncryptedSongFileType&gt;(EncryptedSongFileType::MASTER));</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classqqmusic_1_1BaseMediaFileType" kindref="compound">BaseMediaFileType</ref>, <ref refid="classqqmusic_1_1SongFileType" kindref="compound">SongFileType</ref>, <ref refid="classqqmusic_1_1EncryptedSongFileType" kindref="compound">EncryptedSongFileType</ref> </para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="107" column="6" bodyfile="src/song.cc" bodystart="107" bodyend="246" declfile="include/qqmusic/song.h" declline="290" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1add675d7f250e258145ad61fcf4c999cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; std::string &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; std::string &gt; &gt; qqmusic::get_try_url</definition>
+        <argsstring>(std::string_view mid, std::string_view vs)</argsstring>
+        <name>get_try_url</name>
+        <qualifiedname>qqmusic::get_try_url</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>vs</declname>
+        </param>
+        <briefdescription>
+<para>获取试听链接 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>区域信息筛选, 默认<computeroutput>AreaType::ALL</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>性别信息筛选, 默认<computeroutput>GenderType::ALL</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>genre</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>风格信息筛选, 默认<computeroutput>GenreType::ALL</computeroutput>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="see"><para>AreaType, GenderType, GenreType </para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="248" column="6" bodyfile="src/song.cc" bodystart="248" bodyend="314" declfile="include/qqmusic/song.h" declline="308" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1a9d50fad85a484e9b9385567a0181e51c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_song_detail</definition>
+        <argsstring>(std::string_view mid)</argsstring>
+        <name>get_song_detail</name>
+        <qualifiedname>qqmusic::get_song_detail</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <briefdescription>
+<para>获取歌曲详细信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲mid</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="316" column="6" bodyfile="src/song.cc" bodystart="316" bodyend="352" declfile="include/qqmusic/song.h" declline="320" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1a4ca9c6758c58121b05254525e7faf47c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_song_detail</definition>
+        <argsstring>(uint64_t id)</argsstring>
+        <name>get_song_detail</name>
+        <qualifiedname>qqmusic::get_song_detail</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>获取歌曲详细信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="354" column="6" bodyfile="src/song.cc" bodystart="354" bodyend="390" declfile="include/qqmusic/song.h" declline="332" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1a1368960435eaa891917b2c5a218fbada" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_similar_songs</definition>
+        <argsstring>(uint64_t songid)</argsstring>
+        <name>get_similar_songs</name>
+        <qualifiedname>qqmusic::get_similar_songs</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>songid</declname>
+        </param>
+        <briefdescription>
+<para>获取相似歌曲列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="392" column="6" bodyfile="src/song.cc" bodystart="392" bodyend="430" declfile="include/qqmusic/song.h" declline="344" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1ac49dacd1a99acd2ab9b699171cdcd9a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_labels</definition>
+        <argsstring>(uint64_t songid)</argsstring>
+        <name>get_labels</name>
+        <qualifiedname>qqmusic::get_labels</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>songid</declname>
+        </param>
+        <briefdescription>
+<para>获取歌曲标签信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="432" column="6" bodyfile="src/song.cc" bodystart="432" bodyend="470" declfile="include/qqmusic/song.h" declline="356" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1a2ae33282cc98fec335816ebf86c1c66c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_related_songlist</definition>
+        <argsstring>(uint64_t songid)</argsstring>
+        <name>get_related_songlist</name>
+        <qualifiedname>qqmusic::get_related_songlist</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>songid</declname>
+        </param>
+        <briefdescription>
+<para>获取相关歌单列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="472" column="6" bodyfile="src/song.cc" bodystart="472" bodyend="511" declfile="include/qqmusic/song.h" declline="368" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1a0ba408311a34155d030e601b8c8ebfc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_related_mv</definition>
+        <argsstring>(uint64_t songid, std::optional&lt; std::string &gt; last_mvid=std::nullopt)</argsstring>
+        <name>get_related_mv</name>
+        <qualifiedname>qqmusic::get_related_mv</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>songid</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; std::string &gt;</type>
+          <declname>last_mvid</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取相关MV </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="513" column="6" bodyfile="src/song.cc" bodystart="513" bodyend="554" declfile="include/qqmusic/song.h" declline="380" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1a39d3043ea74e3a4ff402e08023d965c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_other_version</definition>
+        <argsstring>(std::string_view mid)</argsstring>
+        <name>get_other_version</name>
+        <qualifiedname>qqmusic::get_other_version</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <briefdescription>
+<para>获取同名歌曲的其他版本 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲mid</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="556" column="6" bodyfile="src/song.cc" bodystart="556" bodyend="596" declfile="include/qqmusic/song.h" declline="393" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1acc6dad7b69ff6618e82ad6ae29f7f521" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_other_version</definition>
+        <argsstring>(uint64_t id)</argsstring>
+        <name>get_other_version</name>
+        <qualifiedname>qqmusic::get_other_version</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>获取同名歌曲的其他版本 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="598" column="6" bodyfile="src/song.cc" bodystart="598" bodyend="638" declfile="include/qqmusic/song.h" declline="405" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1a4057b751378d926d501ea91fcb670a9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_producer_info</definition>
+        <argsstring>(std::string_view mid)</argsstring>
+        <name>get_producer_info</name>
+        <qualifiedname>qqmusic::get_producer_info</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <briefdescription>
+<para>获取歌曲制作者信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲mid</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>可能返回JSON的<computeroutput>null</computeroutput>, 即没有制作者信息 </para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="640" column="6" bodyfile="src/song.cc" bodystart="640" bodyend="677" declfile="include/qqmusic/song.h" declline="418" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1aad751c398df9697e6c79b9c78f8ae463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_producer_info</definition>
+        <argsstring>(uint64_t id)</argsstring>
+        <name>get_producer_info</name>
+        <qualifiedname>qqmusic::get_producer_info</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>获取歌曲制作者信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>可能返回JSON的<computeroutput>null</computeroutput>, 即没有制作者信息 </para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="679" column="6" bodyfile="src/song.cc" bodystart="679" bodyend="716" declfile="include/qqmusic/song.h" declline="431" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1a2832cd43a66eba9da5341de929d3a8ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_sheet</definition>
+        <argsstring>(std::string_view mid)</argsstring>
+        <name>get_sheet</name>
+        <qualifiedname>qqmusic::get_sheet</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>mid</declname>
+        </param>
+        <briefdescription>
+<para>获取曲谱信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲mid</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="718" column="6" bodyfile="src/song.cc" bodystart="718" bodyend="755" declfile="include/qqmusic/song.h" declline="443" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="song_8cc_1adf198785da5b652558e50eb11844a5fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_fav_num</definition>
+        <argsstring>(std::span&lt; uint64_t &gt; id_list, bool readable=true)</argsstring>
+        <name>get_fav_num</name>
+        <qualifiedname>qqmusic::get_fav_num</qualifiedname>
+        <param>
+          <type>std::span&lt; uint64_t &gt;</type>
+          <declname>id_list</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readable</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>获取歌曲的收藏量 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌曲id列表 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>是否人类可读</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+示例:</para>
+<para><programlisting filename=".txt"><codeline><highlight class="normal">readable<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>返回:<sp/>{</highlight><highlight class="stringliteral">&apos;438910555&apos;</highlight><highlight class="normal">:<sp/>1000001}</highlight></codeline>
+<codeline><highlight class="normal">readable<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>返回:<sp/><sp/>{</highlight><highlight class="stringliteral">&apos;438910555&apos;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&apos;550w+&apos;</highlight><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>包含正确JSON格式结果的<computeroutput>Task&lt;<ref refid="structResult" kindref="compound">Result</ref>&lt;nlohmann::json&gt;&gt;</computeroutput>. 如果产生错误, 返回值包含错误结果和错误类型枚举</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/song.cc" line="761" column="6" bodyfile="src/song.cc" bodystart="761" bodyend="798" declfile="include/qqmusic/song.h" declline="463" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="songlist_8cc_1aeb843a32455d9771a47ae4ee9d4ceda4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_songlist_detail</definition>
+        <argsstring>(uint64_t dissid, unsigned dirid=0, unsigned num=10, unsigned page=1, bool only_song=false, bool tag=true, bool user_info=true)</argsstring>
+        <name>get_songlist_detail</name>
+        <qualifiedname>qqmusic::get_songlist_detail</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>dissid</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>dirid</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>only_song</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>tag</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>user_info</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>获取歌单信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dissid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌单ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dirid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌单drid, 默认为<computeroutput>0</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>返回songlist元素数量, 默认为<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>第几页, 默认为<computeroutput>1</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>only_song</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>是否仅返回歌曲信息, 默认<computeroutput>false</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>是否返回歌单标签信息, 默认<computeroutput>true</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>是否返回歌单创建者的用户信息, 默认<computeroutput>true</computeroutput></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Json格式的歌单信息</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/songlist.cc" line="11" column="6" bodyfile="src/songlist.cc" bodystart="11" bodyend="71" declfile="include/qqmusic/songlist.h" declline="35" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="songlist_8cc_1a3ead0616cb7ea0b637c69c370c769a65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_songlist</definition>
+        <argsstring>(uint64_t dissid, unsigned dirid=0)</argsstring>
+        <name>get_songlist</name>
+        <qualifiedname>qqmusic::get_songlist</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>dissid</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>dirid</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>获取歌单列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dissid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌单ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dirid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌单dirid, 默认为0</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Json格式歌单列表</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/songlist.cc" line="73" column="6" bodyfile="src/songlist.cc" bodystart="73" bodyend="103" declfile="include/qqmusic/songlist.h" declline="53" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="songlist_8cc_1a60d89b4b48fa68ac638a0262dc8b536d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::songlist_create</definition>
+        <argsstring>(std::string_view dirname, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>songlist_create</name>
+        <qualifiedname>qqmusic::songlist_create</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>dirname</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>创建歌单 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dirname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>新的歌单名称 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>创建歌单的基本信息</para>
+</simplesect>
+<simplesect kind="note"><para>异步函数, 返回<computeroutput>Task</computeroutput></para>
+</simplesect>
+<simplesect kind="warning"><para>歌单名称不应该含有除了正常字符之外的东西, 例如emoji, 这将导致歌单虽然被正确创建, 但是返回时json解析异常报错 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/songlist.cc" line="105" column="6" bodyfile="src/songlist.cc" bodystart="105" bodyend="148" declfile="include/qqmusic/songlist.h" declline="68" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="songlist_8cc_1a8368e3e6b0e050fc68d005548d1f5722" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; bool &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; bool &gt; &gt; qqmusic::songlist_delete</definition>
+        <argsstring>(uint64_t dirid, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>songlist_delete</name>
+        <qualifiedname>qqmusic::songlist_delete</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>dirid</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>删除歌单 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dirid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌单ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>是否删除成功, 如果不存在这个歌单则返回<computeroutput>false</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/songlist.cc" line="150" column="6" bodyfile="src/songlist.cc" bodystart="150" bodyend="191" declfile="include/qqmusic/songlist.h" declline="79" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="songlist_8cc_1a55a22ffefa2aa3c40324dbf88f2edd0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; bool &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; bool &gt; &gt; qqmusic::songlist_add_songs</definition>
+        <argsstring>(uint64_t dirid, std::span&lt; uint64_t &gt; song_ids, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>songlist_add_songs</name>
+        <qualifiedname>qqmusic::songlist_add_songs</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>dirid</declname>
+        </param>
+        <param>
+          <type>std::span&lt; uint64_t &gt;</type>
+          <declname>song_ids</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>向歌单内添加歌曲 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dirid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌单ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>song_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待添加歌单列表 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>是否添加成功, 歌曲已存在则返回<computeroutput>false</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/songlist.cc" line="193" column="6" bodyfile="src/songlist.cc" bodystart="193" bodyend="241" declfile="include/qqmusic/songlist.h" declline="91" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="songlist_8cc_1a8ae4259a40bffce4f8a730f45d37133f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; bool &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; bool &gt; &gt; qqmusic::songlist_delete_songs</definition>
+        <argsstring>(uint64_t dirid, std::span&lt; uint64_t &gt; song_ids, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>songlist_delete_songs</name>
+        <qualifiedname>qqmusic::songlist_delete_songs</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>dirid</declname>
+        </param>
+        <param>
+          <type>std::span&lt; uint64_t &gt;</type>
+          <declname>song_ids</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>删除歌单内指定歌曲 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dirid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌单ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>song_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待删除歌单列表 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>是否删除成功, 歌曲不存在则返回<computeroutput>false</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/songlist.cc" line="243" column="6" bodyfile="src/songlist.cc" bodystart="243" bodyend="289" declfile="include/qqmusic/songlist.h" declline="104" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="toplist_8cc_1a7ef5e40f88bf026200718fec958b35f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_toplist_category</definition>
+        <argsstring>()</argsstring>
+        <name>get_toplist_category</name>
+        <qualifiedname>qqmusic::get_toplist_category</qualifiedname>
+        <briefdescription>
+<para>获取所有排行榜 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/toplist.cc" line="8" column="6" bodyfile="src/toplist.cc" bodystart="8" bodyend="43" declfile="include/qqmusic/toplist.h" declline="18" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="toplist_8cc_1ace2c8e22c6b650dd35aadf08b7ea51f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_toplist_item_detail</definition>
+        <argsstring>(unsigned top_id, unsigned num=10, unsigned page=1, bool tag=true)</argsstring>
+        <name>get_toplist_item_detail</name>
+        <qualifiedname>qqmusic::get_toplist_item_detail</qualifiedname>
+        <param>
+          <type>unsigned</type>
+          <declname>top_id</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>tag</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>获取排行榜条目信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>top_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>排行榜ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>返回数量, 默认为<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页码, 默认为<computeroutput>0</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>是否返回歌曲标签, 默认为<computeroutput>true</computeroutput></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/toplist.cc" line="45" column="6" bodyfile="src/toplist.cc" bodystart="45" bodyend="83" declfile="include/qqmusic/toplist.h" declline="30" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1a781752eaa7f79dd37a27c12b8393e28d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; std::string &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; std::string &gt; &gt; qqmusic::get_euin</definition>
+        <argsstring>(uint64_t musicid)</argsstring>
+        <name>get_euin</name>
+        <qualifiedname>qqmusic::get_euin</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>musicid</declname>
+        </param>
+        <briefdescription>
+<para>由musicid获取euin </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>musicid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MusicID, 通常是QQ号</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Euin </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="11" column="6" bodyfile="src/user.cc" bodystart="11" bodyend="50" declfile="include/qqmusic/user.h" declline="27" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1a78db2833fcc146ff840d07dd2c054ec7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; uint64_t &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; uint64_t &gt; &gt; qqmusic::get_musicid</definition>
+        <argsstring>(std::string_view euin)</argsstring>
+        <name>get_musicid</name>
+        <qualifiedname>qqmusic::get_musicid</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>euin</declname>
+        </param>
+        <briefdescription>
+<para>由euin获取musicid </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>euin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>encrypt_uin</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>musicid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="52" column="6" bodyfile="src/user.cc" bodystart="52" bodyend="95" declfile="include/qqmusic/user.h" declline="36" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1acf82b1e1a0eedd33c75230bbe969fcea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_homepage</definition>
+        <argsstring>(std::string_view euin, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_homepage</name>
+        <qualifiedname>qqmusic::get_homepage</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>euin</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取用户主页信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>euin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>encrypt_uin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>用户主页信息, 包含音乐基因, 歌单等 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="97" column="6" bodyfile="src/user.cc" bodystart="97" bodyend="135" declfile="include/qqmusic/user.h" declline="46" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1a3a3ee1b8ad53ee759e5e536f1dc147ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_vip_info</definition>
+        <argsstring>(std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_vip_info</name>
+        <qualifiedname>qqmusic::get_vip_info</qualifiedname>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取当前账号vip信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="137" column="6" bodyfile="src/user.cc" bodystart="137" bodyend="171" declfile="include/qqmusic/user.h" declline="54" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1aabb9ba90cd3570c2747ab7c598a95262" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_follow_singers</definition>
+        <argsstring>(std::string_view euin, unsigned page=1, unsigned num=10, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_follow_singers</name>
+        <qualifiedname>qqmusic::get_follow_singers</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>euin</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取关注的歌手列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>encrypt_uin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页码, 默认<computeroutput>1</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>返回数量, 默认<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="173" column="6" bodyfile="src/user.cc" bodystart="173" bodyend="219" declfile="include/qqmusic/user.h" declline="64" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1acca39ca3c47dd79ead6086a018211cb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_fans</definition>
+        <argsstring>(std::string_view euin, unsigned page=1, unsigned num=10, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_fans</name>
+        <qualifiedname>qqmusic::get_fans</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>euin</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>粉丝数量 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>encrypt_uin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页码, 默认<computeroutput>1</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>返回数量, 默认<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="221" column="6" bodyfile="src/user.cc" bodystart="221" bodyend="268" declfile="include/qqmusic/user.h" declline="78" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1ab2e3a79b7a3a5b3997d669d35a054dbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_friend_list</definition>
+        <argsstring>(unsigned page=1, unsigned num=10, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_friend_list</name>
+        <qualifiedname>qqmusic::get_friend_list</qualifiedname>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取好友列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页码, 默认<computeroutput>1</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>返回数量, 默认<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="270" column="6" bodyfile="src/user.cc" bodystart="270" bodyend="316" declfile="include/qqmusic/user.h" declline="90" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1a9f8939eed62ccbe6bdbe871d46dfe15e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_follow_usr</definition>
+        <argsstring>(std::string_view euin, unsigned page=1, unsigned num=10, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_follow_usr</name>
+        <qualifiedname>qqmusic::get_follow_usr</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>euin</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取关注用户列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>encrypt_uin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页码, 默认<computeroutput>1</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>返回数量, 默认<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="318" column="6" bodyfile="src/user.cc" bodystart="318" bodyend="366" declfile="include/qqmusic/user.h" declline="103" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1afb7bfed24579bed55848e74f1495b1b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_created_songlist</definition>
+        <argsstring>(uint64_t musicid, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_created_songlist</name>
+        <qualifiedname>qqmusic::get_created_songlist</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>musicid</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取创建的歌单列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>musicid</parametername>
+<parametername>通常是QQ号</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="368" column="6" bodyfile="src/user.cc" bodystart="368" bodyend="408" declfile="include/qqmusic/user.h" declline="115" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1a20191a6780b72120e04756cdb0710b8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_fav_song</definition>
+        <argsstring>(std::string_view euin, unsigned page=1, unsigned num=10, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_fav_song</name>
+        <qualifiedname>qqmusic::get_fav_song</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>euin</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取收藏歌曲 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>encrypt_uin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页码, 默认<computeroutput>1</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>返回数量, 默认<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="410" column="6" bodyfile="src/user.cc" bodystart="410" bodyend="457" declfile="include/qqmusic/user.h" declline="126" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1a8dc922c36f196c5ae9e639360dedd4d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_fav_songlist</definition>
+        <argsstring>(std::string_view euin, unsigned page=1, unsigned num=10, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_fav_songlist</name>
+        <qualifiedname>qqmusic::get_fav_songlist</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>euin</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取收藏歌单 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>encrypt_uin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页码, 默认<computeroutput>1</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>返回数量, 默认<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="459" column="6" bodyfile="src/user.cc" bodystart="459" bodyend="497" declfile="include/qqmusic/user.h" declline="139" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1adc1a18a3fe79c3badcec00e91dbb6009" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_fav_album</definition>
+        <argsstring>(std::string_view euin, unsigned page=1, unsigned num=10, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_fav_album</name>
+        <qualifiedname>qqmusic::get_fav_album</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>euin</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取收藏专辑 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>encrypt_uin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页码, 默认<computeroutput>1</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>返回数量, 默认<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="499" column="6" bodyfile="src/user.cc" bodystart="499" bodyend="537" declfile="include/qqmusic/user.h" declline="153" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1a20579dc32f58318cdf8664f0158b2b2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_fav_mv</definition>
+        <argsstring>(std::string_view euin, unsigned page=1, unsigned num=10, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_fav_mv</name>
+        <qualifiedname>qqmusic::get_fav_mv</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>euin</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>page</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>num</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取收藏MV </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>encrypt_uin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>页码, 默认<computeroutput>1</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>返回数量, 默认<computeroutput>10</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="539" column="6" bodyfile="src/user.cc" bodystart="539" bodyend="577" declfile="include/qqmusic/user.h" declline="167" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8cc_1a945d26bdb83c287bb95ff493651bef8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="structResult" kindref="compound">Result</ref>&lt; nlohmann::json &gt; &gt;</type>
+        <definition>Task&lt; Result&lt; nlohmann::json &gt; &gt; qqmusic::get_music_gene</definition>
+        <argsstring>(std::string_view euin, std::optional&lt; utils::Credential &gt; credential=std::nullopt)</argsstring>
+        <name>get_music_gene</name>
+        <qualifiedname>qqmusic::get_music_gene</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>euin</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+          <declname>credential</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>获取音乐基因 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>euin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>encrypt_uin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭据信息 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/user.cc" line="579" column="6" bodyfile="src/user.cc" bodystart="579" bodyend="615" declfile="include/qqmusic/user.h" declline="178" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/album.cc" line="8" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespaceqqmusic_1_1crypto_1_1TeaCipher" kind="namespace" language="C++">
+    <compoundname>qqmusic::crypto::TeaCipher</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="cipher__tea_8h_1a7eb41e8e60086fd09f81bbda7a551c24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::crypto::TeaCipher::decrypt</definition>
+        <argsstring>(qqmusic::utils::buffer &amp;buf, size_t offset, const std::vector&lt; uint8_t &gt; &amp;key)</argsstring>
+        <name>decrypt</name>
+        <qualifiedname>qqmusic::crypto::TeaCipher::decrypt</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref> &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>tea解密，每次解密8字节 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待解密的密钥 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>偏移量 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>解密需要用到的密钥，在 key_derive.cc 中生成 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/cipher_tea.h" line="32" column="6" bodyfile="src/crypto/cipher_tea.cc" bodystart="5" bodyend="36" declfile="include/qqmusic/crypto/cipher_tea.h" declline="32" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/crypto/cipher_tea.h" line="24" column="1"/>
+  </compounddef>
+</doxygen>

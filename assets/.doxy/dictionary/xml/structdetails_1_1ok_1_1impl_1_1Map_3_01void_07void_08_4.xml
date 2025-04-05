@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1ok_1_1impl_1_1Map_3_01void_07void_08_4" kind="struct" language="C++" prot="public">
+    <compoundname>details::ok::impl::Map&lt; void(void)&gt;</compoundname>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structdetails_1_1ok_1_1impl_1_1Map_3_01void_07void_08_4_1afac2036e847ae4a9ad9e3e60b7173961" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename E</type>
+          </param>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structResult" kindref="compound">Result</ref>&lt; void, E &gt;</type>
+        <definition>static Result&lt; void, E &gt; details::ok::impl::Map&lt; void(void)&gt;::map</definition>
+        <argsstring>(const Result&lt; T, E &gt; &amp;result, Func func)</argsstring>
+        <name>map</name>
+        <qualifiedname>details::ok::impl::Map&lt; void(void)&gt;::map</qualifiedname>
+        <param>
+          <type>const <ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt; &amp;</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="188" column="19" bodyfile="include/qqmusic/details/result.h" bodystart="188" bodyend="198"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="186" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="186" bodyend="199"/>
+    <listofallmembers>
+      <member refid="structdetails_1_1ok_1_1impl_1_1Map_3_01void_07void_08_4_1afac2036e847ae4a9ad9e3e60b7173961" prot="public" virt="non-virtual"><scope>details::ok::impl::Map&lt; void(void)&gt;</scope><name>map</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

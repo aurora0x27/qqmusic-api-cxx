@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1utils_1_1SessionManager" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::utils::SessionManager</compoundname>
+    <includes refid="session_8h" local="no">session.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1SessionManager_1aae863bddf6398d4115aa359705719470" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex qqmusic::utils::SessionManager::lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <qualifiedname>qqmusic::utils::SessionManager::lock</qualifiedname>
+        <briefdescription>
+<para>对全局上下文负责的互斥锁 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="159" column="16" bodyfile="include/qqmusic/utils/session.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1SessionManager_1af3f529a220c4e2750cc29fd11a72f616" prot="private" static="no" mutable="no">
+        <type><ref refid="structqqmusic_1_1details_1_1NetworkContext" kindref="compound">qqmusic::details::NetworkContext</ref></type>
+        <definition>qqmusic::details::NetworkContext qqmusic::utils::SessionManager::ctx</definition>
+        <argsstring></argsstring>
+        <name>ctx</name>
+        <qualifiedname>qqmusic::utils::SessionManager::ctx</qualifiedname>
+        <briefdescription>
+<para>全局上下文实例, 即上下文栈的栈顶 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="164" column="38" bodyfile="include/qqmusic/utils/session.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1SessionManager_1a21b29f7903c756896ef913c15e5dfe3a" prot="private" static="no" mutable="no">
+        <type>std::stack&lt; <ref refid="structqqmusic_1_1details_1_1NetworkContext" kindref="compound">qqmusic::details::NetworkContext</ref> &gt;</type>
+        <definition>std::stack&lt;qqmusic::details::NetworkContext&gt; qqmusic::utils::SessionManager::context_stack</definition>
+        <argsstring></argsstring>
+        <name>context_stack</name>
+        <qualifiedname>qqmusic::utils::SessionManager::context_stack</qualifiedname>
+        <briefdescription>
+<para>全局上下文栈 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="169" column="16" bodyfile="include/qqmusic/utils/session.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1SessionManager_1aeae51225ed2e06248e60441ef95ca92f" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; asio::io_context &gt;</type>
+        <definition>std::shared_ptr&lt;asio::io_context&gt; qqmusic::utils::SessionManager::ioc</definition>
+        <argsstring></argsstring>
+        <name>ioc</name>
+        <qualifiedname>qqmusic::utils::SessionManager::ioc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="171" column="21" bodyfile="include/qqmusic/utils/session.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1SessionManager_1a0ca08b4906246d1ffe1ac8d55bafd689" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; asio::ssl::context &gt;</type>
+        <definition>std::shared_ptr&lt;asio::ssl::context&gt; qqmusic::utils::SessionManager::ssl_ctx</definition>
+        <argsstring></argsstring>
+        <name>ssl_ctx</name>
+        <qualifiedname>qqmusic::utils::SessionManager::ssl_ctx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="172" column="21" bodyfile="include/qqmusic/utils/session.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1SessionManager_1a9869f9a7d3f60db7a2197e87001fc1b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::SessionManager::SessionManager</definition>
+        <argsstring>(const SessionManager &amp;)=delete</argsstring>
+        <name>SessionManager</name>
+        <qualifiedname>qqmusic::utils::SessionManager::SessionManager</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1utils_1_1SessionManager" kindref="compound">SessionManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="126" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1SessionManager_1ad364e9c50d94986e40ad7b1a19037688" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1SessionManager" kindref="compound">SessionManager</ref></type>
+        <definition>SessionManager qqmusic::utils::SessionManager::operator=</definition>
+        <argsstring>(const SessionManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>qqmusic::utils::SessionManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1utils_1_1SessionManager" kindref="compound">SessionManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="127" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1SessionManager_1a6e5f55f1a811bd32691c5ea7e9b8f993" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1Session" kindref="compound">Session</ref></type>
+        <definition>Session qqmusic::utils::SessionManager::get_session</definition>
+        <argsstring>()</argsstring>
+        <name>get_session</name>
+        <qualifiedname>qqmusic::utils::SessionManager::get_session</qualifiedname>
+        <briefdescription>
+<para>获取一个<computeroutput>session</computeroutput>实例 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="132" column="13" bodyfile="src/utils/session.cc" bodystart="44" bodyend="46"/>
+        <referencedby refid="classqqmusic_1_1utils_1_1Credential_1abfcb3281837ded83e1424ca36b4e06c5" compoundref="credential_8cc" startline="167" endline="199">qqmusic::utils::Credential::is_expired</referencedby>
+        <referencedby refid="classqqmusic_1_1utils_1_1Credential_1a58c14e80431b734da21cef47de347c66" compoundref="credential_8cc" startline="201" endline="269">qqmusic::utils::Credential::refresh</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1SessionManager_1abce5a80942ee98bb1053d347c9a6b96b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::utils::SessionManager::set_context</definition>
+        <argsstring>(const qqmusic::details::NetworkContext &amp;context)</argsstring>
+        <name>set_context</name>
+        <qualifiedname>qqmusic::utils::SessionManager::set_context</qualifiedname>
+        <param>
+          <type>const <ref refid="structqqmusic_1_1details_1_1NetworkContext" kindref="compound">qqmusic::details::NetworkContext</ref> &amp;</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>替换上下文栈栈顶的上下文 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="137" column="10" bodyfile="src/utils/session.cc" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1SessionManager_1a86684de83c0dee48dcafca02d21f9f17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::utils::SessionManager::push_context</definition>
+        <argsstring>(qqmusic::details::NetworkContext &amp;&amp;context)</argsstring>
+        <name>push_context</name>
+        <qualifiedname>qqmusic::utils::SessionManager::push_context</qualifiedname>
+        <param>
+          <type><ref refid="structqqmusic_1_1details_1_1NetworkContext" kindref="compound">qqmusic::details::NetworkContext</ref> &amp;&amp;</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>将指定的上下文压栈 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="147" column="10" bodyfile="src/utils/session.cc" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1SessionManager_1abc2de031ff9580f4186b0f047bdd6ae8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::utils::SessionManager::pop_context</definition>
+        <argsstring>()</argsstring>
+        <name>pop_context</name>
+        <qualifiedname>qqmusic::utils::SessionManager::pop_context</qualifiedname>
+        <briefdescription>
+<para>上下文栈弹出栈顶元素 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="152" column="10" bodyfile="src/utils/session.cc" bodystart="59" bodyend="63"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1SessionManager_1ab45ddc12c37adfcfdb36cf9e7527ab01" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1SessionManager" kindref="compound">SessionManager</ref> &amp;</type>
+        <definition>SessionManager &amp; qqmusic::utils::SessionManager::get_instance</definition>
+        <argsstring>()</argsstring>
+        <name>get_instance</name>
+        <qualifiedname>qqmusic::utils::SessionManager::get_instance</qualifiedname>
+        <briefdescription>
+<para>获取Session管理器实例 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="142" column="27" bodyfile="src/utils/session.cc" bodystart="37" bodyend="42"/>
+        <referencedby refid="classqqmusic_1_1utils_1_1Credential_1abfcb3281837ded83e1424ca36b4e06c5" compoundref="credential_8cc" startline="167" endline="199">qqmusic::utils::Credential::is_expired</referencedby>
+        <referencedby refid="classqqmusic_1_1utils_1_1Credential_1a58c14e80431b734da21cef47de347c66" compoundref="credential_8cc" startline="201" endline="269">qqmusic::utils::Credential::refresh</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1SessionManager_1ac2f641896c7d48514dd957eba3c5dbe6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::SessionManager::SessionManager</definition>
+        <argsstring>()</argsstring>
+        <name>SessionManager</name>
+        <qualifiedname>qqmusic::utils::SessionManager::SessionManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="155" column="5" bodyfile="src/utils/session.cc" bodystart="30" bodyend="35"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>全局单例的Session管理器, 负责维护全局上下文栈, 并负责<computeroutput>session</computeroutput>实例的生成 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/utils/session.h" line="124" column="1" bodyfile="include/qqmusic/utils/session.h" bodystart="124" bodyend="173"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1a21b29f7903c756896ef913c15e5dfe3a" prot="private" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>context_stack</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1af3f529a220c4e2750cc29fd11a72f616" prot="private" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>ctx</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1ab45ddc12c37adfcfdb36cf9e7527ab01" prot="public" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>get_instance</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1a6e5f55f1a811bd32691c5ea7e9b8f993" prot="public" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>get_session</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1aeae51225ed2e06248e60441ef95ca92f" prot="private" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>ioc</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1aae863bddf6398d4115aa359705719470" prot="private" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>lock</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1ad364e9c50d94986e40ad7b1a19037688" prot="public" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>operator=</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1abc2de031ff9580f4186b0f047bdd6ae8" prot="public" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>pop_context</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1a86684de83c0dee48dcafca02d21f9f17" prot="public" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>push_context</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1a9869f9a7d3f60db7a2197e87001fc1b4" prot="public" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>SessionManager</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1ac2f641896c7d48514dd957eba3c5dbe6" prot="private" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>SessionManager</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1abce5a80942ee98bb1053d347c9a6b96b" prot="public" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>set_context</name></member>
+      <member refid="classqqmusic_1_1utils_1_1SessionManager_1a0ca08b4906246d1ffe1ac8d55bafd689" prot="private" virt="non-virtual"><scope>qqmusic::utils::SessionManager</scope><name>ssl_ctx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

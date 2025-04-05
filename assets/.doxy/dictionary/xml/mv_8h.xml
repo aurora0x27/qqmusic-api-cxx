@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="mv_8h" kind="file" language="C++">
+    <compoundname>mv.h</compoundname>
+    <includes refid="result_8h" local="no">qqmusic/result.h</includes>
+    <includes refid="async-executor_8h" local="no">qqmusic/utils/async-executor.h</includes>
+    <includedby refid="mv_8cc" local="no">mv.cc</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>qqmusic/details/result.h</label>
+        <link refid="details_2result_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>mv.h</label>
+        <link refid="mv_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>qqmusic/result.h</label>
+        <link refid="result_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>qqmusic/utils/async-executor.h</label>
+        <link refid="async-executor_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>qqmusic/utils/exception.h</label>
+        <link refid="exception_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>boost/asio/awaitable.hpp</label>
+      </node>
+      <node id="13">
+        <label>boost/asio/co_spawn.hpp</label>
+      </node>
+      <node id="14">
+        <label>boost/asio/detached.hpp</label>
+      </node>
+      <node id="15">
+        <label>boost/asio/io_context.hpp</label>
+      </node>
+      <node id="16">
+        <label>boost/asio/steady_timer.hpp</label>
+      </node>
+      <node id="17">
+        <label>boost/asio/use_future.hpp</label>
+      </node>
+      <node id="18">
+        <label>exception</label>
+      </node>
+      <node id="6">
+        <label>functional</label>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="19">
+        <label>stdexcept</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="20">
+        <label>thread</label>
+      </node>
+      <node id="8">
+        <label>type_traits</label>
+      </node>
+      <node id="11">
+        <label>unordered_map</label>
+      </node>
+      <node id="21">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structqqmusic_1_1MvUrl" prot="public">qqmusic::MvUrl</innerclass>
+    <innernamespace refid="namespaceqqmusic">qqmusic</innernamespace>
+    <briefdescription>
+<para>关于MV的Api </para>
+    </briefdescription>
+    <detaileddescription>
+<para>--------------------------------------<mdash/><ref refid="mv_8h_source" kindref="compound">qqmusic/mv.h</ref>-----------------------------------------<mdash/></para>
+<para><simplesect kind="date"><para>2025-4-2</para>
+</simplesect>
+<hruler/>
+ </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>QQMUSIC_MV_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QQMUSIC_MV_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qqmusic/result.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qqmusic/utils/async-executor.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">qqmusic<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="structqqmusic_1_1MvUrl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structqqmusic_1_1MvUrl" kindref="compound">MvUrl</ref><sp/>{</highlight></codeline>
+<codeline lineno="24" refid="structqqmusic_1_1MvUrl_1a3dd35af972d4617c3a5a1d52bef2168b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structqqmusic_1_1MvUrl_1a3dd35af972d4617c3a5a1d52bef2168b" kindref="member">vid</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25" refid="structqqmusic_1_1MvUrl_1a6b713b93491f340cc3879c511789d0a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="structqqmusic_1_1MvUrl_1a6b713b93491f340cc3879c511789d0a2" kindref="member">mp4</ref>;<sp/></highlight></codeline>
+<codeline lineno="26" refid="structqqmusic_1_1MvUrl_1aa6b5a5599b9f5ff86f6782edf09fce6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="structqqmusic_1_1MvUrl_1aa6b5a5599b9f5ff86f6782edf09fce6e" kindref="member">hls</ref>;<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">Task&lt;Result&lt;nlohmann::json&gt;&gt;<sp/>get_mv_detail(std::span&lt;std::string&gt;<sp/>vids);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">Task&lt;Result&lt;std::vector&lt;MvUrl&gt;&gt;&gt;<sp/>get_mv_urls(std::span&lt;std::string&gt;<sp/>vids);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>qqmusic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!QQMUSIC_MV_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/qqmusic/mv.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1Lyric" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::Lyric</compoundname>
+    <includes refid="lyric_8h" local="no">lyric.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1Lyric_1acf72e681db7cafcc17f10aa9457b9054" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::Lyric::lyric</definition>
+        <argsstring></argsstring>
+        <name>lyric</name>
+        <qualifiedname>qqmusic::Lyric::lyric</qualifiedname>
+        <briefdescription>
+<para>原始歌词 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/lyric.h" line="84" column="17" bodyfile="include/qqmusic/lyric.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1Lyric_1a2227ff43925bb02603b7181fd535dab7" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::Lyric::trans</definition>
+        <argsstring></argsstring>
+        <name>trans</name>
+        <qualifiedname>qqmusic::Lyric::trans</qualifiedname>
+        <briefdescription>
+<para>翻译 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/lyric.h" line="85" column="17" bodyfile="include/qqmusic/lyric.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1Lyric_1a78dcde78913d94b1538ae8905b9196ad" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::Lyric::roma</definition>
+        <argsstring></argsstring>
+        <name>roma</name>
+        <qualifiedname>qqmusic::Lyric::roma</qualifiedname>
+        <briefdescription>
+<para>罗马音 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/lyric.h" line="86" column="17" bodyfile="include/qqmusic/lyric.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>歌词 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/lyric.h" line="83" column="1" bodyfile="include/qqmusic/lyric.h" bodystart="83" bodyend="87"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1Lyric_1acf72e681db7cafcc17f10aa9457b9054" prot="public" virt="non-virtual"><scope>qqmusic::Lyric</scope><name>lyric</name></member>
+      <member refid="structqqmusic_1_1Lyric_1a78dcde78913d94b1538ae8905b9196ad" prot="public" virt="non-virtual"><scope>qqmusic::Lyric</scope><name>roma</name></member>
+      <member refid="structqqmusic_1_1Lyric_1a2227ff43925bb02603b7181fd535dab7" prot="public" virt="non-virtual"><scope>qqmusic::Lyric</scope><name>trans</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

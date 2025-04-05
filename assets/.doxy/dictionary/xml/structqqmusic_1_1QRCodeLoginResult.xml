@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1QRCodeLoginResult" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::QRCodeLoginResult</compoundname>
+    <includes refid="login_8h" local="no">login.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1QRCodeLoginResult_1ac1c5579a18e7c04a39aac1bc7739766f" prot="public" static="no" mutable="no">
+        <type><ref refid="classqqmusic_1_1QRCodeLoginEvent" kindref="compound">QRCodeLoginEvent</ref></type>
+        <definition>QRCodeLoginEvent qqmusic::QRCodeLoginResult::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>qqmusic::QRCodeLoginResult::status</qualifiedname>
+        <initializer>{<ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a03570470bad94692ce93e32700d2e1cb" kindref="member">QRCodeLoginEvent::Status::OTHER</ref>}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="149" column="22" bodyfile="include/qqmusic/login.h" bodystart="149" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1QRCodeLoginResult_1a81673639fc4c2ec7d00f9e61b4e63b42" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref> &gt;</type>
+        <definition>std::optional&lt;utils::Credential&gt; qqmusic::QRCodeLoginResult::credential</definition>
+        <argsstring></argsstring>
+        <name>credential</name>
+        <qualifiedname>qqmusic::QRCodeLoginResult::credential</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="150" column="19" bodyfile="include/qqmusic/login.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>二维码登陆结果封装 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>qqmusic::QRCodeLoginEvent</label>
+        <link refid="classqqmusic_1_1QRCodeLoginEvent"/>
+      </node>
+      <node id="1">
+        <label>qqmusic::QRCodeLoginResult</label>
+        <link refid="structqqmusic_1_1QRCodeLoginResult"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>status</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/login.h" line="148" column="1" bodyfile="include/qqmusic/login.h" bodystart="148" bodyend="151"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1QRCodeLoginResult_1a81673639fc4c2ec7d00f9e61b4e63b42" prot="public" virt="non-virtual"><scope>qqmusic::QRCodeLoginResult</scope><name>credential</name></member>
+      <member refid="structqqmusic_1_1QRCodeLoginResult_1ac1c5579a18e7c04a39aac1bc7739766f" prot="public" virt="non-virtual"><scope>qqmusic::QRCodeLoginResult</scope><name>status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

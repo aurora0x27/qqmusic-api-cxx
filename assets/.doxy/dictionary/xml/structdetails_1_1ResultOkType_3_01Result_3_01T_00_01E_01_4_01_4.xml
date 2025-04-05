@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1ResultOkType_3_01Result_3_01T_00_01E_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>details::ResultOkType&lt; Result&lt; T, E &gt; &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename E</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structdetails_1_1ResultOkType_3_01Result_3_01T_00_01E_01_4_01_4_1a6c1e9c46971e27ad7ef69435e6d71008" prot="public" static="no">
+        <type>T</type>
+        <definition>typedef T details::ResultOkType&lt; Result&lt; T, E &gt; &gt;::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>details::ResultOkType&lt; Result&lt; T, E &gt; &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="101" column="15" bodyfile="include/qqmusic/details/result.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="100" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="100" bodyend="102"/>
+    <listofallmembers>
+      <member refid="structdetails_1_1ResultOkType_3_01Result_3_01T_00_01E_01_4_01_4_1a6c1e9c46971e27ad7ef69435e6d71008" prot="public" virt="non-virtual"><scope>details::ResultOkType&lt; Result&lt; T, E &gt; &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

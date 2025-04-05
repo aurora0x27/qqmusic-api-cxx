@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="dir_544e59fdeba566aba49a0802b8225c84" kind="dir">
+    <compoundname>crypto</compoundname>
+    <innerfile refid="cipher_8h">cipher.h</innerfile>
+    <innerfile refid="cipher__map_8h">cipher_map.h</innerfile>
+    <innerfile refid="cipher__rc4_8h">cipher_rc4.h</innerfile>
+    <innerfile refid="cipher__tea_8h">cipher_tea.h</innerfile>
+    <innerfile refid="key__derive_8h">key_derive.h</innerfile>
+    <innerfile refid="qmc_8h">qmc.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/crypto/"/>
+  </compounddef>
+</doxygen>

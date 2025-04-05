@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1crypto_1_1MapCipher" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::crypto::MapCipher</compoundname>
+    <basecompoundref refid="classqqmusic_1_1crypto_1_1Cipher" prot="public" virt="non-virtual">qqmusic::crypto::Cipher</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1crypto_1_1MapCipher_1ac803eba5b7a507f069942f38da92a616" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; qqmusic::crypto::MapCipher::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <qualifiedname>qqmusic::crypto::MapCipher::key</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/cipher_map.h" line="38" column="17" bodyfile="include/qqmusic/crypto/cipher_map.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1crypto_1_1MapCipher_1abb21284d1ea901b95299c2e4b93340e1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::crypto::MapCipher::MapCipher</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;key)</argsstring>
+        <name>MapCipher</name>
+        <qualifiedname>qqmusic::crypto::MapCipher::MapCipher</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/cipher_map.h" line="28" column="14" bodyfile="src/crypto/cipher_map.cc" bodystart="6" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1crypto_1_1MapCipher_1ac6e8db7a5fdaca34ab3e6d3128e87ebf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void qqmusic::crypto::MapCipher::decrypt</definition>
+        <argsstring>(qqmusic::utils::buffer &amp;buf, size_t offset) override</argsstring>
+        <name>decrypt</name>
+        <qualifiedname>qqmusic::crypto::MapCipher::decrypt</qualifiedname>
+        <reimplements refid="classqqmusic_1_1crypto_1_1Cipher_1ab5110e9fdcf3d956f582e6a0ab761409">decrypt</reimplements>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref> &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para>map解密算法 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待解密的密钥 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>偏移量 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/cipher_map.h" line="35" column="10" bodyfile="src/crypto/cipher_map.cc" bodystart="13" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>qqmusic::crypto::Cipher</label>
+        <link refid="classqqmusic_1_1crypto_1_1Cipher"/>
+      </node>
+      <node id="1">
+        <label>qqmusic::crypto::MapCipher</label>
+        <link refid="classqqmusic_1_1crypto_1_1MapCipher"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>qqmusic::crypto::Cipher</label>
+        <link refid="classqqmusic_1_1crypto_1_1Cipher"/>
+      </node>
+      <node id="1">
+        <label>qqmusic::crypto::MapCipher</label>
+        <link refid="classqqmusic_1_1crypto_1_1MapCipher"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/crypto/cipher_map.h" line="26" column="1" bodyfile="include/qqmusic/crypto/cipher_map.h" bodystart="26" bodyend="39"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1crypto_1_1MapCipher_1ac6e8db7a5fdaca34ab3e6d3128e87ebf" prot="public" virt="virtual"><scope>qqmusic::crypto::MapCipher</scope><name>decrypt</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1MapCipher_1ac803eba5b7a507f069942f38da92a616" prot="private" virt="non-virtual"><scope>qqmusic::crypto::MapCipher</scope><name>key</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1MapCipher_1abb21284d1ea901b95299c2e4b93340e1" prot="public" virt="non-virtual"><scope>qqmusic::crypto::MapCipher</scope><name>MapCipher</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1Cipher_1a476761cbc0d1723cdfdbec4f1d545107" prot="public" virt="virtual"><scope>qqmusic::crypto::MapCipher</scope><name>~Cipher</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

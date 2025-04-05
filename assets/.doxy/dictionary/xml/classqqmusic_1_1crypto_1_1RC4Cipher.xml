@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1crypto_1_1RC4Cipher" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::crypto::RC4Cipher</compoundname>
+    <basecompoundref refid="classqqmusic_1_1crypto_1_1Cipher" prot="public" virt="non-virtual">qqmusic::crypto::Cipher</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1crypto_1_1RC4Cipher_1aa4f77d4eef176ceb4536471ea2c4ab90" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; qqmusic::crypto::RC4Cipher::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <qualifiedname>qqmusic::crypto::RC4Cipher::key</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/cipher_rc4.h" line="38" column="17" bodyfile="include/qqmusic/crypto/cipher_rc4.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1crypto_1_1RC4Cipher_1a3d92369fda693ac1997440e4714e91a8" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::crypto::RC4Cipher::RC4Cipher</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;key)</argsstring>
+        <name>RC4Cipher</name>
+        <qualifiedname>qqmusic::crypto::RC4Cipher::RC4Cipher</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/cipher_rc4.h" line="28" column="14" bodyfile="src/crypto/cipher_rc4.cc" bodystart="4" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1crypto_1_1RC4Cipher_1a8a465e31399c38ef1efe0e75ee4324b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void qqmusic::crypto::RC4Cipher::decrypt</definition>
+        <argsstring>(qqmusic::utils::buffer &amp;buf, size_t offset) override</argsstring>
+        <name>decrypt</name>
+        <qualifiedname>qqmusic::crypto::RC4Cipher::decrypt</qualifiedname>
+        <reimplements refid="classqqmusic_1_1crypto_1_1Cipher_1ab5110e9fdcf3d956f582e6a0ab761409">decrypt</reimplements>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref> &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para>RC4解密算法 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待解密的密钥 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>偏移量 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/cipher_rc4.h" line="35" column="10" bodyfile="src/crypto/cipher_rc4.cc" bodystart="11" bodyend="96"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>qqmusic::crypto::Cipher</label>
+        <link refid="classqqmusic_1_1crypto_1_1Cipher"/>
+      </node>
+      <node id="1">
+        <label>qqmusic::crypto::RC4Cipher</label>
+        <link refid="classqqmusic_1_1crypto_1_1RC4Cipher"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>qqmusic::crypto::Cipher</label>
+        <link refid="classqqmusic_1_1crypto_1_1Cipher"/>
+      </node>
+      <node id="1">
+        <label>qqmusic::crypto::RC4Cipher</label>
+        <link refid="classqqmusic_1_1crypto_1_1RC4Cipher"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/crypto/cipher_rc4.h" line="26" column="1" bodyfile="include/qqmusic/crypto/cipher_rc4.h" bodystart="26" bodyend="39"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1crypto_1_1RC4Cipher_1a8a465e31399c38ef1efe0e75ee4324b8" prot="public" virt="virtual"><scope>qqmusic::crypto::RC4Cipher</scope><name>decrypt</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1RC4Cipher_1aa4f77d4eef176ceb4536471ea2c4ab90" prot="private" virt="non-virtual"><scope>qqmusic::crypto::RC4Cipher</scope><name>key</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1RC4Cipher_1a3d92369fda693ac1997440e4714e91a8" prot="public" virt="non-virtual"><scope>qqmusic::crypto::RC4Cipher</scope><name>RC4Cipher</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1Cipher_1a476761cbc0d1723cdfdbec4f1d545107" prot="public" virt="virtual"><scope>qqmusic::crypto::RC4Cipher</scope><name>~Cipher</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

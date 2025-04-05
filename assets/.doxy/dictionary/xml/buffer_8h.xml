@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="buffer_8h" kind="file" language="C++">
+    <compoundname>buffer.h</compoundname>
+    <includes local="no">cstddef</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="no">cstdlib</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="api_8h" local="no">api.h</includedby>
+    <includedby refid="cipher_8h" local="no">cipher.h</includedby>
+    <includedby refid="cipher__map_8h" local="no">cipher_map.h</includedby>
+    <includedby refid="cipher__rc4_8h" local="no">cipher_rc4.h</includedby>
+    <includedby refid="cipher__tea_8h" local="no">cipher_tea.h</includedby>
+    <includedby refid="common_8cc" local="no">common.cc</includedby>
+    <includedby refid="common_8h" local="no">common.h</includedby>
+    <includedby refid="device_8cc" local="no">device.cc</includedby>
+    <includedby refid="key__derive_8cc" local="no">key_derive.cc</includedby>
+    <includedby refid="key__derive_8h" local="no">key_derive.h</includedby>
+    <includedby refid="login_8h" local="no">login.h</includedby>
+    <includedby refid="lyric_8cc" local="no">lyric.cc</includedby>
+    <includedby refid="qimei_8cc" local="no">qimei.cc</includedby>
+    <includedby refid="qimei_8h" local="no">qimei.h</includedby>
+    <includedby refid="qmc_8cc" local="no">qmc.cc</includedby>
+    <includedby refid="qmc_8h" local="no">qmc.h</includedby>
+    <includedby refid="tripledes_8h" local="no">tripledes.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>buffer.h</label>
+        <link refid="buffer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstddef</label>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>cstdlib</label>
+      </node>
+      <node id="5">
+        <label>cstring</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>album.h</label>
+        <link refid="album_8h_source"/>
+      </node>
+      <node id="4">
+        <label>cipher.h</label>
+        <link refid="cipher_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>cipher_map.h</label>
+        <link refid="cipher__map_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cipher_rc4.h</label>
+        <link refid="cipher__rc4_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>cipher_tea.h</label>
+        <link refid="cipher__tea_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>key_derive.h</label>
+        <link refid="key__derive_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>qmc.h</label>
+        <link refid="qmc_8h_source"/>
+      </node>
+      <node id="2">
+        <label>api.h</label>
+        <link refid="api_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>context.h</label>
+        <link refid="context_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>tripledes.h</label>
+        <link refid="tripledes_8h_source"/>
+      </node>
+      <node id="11">
+        <label>login.h</label>
+        <link refid="login_8h_source"/>
+      </node>
+      <node id="1">
+        <label>buffer.h</label>
+        <link refid="buffer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>common.h</label>
+        <link refid="common_8h_source"/>
+      </node>
+      <node id="12">
+        <label>qimei.h</label>
+        <link refid="qimei_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>session.h</label>
+        <link refid="session_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classqqmusic_1_1utils_1_1buffer" prot="public">qqmusic::utils::buffer</innerclass>
+    <innernamespace refid="namespaceqqmusic">qqmusic</innernamespace>
+    <innernamespace refid="namespaceqqmusic_1_1utils">qqmusic::utils</innernamespace>
+    <briefdescription>
+<para>二进制缓冲区类 </para>
+    </briefdescription>
+    <detaileddescription>
+<para>---------------------------------<mdash/><ref refid="buffer_8h_source" kindref="compound">qqmusic/utils/buffer.h</ref>------------------------------------<mdash/></para>
+<para><simplesect kind="date"><para>2025-3-21</para>
+</simplesect>
+<hruler/>
+ </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>QQMUSIC_UTILS_BUFFER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QQMUSIC_UTILS_BUFFER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstddef&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceqqmusic_1_1utils" kindref="compound">qqmusic::utils</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classqqmusic_1_1utils_1_1buffer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classqqmusic_1_1utils_1_1buffer_1a908e0e022319ec472d81b6bf01674e5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer_1a908e0e022319ec472d81b6bf01674e5c" kindref="member">buffer</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classqqmusic_1_1utils_1_1buffer_1adcf9de5135399d98af966c70169de469" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer_1adcf9de5135399d98af966c70169de469" kindref="member">buffer</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>std::vector&lt;uint8_t&gt;(size){};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classqqmusic_1_1utils_1_1buffer_1a4dc3563a76dbf97cc8beee1c86b716e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer_1a4dc3563a76dbf97cc8beee1c86b716e7" kindref="member">buffer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>src_head,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>src_size)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>std::vector&lt;uint8_t&gt;(src_head,<sp/>src_head<sp/>+<sp/>src_size){};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classqqmusic_1_1utils_1_1buffer_1a081741cda5ced9a78a7ec8f53fc01ccc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer_1a081741cda5ced9a78a7ec8f53fc01ccc" kindref="member">buffer</ref>(std::vector&lt;uint8_t&gt;&amp;&amp;<sp/>other)<sp/>noexcept</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>std::vector&lt;uint8_t&gt;(std::move(other))<sp/>{}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classqqmusic_1_1utils_1_1buffer_1a7b0058bf348c1fafbfb29c155bcae72a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer_1a7b0058bf348c1fafbfb29c155bcae72a" kindref="member">buffer</ref>(<ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref>&amp;&amp;<sp/>other)<sp/>noexcept</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>std::vector&lt;uint8_t&gt;(std::move(other))<sp/>{}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classqqmusic_1_1utils_1_1buffer_1aebd3b926b2d874e343d34c9caff039e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer_1aebd3b926b2d874e343d34c9caff039e3" kindref="member">buffer</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>std::vector&lt;uint8_t&gt;(size,<sp/>c)<sp/>{}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">~buffer</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classqqmusic_1_1utils_1_1buffer_1a8c7f031a55a06dcbf97fcf18cf23c76e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1utils_1_1buffer_1a8c7f031a55a06dcbf97fcf18cf23c76e" kindref="member">append</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>src_data_buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>data_buf_size)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;insert(this-&gt;end(),<sp/>(uint8_t*)<sp/>src_data_buf,<sp/>(uint8_t*)<sp/>src_data_buf<sp/>+<sp/>data_buf_size);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classqqmusic_1_1utils_1_1buffer_1af35e7c9aab7fbb00bb93c4fc8d3ac867" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer_1af35e7c9aab7fbb00bb93c4fc8d3ac867" kindref="member">buffer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref>&amp;<sp/>other)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="classqqmusic_1_1utils_1_1buffer_1a011d1f46190f662b31c70b6d08a43c32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref>&amp;<sp/><ref refid="classqqmusic_1_1utils_1_1buffer_1a011d1f46190f662b31c70b6d08a43c32" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref>&amp;<sp/>other)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classqqmusic_1_1utils_1_1buffer_1a51e9321c3a5fccb73ba71d99c17a08b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref><sp/><ref refid="classqqmusic_1_1utils_1_1buffer_1a51e9321c3a5fccb73ba71d99c17a08b3" kindref="member">operator+=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref>&amp;<sp/>a)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;insert(this-&gt;end(),<sp/>a.begin(),<sp/>a.end());</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="classqqmusic_1_1utils_1_1buffer_1a1dd7397987f0a8f363e7c25018d8417b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref><sp/><ref refid="classqqmusic_1_1utils_1_1buffer_1a1dd7397987f0a8f363e7c25018d8417b" kindref="member">operator+</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref>&amp;<sp/>a)<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref><sp/>res<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>res<sp/>+=<sp/>a;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>qqmusic::utils</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!QQMUSIC_UTILS_BUFFER_HPP</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/qqmusic/utils/buffer.h"/>
+  </compounddef>
+</doxygen>

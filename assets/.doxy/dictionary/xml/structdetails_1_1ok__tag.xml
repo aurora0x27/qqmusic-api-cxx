@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1ok__tag" kind="struct" language="C++" prot="public">
+    <compoundname>details::ok_tag</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="528" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="528" bodyend="528"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

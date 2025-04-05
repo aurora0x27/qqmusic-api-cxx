@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespacedetails_1_1Or" kind="namespace" language="C++">
+    <compoundname>details::Or</compoundname>
+    <innerclass refid="structdetails_1_1Or_1_1Else" prot="public">details::Or::Else</innerclass>
+    <innerclass refid="structdetails_1_1Or_1_1Else_3_01Ret_07_5_08_07Args_8_8_8_08_4" prot="public">details::Or::Else&lt; Ret(*)(Args...)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1Or_1_1Else_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" prot="public">details::Or::Else&lt; Ret(Cls::*)(Args...) const &gt;</innerclass>
+    <innerclass refid="structdetails_1_1Or_1_1Else_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" prot="public">details::Or::Else&lt; Ret(Cls::*)(Args...)&gt;</innerclass>
+    <innernamespace refid="namespacedetails_1_1Or_1_1impl">details::Or::impl</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="358" column="1"/>
+  </compounddef>
+</doxygen>

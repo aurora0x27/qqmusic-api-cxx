@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1QRCode" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::QRCode</compoundname>
+    <includes refid="login_8h" local="no">login.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1QRCode_1a5a9693be2fb7cb7021a257b5bb22bb36" prot="public" static="no" mutable="no">
+        <type>QRLoginType</type>
+        <definition>QRLoginType qqmusic::QRCode::qr_type</definition>
+        <argsstring></argsstring>
+        <name>qr_type</name>
+        <qualifiedname>qqmusic::QRCode::qr_type</qualifiedname>
+        <briefdescription>
+<para>qr code type </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="50" column="17" bodyfile="include/qqmusic/login.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1QRCode_1a1dfc27ceb2d7374160b2f67c6c2d91c5" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::QRCode::identifier</definition>
+        <argsstring></argsstring>
+        <name>identifier</name>
+        <qualifiedname>qqmusic::QRCode::identifier</qualifiedname>
+        <briefdescription>
+<para>qr code identifier </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="51" column="17" bodyfile="include/qqmusic/login.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1QRCode_1a9e70b93ed7fa3b3aaed1362c3f5293c8" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::QRCode::mimie_type</definition>
+        <argsstring></argsstring>
+        <name>mimie_type</name>
+        <qualifiedname>qqmusic::QRCode::mimie_type</qualifiedname>
+        <briefdescription>
+<para>qr code image type </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="52" column="17" bodyfile="include/qqmusic/login.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1QRCode_1a443911364d281300478db9c54386aecd" prot="public" static="no" mutable="no">
+        <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref></type>
+        <definition>qqmusic::utils::buffer qqmusic::QRCode::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>qqmusic::QRCode::data</qualifiedname>
+        <briefdescription>
+<para>qr code image binary data </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/login.h" line="53" column="28" bodyfile="include/qqmusic/login.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>二维码信息 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>qqmusic::QRCode</label>
+        <link refid="structqqmusic_1_1QRCode"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>qqmusic::utils::buffer</label>
+        <link refid="classqqmusic_1_1utils_1_1buffer"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::vector&lt; uint8_t &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/login.h" line="49" column="1" bodyfile="include/qqmusic/login.h" bodystart="49" bodyend="54"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1QRCode_1a443911364d281300478db9c54386aecd" prot="public" virt="non-virtual"><scope>qqmusic::QRCode</scope><name>data</name></member>
+      <member refid="structqqmusic_1_1QRCode_1a1dfc27ceb2d7374160b2f67c6c2d91c5" prot="public" virt="non-virtual"><scope>qqmusic::QRCode</scope><name>identifier</name></member>
+      <member refid="structqqmusic_1_1QRCode_1a9e70b93ed7fa3b3aaed1362c3f5293c8" prot="public" virt="non-virtual"><scope>qqmusic::QRCode</scope><name>mimie_type</name></member>
+      <member refid="structqqmusic_1_1QRCode_1a5a9693be2fb7cb7021a257b5bb22bb36" prot="public" virt="non-virtual"><scope>qqmusic::QRCode</scope><name>qr_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="result_8h" kind="file" language="C++">
+    <compoundname>result.h</compoundname>
+    <includes local="no">boost/asio/awaitable.hpp</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes refid="details_2result_8h" local="no">qqmusic/details/result.h</includes>
+    <includes refid="exception_8h" local="no">qqmusic/utils/exception.h</includes>
+    <includedby refid="album_8cc" local="no">album.cc</includedby>
+    <includedby refid="album_8h" local="no">album.h</includedby>
+    <includedby refid="api_8cc" local="no">api.cc</includedby>
+    <includedby refid="api_8h" local="no">api.h</includedby>
+    <includedby refid="async-executor_8h" local="no">async-executor.h</includedby>
+    <includedby refid="cipher__rc4_8h" local="no">cipher_rc4.h</includedby>
+    <includedby refid="common_8cc" local="no">common.cc</includedby>
+    <includedby refid="common_8h" local="no">common.h</includedby>
+    <includedby refid="cookie_8cc" local="yes">cookie.cc</includedby>
+    <includedby refid="cookie_8h" local="no">cookie.h</includedby>
+    <includedby refid="credential_8cc" local="no">credential.cc</includedby>
+    <includedby refid="credential_8h" local="no">credential.h</includedby>
+    <includedby refid="device_8h" local="no">device.h</includedby>
+    <includedby refid="key__derive_8cc" local="no">key_derive.cc</includedby>
+    <includedby refid="key__derive_8h" local="no">key_derive.h</includedby>
+    <includedby refid="login_8cc" local="no">login.cc</includedby>
+    <includedby refid="login_8h" local="no">login.h</includedby>
+    <includedby refid="lyric_8cc" local="no">lyric.cc</includedby>
+    <includedby refid="lyric_8h" local="no">lyric.h</includedby>
+    <includedby refid="mv_8h" local="no">mv.h</includedby>
+    <includedby refid="qimei_8cc" local="no">qimei.cc</includedby>
+    <includedby refid="qimei_8h" local="no">qimei.h</includedby>
+    <includedby refid="search_8h" local="no">search.h</includedby>
+    <includedby refid="session_8cc" local="no">session.cc</includedby>
+    <includedby refid="session_8h" local="no">session.h</includedby>
+    <includedby refid="singer_8cc" local="no">singer.cc</includedby>
+    <includedby refid="singer_8h" local="no">singer.h</includedby>
+    <includedby refid="song_8cc" local="no">song.cc</includedby>
+    <includedby refid="song_8h" local="no">song.h</includedby>
+    <includedby refid="songlist_8cc" local="no">songlist.cc</includedby>
+    <includedby refid="songlist_8h" local="no">songlist.h</includedby>
+    <includedby refid="toplist_8h" local="no">toplist.h</includedby>
+    <includedby refid="user_8h" local="no">user.h</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>qqmusic/details/result.h</label>
+        <link refid="details_2result_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>result.h</label>
+        <link refid="result_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>qqmusic/utils/exception.h</label>
+        <link refid="exception_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>boost/asio/awaitable.hpp</label>
+      </node>
+      <node id="5">
+        <label>functional</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="3">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>type_traits</label>
+      </node>
+      <node id="10">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>album.h</label>
+        <link refid="album_8h_source"/>
+      </node>
+      <node id="6">
+        <label>cipher_rc4.h</label>
+        <link refid="cipher__rc4_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>key_derive.h</label>
+        <link refid="key__derive_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>qmc.h</label>
+        <link refid="qmc_8h_source"/>
+      </node>
+      <node id="3">
+        <label>api.h</label>
+        <link refid="api_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>context.h</label>
+        <link refid="context_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>login.h</label>
+        <link refid="login_8h_source"/>
+      </node>
+      <node id="20">
+        <label>lyric.h</label>
+        <link refid="lyric_8h_source"/>
+      </node>
+      <node id="5">
+        <label>mv.h</label>
+        <link refid="mv_8h_source"/>
+      </node>
+      <node id="1">
+        <label>result.h</label>
+        <link refid="result_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>search.h</label>
+        <link refid="search_8h_source"/>
+      </node>
+      <node id="22">
+        <label>singer.h</label>
+        <link refid="singer_8h_source"/>
+      </node>
+      <node id="14">
+        <label>song.h</label>
+        <link refid="song_8h_source"/>
+      </node>
+      <node id="15">
+        <label>songlist.h</label>
+        <link refid="songlist_8h_source"/>
+      </node>
+      <node id="23">
+        <label>toplist.h</label>
+        <link refid="toplist_8h_source"/>
+      </node>
+      <node id="16">
+        <label>user.h</label>
+        <link refid="user_8h_source"/>
+      </node>
+      <node id="4">
+        <label>async-executor.h</label>
+        <link refid="async-executor_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>common.h</label>
+        <link refid="common_8h_source"/>
+      </node>
+      <node id="9">
+        <label>cookie.h</label>
+        <link refid="cookie_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>credential.h</label>
+        <link refid="credential_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>device.h</label>
+        <link refid="device_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>qimei.h</label>
+        <link refid="qimei_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>session.h</label>
+        <link refid="session_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceqqmusic">qqmusic</innernamespace>
+    <briefdescription>
+<para>提供返回值类型的封装 </para>
+    </briefdescription>
+    <detaileddescription>
+<para>-----------------------------------<mdash/><ref refid="result_8h_source" kindref="compound">qqmusic/result.h</ref>----------------------------------------<mdash/></para>
+<para>@detail <computeroutput><ref refid="structResult" kindref="compound">Result</ref>&lt;&gt;</computeroutput>基于<ulink url="https://github.com/oktal/result">Result.h</ulink>设计, 采用Rust风格的返回值, 同时 封装正确的返回结果和异常类型.</para>
+<para><computeroutput>Task&lt;&gt;</computeroutput>是基于<computeroutput>boost::asio</computeroutput>的通用协程异步任务, 作为协程异步函数的返回值</para>
+<para><simplesect kind="date"><para>2025-4-2</para>
+</simplesect>
+<hruler/>
+ </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>QQMUSIC_RESULT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QQMUSIC_RESULT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/asio/awaitable.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qqmusic/details/result.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qqmusic/utils/exception.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">qqmusic<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="structResult" kindref="compound">Result</ref><sp/>=<sp/><ref refid="structResult" kindref="compound">Result&lt;T, qqmusic::utils::Exception&gt;</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Task<sp/>=<sp/>boost::asio::awaitable&lt;T&gt;;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>qqmusic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!QQMUSIC_RESULT_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/qqmusic/result.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1BaseMediaFileType" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>qqmusic::BaseMediaFileType</compoundname>
+    <derivedcompoundref refid="classqqmusic_1_1EncryptedSongFileType" prot="public" virt="non-virtual">qqmusic::EncryptedSongFileType</derivedcompoundref>
+    <derivedcompoundref refid="classqqmusic_1_1SongFileType" prot="public" virt="non-virtual">qqmusic::SongFileType</derivedcompoundref>
+    <includes refid="song_8h" local="no">song.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1BaseMediaFileType_1a23664a172e188fbcb5af4c80d39bb87b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string_view</type>
+        <definition>virtual std::string_view qqmusic::BaseMediaFileType::prefix</definition>
+        <argsstring>()=0</argsstring>
+        <name>prefix</name>
+        <qualifiedname>qqmusic::BaseMediaFileType::prefix</qualifiedname>
+        <reimplementedby refid="classqqmusic_1_1SongFileType_1a09bed25d3767fd407d5437f6f4f8abf7">prefix</reimplementedby>
+        <reimplementedby refid="classqqmusic_1_1EncryptedSongFileType_1a3fbc6b8f99511dde35767e578088b296">prefix</reimplementedby>
+        <briefdescription>
+<para>获取基类ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="28" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1BaseMediaFileType_1a869424d2bfc385b3a8e34987590f9a57" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string_view</type>
+        <definition>virtual std::string_view qqmusic::BaseMediaFileType::expandation</definition>
+        <argsstring>()=0</argsstring>
+        <name>expandation</name>
+        <qualifiedname>qqmusic::BaseMediaFileType::expandation</qualifiedname>
+        <reimplementedby refid="classqqmusic_1_1SongFileType_1a6706770607800ea19f0d0c467eab66dd">expandation</reimplementedby>
+        <reimplementedby refid="classqqmusic_1_1EncryptedSongFileType_1a0dc9de2a9d887267cd2df873b02a01cf">expandation</reimplementedby>
+        <briefdescription>
+<para>获取扩展名 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="33" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1BaseMediaFileType_1a6a82fc4bbc1c5fdf0eda209709579317" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool qqmusic::BaseMediaFileType::encrypted</definition>
+        <argsstring>()=0</argsstring>
+        <name>encrypted</name>
+        <qualifiedname>qqmusic::BaseMediaFileType::encrypted</qualifiedname>
+        <reimplementedby refid="classqqmusic_1_1SongFileType_1ae87c8783caf034d89c744d9ac0ba8381">encrypted</reimplementedby>
+        <reimplementedby refid="classqqmusic_1_1EncryptedSongFileType_1a619a1abb96168eaae876eb8122a0407e">encrypted</reimplementedby>
+        <briefdescription>
+<para>是否加密 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="38" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1BaseMediaFileType_1a2049748414337f7068ebe12b86a20e9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual qqmusic::BaseMediaFileType::~BaseMediaFileType</definition>
+        <argsstring>()=default</argsstring>
+        <name>~BaseMediaFileType</name>
+        <qualifiedname>qqmusic::BaseMediaFileType::~BaseMediaFileType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="40" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>媒体文件类型基类 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>qqmusic::BaseMediaFileType</label>
+        <link refid="classqqmusic_1_1BaseMediaFileType"/>
+      </node>
+      <node id="2">
+        <label>qqmusic::EncryptedSongFileType</label>
+        <link refid="classqqmusic_1_1EncryptedSongFileType"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>qqmusic::SongFileType</label>
+        <link refid="classqqmusic_1_1SongFileType"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/qqmusic/song.h" line="23" column="1" bodyfile="include/qqmusic/song.h" bodystart="23" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1BaseMediaFileType_1a6a82fc4bbc1c5fdf0eda209709579317" prot="public" virt="pure-virtual"><scope>qqmusic::BaseMediaFileType</scope><name>encrypted</name></member>
+      <member refid="classqqmusic_1_1BaseMediaFileType_1a869424d2bfc385b3a8e34987590f9a57" prot="public" virt="pure-virtual"><scope>qqmusic::BaseMediaFileType</scope><name>expandation</name></member>
+      <member refid="classqqmusic_1_1BaseMediaFileType_1a23664a172e188fbcb5af4c80d39bb87b" prot="public" virt="pure-virtual"><scope>qqmusic::BaseMediaFileType</scope><name>prefix</name></member>
+      <member refid="classqqmusic_1_1BaseMediaFileType_1a2049748414337f7068ebe12b86a20e9e" prot="public" virt="virtual"><scope>qqmusic::BaseMediaFileType</scope><name>~BaseMediaFileType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

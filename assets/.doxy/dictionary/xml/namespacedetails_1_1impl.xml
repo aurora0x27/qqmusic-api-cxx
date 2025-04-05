@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespacedetails_1_1impl" kind="namespace" language="C++">
+    <compoundname>details::impl</compoundname>
+    <innerclass refid="structdetails_1_1impl_1_1result__of" prot="public">details::impl::result_of</innerclass>
+    <innerclass refid="structdetails_1_1impl_1_1result__of_3_01Ret_07Args_8_8_8_08_4" prot="public">details::impl::result_of&lt; Ret(Args...)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1impl_1_1result__of_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" prot="public">details::impl::result_of&lt; Ret(Cls::*)(Args...)&gt;</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="68" column="1"/>
+  </compounddef>
+</doxygen>

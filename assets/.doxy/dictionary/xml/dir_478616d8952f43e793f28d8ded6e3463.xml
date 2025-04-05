@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="dir_478616d8952f43e793f28d8ded6e3463" kind="dir">
+    <compoundname>utils</compoundname>
+    <innerfile refid="async-executor_8h">async-executor.h</innerfile>
+    <innerfile refid="buffer_8h">buffer.h</innerfile>
+    <innerfile refid="common_8h">common.h</innerfile>
+    <innerfile refid="cookie_8h">cookie.h</innerfile>
+    <innerfile refid="credential_8h">credential.h</innerfile>
+    <innerfile refid="device_8h">device.h</innerfile>
+    <innerfile refid="exception_8h">exception.h</innerfile>
+    <innerfile refid="paths_8h">paths.h</innerfile>
+    <innerfile refid="qimei_8h">qimei.h</innerfile>
+    <innerfile refid="session_8h">session.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/utils/"/>
+  </compounddef>
+</doxygen>

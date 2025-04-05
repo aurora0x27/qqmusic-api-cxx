@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1EncryptedSongFileType_1_1CoreData" kind="struct" language="C++" prot="private">
+    <compoundname>qqmusic::EncryptedSongFileType::CoreData</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1EncryptedSongFileType_1_1CoreData_1afa6dc73fefdb99b49fb273af46713ae2" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::EncryptedSongFileType::CoreData::start_id</definition>
+        <argsstring></argsstring>
+        <name>start_id</name>
+        <qualifiedname>qqmusic::EncryptedSongFileType::CoreData::start_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="211" column="21" bodyfile="include/qqmusic/song.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1EncryptedSongFileType_1_1CoreData_1a5efbdac47e5262d88237da7c3977b75c" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::EncryptedSongFileType::CoreData::extention</definition>
+        <argsstring></argsstring>
+        <name>extention</name>
+        <qualifiedname>qqmusic::EncryptedSongFileType::CoreData::extention</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/song.h" line="212" column="21" bodyfile="include/qqmusic/song.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/song.h" line="210" column="5" bodyfile="include/qqmusic/song.h" bodystart="210" bodyend="213"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1EncryptedSongFileType_1_1CoreData_1a5efbdac47e5262d88237da7c3977b75c" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType::CoreData</scope><name>extention</name></member>
+      <member refid="structqqmusic_1_1EncryptedSongFileType_1_1CoreData_1afa6dc73fefdb99b49fb273af46713ae2" prot="public" virt="non-virtual"><scope>qqmusic::EncryptedSongFileType::CoreData</scope><name>start_id</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

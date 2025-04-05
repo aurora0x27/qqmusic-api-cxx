@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespacedetails_1_1Or_1_1impl" kind="namespace" language="C++">
+    <compoundname>details::Or::impl</compoundname>
+    <innerclass refid="structdetails_1_1Or_1_1impl_1_1Else" prot="public">details::Or::impl::Else</innerclass>
+    <innerclass refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Result_3_01T_00_01F_01_4_07Arg_08_4" prot="public">details::Or::impl::Else&lt; Result&lt; T, F &gt;(Arg)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Result_3_01T_00_01F_01_4_07void_08_4" prot="public">details::Or::impl::Else&lt; Result&lt; T, F &gt;(void)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Ret_07_5_08_07Args_8_8_8_08_4" prot="public">details::Or::impl::Else&lt; Ret(*)(Args...)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" prot="public">details::Or::impl::Else&lt; Ret(Cls::*)(Args...) const &gt;</innerclass>
+    <innerclass refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" prot="public">details::Or::impl::Else&lt; Ret(Cls::*)(Args...)&gt;</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="360" column="1"/>
+  </compounddef>
+</doxygen>

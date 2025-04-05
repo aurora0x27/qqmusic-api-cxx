@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespacedetails_1_1ok_1_1impl" kind="namespace" language="C++">
+    <compoundname>details::ok::impl</compoundname>
+    <innerclass refid="structdetails_1_1ok_1_1impl_1_1Map" prot="public">details::ok::impl::Map</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Result_3_01U_00_01E_01_4_07Arg_08_4" prot="public">details::ok::impl::Map&lt; Result&lt; U, E &gt;(Arg)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Result_3_01U_00_01E_01_4_07void_08_4" prot="public">details::ok::impl::Map&lt; Result&lt; U, E &gt;(void)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Arg_08_4" prot="public">details::ok::impl::Map&lt; Ret(Arg)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Cls_1_1_5_08_07Arg_08_01const_01_4" prot="public">details::ok::impl::Map&lt; Ret(Cls::*)(Arg) const &gt;</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Cls_1_1_5_08_07Arg_08_4" prot="public">details::ok::impl::Map&lt; Ret(Cls::*)(Arg)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07void_08_4" prot="public">details::ok::impl::Map&lt; Ret(void)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1impl_1_1Map_3_01void_07Arg_08_4" prot="public">details::ok::impl::Map&lt; void(Arg)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1ok_1_1impl_1_1Map_3_01void_07void_08_4" prot="public">details::ok::impl::Map&lt; void(void)&gt;</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="122" column="1"/>
+  </compounddef>
+</doxygen>

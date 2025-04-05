@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1TabType" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::TabType</compoundname>
+    <includes refid="singer_8h" local="no">singer.h</includes>
+    <innerclass refid="structqqmusic_1_1TabType_1_1Tab" prot="private">qqmusic::TabType::Tab</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Type</name>
+        <qualifiedname>qqmusic::TabType::Type</qualifiedname>
+        <enumvalue id="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a12892463c66d75e451f4df9fb65d9b18" prot="public">
+          <name>WIKI</name>
+          <briefdescription>
+<para>wiki </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728adbacd9db57ae4b020e0c5024e745c1c5" prot="public">
+          <name>ALBUM</name>
+          <briefdescription>
+<para>专辑 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a2d4418f5f37512925afcf30533d371f0" prot="public">
+          <name>COMPOSER</name>
+          <briefdescription>
+<para>编曲 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728acc52ae2d3dd570defb553a87e76560c8" prot="public">
+          <name>LYRICIST</name>
+          <briefdescription>
+<para>作词 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728abafca60da2ec7935ced3300f50a1fd88" prot="public">
+          <name>PRODUCER</name>
+          <briefdescription>
+<para>制作 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728aad60dcef9211bd43e14c083f255f4f0a" prot="public">
+          <name>ARRANGER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a2d7c1fbcdc7d70e67cf67c7ed879b8db" prot="public">
+          <name>MUSICIAN</name>
+          <briefdescription>
+<para>演唱 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a45afbcd8801876720602ecbd303a38c2" prot="public">
+          <name>SONG</name>
+          <briefdescription>
+<para>歌曲 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728ab01d7c8255c36bf4dcb1c6157d6a6aae" prot="public">
+          <name>VIDEO</name>
+          <briefdescription>
+<para>视频 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>标签类型枚举 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="104" column="5" bodyfile="include/qqmusic/singer.h" bodystart="104" bodyend="114"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1TabType_1a9a5e6b535478b2d1eb77e292a943b2e8" prot="private" static="no" mutable="no">
+        <type>struct qqmusic::TabType::Tab</type>
+        <definition>struct qqmusic::TabType::Tab qqmusic::TabType::inner</definition>
+        <argsstring></argsstring>
+        <name>inner</name>
+        <qualifiedname>qqmusic::TabType::inner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="153" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1TabType_1af4691d0b3fe706275959592714c957c7" prot="private" static="yes" mutable="no">
+        <type>const std::unordered_map&lt; <ref refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728" kindref="member">TabType::Type</ref>, TabType::Tab &gt;</type>
+        <definition>const std::unordered_map&lt;TabType::Type, TabType::Tab&gt; qqmusic::TabType::tab_data</definition>
+        <argsstring></argsstring>
+        <name>tab_data</name>
+        <qualifiedname>qqmusic::TabType::tab_data</qualifiedname>
+        <initializer>= {
+        {<ref refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a12892463c66d75e451f4df9fb65d9b18" kindref="member">TabType::WIKI</ref>, {&quot;wiki&quot;, &quot;IntroductionTab&quot;}},
+        {<ref refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728adbacd9db57ae4b020e0c5024e745c1c5" kindref="member">TabType::ALBUM</ref>, {&quot;album&quot;, &quot;AlbumTab&quot;}},
+        {<ref refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a2d4418f5f37512925afcf30533d371f0" kindref="member">TabType::COMPOSER</ref>, {&quot;song_composing&quot;, &quot;SongTab&quot;}},
+        {<ref refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728acc52ae2d3dd570defb553a87e76560c8" kindref="member">TabType::LYRICIST</ref>, {&quot;song_lyric&quot;, &quot;SongTab&quot;}},
+        {<ref refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728abafca60da2ec7935ced3300f50a1fd88" kindref="member">TabType::PRODUCER</ref>, {&quot;producer&quot;, &quot;SongTab&quot;}},
+        {TabType::ARRANGER, {&quot;arranger&quot;, &quot;SongTab&quot;}},
+        {<ref refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a2d7c1fbcdc7d70e67cf67c7ed879b8db" kindref="member">TabType::MUSICIAN</ref>, {&quot;musician&quot;, &quot;SongTab&quot;}},
+        {<ref refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a45afbcd8801876720602ecbd303a38c2" kindref="member">TabType::SONG</ref>, {&quot;song_sing&quot;, &quot;SongTab&quot;}},
+        {<ref refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728ab01d7c8255c36bf4dcb1c6157d6a6aae" kindref="member">TabType::VIDEO</ref>, {&quot;video&quot;, &quot;VideoTab&quot;}},
+    }</initializer>
+        <briefdescription>
+<para>枚举值和标签内容的映射表初始化 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="158" column="44" bodyfile="include/qqmusic/singer.h" bodystart="158" bodyend="168"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1TabType_1a0eec398eb62602ff03ee301b741175e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::TabType::TabType</definition>
+        <argsstring>()=delete</argsstring>
+        <name>TabType</name>
+        <qualifiedname>qqmusic::TabType::TabType</qualifiedname>
+        <briefdescription>
+<para>使用枚举值初始化标签类 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>标签类型枚举</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>若提供的枚举值不合法</parametername>
+<parametername>则抛出&lt;tt&gt;std::runtime_error&lt;/tt&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="123" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1TabType_1abd60790952b9cc0ecfd1b578d33a0902" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::TabType::TabType</definition>
+        <argsstring>(Type type)</argsstring>
+        <name>TabType</name>
+        <qualifiedname>qqmusic::TabType::TabType</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728" kindref="member">Type</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="124" column="5" bodyfile="include/qqmusic/singer.h" bodystart="124" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1TabType_1aa0d5c78e9fe258072300fc1b059a5cb8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string qqmusic::TabType::get_id</definition>
+        <argsstring>() const</argsstring>
+        <name>get_id</name>
+        <qualifiedname>qqmusic::TabType::get_id</qualifiedname>
+        <briefdescription>
+<para>获取tab id </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::string格式tab id </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="137" column="17" bodyfile="include/qqmusic/singer.h" bodystart="137" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1TabType_1af6f8abdf84b789ac0ee08d0b1f6f8756" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string qqmusic::TabType::get_name</definition>
+        <argsstring>() const</argsstring>
+        <name>get_name</name>
+        <qualifiedname>qqmusic::TabType::get_name</qualifiedname>
+        <briefdescription>
+<para>获取tab名称 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::string格式tab name </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/singer.h" line="144" column="17" bodyfile="include/qqmusic/singer.h" bodystart="144" bodyend="144"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>标签类 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/singer.h" line="99" column="1" bodyfile="include/qqmusic/singer.h" bodystart="99" bodyend="169"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728adbacd9db57ae4b020e0c5024e745c1c5" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>ALBUM</name></member>
+      <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728aad60dcef9211bd43e14c083f255f4f0a" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>ARRANGER</name></member>
+      <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a2d4418f5f37512925afcf30533d371f0" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>COMPOSER</name></member>
+      <member refid="classqqmusic_1_1TabType_1aa0d5c78e9fe258072300fc1b059a5cb8" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>get_id</name></member>
+      <member refid="classqqmusic_1_1TabType_1af6f8abdf84b789ac0ee08d0b1f6f8756" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>get_name</name></member>
+      <member refid="classqqmusic_1_1TabType_1a9a5e6b535478b2d1eb77e292a943b2e8" prot="private" virt="non-virtual"><scope>qqmusic::TabType</scope><name>inner</name></member>
+      <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728acc52ae2d3dd570defb553a87e76560c8" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>LYRICIST</name></member>
+      <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a2d7c1fbcdc7d70e67cf67c7ed879b8db" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>MUSICIAN</name></member>
+      <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728abafca60da2ec7935ced3300f50a1fd88" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>PRODUCER</name></member>
+      <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a45afbcd8801876720602ecbd303a38c2" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>SONG</name></member>
+      <member refid="classqqmusic_1_1TabType_1af4691d0b3fe706275959592714c957c7" prot="private" virt="non-virtual"><scope>qqmusic::TabType</scope><name>tab_data</name></member>
+      <member refid="classqqmusic_1_1TabType_1a0eec398eb62602ff03ee301b741175e9" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>TabType</name></member>
+      <member refid="classqqmusic_1_1TabType_1abd60790952b9cc0ecfd1b578d33a0902" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>TabType</name></member>
+      <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>Type</name></member>
+      <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728ab01d7c8255c36bf4dcb1c6157d6a6aae" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>VIDEO</name></member>
+      <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a12892463c66d75e451f4df9fb65d9b18" prot="public" virt="non-virtual"><scope>qqmusic::TabType</scope><name>WIKI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

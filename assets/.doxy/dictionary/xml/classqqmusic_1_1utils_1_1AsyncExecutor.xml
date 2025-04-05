@@ -1,0 +1,459 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1utils_1_1AsyncExecutor" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::utils::AsyncExecutor</compoundname>
+    <includes refid="async-executor_8h" local="no">async-executor.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1AsyncExecutor_1a7433f8c3653864cf081e3660331a7212" prot="private" static="no" mutable="no">
+        <type>boost::asio::io_context</type>
+        <definition>boost::asio::io_context qqmusic::utils::AsyncExecutor::ioc</definition>
+        <argsstring></argsstring>
+        <name>ioc</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::ioc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="337" column="29" bodyfile="include/qqmusic/utils/async-executor.h" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1utils_1_1AsyncExecutor_1ada12c244130984b80a68dac93bb581b5" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread qqmusic::utils::AsyncExecutor::ioc_thread</definition>
+        <argsstring></argsstring>
+        <name>ioc_thread</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::ioc_thread</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="338" column="17" bodyfile="include/qqmusic/utils/async-executor.h" bodystart="338" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1AsyncExecutor_1a2a2686dfa2ae9172b5be3e7e1721b142" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::AsyncExecutor::AsyncExecutor</definition>
+        <argsstring>(const AsyncExecutor &amp;)=delete</argsstring>
+        <name>AsyncExecutor</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::AsyncExecutor</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1utils_1_1AsyncExecutor" kindref="compound">AsyncExecutor</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="115" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1AsyncExecutor_1a64649db21c7b158bf42d3828d851c2f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1AsyncExecutor" kindref="compound">AsyncExecutor</ref> &amp;</type>
+        <definition>AsyncExecutor &amp; qqmusic::utils::AsyncExecutor::operator=</definition>
+        <argsstring>(const AsyncExecutor &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1utils_1_1AsyncExecutor" kindref="compound">AsyncExecutor</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="116" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1AsyncExecutor_1ae526d2fa9be9a83d709d777725d08c62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>BOOST_ASIO_COMPLETION_TOKEN_FOR(void(T &amp;&amp;))</type>
+            <declname>CompletionCallback</declname>
+            <defname>CompletionCallback</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void qqmusic::utils::AsyncExecutor::async_exec</definition>
+        <argsstring>(qqmusic::Task&lt; T &gt; task, CompletionCallback &amp;&amp;callback)</argsstring>
+        <name>async_exec</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::async_exec</qualifiedname>
+        <param>
+          <type>qqmusic::Task&lt; T &gt;</type>
+          <declname>task</declname>
+        </param>
+        <param>
+          <type>CompletionCallback &amp;&amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>异步执行任务, 并在任务结束后触发回调 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>task</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>异步任务 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>回调函数, 会将<computeroutput>task</computeroutput>的执行结果传递给回调函数 回调函数不返回任何值 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="133" column="10" bodyfile="include/qqmusic/utils/async-executor.h" bodystart="133" bodyend="151"/>
+        <references refid="namespaceqqmusic_1_1utils_1aa01478c64ffd5e3b8084956cfce6e186" compoundref="async-executor_8h" startline="40" endline="49">qqmusic::utils::custom_co_spawn_entry_point</references>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1AsyncExecutor_1a40aecaaf9e49f9e9aa9af90ac45988ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>BOOST_ASIO_COMPLETION_TOKEN_FOR(void())</type>
+            <declname>CompletionCallback</declname>
+            <defname>CompletionCallback</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void qqmusic::utils::AsyncExecutor::async_exec</definition>
+        <argsstring>(qqmusic::Task&lt; void &gt; task, CompletionCallback &amp;&amp;callback)</argsstring>
+        <name>async_exec</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::async_exec</qualifiedname>
+        <param>
+          <type>qqmusic::Task&lt; void &gt;</type>
+          <declname>task</declname>
+        </param>
+        <param>
+          <type>CompletionCallback &amp;&amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>异步执行任务函数的void特化, 并在任务结束后触发回调 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>task</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>异步任务 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>回调函数, 会将<computeroutput>task</computeroutput>的执行结果传递给回调函数 回调函数不返回任何值 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="161" column="10" bodyfile="include/qqmusic/utils/async-executor.h" bodystart="161" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1AsyncExecutor_1afa1433b7ca4b3f63e2c64b6a16360111" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>BOOST_ASIO_COMPLETION_TOKEN_FOR(void(T &amp;&amp;))</type>
+            <declname>CompletionCallback</declname>
+            <defname>CompletionCallback</defname>
+          </param>
+          <param>
+            <type>BOOST_ASIO_COMPLETION_TOKEN_FOR(void())</type>
+            <declname>TimeoutCallback</declname>
+            <defname>TimeoutCallback</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void qqmusic::utils::AsyncExecutor::async_exec</definition>
+        <argsstring>(qqmusic::Task&lt; T &gt; task, CompletionCallback &amp;&amp;callback, std::chrono::steady_clock::duration timeout, TimeoutCallback &amp;&amp;timeout_callback)</argsstring>
+        <name>async_exec</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::async_exec</qualifiedname>
+        <param>
+          <type>qqmusic::Task&lt; T &gt;</type>
+          <declname>task</declname>
+        </param>
+        <param>
+          <type>CompletionCallback &amp;&amp;</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>std::chrono::steady_clock::duration</type>
+          <declname>timeout</declname>
+        </param>
+        <param>
+          <type>TimeoutCallback &amp;&amp;</type>
+          <declname>timeout_callback</declname>
+        </param>
+        <briefdescription>
+<para>异步执行任务函数, 带有超时限制, 并在任务结束后触发回调 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>task</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>异步任务 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>回调函数, 会将<computeroutput>task</computeroutput>的执行结果传递给回调函数 回调函数不返回任何值 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>超时时间限制 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout_callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>超时之后需要执行的回调函数 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="193" column="10" bodyfile="include/qqmusic/utils/async-executor.h" bodystart="193" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1AsyncExecutor_1a16bc1dee1494d7fe301f8e98fef0c26a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>BOOST_ASIO_COMPLETION_TOKEN_FOR(void())</type>
+            <declname>CompletionCallback</declname>
+            <defname>CompletionCallback</defname>
+          </param>
+          <param>
+            <type>BOOST_ASIO_COMPLETION_TOKEN_FOR(void())</type>
+            <declname>TimeoutCallback</declname>
+            <defname>TimeoutCallback</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void qqmusic::utils::AsyncExecutor::async_exec</definition>
+        <argsstring>(qqmusic::Task&lt; void &gt; task, CompletionCallback &amp;&amp;callback, std::chrono::steady_clock::duration timeout, TimeoutCallback &amp;&amp;timeout_callback)</argsstring>
+        <name>async_exec</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::async_exec</qualifiedname>
+        <param>
+          <type>qqmusic::Task&lt; void &gt;</type>
+          <declname>task</declname>
+        </param>
+        <param>
+          <type>CompletionCallback &amp;&amp;</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>std::chrono::steady_clock::duration</type>
+          <declname>timeout</declname>
+        </param>
+        <param>
+          <type>TimeoutCallback &amp;&amp;</type>
+          <declname>timeout_callback</declname>
+        </param>
+        <briefdescription>
+<para>异步执行任务函数void特化, 带有超时限制. 并在任务结束后触发回调 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>task</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>异步任务 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>回调函数, 会将<computeroutput>task</computeroutput>的执行结果传递给回调函数 回调函数不返回任何值 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>超时时间限制 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout_callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>超时之后需要执行的回调函数 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="240" column="10" bodyfile="include/qqmusic/utils/async-executor.h" bodystart="240" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1AsyncExecutor_1adf1b94c822e23ee401549b7c2466c4e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto qqmusic::utils::AsyncExecutor::when_all</definition>
+        <argsstring>(std::vector&lt; boost::asio::awaitable&lt; T &gt; &gt; tasks) -&gt; boost::asio::awaitable&lt; std::vector&lt; T &gt; &gt;</argsstring>
+        <name>when_all</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::when_all</qualifiedname>
+        <param>
+          <type>std::vector&lt; boost::asio::awaitable&lt; T &gt; &gt;</type>
+          <declname>tasks</declname>
+        </param>
+        <briefdescription>
+<para>等待任务列表中所有的任务执行完毕之后返回结果列表 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>使用示例:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;Task&lt;nlohmann::json&gt;&gt;<sp/>tasks{};<sp/></highlight><highlight class="comment">//<sp/>给定任务列表</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>executor<sp/>=<sp/><ref refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a6061fc2c871d76ba68e2b6ae51b1ed57" kindref="member">qqmusic::utils::AsyncExecutor::get_instance</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>results<sp/>=<sp/>executor.when_all(std::move(tasks));</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>result<sp/>:<sp/>results)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>handle<sp/>the<sp/>result<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tasks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>异步任务列表</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>包含结果列表的任务<computeroutput>boost::asio::awaitable&lt;std::vector&lt;T&gt;&gt;</computeroutput></para>
+</simplesect>
+@warn 原本任务的顺序和结果顺序不一定一致 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="296" column="10" bodyfile="include/qqmusic/utils/async-executor.h" bodystart="296" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1AsyncExecutor_1ad234aad1d30cf6f940984264469535ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qqmusic::utils::AsyncExecutor::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="332" column="10" bodyfile="src/utils/async-executor.cc" bodystart="22" bodyend="27"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1AsyncExecutor_1a6061fc2c871d76ba68e2b6ae51b1ed57" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1AsyncExecutor" kindref="compound">AsyncExecutor</ref> &amp;</type>
+        <definition>AsyncExecutor &amp; qqmusic::utils::AsyncExecutor::get_instance</definition>
+        <argsstring>()</argsstring>
+        <name>get_instance</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::get_instance</qualifiedname>
+        <briefdescription>
+<para>获取全局单例引用 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>全局调度器实例引用 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="123" column="26" bodyfile="src/utils/async-executor.cc" bodystart="29" bodyend="32"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1AsyncExecutor_1a11a0ff51b0ac1eb78cf436ee701b8a13" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::AsyncExecutor::AsyncExecutor</definition>
+        <argsstring>()</argsstring>
+        <name>AsyncExecutor</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::AsyncExecutor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="335" column="5" bodyfile="src/utils/async-executor.cc" bodystart="6" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1utils_1_1AsyncExecutor_1af71fb5a7112da6d25bd589b6b4a1385f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::AsyncExecutor::~AsyncExecutor</definition>
+        <argsstring>()</argsstring>
+        <name>~AsyncExecutor</name>
+        <qualifiedname>qqmusic::utils::AsyncExecutor::~AsyncExecutor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="336" column="5" bodyfile="src/utils/async-executor.cc" bodystart="18" bodyend="20"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>全局调度器类 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/utils/async-executor.h" line="112" column="1" bodyfile="include/qqmusic/utils/async-executor.h" bodystart="112" bodyend="339"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1ae526d2fa9be9a83d709d777725d08c62" prot="public" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>async_exec</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a40aecaaf9e49f9e9aa9af90ac45988ef" prot="public" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>async_exec</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1afa1433b7ca4b3f63e2c64b6a16360111" prot="public" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>async_exec</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a16bc1dee1494d7fe301f8e98fef0c26a" prot="public" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>async_exec</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a2a2686dfa2ae9172b5be3e7e1721b142" prot="public" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>AsyncExecutor</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a11a0ff51b0ac1eb78cf436ee701b8a13" prot="private" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>AsyncExecutor</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a6061fc2c871d76ba68e2b6ae51b1ed57" prot="public" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>get_instance</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a7433f8c3653864cf081e3660331a7212" prot="private" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>ioc</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1ada12c244130984b80a68dac93bb581b5" prot="private" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>ioc_thread</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a64649db21c7b158bf42d3828d851c2f8" prot="public" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>operator=</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1ad234aad1d30cf6f940984264469535ad" prot="public" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>shutdown</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1adf1b94c822e23ee401549b7c2466c4e9" prot="public" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>when_all</name></member>
+      <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1af71fb5a7112da6d25bd589b6b4a1385f" prot="private" virt="non-virtual"><scope>qqmusic::utils::AsyncExecutor</scope><name>~AsyncExecutor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

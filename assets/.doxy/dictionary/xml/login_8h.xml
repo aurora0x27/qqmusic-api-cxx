@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="login_8h" kind="file" language="C++">
+    <compoundname>login.h</compoundname>
+    <includes refid="result_8h" local="no">qqmusic/result.h</includes>
+    <includes refid="buffer_8h" local="no">qqmusic/utils/buffer.h</includes>
+    <includes refid="credential_8h" local="no">qqmusic/utils/credential.h</includes>
+    <includedby refid="login_8cc" local="no">login.cc</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>qqmusic/details/result.h</label>
+        <link refid="details_2result_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>login.h</label>
+        <link refid="login_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>qqmusic/result.h</label>
+        <link refid="result_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>qqmusic/utils/buffer.h</label>
+        <link refid="buffer_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>qqmusic/utils/credential.h</label>
+        <link refid="credential_8h_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>qqmusic/utils/exception.h</label>
+        <link refid="exception_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>boost/asio/awaitable.hpp</label>
+      </node>
+      <node id="13">
+        <label>cstddef</label>
+      </node>
+      <node id="14">
+        <label>cstdint</label>
+      </node>
+      <node id="15">
+        <label>cstdlib</label>
+      </node>
+      <node id="16">
+        <label>cstring</label>
+      </node>
+      <node id="6">
+        <label>functional</label>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="19">
+        <label>nlohmann/detail/macro_scope.hpp</label>
+      </node>
+      <node id="4">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>type_traits</label>
+      </node>
+      <node id="11">
+        <label>unordered_map</label>
+      </node>
+      <node id="17">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structqqmusic_1_1PhoneLoginResult" prot="public">qqmusic::PhoneLoginResult</innerclass>
+    <innerclass refid="structqqmusic_1_1QRCode" prot="public">qqmusic::QRCode</innerclass>
+    <innerclass refid="classqqmusic_1_1QRCodeLoginEvent" prot="public">qqmusic::QRCodeLoginEvent</innerclass>
+    <innerclass refid="structqqmusic_1_1QRCodeLoginResult" prot="public">qqmusic::QRCodeLoginResult</innerclass>
+    <innernamespace refid="namespaceqqmusic">qqmusic</innernamespace>
+    <briefdescription>
+<para>登陆相关Api, 包含三种登陆方式 <ndash/> QQ扫码, 微信扫码, 手机号登陆 </para>
+    </briefdescription>
+    <detaileddescription>
+<para>----------------------------------<mdash/><ref refid="login_8h_source" kindref="compound">qqmusic/login.h</ref>------------------------------------------<mdash/></para>
+<para><simplesect kind="warning"><para>手机号登陆的Api仍然有问题, 不能使用.</para>
+</simplesect>
+<hruler/>
+ </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>QQMUSIC_LOGIN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QQMUSIC_LOGIN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qqmusic/result.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qqmusic/utils/buffer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qqmusic/utils/credential.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">qqmusic<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>QRLoginType<sp/>{<sp/>QQ,<sp/>WX<sp/>};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="structPhoneLoginEvent" kindref="compound">PhoneLoginEvent</ref><sp/>:<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>{<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>SEND<sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>CAPTCHA<sp/>=<sp/>20276,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>FREQUENCY<sp/>=<sp/>100001,<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>OTHER<sp/>=<sp/>-1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structqqmusic_1_1PhoneLoginResult" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structqqmusic_1_1PhoneLoginResult" kindref="compound">PhoneLoginResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structPhoneLoginEvent" kindref="compound">PhoneLoginEvent</ref><sp/>event;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>msg;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="structqqmusic_1_1QRCode" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structqqmusic_1_1QRCode" kindref="compound">QRCode</ref><sp/>{</highlight></codeline>
+<codeline lineno="50" refid="structqqmusic_1_1QRCode_1a5a9693be2fb7cb7021a257b5bb22bb36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QRLoginType<sp/><ref refid="structqqmusic_1_1QRCode_1a5a9693be2fb7cb7021a257b5bb22bb36" kindref="member">qr_type</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51" refid="structqqmusic_1_1QRCode_1a1dfc27ceb2d7374160b2f67c6c2d91c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structqqmusic_1_1QRCode_1a1dfc27ceb2d7374160b2f67c6c2d91c5" kindref="member">identifier</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52" refid="structqqmusic_1_1QRCode_1a9e70b93ed7fa3b3aaed1362c3f5293c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structqqmusic_1_1QRCode_1a9e70b93ed7fa3b3aaed1362c3f5293c8" kindref="member">mimie_type</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53" refid="structqqmusic_1_1QRCode_1a443911364d281300478db9c54386aecd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref><sp/><ref refid="structqqmusic_1_1QRCode_1a443911364d281300478db9c54386aecd" kindref="member">data</ref>;<sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classqqmusic_1_1QRCodeLoginEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classqqmusic_1_1QRCodeLoginEvent" kindref="compound">QRCodeLoginEvent</ref><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689" kindref="member">Status</ref><sp/>{<sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a2ba22e58ca17bb728d522bba36cf8350" kindref="member">DONE</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689ae0740abfbc61bc2be0bfa78af61106ae" kindref="member">SCAN</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a8d428c502adec040b6a51e880034b9f4" kindref="member">CONF</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a499a6c694b83db642a374bbc7cb07711" kindref="member">REFUSE</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a070a0fb40f6c308ab544b227660aadff" kindref="member">TIMEOUT</ref>,<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a03570470bad94692ce93e32700d2e1cb" kindref="member">OTHER</ref><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classqqmusic_1_1QRCodeLoginEvent_1ac5df038d39e4b9a58625d32ed106476e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1ac5df038d39e4b9a58625d32ed106476e" kindref="member">QRCodeLoginEvent</ref>(<ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689" kindref="member">Status</ref><sp/>stat)<sp/>{<sp/>status<sp/>=<sp/>stat;<sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classqqmusic_1_1QRCodeLoginEvent_1af1f0224fc3c370b8020b4986debb6a1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1af1f0224fc3c370b8020b4986debb6a1a" kindref="member">QRCodeLoginEvent</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>code)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(code)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0:</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>405:</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a2ba22e58ca17bb728d522bba36cf8350" kindref="member">Status::DONE</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>66:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>408:</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689ae0740abfbc61bc2be0bfa78af61106ae" kindref="member">Status::SCAN</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>67:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>404:</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a8d428c502adec040b6a51e880034b9f4" kindref="member">Status::CONF</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>65:</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a070a0fb40f6c308ab544b227660aadff" kindref="member">Status::TIMEOUT</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>68:</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>403:</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a499a6c694b83db642a374bbc7cb07711" kindref="member">Status::REFUSE</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a03570470bad94692ce93e32700d2e1cb" kindref="member">Status::OTHER</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classqqmusic_1_1QRCodeLoginEvent_1ad3030239af1e0b0f64f20a4137d50529" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1ad3030239af1e0b0f64f20a4137d50529" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent" kindref="compound">QRCodeLoginEvent</ref>&amp;<sp/>e)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;status<sp/>==<sp/>e.status;<sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="classqqmusic_1_1QRCodeLoginEvent_1a73a19988749761086db795ebf0c16640" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a73a19988749761086db795ebf0c16640" kindref="member">operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent" kindref="compound">QRCodeLoginEvent</ref>&amp;<sp/>e)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;status<sp/>!=<sp/>e.status;<sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="classqqmusic_1_1QRCodeLoginEvent_1a7e7f8ea7d1d36145ca3fa0a143b923ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a7e7f8ea7d1d36145ca3fa0a143b923ce" kindref="member">operator==</ref>(<ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689" kindref="member">Status</ref><sp/>stat)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status<sp/>==<sp/>stat;<sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="classqqmusic_1_1QRCodeLoginEvent_1a3f331da5f77cb1041ee199471a17548d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a3f331da5f77cb1041ee199471a17548d" kindref="member">operator!=</ref>(<ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689" kindref="member">Status</ref><sp/>stat)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status<sp/>!=<sp/>stat;<sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classqqmusic_1_1QRCodeLoginEvent_1a446efdd058fd92ca99519e6a84b52a40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>std::string_view<sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a446efdd058fd92ca99519e6a84b52a40" kindref="member">name</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>name_map.at(status);<sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689" kindref="member">Status</ref><sp/>status;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;Status,<sp/>std::string&gt;<sp/>name_map<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a2ba22e58ca17bb728d522bba36cf8350" kindref="member">Status::DONE</ref>,<sp/></highlight><highlight class="stringliteral">&quot;DONE&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689ae0740abfbc61bc2be0bfa78af61106ae" kindref="member">Status::SCAN</ref>,<sp/></highlight><highlight class="stringliteral">&quot;SCAN&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a8d428c502adec040b6a51e880034b9f4" kindref="member">Status::CONF</ref>,<sp/></highlight><highlight class="stringliteral">&quot;CONF&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a070a0fb40f6c308ab544b227660aadff" kindref="member">Status::TIMEOUT</ref>,<sp/></highlight><highlight class="stringliteral">&quot;TIMEOUT&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a499a6c694b83db642a374bbc7cb07711" kindref="member">Status::REFUSE</ref>,<sp/></highlight><highlight class="stringliteral">&quot;REFUSE&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a03570470bad94692ce93e32700d2e1cb" kindref="member">Status::OTHER</ref>,<sp/></highlight><highlight class="stringliteral">&quot;OTHER&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="structqqmusic_1_1QRCodeLoginResult" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structqqmusic_1_1QRCodeLoginResult" kindref="compound">QRCodeLoginResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqqmusic_1_1QRCodeLoginEvent" kindref="compound">QRCodeLoginEvent</ref><sp/>status{<ref refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a03570470bad94692ce93e32700d2e1cb" kindref="member">QRCodeLoginEvent::Status::OTHER</ref>};</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;utils::Credential&gt;<sp/>credential;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal">qqmusic::Task&lt;qqmusic::Result&lt;QRCode&gt;&gt;<sp/>get_qrcode(QRLoginType<sp/>login_type);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal">qqmusic::Task&lt;qqmusic::Result&lt;QRCodeLoginResult&gt;&gt;<sp/>check_qq_qr(<ref refid="structqqmusic_1_1QRCode" kindref="compound">QRCode</ref>&amp;<sp/>qrc);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal">qqmusic::Task&lt;qqmusic::Result&lt;QRCodeLoginResult&gt;&gt;<sp/>check_wx_qr(<ref refid="structqqmusic_1_1QRCode" kindref="compound">QRCode</ref>&amp;<sp/>qrc);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal">qqmusic::Task&lt;qqmusic::Result&lt;PhoneLoginResult&gt;&gt;<sp/>send_authcode(</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string_view<sp/>phone,<sp/>std::string_view<sp/>country_code<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;86&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal">qqmusic::Task&lt;qqmusic::Result&lt;utils::Credential&gt;&gt;<sp/>phone_authorize(</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string_view<sp/>phone,<sp/>std::string_view<sp/>auth_code,<sp/>std::string_view<sp/>country_code<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;86&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>qqmusic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!QQMUSIC_LOGIN_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/qqmusic/login.h"/>
+  </compounddef>
+</doxygen>

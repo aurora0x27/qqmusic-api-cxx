@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1MvUrl" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::MvUrl</compoundname>
+    <includes refid="mv_8h" local="no">mv.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1MvUrl_1a3dd35af972d4617c3a5a1d52bef2168b" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::MvUrl::vid</definition>
+        <argsstring></argsstring>
+        <name>vid</name>
+        <qualifiedname>qqmusic::MvUrl::vid</qualifiedname>
+        <briefdescription>
+<para>Mv的vid </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/mv.h" line="24" column="17" bodyfile="include/qqmusic/mv.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1MvUrl_1a6b713b93491f340cc3879c511789d0a2" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>std::map&lt;std::string, std::string&gt; qqmusic::MvUrl::mp4</definition>
+        <argsstring></argsstring>
+        <name>mp4</name>
+        <qualifiedname>qqmusic::MvUrl::mp4</qualifiedname>
+        <briefdescription>
+<para>mp4格式url </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/mv.h" line="25" column="14" bodyfile="include/qqmusic/mv.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1MvUrl_1aa6b5a5599b9f5ff86f6782edf09fce6e" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>std::map&lt;std::string, std::string&gt; qqmusic::MvUrl::hls</definition>
+        <argsstring></argsstring>
+        <name>hls</name>
+        <qualifiedname>qqmusic::MvUrl::hls</qualifiedname>
+        <briefdescription>
+<para>hls格式url </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/mv.h" line="26" column="14" bodyfile="include/qqmusic/mv.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Mv url封裝 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/mv.h" line="23" column="1" bodyfile="include/qqmusic/mv.h" bodystart="23" bodyend="27"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1MvUrl_1aa6b5a5599b9f5ff86f6782edf09fce6e" prot="public" virt="non-virtual"><scope>qqmusic::MvUrl</scope><name>hls</name></member>
+      <member refid="structqqmusic_1_1MvUrl_1a6b713b93491f340cc3879c511789d0a2" prot="public" virt="non-virtual"><scope>qqmusic::MvUrl</scope><name>mp4</name></member>
+      <member refid="structqqmusic_1_1MvUrl_1a3dd35af972d4617c3a5a1d52bef2168b" prot="public" virt="non-virtual"><scope>qqmusic::MvUrl</scope><name>vid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

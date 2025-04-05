@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structdetails_1_1Constructor" kind="struct" language="C++" prot="public">
+    <compoundname>details::Constructor</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename E</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structdetails_1_1Constructor_1a2e4422636bbb2eca1c02c8dbc5b47e9e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void details::Constructor&lt; T, E &gt;::move</definition>
+        <argsstring>(Storage&lt; T, E &gt; &amp;&amp;src, Storage&lt; T, E &gt; &amp;dst, ok_tag)</argsstring>
+        <name>move</name>
+        <qualifiedname>details::Constructor::move</qualifiedname>
+        <param>
+          <type><ref refid="structdetails_1_1Storage" kindref="compound">Storage</ref>&lt; T, E &gt; &amp;&amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="structdetails_1_1Storage" kindref="compound">Storage</ref>&lt; T, E &gt; &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="structdetails_1_1ok__tag" kindref="compound">ok_tag</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="632" column="17" bodyfile="include/qqmusic/details/result.h" bodystart="632" bodyend="635"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetails_1_1Constructor_1a1e47dcb6cce20296c3ca427bf5699256" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void details::Constructor&lt; T, E &gt;::copy</definition>
+        <argsstring>(const Storage&lt; T, E &gt; &amp;src, Storage&lt; T, E &gt; &amp;dst, ok_tag)</argsstring>
+        <name>copy</name>
+        <qualifiedname>details::Constructor::copy</qualifiedname>
+        <param>
+          <type>const <ref refid="structdetails_1_1Storage" kindref="compound">Storage</ref>&lt; T, E &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="structdetails_1_1Storage" kindref="compound">Storage</ref>&lt; T, E &gt; &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="structdetails_1_1ok__tag" kindref="compound">ok_tag</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="637" column="17" bodyfile="include/qqmusic/details/result.h" bodystart="637" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetails_1_1Constructor_1a5af3b199649d73f48a864126101b4f8a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void details::Constructor&lt; T, E &gt;::move</definition>
+        <argsstring>(Storage&lt; T, E &gt; &amp;&amp;src, Storage&lt; T, E &gt; &amp;dst, err_tag)</argsstring>
+        <name>move</name>
+        <qualifiedname>details::Constructor::move</qualifiedname>
+        <param>
+          <type><ref refid="structdetails_1_1Storage" kindref="compound">Storage</ref>&lt; T, E &gt; &amp;&amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="structdetails_1_1Storage" kindref="compound">Storage</ref>&lt; T, E &gt; &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="structdetails_1_1err__tag" kindref="compound">err_tag</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="641" column="17" bodyfile="include/qqmusic/details/result.h" bodystart="641" bodyend="644"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetails_1_1Constructor_1afdf6ae33c08d96c3efbd0b0cede9633a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void details::Constructor&lt; T, E &gt;::copy</definition>
+        <argsstring>(const Storage&lt; T, E &gt; &amp;src, Storage&lt; T, E &gt; &amp;dst, err_tag)</argsstring>
+        <name>copy</name>
+        <qualifiedname>details::Constructor::copy</qualifiedname>
+        <param>
+          <type>const <ref refid="structdetails_1_1Storage" kindref="compound">Storage</ref>&lt; T, E &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="structdetails_1_1Storage" kindref="compound">Storage</ref>&lt; T, E &gt; &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="structdetails_1_1err__tag" kindref="compound">err_tag</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="646" column="17" bodyfile="include/qqmusic/details/result.h" bodystart="646" bodyend="648"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="631" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="631" bodyend="649"/>
+    <listofallmembers>
+      <member refid="structdetails_1_1Constructor_1a1e47dcb6cce20296c3ca427bf5699256" prot="public" virt="non-virtual"><scope>details::Constructor</scope><name>copy</name></member>
+      <member refid="structdetails_1_1Constructor_1afdf6ae33c08d96c3efbd0b0cede9633a" prot="public" virt="non-virtual"><scope>details::Constructor</scope><name>copy</name></member>
+      <member refid="structdetails_1_1Constructor_1a2e4422636bbb2eca1c02c8dbc5b47e9e" prot="public" virt="non-virtual"><scope>details::Constructor</scope><name>move</name></member>
+      <member refid="structdetails_1_1Constructor_1a5af3b199649d73f48a864126101b4f8a" prot="public" virt="non-virtual"><scope>details::Constructor</scope><name>move</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

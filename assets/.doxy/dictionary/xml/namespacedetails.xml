@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespacedetails" kind="namespace" language="C++">
+    <compoundname>details</compoundname>
+    <innerclass refid="structdetails_1_1Constructor" prot="public">details::Constructor</innerclass>
+    <innerclass refid="structdetails_1_1Constructor_3_01void_00_01E_01_4" prot="public">details::Constructor&lt; void, E &gt;</innerclass>
+    <innerclass refid="structdetails_1_1err__tag" prot="public">details::err_tag</innerclass>
+    <innerclass refid="structdetails_1_1IsResult" prot="public">details::IsResult</innerclass>
+    <innerclass refid="structdetails_1_1IsResult_3_01Result_3_01T_00_01E_01_4_01_4" prot="public">details::IsResult&lt; Result&lt; T, E &gt; &gt;</innerclass>
+    <innerclass refid="structdetails_1_1ok__tag" prot="public">details::ok_tag</innerclass>
+    <innerclass refid="structdetails_1_1result__of" prot="public">details::result_of</innerclass>
+    <innerclass refid="structdetails_1_1result__of_3_01Ret_07_5_08_07Args_8_8_8_08_4" prot="public">details::result_of&lt; Ret(*)(Args...)&gt;</innerclass>
+    <innerclass refid="structdetails_1_1result__of_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" prot="public">details::result_of&lt; Ret(Cls::*)(Args...) const &gt;</innerclass>
+    <innerclass refid="structdetails_1_1ResultErrType" prot="public">details::ResultErrType</innerclass>
+    <innerclass refid="structdetails_1_1ResultErrType_3_01Result_3_01T_00_01E_01_4_01_4" prot="public">details::ResultErrType&lt; Result&lt; T, E &gt; &gt;</innerclass>
+    <innerclass refid="structdetails_1_1ResultOkType" prot="public">details::ResultOkType</innerclass>
+    <innerclass refid="structdetails_1_1ResultOkType_3_01Result_3_01T_00_01E_01_4_01_4" prot="public">details::ResultOkType&lt; Result&lt; T, E &gt; &gt;</innerclass>
+    <innerclass refid="structdetails_1_1Storage" prot="public">details::Storage</innerclass>
+    <innerclass refid="structdetails_1_1Storage_3_01void_00_01E_01_4" prot="public">details::Storage&lt; void, E &gt;</innerclass>
+    <innerclass refid="structdetails_1_1void__t" prot="public">details::void_t</innerclass>
+    <innernamespace refid="namespacedetails_1_1And">details::And</innernamespace>
+    <innernamespace refid="namespacedetails_1_1err">details::err</innernamespace>
+    <innernamespace refid="namespacedetails_1_1impl">details::impl</innernamespace>
+    <innernamespace refid="namespacedetails_1_1ok">details::ok</innernamespace>
+    <innernamespace refid="namespacedetails_1_1Or">details::Or</innernamespace>
+    <innernamespace refid="namespacedetails_1_1Other">details::Other</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="details_2result_8h_1a597f8665b7f811e0e3458709ea6c668c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename E</type>
+          </param>
+          <param>
+            <type>typename Func</type>
+          </param>
+          <param>
+            <type>typename Ret</type>
+            <defval><ref refid="structResult" kindref="compound">Result</ref>&lt;typename <ref refid="structdetails_1_1ResultOkType" kindref="compound">details::ResultOkType</ref>&lt;typename <ref refid="structdetails_1_1result__of" kindref="compound">details::result_of</ref>&lt;Func&gt;::type&gt;::type, E&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>Ret</type>
+        <definition>Ret details::map</definition>
+        <argsstring>(const Result&lt; T, E &gt; &amp;result, Func func)</argsstring>
+        <name>map</name>
+        <qualifiedname>details::map</qualifiedname>
+        <param>
+          <type>const <ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt; &amp;</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="496" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="496" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="details_2result_8h_1a2030738f8e724d2be44da4d6a355f9d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename E</type>
+          </param>
+          <param>
+            <type>typename Func</type>
+          </param>
+          <param>
+            <type>typename Ret</type>
+            <defval><ref refid="structResult" kindref="compound">Result</ref>&lt;T, typename <ref refid="structdetails_1_1ResultErrType" kindref="compound">details::ResultErrType</ref>&lt;typename <ref refid="structdetails_1_1result__of" kindref="compound">details::result_of</ref>&lt;Func&gt;::type&gt;::type&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>Ret</type>
+        <definition>Ret details::mapError</definition>
+        <argsstring>(const Result&lt; T, E &gt; &amp;result, Func func)</argsstring>
+        <name>mapError</name>
+        <qualifiedname>details::mapError</qualifiedname>
+        <param>
+          <type>const <ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt; &amp;</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="505" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="505" bodyend="507"/>
+      </memberdef>
+      <memberdef kind="function" id="details_2result_8h_1acdc946fd10251915ff4f80acc56d5131" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename E</type>
+          </param>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt;</type>
+        <definition>Result&lt; T, E &gt; details::then</definition>
+        <argsstring>(const Result&lt; T, E &gt; &amp;result, Func func)</argsstring>
+        <name>then</name>
+        <qualifiedname>details::then</qualifiedname>
+        <param>
+          <type>const <ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt; &amp;</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="510" column="8" bodyfile="include/qqmusic/details/result.h" bodystart="510" bodyend="512"/>
+      </memberdef>
+      <memberdef kind="function" id="details_2result_8h_1a4f0f3a3450293008baaf5a7ed4c7907e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename E</type>
+          </param>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt;</type>
+        <definition>Result&lt; T, E &gt; details::otherwise</definition>
+        <argsstring>(const Result&lt; T, E &gt; &amp;result, Func func)</argsstring>
+        <name>otherwise</name>
+        <qualifiedname>details::otherwise</qualifiedname>
+        <param>
+          <type>const <ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt; &amp;</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="515" column="8" bodyfile="include/qqmusic/details/result.h" bodystart="515" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="details_2result_8h_1a4bc294d0174456a77055aadae3b93433" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename E</type>
+          </param>
+          <param>
+            <type>typename Func</type>
+          </param>
+          <param>
+            <type>typename Ret</type>
+            <defval><ref refid="structResult" kindref="compound">Result</ref>&lt;T, typename <ref refid="structdetails_1_1ResultErrType" kindref="compound">details::ResultErrType</ref>&lt;typename <ref refid="structdetails_1_1result__of" kindref="compound">details::result_of</ref>&lt;Func&gt;::type&gt;::type&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>Ret</type>
+        <definition>Ret details::orElse</definition>
+        <argsstring>(const Result&lt; T, E &gt; &amp;result, Func func)</argsstring>
+        <name>orElse</name>
+        <qualifiedname>details::orElse</qualifiedname>
+        <param>
+          <type>const <ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt; &amp;</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="524" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="524" bodyend="526"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="61" column="1"/>
+  </compounddef>
+</doxygen>

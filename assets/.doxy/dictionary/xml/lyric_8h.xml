@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="lyric_8h" kind="file" language="C++">
+    <compoundname>lyric.h</compoundname>
+    <includes refid="result_8h" local="no">qqmusic/result.h</includes>
+    <includedby refid="lyric_8cc" local="no">lyric.cc</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>qqmusic/details/result.h</label>
+        <link refid="details_2result_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>lyric.h</label>
+        <link refid="lyric_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>qqmusic/result.h</label>
+        <link refid="result_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>qqmusic/utils/exception.h</label>
+        <link refid="exception_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>boost/asio/awaitable.hpp</label>
+      </node>
+      <node id="6">
+        <label>functional</label>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>type_traits</label>
+      </node>
+      <node id="11">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structqqmusic_1_1Lyric" prot="public">qqmusic::Lyric</innerclass>
+    <innernamespace refid="namespaceqqmusic">qqmusic</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*-------------------------------------qqmusic/lyric.h----------------------------------------------</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Lyric<sp/>utils<sp/>--<sp/>get<sp/>and<sp/>decrypt<sp/>lyrics<sp/></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Get<sp/>lyric<sp/>and<sp/>parse<sp/>them<sp/>to<sp/>strings</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>QRC<sp/>lyric<sp/>is<sp/>an<sp/>xml<sp/>string,<sp/>which<sp/>starts<sp/>with<sp/>`&lt;?xml`,<sp/>and<sp/>has<sp/>time<sp/>stamp<sp/>for</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>single<sp/>character:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>&lt;?xml<sp/>version=&quot;1.0&quot;<sp/>encoding=&quot;utf-8&quot;?&gt;</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>&lt;QrcInfos&gt;</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>&lt;QrcHeadInfo<sp/>SaveTime=&quot;253&quot;<sp/>Version=&quot;100&quot;/&gt;</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>&lt;LyricInfo<sp/>LyricCount=&quot;1&quot;&gt;</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>&lt;Lyric_1<sp/>LyricType=&quot;1&quot;<sp/>LyricContent=&quot;[ti:嘘つきは恋のはじまり]</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>[ar:洛天依]</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>[al:嘘つきは恋の始まり]</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>[by:]</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>[offset:0]</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>[kana:1うそ1こい1111し...1あ1わら1こた1うそ1ほん1とう1い1あめ1ひ1かぜ1ひ1お]</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>[0,4690]嘘(0,293)つ(293,293)き(586,293)は(879,293)恋(1172,293)の(1465,293)</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>は(1758,293)じ(2051,293)ま(2344,293)り(2637,293)<sp/>(2930,293)-(3223,293)<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>(3516,293)洛(3809,293)天(4102,293)</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>依(4395,293)</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>[4690,4690]词(4690,1563)：(6253,1563)４０(7816,781)mP(8597,782)</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>[9380,4690]曲(9380,1563)：(10943,1563)４０(12506,781)mP(13287,782)</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>[14070,4690]编(14070,1172)曲(15242,1172)：(16414,1172)４０(17586,586)</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>mP(18172,586)</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>[18770,677]「(18770,151)ね(18921,151)え(19072,375)</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>[19538,5596]好(19538,207)き(19745,207)な(19952,527)人(20479,1759)</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>い(22238,559)る(22797,223)の(23020,175)？(23195,191)」(23386,135)</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>な(23521,200)ん(23721,182)て(23903,1231)</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>[25394,4879]君(25394,471)が(25865,391)問(26256,311)い(26567,247)</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>か(26814,567)け(27381,407)て(27788,383)き(28171,335)た(28506,1767)</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>[31434,6158]風(31434,784)が(32218,254)吹(32472,263)い(32735,303)て(33038,1655)</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>髪(34693,520)が(35213,318)揺(35531,319)れ(35850,327)て(36177,1415)</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>[37930,6632]教(37930,471)室(38401,503)の(38904,495)時(39399,543)が(39942,351)</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>止(40293,359)ま(40652,415)る(41067,1807)</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>[44562,5977]消(44562,688)し(45250,592)ゴ(45842,440)ム(46282,388)が(46670,689)</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>床(47359,980)に(48339,624)落(48963,340)ち(49303,416)て(49719,820)</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>[50642,3569]す(50642,559)ぐ(51201,711)に(51912,599)拾(52511,535)</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>い(53046,271)上(53317,183)げ(53500,159)て(53659,552)</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>[54330,3584]笑(54330,263)い(54593,255)な(54848,191)が(55039,207)</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>ら(55246,607)答(55853,336)え(56189,310)る(56499,1415)</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>...</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>Normal<sp/>lyric<sp/>format<sp/>only<sp/>has<sp/>time<sp/>stamp<sp/>for<sp/>each<sp/>line:</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>[ti:嘘つきは恋のはじまり]</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>[ar:洛天依]</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>[al:嘘つきは恋の始まり]</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>[by:]</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>[offset:0]</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>[kana:1うそ1こ....う1い1あめ1ひ1かぜ1ひ1おも1つづ1ひと1め1まえ1]</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>[00:00.00]嘘つきは恋のはじまり<sp/>-<sp/>洛天依</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>[00:04.69]词：４０mP</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>[00:09.38]曲：４０mP</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>[00:14.07]编曲：４０mP</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>[00:18.77]「ねえ</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>[00:19.53]好きな人いるの？」なんて</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>[00:25.39]君が問いかけてきた</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>[00:30.27]</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>[00:31.43]風が吹いて髪が揺れて</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>[00:37.93]教室の時が止まる</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>[00:44.56]消しゴムが床に落ちて</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/>[00:50.64]すぐに拾い上げて</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>[00:54.33]笑いながら答える</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>[00:58.10]「いないよ」</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>[01:00.71]ほんのちょっと嘘をついた</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>[01:03.71]バレるのがこわくて</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>...</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*------------------------------------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>QQMUSIC_LYRIC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QQMUSIC_LYRIC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qqmusic/result.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">qqmusic<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="structqqmusic_1_1Lyric" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structqqmusic_1_1Lyric" kindref="compound">Lyric</ref><sp/>{</highlight></codeline>
+<codeline lineno="84" refid="structqqmusic_1_1Lyric_1acf72e681db7cafcc17f10aa9457b9054" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structqqmusic_1_1Lyric_1acf72e681db7cafcc17f10aa9457b9054" kindref="member">lyric</ref>;<sp/></highlight></codeline>
+<codeline lineno="85" refid="structqqmusic_1_1Lyric_1a2227ff43925bb02603b7181fd535dab7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structqqmusic_1_1Lyric_1a2227ff43925bb02603b7181fd535dab7" kindref="member">trans</ref>;<sp/></highlight></codeline>
+<codeline lineno="86" refid="structqqmusic_1_1Lyric_1a78dcde78913d94b1538ae8905b9196ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structqqmusic_1_1Lyric_1a78dcde78913d94b1538ae8905b9196ad" kindref="member">roma</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">Task&lt;Result&lt;Lyric&gt;&gt;<sp/>get_lyric(std::string_view<sp/>mid,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>qrc<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>trans<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>roma<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">Task&lt;Result&lt;Lyric&gt;&gt;<sp/>get_lyric(uint64_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>qrc<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>trans<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>roma<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>qqmusic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!QQMUSIC_LYRIC_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/qqmusic/lyric.h"/>
+  </compounddef>
+</doxygen>

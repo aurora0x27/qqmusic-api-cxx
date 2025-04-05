@@ -1,0 +1,676 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="namespaceqqmusic_1_1utils" kind="namespace" language="C++">
+    <compoundname>qqmusic::utils</compoundname>
+    <innerclass refid="classqqmusic_1_1utils_1_1AsyncExecutor" prot="public">qqmusic::utils::AsyncExecutor</innerclass>
+    <innerclass refid="classqqmusic_1_1utils_1_1buffer" prot="public">qqmusic::utils::buffer</innerclass>
+    <innerclass refid="structqqmusic_1_1utils_1_1Cookie" prot="public">qqmusic::utils::Cookie</innerclass>
+    <innerclass refid="classqqmusic_1_1utils_1_1CookieJar" prot="public">qqmusic::utils::CookieJar</innerclass>
+    <innerclass refid="classqqmusic_1_1utils_1_1Credential" prot="public">qqmusic::utils::Credential</innerclass>
+    <innerclass refid="structqqmusic_1_1utils_1_1Device" prot="public">qqmusic::utils::Device</innerclass>
+    <innerclass refid="classqqmusic_1_1utils_1_1Exception" prot="public">qqmusic::utils::Exception</innerclass>
+    <innerclass refid="structqqmusic_1_1utils_1_1OSVersion" prot="public">qqmusic::utils::OSVersion</innerclass>
+    <innerclass refid="classqqmusic_1_1utils_1_1PathManager" prot="public">qqmusic::utils::PathManager</innerclass>
+    <innerclass refid="structqqmusic_1_1utils_1_1QimeiResult" prot="public">qqmusic::utils::QimeiResult</innerclass>
+    <innerclass refid="classqqmusic_1_1utils_1_1Session" prot="public">qqmusic::utils::Session</innerclass>
+    <innerclass refid="classqqmusic_1_1utils_1_1SessionGuard" prot="public">qqmusic::utils::SessionGuard</innerclass>
+    <innerclass refid="classqqmusic_1_1utils_1_1SessionManager" prot="public">qqmusic::utils::SessionManager</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceqqmusic_1_1utils_1a5acd096d92184c34074b7164983855c5" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>qrc_type</name>
+        <qualifiedname>qqmusic::utils::qrc_type</qualifiedname>
+        <enumvalue id="namespaceqqmusic_1_1utils_1a5acd096d92184c34074b7164983855c5aa1234b3161b4fbfdfb96dd576b65bbea" prot="public">
+          <name>cloud</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceqqmusic_1_1utils_1a5acd096d92184c34074b7164983855c5af5ddaf0ca7929578b408c909429f68f2" prot="public">
+          <name>local</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>QRC歌词种类 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/common.h" line="51" column="1" bodyfile="include/qqmusic/utils/common.h" bodystart="51" bodyend="51"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceqqmusic_1_1utils_1a8e9d5eb4b6f56a4d6c90d406c2499100" prot="public" static="no">
+        <type>http::response&lt; http::dynamic_body &gt;</type>
+        <definition>using qqmusic::utils::HttpResponse = typedef http::response&lt;http::dynamic_body&gt;</definition>
+        <argsstring></argsstring>
+        <name>HttpResponse</name>
+        <qualifiedname>qqmusic::utils::HttpResponse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/session.h" line="32" column="1" bodyfile="include/qqmusic/utils/session.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1a02f1e0e8826f25fcfc21d9864b3e634b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref></type>
+        <definition>buffer qqmusic::utils::resp2buf</definition>
+        <argsstring>(http::response&lt; http::dynamic_body &gt; &amp;&amp;resp)</argsstring>
+        <name>resp2buf</name>
+        <qualifiedname>qqmusic::utils::resp2buf</qualifiedname>
+        <param>
+          <type>http::response&lt; http::dynamic_body &gt; &amp;&amp;</type>
+          <declname>resp</declname>
+        </param>
+        <briefdescription>
+<para>将请求回复报文体转换成二进制buffer </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>resp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>回复报文</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>qqmusic::utils::buffer类型buffer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/common.cc" line="21" column="8" bodyfile="src/utils/common.cc" bodystart="21" bodyend="26" declfile="include/qqmusic/utils/common.h" declline="37" declcolumn="8"/>
+        <referencedby refid="classqqmusic_1_1utils_1_1Credential_1abfcb3281837ded83e1424ca36b4e06c5" compoundref="credential_8cc" startline="167" endline="199">qqmusic::utils::Credential::is_expired</referencedby>
+        <referencedby refid="classqqmusic_1_1utils_1_1Credential_1a58c14e80431b734da21cef47de347c66" compoundref="credential_8cc" startline="201" endline="269">qqmusic::utils::Credential::refresh</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1a2d489567b020f1ad6aff04a77c4da17e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref></type>
+        <definition>buffer qqmusic::utils::hex2buf</definition>
+        <argsstring>(std::string_view hex)</argsstring>
+        <name>hex2buf</name>
+        <qualifiedname>qqmusic::utils::hex2buf</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>hex</declname>
+        </param>
+        <briefdescription>
+<para>十六进制字符串转成buffer </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>十六进制编码字符串</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>qqmusic::utils::buffer类型buffer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/common.cc" line="28" column="8" bodyfile="src/utils/common.cc" bodystart="28" bodyend="30" declfile="include/qqmusic/utils/common.h" declline="46" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1a29c8802f83925f715b99c15b19e4bcf4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string qqmusic::utils::head</definition>
+        <argsstring>(std::span&lt; uint8_t &gt; data)</argsstring>
+        <name>head</name>
+        <qualifiedname>qqmusic::utils::head</qualifiedname>
+        <param>
+          <type>std::span&lt; uint8_t &gt;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/common.cc" line="96" column="20" bodyfile="src/utils/common.cc" bodystart="96" bodyend="108" declfile="src/utils/common.cc" declline="32" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1aa250d9a2d2aa8b7097b1ed637dc6c718" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string qqmusic::utils::tail</definition>
+        <argsstring>(std::span&lt; uint8_t &gt; data)</argsstring>
+        <name>tail</name>
+        <qualifiedname>qqmusic::utils::tail</qualifiedname>
+        <param>
+          <type>std::span&lt; uint8_t &gt;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/common.cc" line="110" column="20" bodyfile="src/utils/common.cc" bodystart="110" bodyend="122" declfile="src/utils/common.cc" declline="33" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1a28258e482a48ec4bf7a7d608cccaa397" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string qqmusic::utils::middle</definition>
+        <argsstring>(std::span&lt; uint8_t &gt; data)</argsstring>
+        <name>middle</name>
+        <qualifiedname>qqmusic::utils::middle</qualifiedname>
+        <param>
+          <type>std::span&lt; uint8_t &gt;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/common.cc" line="124" column="20" bodyfile="src/utils/common.cc" bodystart="124" bodyend="161" declfile="src/utils/common.cc" declline="34" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1af3b3b64def81c94ee6e65875a37b0dbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::sign</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>sign</name>
+        <qualifiedname>qqmusic::utils::sign</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>QQ音乐请求签名 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>请求数据表单</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>签名结果 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/common.cc" line="36" column="13" bodyfile="src/utils/common.cc" bodystart="36" bodyend="94" declfile="include/qqmusic/utils/common.h" declline="28" declcolumn="13"/>
+        <referencedby refid="classqqmusic_1_1details_1_1Api_1a9a1fcc873609e03bd482c1d876e2b1ab" compoundref="api_8cc" startline="39" endline="129">qqmusic::details::Api::prepare_request</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1a90677d00a3a9be293836126eac782517" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int qqmusic::utils::decompress</definition>
+        <argsstring>(const buffer &amp;src, buffer &amp;dest)</argsstring>
+        <name>decompress</name>
+        <qualifiedname>qqmusic::utils::decompress</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref> &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/common.cc" line="229" column="12" bodyfile="src/utils/common.cc" bodystart="229" bodyend="270" declfile="src/utils/common.cc" declline="163" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1ad070c85c43fd950887a6ec882cf56fa0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void qqmusic::utils::qmc1_decrypt</definition>
+        <argsstring>(buffer &amp;src)</argsstring>
+        <name>qmc1_decrypt</name>
+        <qualifiedname>qqmusic::utils::qmc1_decrypt</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">buffer</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/common.cc" line="276" column="13" bodyfile="src/utils/common.cc" bodystart="276" bodyend="309" declfile="src/utils/common.cc" declline="166" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1ae36a519ee4e4658ca212fd2a890f69cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Result&lt; std::string &gt;</type>
+        <definition>qqmusic::Result&lt; std::string &gt; qqmusic::utils::qrc_decode</definition>
+        <argsstring>(const qqmusic::utils::buffer &amp;src, qqmusic::utils::qrc_type type)</argsstring>
+        <name>qrc_decode</name>
+        <qualifiedname>qqmusic::utils::qrc_decode</qualifiedname>
+        <param>
+          <type>const <ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceqqmusic_1_1utils_1a5acd096d92184c34074b7164983855c5" kindref="member">qqmusic::utils::qrc_type</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>解码加密的QRC歌词 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>被加密的歌词 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>歌词类型</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>解码后的字符串, 如果出错会返回<computeroutput><ref refid="classqqmusic_1_1utils_1_1Exception" kindref="compound">Exception</ref></computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/common.cc" line="168" column="17" bodyfile="src/utils/common.cc" bodystart="168" bodyend="227" declfile="include/qqmusic/utils/common.h" declline="61" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1a95a530d7fa81009bc430f987466c200a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t qqmusic::utils::hash33</definition>
+        <argsstring>(std::string_view str, uint64_t prev=0)</argsstring>
+        <name>hash33</name>
+        <qualifiedname>qqmusic::utils::hash33</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>prev</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>计算utf-8字符串的哈希值 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>待求值字符串 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>多次求值时传入上次求出的结果, 默认为<computeroutput>0</computeroutput></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>64位整数格式的哈希 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/common.cc" line="311" column="10" bodyfile="src/utils/common.cc" bodystart="311" bodyend="350" declfile="include/qqmusic/utils/common.h" declline="72" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1a37da4107b43c896ff5522b4a1d01c642" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::get_search_id</definition>
+        <argsstring>()</argsstring>
+        <name>get_search_id</name>
+        <qualifiedname>qqmusic::utils::get_search_id</qualifiedname>
+        <briefdescription>
+<para>返回随机搜索ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/common.cc" line="352" column="13" bodyfile="src/utils/common.cc" bodystart="352" bodyend="390" declfile="include/qqmusic/utils/common.h" declline="77" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1a64f9e98bd4303eee4a412799048c8583" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Result&lt; nlohmann::json &gt;</type>
+        <definition>qqmusic::Result&lt; nlohmann::json &gt; qqmusic::utils::parse_cookie</definition>
+        <argsstring>(std::string_view cookie_str)</argsstring>
+        <name>parse_cookie</name>
+        <qualifiedname>qqmusic::utils::parse_cookie</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>cookie_str</declname>
+        </param>
+        <briefdescription>
+<para>将Cookie字符串解析成Json对象 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".text"><codeline><highlight class="normal">key1=value1;<sp/>key2=value2;<sp/>key3=value3;<sp/>key4=value4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>v</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;key1&quot;:<sp/>&quot;value1&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;key2&quot;:<sp/>&quot;value2&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;key3&quot;:<sp/>&quot;value3&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;key4&quot;:<sp/>&quot;value4&quot;,</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/cookie.cc" line="249" column="17" bodyfile="src/utils/cookie.cc" bodystart="249" bodyend="273" declfile="include/qqmusic/utils/cookie.h" declline="58" declcolumn="17"/>
+        <referencedby refid="classqqmusic_1_1utils_1_1CookieJar_1a46c164bb17fb01a2166b657f808abc83" compoundref="cookie_8cc" startline="9" endline="16">qqmusic::utils::CookieJar::CookieJar</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1ac0b8958b4f89d786d2bd6883cdceb635" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Result&lt; <ref refid="structqqmusic_1_1utils_1_1Device" kindref="compound">Device</ref> &gt;</type>
+        <definition>qqmusic::Result&lt; Device &gt; qqmusic::utils::get_device_info</definition>
+        <argsstring>()</argsstring>
+        <name>get_device_info</name>
+        <qualifiedname>qqmusic::utils::get_device_info</qualifiedname>
+        <briefdescription>
+<para>获取随机设备信息 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>包含正确结果或异常的<computeroutput><ref refid="structResult" kindref="compound">Result</ref>&lt;<ref refid="structqqmusic_1_1utils_1_1Device" kindref="compound">Device</ref>&gt;</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/device.cc" line="18" column="17" bodyfile="src/utils/device.cc" bodystart="18" bodyend="64" declfile="include/qqmusic/utils/device.h" declline="92" declcolumn="17"/>
+        <references refid="classqqmusic_1_1utils_1_1PathManager_1a3af65f173e5c25e5333c41fd589c6cb5" compoundref="paths_8cc" startline="16" endline="18">qqmusic::utils::PathManager::get_cache_path</references>
+        <references refid="classqqmusic_1_1utils_1_1PathManager_1a1a64b30a96781cd11f5f89416a0cf65c" compoundref="paths_8cc" startline="7" endline="10">qqmusic::utils::PathManager::get_instance</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1a0e4582ca294982acc156d976ee5d7ea9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Result&lt; void &gt;</type>
+        <definition>qqmusic::Result&lt; void &gt; qqmusic::utils::cache_device</definition>
+        <argsstring>(const Device &amp;device)</argsstring>
+        <name>cache_device</name>
+        <qualifiedname>qqmusic::utils::cache_device</qualifiedname>
+        <param>
+          <type>const <ref refid="structqqmusic_1_1utils_1_1Device" kindref="compound">Device</ref> &amp;</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+<para>将设备信息缓存到文件缓存路径下的<computeroutput>device.json</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classqqmusic_1_1utils_1_1PathManager" kindref="compound">qqmusic::utils::PathManager</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/device.cc" line="66" column="17" bodyfile="src/utils/device.cc" bodystart="66" bodyend="82" declfile="include/qqmusic/utils/device.h" declline="99" declcolumn="17"/>
+        <references refid="classqqmusic_1_1utils_1_1PathManager_1a3af65f173e5c25e5333c41fd589c6cb5" compoundref="paths_8cc" startline="16" endline="18">qqmusic::utils::PathManager::get_cache_path</references>
+        <references refid="classqqmusic_1_1utils_1_1PathManager_1a1a64b30a96781cd11f5f89416a0cf65c" compoundref="paths_8cc" startline="7" endline="10">qqmusic::utils::PathManager::get_instance</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1aa01478c64ffd5e3b8084956cfce6e186" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Executor</type>
+          </param>
+        </templateparamlist>
+        <type>boost::asio::awaitable&lt; void &gt;</type>
+        <definition>boost::asio::awaitable&lt; void &gt; qqmusic::utils::custom_co_spawn_entry_point</definition>
+        <argsstring>(boost::asio::awaitable&lt; T, Executor &gt; aw, std::function&lt; void(std::exception_ptr, std::optional&lt; T &gt;)&gt; handler)</argsstring>
+        <name>custom_co_spawn_entry_point</name>
+        <qualifiedname>qqmusic::utils::custom_co_spawn_entry_point</qualifiedname>
+        <param>
+          <type>boost::asio::awaitable&lt; T, Executor &gt;</type>
+          <declname>aw</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(std::exception_ptr, std::optional&lt; T &gt;)&gt;</type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+<para>Result&lt;&gt;不能进行拷贝, 也没有默认构造函数. boost::asio::co_spawn中会调用默认构造函数. 所以需要包装原本的异步任务, 使用移动构造函数来构造result </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>异步任务 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>回调函数</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>回调函数的签名是<computeroutput>void(std::exception_ptr, std::optional&lt;T&gt;)</computeroutput>, 前一个参数是处理异常的, 后一个参数是正常的返回结果. 如果出错, 则返回结果的<computeroutput>std::optional</computeroutput>置空</para>
+</simplesect>
+<simplesect kind="see"><para>qqmusic::Result </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="40" column="24" bodyfile="include/qqmusic/utils/async-executor.h" bodystart="40" bodyend="49"/>
+        <referencedby refid="classqqmusic_1_1utils_1_1AsyncExecutor_1ae526d2fa9be9a83d709d777725d08c62" compoundref="async-executor_8h" startline="133" endline="151">qqmusic::utils::AsyncExecutor::async_exec</referencedby>
+        <referencedby refid="namespaceqqmusic_1_1utils_1a3bedea760eb27e7afc28f3e6fbbdd4ff" compoundref="async-executor_8h" startline="62" endline="91">sync_exec</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1a3bedea760eb27e7afc28f3e6fbbdd4ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T qqmusic::utils::sync_exec</definition>
+        <argsstring>(boost::asio::io_context &amp;ioc, qqmusic::Task&lt; T &gt; task)</argsstring>
+        <name>sync_exec</name>
+        <qualifiedname>qqmusic::utils::sync_exec</qualifiedname>
+        <param>
+          <type>boost::asio::io_context &amp;</type>
+          <declname>ioc</declname>
+        </param>
+        <param>
+          <type>qqmusic::Task&lt; T &gt;</type>
+          <declname>task</declname>
+        </param>
+        <briefdescription>
+<para>同步执行异步函数 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ioc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>当前io_context引用 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>task</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>异步任务</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>返回执行结果</para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+<parametername>当执行出现异常或没有返回预期值</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="62" column="3" bodyfile="include/qqmusic/utils/async-executor.h" bodystart="62" bodyend="91"/>
+        <references refid="namespaceqqmusic_1_1utils_1aa01478c64ffd5e3b8084956cfce6e186" compoundref="async-executor_8h" startline="40" endline="49">custom_co_spawn_entry_point</references>
+        <referencedby refid="namespaceqqmusic_1_1utils_1a3ffc525456b74839c9ae8a33a40e3069" compoundref="async-executor_8h" startline="101" endline="105">sync_exec</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1a3ffc525456b74839c9ae8a33a40e3069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T qqmusic::utils::sync_exec</definition>
+        <argsstring>(qqmusic::Task&lt; T &gt; task)</argsstring>
+        <name>sync_exec</name>
+        <qualifiedname>qqmusic::utils::sync_exec</qualifiedname>
+        <param>
+          <type>qqmusic::Task&lt; T &gt;</type>
+          <declname>task</declname>
+        </param>
+        <briefdescription>
+<para>同步执行异步函数 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>task</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>异步任务</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>返回执行结果 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/async-executor.h" line="101" column="3" bodyfile="include/qqmusic/utils/async-executor.h" bodystart="101" bodyend="105"/>
+        <references refid="namespaceqqmusic_1_1utils_1a3bedea760eb27e7afc28f3e6fbbdd4ff" compoundref="async-executor_8h" startline="62" endline="91">sync_exec</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqqmusic_1_1utils_1ac3b6079508bc40da2055769ae6485f38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Result&lt; <ref refid="structqqmusic_1_1utils_1_1QimeiResult" kindref="compound">QimeiResult</ref> &gt;</type>
+        <definition>qqmusic::Result&lt; qqmusic::utils::QimeiResult &gt; qqmusic::utils::get_qimei</definition>
+        <argsstring>(qqmusic::utils::Device &amp;device, std::string_view version)</argsstring>
+        <name>get_qimei</name>
+        <qualifiedname>qqmusic::utils::get_qimei</qualifiedname>
+        <param>
+          <type><ref refid="structqqmusic_1_1utils_1_1Device" kindref="compound">qqmusic::utils::Device</ref> &amp;</type>
+          <declname>device</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/qimei.h" line="24" column="17" bodyfile="src/utils/qimei.cc" bodystart="48" bodyend="197" declfile="include/qqmusic/utils/qimei.h" declline="24" declcolumn="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>简易Cookie管理器, 负责cookie的序列化和反序列化, 依赖<computeroutput>nlohmann::json</computeroutput>实现 目前不支持路径嵌套和<computeroutput>Expires</computeroutput>和<computeroutput>HttpOnly</computeroutput>这样的特性 </para>
+    </briefdescription>
+    <detaileddescription>
+<para>API异常类, 提供全局错误类型表示</para>
+<para>设备信息提供设备信息描述, 随机生成设备信息</para>
+<para>QQ音乐账号凭据, 部分和会员, 用户相关的Api需要依靠传入凭据才能生效, 凭据由<computeroutput>Login</computeroutput>部分的 Api获取</para>
+<para>-------------------------------<mdash/><ref refid="common_8h_source" kindref="compound">qqmusic/utils/common.h</ref>--------------------------------------<mdash/></para>
+<para>@ brief 工具函数</para>
+<para>@ date 2025-3-21</para>
+<para><hruler/>
+</para>
+<para>------------------------------<mdash/>qqmusic/details/cookie.h-------------------------------------<mdash/></para>
+<para><simplesect kind="date"><para>2025-3-21</para>
+</simplesect>
+<hruler/>
+</para>
+<para>-------------------------------------<mdash/><ref refid="credential_8h_source" kindref="compound">utils/credential.h</ref>------------------------------------<mdash/></para>
+<para><simplesect kind="date"><para>2025-3-21</para>
+</simplesect>
+<hruler/>
+</para>
+<para>--------------------------------<mdash/>qqmusic/details/device.h-----------------------------------<mdash/></para>
+<para><simplesect kind="date"><para>2025-3-21</para>
+</simplesect>
+<hruler/>
+</para>
+<para>----------------------------<mdash/><ref refid="exception_8h_source" kindref="compound">qqmusic/utils/exception.h</ref>--------------------------------------<mdash/></para>
+<para><simplesect kind="date"><para>2025-3-21</para>
+</simplesect>
+<hruler/>
+</para>
+<para>---------------------------------------<mdash/><ref refid="paths_8h_source" kindref="compound">utils/paths.h</ref>---------------------------------------<mdash/> <ref refid="classqqmusic_1_1utils_1_1PathManager" kindref="compound">PathManager</ref> provide common interface to file system.</para>
+<para><ref refid="classqqmusic_1_1utils_1_1PathManager" kindref="compound">PathManager</ref> provide 3 types of files for io : log, cache, download<itemizedlist>
+<listitem><para><emphasis>log</emphasis> for debug log info</para>
+</listitem><listitem><para><emphasis>cache</emphasis> for cached credential, identification, recent cached songs</para>
+</listitem><listitem><para><emphasis>download</emphasis> for downloaded media and lyrics</para>
+</listitem></itemizedlist>
+</para>
+<para>Default paths are:<itemizedlist>
+<listitem><para>Linux:<itemizedlist>
+<listitem><para>cache: $XDG_CACHE_HOME/qqmusic-api-cxx/cache OR $HOME/.cache/qqmusic-api-cxx/cache</para>
+</listitem><listitem><para>log: $XDG_CACHE_HOME/qqmusic-api-cxx/log OR $HOME/.cache/qqmusic-api-cxx/log</para>
+</listitem><listitem><para>download: $HOME/Download/qqmusic-api-cxx</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><verbatim>- Windows:
+     - cache: %LOCALAPPDATA%\cache
+              OR %USERPROFILE%\cahce
+
+     - log: %LOCALAPPDATA%\log  
+            OR %USERPROFILE%\log
+
+     - download:%USERPROFILE%\Download\qqmusic-api-cxx
+
+- MacOS:
+     - cache: $HOME/Library/Caches/qqmusic-api-cxx/cache
+
+     - log: $HOME/Library/Caches/qqmusic-api-cxx/log
+
+     - download: $HOME/Downloads/qqmusic-api-cxx
+</verbatim> Applications can set the path by themselves Usage: </para>
+<sect2 id="namespaceqqmusic_1_1utils_1autotoc_md20">
+<title>@icode</title>
+<para>&quot;get instance first&quot; auto&amp; pm = <ref refid="classqqmusic_1_1utils_1_1PathManager_1a1a64b30a96781cd11f5f89416a0cf65c" kindref="member">PathManager::get_instance()</ref>; auto cache_path = cm.get_cache_path();  </para>
+</sect2>
+    </detaileddescription>
+    <location file="src/utils/async-executor.cc" line="4" column="1"/>
+  </compounddef>
+</doxygen>

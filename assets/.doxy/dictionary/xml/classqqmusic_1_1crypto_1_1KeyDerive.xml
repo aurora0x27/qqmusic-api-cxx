@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1crypto_1_1KeyDerive" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::crypto::KeyDerive</compoundname>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1crypto_1_1KeyDerive_1a53ebe1bd9099f55a1ad182195a8efe91" prot="private" static="yes" mutable="no">
+        <type>const std::vector&lt; uint8_t &gt;</type>
+        <definition>const std::vector&lt;uint8_t&gt; qqmusic::crypto::KeyDerive::DeriveV2Key1</definition>
+        <argsstring></argsstring>
+        <name>DeriveV2Key1</name>
+        <qualifiedname>qqmusic::crypto::KeyDerive::DeriveV2Key1</qualifiedname>
+        <initializer>= {{0x33,
+                                                              0x38,
+                                                              0x36,
+                                                              0x5A,
+                                                              0x4A,
+                                                              0x59,
+                                                              0x21,
+                                                              0x40,
+                                                              0x23,
+                                                              0x2A,
+                                                              0x24,
+                                                              0x25,
+                                                              0x5E,
+                                                              0x26,
+                                                              0x29,
+                                                              0x28}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/key_derive.h" line="106" column="37" bodyfile="include/qqmusic/crypto/key_derive.h" bodystart="106" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1crypto_1_1KeyDerive_1a5567133e98efc1e17174e391b63990fc" prot="private" static="yes" mutable="no">
+        <type>const std::vector&lt; uint8_t &gt;</type>
+        <definition>const std::vector&lt;uint8_t&gt; qqmusic::crypto::KeyDerive::DeriveV2Key2</definition>
+        <argsstring></argsstring>
+        <name>DeriveV2Key2</name>
+        <qualifiedname>qqmusic::crypto::KeyDerive::DeriveV2Key2</qualifiedname>
+        <initializer>= {{0x2A,
+                                                              0x2A,
+                                                              0x23,
+                                                              0x21,
+                                                              0x28,
+                                                              0x23,
+                                                              0x24,
+                                                              0x25,
+                                                              0x26,
+                                                              0x5E,
+                                                              0x61,
+                                                              0x31,
+                                                              0x63,
+                                                              0x5A,
+                                                              0x2C,
+                                                              0x54}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/key_derive.h" line="123" column="37" bodyfile="include/qqmusic/crypto/key_derive.h" bodystart="123" bodyend="138"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classqqmusic_1_1crypto_1_1KeyDerive_1a0bda842e27a16d337d8755775dc8432d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref></type>
+        <definition>qqmusic::utils::buffer qqmusic::crypto::KeyDerive::derive</definition>
+        <argsstring>(qqmusic::utils::buffer &amp;&amp;raw_key)</argsstring>
+        <name>derive</name>
+        <qualifiedname>qqmusic::crypto::KeyDerive::derive</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref> &amp;&amp;</type>
+          <declname>raw_key</declname>
+        </param>
+        <briefdescription>
+<para>主要的密钥派生函数，处理派生逻辑 当检测到V2前缀时，先进行V2解密，然后进行V1解密 如果没有V2前缀，则直接进行V1解密 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>raw_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>原始密钥 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref> 解密后的密钥 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/key_derive.h" line="49" column="35" bodyfile="src/crypto/key_derive.cc" bodystart="15" bodyend="29"/>
+        <referencedby refid="classqqmusic_1_1crypto_1_1Decoder_1ae72de37555af2647bd9fe50acd3eac84" compoundref="qmc_8cc" startline="23" endline="41">qqmusic::crypto::Decoder::decrypt</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classqqmusic_1_1crypto_1_1KeyDerive_1a5a0a8206482bc971539104250a03b365" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref></type>
+        <definition>qqmusic::utils::buffer qqmusic::crypto::KeyDerive::derive_V1</definition>
+        <argsstring>(qqmusic::utils::buffer &amp;&amp;raw_key_dec)</argsstring>
+        <name>derive_V1</name>
+        <qualifiedname>qqmusic::crypto::KeyDerive::derive_V1</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref> &amp;&amp;</type>
+          <declname>raw_key_dec</declname>
+        </param>
+        <briefdescription>
+<para>执行QQ音乐V1版密钥派生算法 </para>
+        </briefdescription>
+        <detaileddescription>
+<para>处理流程：<orderedlist>
+<listitem><para>校验密钥长度 ≥16 字节</para>
+</listitem><listitem><para>生成106号简单密钥（8字节）</para>
+</listitem><listitem><para>构建16字节TEA密钥（交替填充简单密钥和原始密钥头）</para>
+</listitem><listitem><para>使用TEA算法解密核心数据块（原始密钥8字节之后的数据）</para>
+</listitem><listitem><para>拼接原始密钥头(8字节) + 解密数据（可变长度） → 最终音频密钥 raw_key_dec + decrypt_res</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>raw_key_dec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>经过Base64解码的中间密钥数据，包含：<itemizedlist>
+<listitem><para>V2流程处理后的解密数据</para>
+</listitem><listitem><para>直接输入的V1密钥数据 <bold>最小长度：16字节</bold> </para>
+</listitem></itemizedlist>
+</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/key_derive.h" line="67" column="35" bodyfile="src/crypto/key_derive.cc" bodystart="31" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1crypto_1_1KeyDerive_1af2c373cdfa8bbdade44abddfce23b81b" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref></type>
+        <definition>qqmusic::utils::buffer qqmusic::crypto::KeyDerive::derive_V2</definition>
+        <argsstring>(qqmusic::utils::buffer raw)</argsstring>
+        <name>derive_V2</name>
+        <qualifiedname>qqmusic::crypto::KeyDerive::derive_V2</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref></type>
+          <declname>raw</declname>
+        </param>
+        <briefdescription>
+<para>V2密钥处理 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/key_derive.h" line="72" column="35" bodyfile="src/crypto/key_derive.cc" bodystart="63" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1crypto_1_1KeyDerive_1a08c06a8bd745b3856ea940a6c7734a74" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref></type>
+        <definition>qqmusic::utils::buffer qqmusic::crypto::KeyDerive::decrypt_tencent_tea</definition>
+        <argsstring>(qqmusic::utils::buffer &amp;&amp;in_buf, const std::vector&lt; uint8_t &gt; &amp;key)</argsstring>
+        <name>decrypt_tencent_tea</name>
+        <qualifiedname>qqmusic::crypto::KeyDerive::decrypt_tencent_tea</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">qqmusic::utils::buffer</ref> &amp;&amp;</type>
+          <declname>in_buf</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>腾讯TEA算法核心解密函数 实现标准TEA解密算法的变种，支持不同阶段的解密需求： 处理流程： </para>
+        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>输入校验：块大小8字节对齐，最小长度16字节</para>
+</listitem><listitem><para>初始化TEA算法（32轮迭代）</para>
+</listitem><listitem><para>解密首块获取填充长度</para>
+</listitem><listitem><para>处理2字节盐值（随机干扰数据）</para>
+</listitem><listitem><para>循环解密数据主体</para>
+</listitem><listitem><para>校验7字节零值区 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>in_buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>加密数据流，包含：<itemizedlist>
+<listitem><para>V2阶段：Base64解码后的原始数据，但并未解密</para>
+</listitem><listitem><para>V1阶段：去除8字节校验头的核心密文 要求：长度必须为8的倍数且≥16字节 </para>
+</listitem></itemizedlist>
+</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>解密密钥，包含：<itemizedlist>
+<listitem><para>V2阶段：固定密钥 DeriveV2Key1/DeriveV2Key2</para>
+</listitem><listitem><para>V1阶段：动态生成的16字节混合密钥</para>
+</listitem><listitem><para>固定密钥：deriveV2Key1/deriveV2Key2（V2阶段） 动态密钥：基于simpleKey生成的teaKey（V1阶段） 长度：必须为16字节 </para>
+</listitem></itemizedlist>
+</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/key_derive.h" line="94" column="35" bodyfile="src/crypto/key_derive.cc" bodystart="75" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1crypto_1_1KeyDerive_1a1f5826cc0002e6c4d76d425c7417577d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>static std::vector&lt; uint8_t &gt; qqmusic::crypto::KeyDerive::makeSimpleKey</definition>
+        <argsstring>(uint8_t salt, size_t len)</argsstring>
+        <name>makeSimpleKey</name>
+        <qualifiedname>qqmusic::crypto::KeyDerive::makeSimpleKey</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>salt</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/crypto/key_derive.h" line="97" column="31" bodyfile="include/qqmusic/crypto/key_derive.h" bodystart="97" bodyend="104"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/crypto/key_derive.h" line="40" column="1" bodyfile="include/qqmusic/crypto/key_derive.h" bodystart="40" bodyend="139"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a08c06a8bd745b3856ea940a6c7734a74" prot="private" virt="non-virtual"><scope>qqmusic::crypto::KeyDerive</scope><name>decrypt_tencent_tea</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a0bda842e27a16d337d8755775dc8432d" prot="public" virt="non-virtual"><scope>qqmusic::crypto::KeyDerive</scope><name>derive</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a5a0a8206482bc971539104250a03b365" prot="private" virt="non-virtual"><scope>qqmusic::crypto::KeyDerive</scope><name>derive_V1</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1af2c373cdfa8bbdade44abddfce23b81b" prot="private" virt="non-virtual"><scope>qqmusic::crypto::KeyDerive</scope><name>derive_V2</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a53ebe1bd9099f55a1ad182195a8efe91" prot="private" virt="non-virtual"><scope>qqmusic::crypto::KeyDerive</scope><name>DeriveV2Key1</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a5567133e98efc1e17174e391b63990fc" prot="private" virt="non-virtual"><scope>qqmusic::crypto::KeyDerive</scope><name>DeriveV2Key2</name></member>
+      <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a1f5826cc0002e6c4d76d425c7417577d" prot="private" virt="non-virtual"><scope>qqmusic::crypto::KeyDerive</scope><name>makeSimpleKey</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

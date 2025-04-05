@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="classqqmusic_1_1details_1_1Api" kind="class" language="C++" prot="public">
+    <compoundname>qqmusic::details::Api</compoundname>
+    <includes refid="api_8h" local="no">api.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqqmusic_1_1details_1_1Api_1a791ed8eab14ac351daade395bb862c47" prot="private" static="no" mutable="no">
+        <type><ref refid="classqqmusic_1_1utils_1_1Session" kindref="compound">utils::Session</ref> &amp;</type>
+        <definition>utils::Session&amp; qqmusic::details::Api::session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <qualifiedname>qqmusic::details::Api::session</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/api.h" line="85" column="20" bodyfile="include/qqmusic/details/api.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1details_1_1Api_1a591a917cfbefd621a516cd57657de8b9" prot="private" static="no" mutable="no">
+        <type>std::string std::string</type>
+        <definition>std::string std::string qqmusic::details::Api::method</definition>
+        <argsstring></argsstring>
+        <name>method</name>
+        <qualifiedname>qqmusic::details::Api::method</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/api.h" line="87" column="17" bodyfile="include/qqmusic/details/api.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1details_1_1Api_1aab09d7b9a0023f4ac4ca29fe717b76b9" prot="private" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json qqmusic::details::Api::common</definition>
+        <argsstring></argsstring>
+        <name>common</name>
+        <qualifiedname>qqmusic::details::Api::common</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/api.h" line="88" column="20" bodyfile="include/qqmusic/details/api.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqqmusic_1_1details_1_1Api_1abb42a9464eb6b1baeb979116ad254d25" prot="private" static="no" mutable="no">
+        <type><ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref></type>
+        <definition>utils::Credential qqmusic::details::Api::credential</definition>
+        <argsstring></argsstring>
+        <name>credential</name>
+        <qualifiedname>qqmusic::details::Api::credential</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/api.h" line="89" column="23" bodyfile="include/qqmusic/details/api.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqqmusic_1_1details_1_1Api_1a37f8716475eaf526dd3f8fd4b0649014" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::details::Api::Api</definition>
+        <argsstring>(utils::Session &amp;session, std::string module, std::string method, utils::Credential credential={}, nlohmann::json common={{}})</argsstring>
+        <name>Api</name>
+        <qualifiedname>qqmusic::details::Api::Api</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1Session" kindref="compound">utils::Session</ref> &amp;</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>module</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>method</declname>
+        </param>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1Credential" kindref="compound">utils::Credential</ref></type>
+          <declname>credential</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>nlohmann::json</type>
+          <declname>common</declname>
+          <defval>{{}}</defval>
+        </param>
+        <briefdescription>
+<para>构造函数 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>session实例引用 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>module</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Api所属模块 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Api请求方法 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>credential</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>凭证, 默认为空 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>common</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>公共参数</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>credential的取舍优先级: <computeroutput>传入的参数 &gt; session(全局默认) &gt; 默认初始化credential</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/api.h" line="53" column="5" bodyfile="include/qqmusic/details/api.h" bodystart="53" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1details_1_1Api_1a9a1fcc873609e03bd482c1d876e2b1ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Task&lt; qqmusic::Result&lt; <ref refid="structqqmusic_1_1details_1_1RequestParam" kindref="compound">RequestParam</ref> &gt; &gt;</type>
+        <definition>qqmusic::Task&lt; qqmusic::Result&lt; RequestParam &gt; &gt; qqmusic::details::Api::prepare_request</definition>
+        <argsstring>(const nlohmann::json &amp;params, bool verify=false)</argsstring>
+        <name>prepare_request</name>
+        <qualifiedname>qqmusic::details::Api::prepare_request</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>verify</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>使用给定的参数组装请求 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>请求体数据表单 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>verify</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>是否需要合法的Credential进行请求</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>产生<computeroutput><ref refid="structqqmusic_1_1details_1_1RequestParam" kindref="compound">RequestParam</ref></computeroutput>打包的请求参数 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/api.h" line="76" column="19" bodyfile="src/details/api.cc" bodystart="39" bodyend="129"/>
+        <references refid="classqqmusic_1_1utils_1_1Session_1a2325c96c481b9f49eaa7790cb528cc16" compoundref="session_8cc" startline="65" endline="67">qqmusic::utils::Session::get_context_ref</references>
+        <references refid="classqqmusic_1_1utils_1_1Credential_1ac1ddcecc2e8303bb3302fb85b52e5b92" compoundref="credential_8cc" startline="132" endline="138">qqmusic::utils::Credential::is_valid</references>
+        <references refid="classqqmusic_1_1utils_1_1Credential_1a3b6d928af8506d12eca6439a481ba224" compoundref="credential_8h" startline="169">qqmusic::utils::Credential::loginType</references>
+        <references refid="classqqmusic_1_1utils_1_1Credential_1aa1d3cf96bc0e4366e80ff71f603389f2" compoundref="credential_8h" startline="133">qqmusic::utils::Credential::musicid</references>
+        <references refid="classqqmusic_1_1utils_1_1Credential_1ad10ca3e312c13f7c8ad40289bde9488c" compoundref="credential_8h" startline="140">qqmusic::utils::Credential::musickey</references>
+        <references refid="namespaceqqmusic_1_1utils_1af3b3b64def81c94ee6e65875a37b0dbd" compoundref="common_8cc" startline="36" endline="94">qqmusic::utils::sign</references>
+        <references refid="classqqmusic_1_1utils_1_1Session_1a4ac0a3a73bb0c5f6efa9e99e785c9a66" compoundref="session_8cc" startline="69" endline="72">qqmusic::utils::Session::sync_global</references>
+        <referencedby refid="classqqmusic_1_1utils_1_1Credential_1a58c14e80431b734da21cef47de347c66" compoundref="credential_8cc" startline="201" endline="269">qqmusic::utils::Credential::refresh</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classqqmusic_1_1details_1_1Api_1a2693c79b4c04da2d8d562f891ea3cf38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qqmusic::Result&lt; nlohmann::json &gt;</type>
+        <definition>qqmusic::Result&lt; nlohmann::json &gt; qqmusic::details::Api::parse_response</definition>
+        <argsstring>(utils::buffer &amp;&amp;response)</argsstring>
+        <name>parse_response</name>
+        <qualifiedname>qqmusic::details::Api::parse_response</qualifiedname>
+        <param>
+          <type><ref refid="classqqmusic_1_1utils_1_1buffer" kindref="compound">utils::buffer</ref> &amp;&amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+<para>将返回报文解析成Json结果, 必须是由Api类产生的请求产生的结果 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/api.h" line="82" column="21" bodyfile="src/details/api.cc" bodystart="11" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Api类, 简化请求报文组装和返回报文解析过程 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/api.h" line="40" column="1" bodyfile="include/qqmusic/details/api.h" bodystart="40" bodyend="90"/>
+    <listofallmembers>
+      <member refid="classqqmusic_1_1details_1_1Api_1a37f8716475eaf526dd3f8fd4b0649014" prot="public" virt="non-virtual"><scope>qqmusic::details::Api</scope><name>Api</name></member>
+      <member refid="classqqmusic_1_1details_1_1Api_1aab09d7b9a0023f4ac4ca29fe717b76b9" prot="private" virt="non-virtual"><scope>qqmusic::details::Api</scope><name>common</name></member>
+      <member refid="classqqmusic_1_1details_1_1Api_1abb42a9464eb6b1baeb979116ad254d25" prot="private" virt="non-virtual"><scope>qqmusic::details::Api</scope><name>credential</name></member>
+      <member refid="classqqmusic_1_1details_1_1Api_1a591a917cfbefd621a516cd57657de8b9" prot="private" virt="non-virtual"><scope>qqmusic::details::Api</scope><name>method</name></member>
+      <member refid="classqqmusic_1_1details_1_1Api_1a2693c79b4c04da2d8d562f891ea3cf38" prot="public" virt="non-virtual"><scope>qqmusic::details::Api</scope><name>parse_response</name></member>
+      <member refid="classqqmusic_1_1details_1_1Api_1a9a1fcc873609e03bd482c1d876e2b1ab" prot="public" virt="non-virtual"><scope>qqmusic::details::Api</scope><name>prepare_request</name></member>
+      <member refid="classqqmusic_1_1details_1_1Api_1a791ed8eab14ac351daade395bb862c47" prot="private" virt="non-virtual"><scope>qqmusic::details::Api</scope><name>session</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

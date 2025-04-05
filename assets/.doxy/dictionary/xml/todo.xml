@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="todo" kind="page">
+    <compoundname>todo</compoundname>
+    <title>待办事项列表</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>类 <ref refid="classqqmusic_1_1utils_1_1CookieJar" kindref="compound">qqmusic::utils::CookieJar</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000001"/>需要支持嵌套的路径, 支持非键值对形式的Cookie </para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+    <location file="todo"/>
+  </compounddef>
+</doxygen>

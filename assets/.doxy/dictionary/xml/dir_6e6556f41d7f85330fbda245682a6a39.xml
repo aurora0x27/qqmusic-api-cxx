@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="dir_6e6556f41d7f85330fbda245682a6a39" kind="dir">
+    <compoundname>details</compoundname>
+    <innerfile refid="api_8h">api.h</innerfile>
+    <innerfile refid="context_8h">context.h</innerfile>
+    <innerfile refid="details_2result_8h">details/result.h</innerfile>
+    <innerfile refid="tripledes_8h">tripledes.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/"/>
+  </compounddef>
+</doxygen>

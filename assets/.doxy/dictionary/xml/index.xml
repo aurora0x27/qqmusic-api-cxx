@@ -1,0 +1,1002 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="zh">
+  <compound refid="classqqmusic_1_1details_1_1Api" kind="class"><name>qqmusic::details::Api</name>
+    <member refid="classqqmusic_1_1details_1_1Api_1a791ed8eab14ac351daade395bb862c47" kind="variable"><name>session</name></member>
+    <member refid="classqqmusic_1_1details_1_1Api_1a591a917cfbefd621a516cd57657de8b9" kind="variable"><name>method</name></member>
+    <member refid="classqqmusic_1_1details_1_1Api_1aab09d7b9a0023f4ac4ca29fe717b76b9" kind="variable"><name>common</name></member>
+    <member refid="classqqmusic_1_1details_1_1Api_1abb42a9464eb6b1baeb979116ad254d25" kind="variable"><name>credential</name></member>
+    <member refid="classqqmusic_1_1details_1_1Api_1a37f8716475eaf526dd3f8fd4b0649014" kind="function"><name>Api</name></member>
+    <member refid="classqqmusic_1_1details_1_1Api_1a9a1fcc873609e03bd482c1d876e2b1ab" kind="function"><name>prepare_request</name></member>
+    <member refid="classqqmusic_1_1details_1_1Api_1a2693c79b4c04da2d8d562f891ea3cf38" kind="function"><name>parse_response</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1details_1_1ApiConfig" kind="struct"><name>qqmusic::details::ApiConfig</name>
+    <member refid="structqqmusic_1_1details_1_1ApiConfig_1a3ceac8166ada3326255cb5a6ed0fb897" kind="variable"><name>version</name></member>
+    <member refid="structqqmusic_1_1details_1_1ApiConfig_1ae353cbca6a79deffa8eecff2e54ef0f3" kind="variable"><name>version_code</name></member>
+    <member refid="structqqmusic_1_1details_1_1ApiConfig_1aec1d0d8bf4179639d85534d134e99d27" kind="variable"><name>enable_sign</name></member>
+    <member refid="structqqmusic_1_1details_1_1ApiConfig_1a5b271978435c58e976fd48db2ce47eed" kind="variable"><name>endpoint</name></member>
+    <member refid="structqqmusic_1_1details_1_1ApiConfig_1a9aba23e1dc133b59c4e72f498fec5534" kind="variable"><name>enc_endpoint</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1utils_1_1AsyncExecutor" kind="class"><name>qqmusic::utils::AsyncExecutor</name>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a7433f8c3653864cf081e3660331a7212" kind="variable"><name>ioc</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1ada12c244130984b80a68dac93bb581b5" kind="variable"><name>ioc_thread</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a2a2686dfa2ae9172b5be3e7e1721b142" kind="function"><name>AsyncExecutor</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a64649db21c7b158bf42d3828d851c2f8" kind="function"><name>operator=</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1ae526d2fa9be9a83d709d777725d08c62" kind="function"><name>async_exec</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a40aecaaf9e49f9e9aa9af90ac45988ef" kind="function"><name>async_exec</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1afa1433b7ca4b3f63e2c64b6a16360111" kind="function"><name>async_exec</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a16bc1dee1494d7fe301f8e98fef0c26a" kind="function"><name>async_exec</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1adf1b94c822e23ee401549b7c2466c4e9" kind="function"><name>when_all</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1ad234aad1d30cf6f940984264469535ad" kind="function"><name>shutdown</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a6061fc2c871d76ba68e2b6ae51b1ed57" kind="function"><name>get_instance</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1a11a0ff51b0ac1eb78cf436ee701b8a13" kind="function"><name>AsyncExecutor</name></member>
+    <member refid="classqqmusic_1_1utils_1_1AsyncExecutor_1af71fb5a7112da6d25bd589b6b4a1385f" kind="function"><name>~AsyncExecutor</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1BaseMediaFileType" kind="class"><name>qqmusic::BaseMediaFileType</name>
+    <member refid="classqqmusic_1_1BaseMediaFileType_1a23664a172e188fbcb5af4c80d39bb87b" kind="function"><name>prefix</name></member>
+    <member refid="classqqmusic_1_1BaseMediaFileType_1a869424d2bfc385b3a8e34987590f9a57" kind="function"><name>expandation</name></member>
+    <member refid="classqqmusic_1_1BaseMediaFileType_1a6a82fc4bbc1c5fdf0eda209709579317" kind="function"><name>encrypted</name></member>
+    <member refid="classqqmusic_1_1BaseMediaFileType_1a2049748414337f7068ebe12b86a20e9e" kind="function"><name>~BaseMediaFileType</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1utils_1_1buffer" kind="class"><name>qqmusic::utils::buffer</name>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1a908e0e022319ec472d81b6bf01674e5c" kind="function"><name>buffer</name></member>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1adcf9de5135399d98af966c70169de469" kind="function"><name>buffer</name></member>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1a4dc3563a76dbf97cc8beee1c86b716e7" kind="function"><name>buffer</name></member>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1a081741cda5ced9a78a7ec8f53fc01ccc" kind="function"><name>buffer</name></member>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1a7b0058bf348c1fafbfb29c155bcae72a" kind="function"><name>buffer</name></member>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1aebd3b926b2d874e343d34c9caff039e3" kind="function"><name>buffer</name></member>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1aa444c1dadd1e6bd0194f19034f098048" kind="function"><name>~buffer</name></member>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1a8c7f031a55a06dcbf97fcf18cf23c76e" kind="function"><name>append</name></member>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1af35e7c9aab7fbb00bb93c4fc8d3ac867" kind="function"><name>buffer</name></member>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1a011d1f46190f662b31c70b6d08a43c32" kind="function"><name>operator=</name></member>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1a51e9321c3a5fccb73ba71d99c17a08b3" kind="function"><name>operator+=</name></member>
+    <member refid="classqqmusic_1_1utils_1_1buffer_1a1dd7397987f0a8f363e7c25018d8417b" kind="function"><name>operator+</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1crypto_1_1Cipher" kind="class"><name>qqmusic::crypto::Cipher</name>
+    <member refid="classqqmusic_1_1crypto_1_1Cipher_1a476761cbc0d1723cdfdbec4f1d545107" kind="function"><name>~Cipher</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1Cipher_1ab5110e9fdcf3d956f582e6a0ab761409" kind="function"><name>decrypt</name></member>
+  </compound>
+  <compound refid="structdetails_1_1Constructor" kind="struct"><name>details::Constructor</name>
+    <member refid="structdetails_1_1Constructor_1a2e4422636bbb2eca1c02c8dbc5b47e9e" kind="function"><name>move</name></member>
+    <member refid="structdetails_1_1Constructor_1a1e47dcb6cce20296c3ca427bf5699256" kind="function"><name>copy</name></member>
+    <member refid="structdetails_1_1Constructor_1a5af3b199649d73f48a864126101b4f8a" kind="function"><name>move</name></member>
+    <member refid="structdetails_1_1Constructor_1afdf6ae33c08d96c3efbd0b0cede9633a" kind="function"><name>copy</name></member>
+  </compound>
+  <compound refid="structdetails_1_1Constructor_3_01void_00_01E_01_4" kind="struct"><name>details::Constructor&lt; void, E &gt;</name>
+    <member refid="structdetails_1_1Constructor_3_01void_00_01E_01_4_1a6bfe6c88d1db554f8c76dbd752283d8f" kind="function"><name>move</name></member>
+    <member refid="structdetails_1_1Constructor_3_01void_00_01E_01_4_1adecb297fed05ab7ebd129133ac93fc92" kind="function"><name>copy</name></member>
+    <member refid="structdetails_1_1Constructor_3_01void_00_01E_01_4_1a6ce5e1f9064362fc912729af77b43d0c" kind="function"><name>move</name></member>
+    <member refid="structdetails_1_1Constructor_3_01void_00_01E_01_4_1a4b62aec1887c7f7aa3ab34aab6e8a77b" kind="function"><name>copy</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1utils_1_1Cookie" kind="struct"><name>qqmusic::utils::Cookie</name>
+    <member refid="structqqmusic_1_1utils_1_1Cookie_1a8452e33abf079ce507b1310f51d240be" kind="variable"><name>domain</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Cookie_1a1dcbfa18a495309dbe34fd2157f0394d" kind="variable"><name>path</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Cookie_1aebf1c07b17aaf62c6e7f90e89d8e81cb" kind="variable"><name>key</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Cookie_1acdca996920ea6a532dda7c74253e49c5" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1utils_1_1CookieJar" kind="class"><name>qqmusic::utils::CookieJar</name>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1a6bb362a779d48dd8cd81b8a7789044be" kind="variable"><name>content</name></member>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1a1191a94c38322633defbf61303e517ca" kind="function"><name>CookieJar</name></member>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1a7f79a05750dcc48fa687d0dbe3274981" kind="function"><name>CookieJar</name></member>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1a46c164bb17fb01a2166b657f808abc83" kind="function"><name>CookieJar</name></member>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1aa657e60eec243f17c158a4b18cbaf46f" kind="function"><name>set</name></member>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1aa13147b3ce15a82a73310b8a68acb6c9" kind="function"><name>get</name></member>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1ad80980930f62e7e3d2fea3910be22481" kind="function"><name>del</name></member>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1a52f458018fe3472ccb9e1774cfee3372" kind="function"><name>dump</name></member>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1a355dfac99af941774e5d23c8e3b84ddb" kind="function"><name>serialize</name></member>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1acb338d1f1dac14d6386137a3c336f588" kind="function"><name>clear</name></member>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1a05cceae4db9a26e8604f6d6af8853f55" kind="function"><name>update</name></member>
+    <member refid="classqqmusic_1_1utils_1_1CookieJar_1a2d702f54302b7a97a8bc914d373c0378" kind="function"><name>merge</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1EncryptedSongFileType_1_1CoreData" kind="struct"><name>qqmusic::EncryptedSongFileType::CoreData</name>
+    <member refid="structqqmusic_1_1EncryptedSongFileType_1_1CoreData_1afa6dc73fefdb99b49fb273af46713ae2" kind="variable"><name>start_id</name></member>
+    <member refid="structqqmusic_1_1EncryptedSongFileType_1_1CoreData_1a5efbdac47e5262d88237da7c3977b75c" kind="variable"><name>extention</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1SongFileType_1_1CoreData" kind="struct"><name>qqmusic::SongFileType::CoreData</name>
+    <member refid="structqqmusic_1_1SongFileType_1_1CoreData_1a6f1fe321fd1788f6ef8efaee26103290" kind="variable"><name>start_id</name></member>
+    <member refid="structqqmusic_1_1SongFileType_1_1CoreData_1a04bba1090fcc6a04a0d22822a324869f" kind="variable"><name>extention</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1utils_1_1Credential" kind="class"><name>qqmusic::utils::Credential</name>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a9f44fc2bc053995eb48c9c58395aabf6" kind="variable"><name>openid</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1abc60e20d0e992af1d8c31205ea734445" kind="variable"><name>refresh_token</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a7fd4ba69b2f01df872d46c650c0d9a08" kind="variable"><name>access_token</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1ab5256724a0f36982c3662d40465b3a23" kind="variable"><name>expired_at</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1aa1d3cf96bc0e4366e80ff71f603389f2" kind="variable"><name>musicid</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1ad10ca3e312c13f7c8ad40289bde9488c" kind="variable"><name>musickey</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a58d02494f14d2e9dc60780701e928b55" kind="variable"><name>unionid</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a122e3f956ddb1f1d63f379eea05e4cba" kind="variable"><name>str_musicid</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a29accf456d6a98cbda2e926767167998" kind="variable"><name>refresh_key</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1ae35d08d44164c06e3fb5247dc0b463b0" kind="variable"><name>encryptUin</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a3b6d928af8506d12eca6439a481ba224" kind="variable"><name>loginType</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1acafac6ab23226b6e93b23409101702de" kind="variable"><name>extra_fields</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1ae1ba93e3824b70ad8e5340ce6f762000" kind="function"><name>Credential</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a2f36ecad20819adf6fcb0e88f2787816" kind="function"><name>Credential</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a07d8a1cfe73b0ab2b1c17880535bb8af" kind="function"><name>Credential</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1ac9218de1aa2e48c4b0cecdb631dd5f47" kind="function"><name>from_cache</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a577453a2d2e762407d43206d9a331a85" kind="function"><name>from_cache</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1ac1ddcecc2e8303bb3302fb85b52e5b92" kind="function"><name>is_valid</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1abfcb3281837ded83e1424ca36b4e06c5" kind="function"><name>is_expired</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a58c14e80431b734da21cef47de347c66" kind="function"><name>refresh</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a28a9324b61aca8c0936043ab338bfa4e" kind="function"><name>to_string</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a4e894d27f90e1f7e97c5aaa89f5268eb" kind="function"><name>to_json</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Credential_1a068c8db785100d727f538560d4bff2a7" kind="function"><name>NLOHMANN_DEFINE_TYPE_INTRUSIVE</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1crypto_1_1Decoder" kind="class"><name>qqmusic::crypto::Decoder</name>
+    <member refid="classqqmusic_1_1crypto_1_1Decoder_1abcaeb58062b5fe3ebfafc650292c1f11" kind="variable"><name>ekey</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1Decoder_1a706f9196e756f8b933a36c28db8393bb" kind="variable"><name>key</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1Decoder_1a8c925a58076db9bd133d7d37c0ec3e1f" kind="variable"><name>buf_in</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1Decoder_1af0c99d43f2f201068d086f9202000bdc" kind="variable"><name>buf_out</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1Decoder_1a8541858861fb177af8c0c23f6cfad2ad" kind="variable"><name>cipher</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1Decoder_1a4886e1c82d324b979c27001b51cf2ec0" kind="function"><name>Decoder</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1Decoder_1ae72de37555af2647bd9fe50acd3eac84" kind="function"><name>decrypt</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1Decoder_1a52071e7e14534fb794b6817b6378535d" kind="function"><name>read2buf</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1utils_1_1Device" kind="struct"><name>qqmusic::utils::Device</name>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a20f748c20f458db551815fa9b82f6c77" kind="variable"><name>display</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a9da883834b0bd860e4ba5a6244922782" kind="variable"><name>product</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a91a68ab84a071bbb8f86210977eebf24" kind="variable"><name>device</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1ad8309e77a8a81ffa27c470fab0d8d7ef" kind="variable"><name>board</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a696b528dd59f0bc472598866d4bbe675" kind="variable"><name>model</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a5774c0a784f1d0aa79f9f29234b0be71" kind="variable"><name>fingerprint</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1aa762cb3f2b52ff548c808c00113ebba5" kind="variable"><name>boot_id</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a553ac67c007b1861f556e17fdce6828b" kind="variable"><name>proc_version</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a251522c0f7a286b352dc0e8cbaec32b2" kind="variable"><name>imei</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1aeabdffa9803af3227f8cbe9d22d6d8fd" kind="variable"><name>brand</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1aabe4cb189686fd131c4fa232e3f322f9" kind="variable"><name>bootloader</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a9cdacedf871a8ec63aacdfe4d4691779" kind="variable"><name>base_band</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1af3310ed0efe3b728b8a147f4a0815cff" kind="variable"><name>version</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1afa17ffe554a4e5f12e9f23599b3989d8" kind="variable"><name>sim_info</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1aaddf87d16659d793bcb69e6e93a0e3dc" kind="variable"><name>os_type</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a16734fe5738e690253ecf735f34ecfe6" kind="variable"><name>mac_address</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a21bc2d3ebea255da1771901b74f76ad0" kind="variable"><name>ip_address</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a11d030d58566d00bac2f1db584196697" kind="variable"><name>wifi_bssid</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1ae9e96cb14a4630aa3e6b70330cbfb8eb" kind="variable"><name>wifi_ssid</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a3403cd306801550f524bfeed770a2892" kind="variable"><name>imsi_md5</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a1d595ba9c477b1ba1045c6ea6903e46d" kind="variable"><name>android_id</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1ae29e02ab8ff2f2ac552f903ac6d02c93" kind="variable"><name>apn</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a8778f03fed626e27c84487bb26837d8e" kind="variable"><name>vendor_name</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a6e91bc2a53393df5c0f7c9257c8ba140" kind="variable"><name>vendor_os_name</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a631bbe77db91b3581b70bb0403708c4c" kind="variable"><name>qimei</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1ac63d08eb2a3e3ccda6f9842f8fea9d92" kind="function"><name>Device</name></member>
+    <member refid="structqqmusic_1_1utils_1_1Device_1a593aff49ef00e12b0b7594caba0761ce" kind="function"><name>NLOHMANN_DEFINE_TYPE_INTRUSIVE</name></member>
+  </compound>
+  <compound refid="structdetails_1_1Or_1_1Else" kind="struct"><name>details::Or::Else</name>
+  </compound>
+  <compound refid="structdetails_1_1Or_1_1impl_1_1Else" kind="struct"><name>details::Or::impl::Else</name>
+  </compound>
+  <compound refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Result_3_01T_00_01F_01_4_07Arg_08_4" kind="struct"><name>details::Or::impl::Else&lt; Result&lt; T, F &gt;(Arg)&gt;</name>
+    <member refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Result_3_01T_00_01F_01_4_07Arg_08_4_1ac28ae7046daee889a4ac51d9b37ff175" kind="function"><name>orElse</name></member>
+    <member refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Result_3_01T_00_01F_01_4_07Arg_08_4_1afdd54552d601f6b135df5314e1d72e28" kind="function"><name>orElse</name></member>
+  </compound>
+  <compound refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Result_3_01T_00_01F_01_4_07void_08_4" kind="struct"><name>details::Or::impl::Else&lt; Result&lt; T, F &gt;(void)&gt;</name>
+    <member refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Result_3_01T_00_01F_01_4_07void_08_4_1adb4d5e38c1172ff3f8815629ee1bb812" kind="function"><name>orElse</name></member>
+    <member refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Result_3_01T_00_01F_01_4_07void_08_4_1a491dfc8f54704d2fb29c30a3b9b91c4d" kind="function"><name>orElse</name></member>
+  </compound>
+  <compound refid="structdetails_1_1Or_1_1Else_3_01Ret_07_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::Or::Else&lt; Ret(*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Ret_07_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::Or::impl::Else&lt; Ret(*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1Or_1_1Else_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" kind="struct"><name>details::Or::Else&lt; Ret(Cls::*)(Args...) const &gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" kind="struct"><name>details::Or::impl::Else&lt; Ret(Cls::*)(Args...) const &gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1Or_1_1Else_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::Or::Else&lt; Ret(Cls::*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1Or_1_1impl_1_1Else_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::Or::impl::Else&lt; Ret(Cls::*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="classqqmusic_1_1EncryptedSongFileType" kind="class"><name>qqmusic::EncryptedSongFileType</name>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132" kind="enum"><name>Type</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a54c76ac6f78f06fa0ac26d5aa054aa40" kind="enumvalue"><name>MASTER</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132ab2233f2921ba7e83d64a814f96f14899" kind="enumvalue"><name>ATMOS_2</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a2774ab5986fa335a801e68f11aa365e7" kind="enumvalue"><name>ATMOS_51</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a9175a969d836d88422b0a3ede8cb59a3" kind="enumvalue"><name>FLAC</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132ab1243795ba9a40e7f7737369c695d9bb" kind="enumvalue"><name>OGG_640</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a0529c0692203029f296e5070dfbd9375" kind="enumvalue"><name>OGG_320</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132ad3553e35506af9cb11f18ba66c8633c2" kind="enumvalue"><name>OGG_192</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a01d3cecf75094bdfd0f7e52cdbfb8132a676f32d751ca75498a00d5006f1bcbd3" kind="enumvalue"><name>OGG_96</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a3eab04066ffc08aaeec77ade9d7a243b" kind="variable"><name>inner</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a46749185da546b306e329dcffc5d4912" kind="variable"><name>table</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1ae904f1cfbc331df6cec2417852837bbd" kind="function"><name>EncryptedSongFileType</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1ad8d17fc6dc9b817375ebae199ee4ae7f" kind="function"><name>EncryptedSongFileType</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a2caf7a247b741f3f50f97b8734332749" kind="function"><name>~EncryptedSongFileType</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a3fbc6b8f99511dde35767e578088b296" kind="function"><name>prefix</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a0dc9de2a9d887267cd2df873b02a01cf" kind="function"><name>expandation</name></member>
+    <member refid="classqqmusic_1_1EncryptedSongFileType_1a619a1abb96168eaae876eb8122a0407e" kind="function"><name>encrypted</name></member>
+  </compound>
+  <compound refid="structconcepts_1_1EqualityComparable" kind="struct"><name>concepts::EqualityComparable</name>
+  </compound>
+  <compound refid="structconcepts_1_1EqualityComparable_3_01T_00_01typename_01std_1_1enable__if_3_01true_00_01typenb4b0200ec94bdc3bb35c4a1595f66806" kind="struct"><name>concepts::EqualityComparable&lt; T, typename std::enable_if&lt; true, typename details::void_t&lt; decltype(std::declval&lt; T &gt;()==std::declval&lt; T &gt;())&gt;::type &gt;::type &gt;</name>
+  </compound>
+  <compound refid="structtypes_1_1Err" kind="struct"><name>types::Err</name>
+    <member refid="structtypes_1_1Err_1adc01aa1e2d865aecbbaa5a39e7621429" kind="variable"><name>val</name></member>
+    <member refid="structtypes_1_1Err_1ac61c58384609acc17ecb8294e7f111e6" kind="function"><name>Err</name></member>
+    <member refid="structtypes_1_1Err_1a09c01c29269da183f00d12ead46da764" kind="function"><name>Err</name></member>
+  </compound>
+  <compound refid="structdetails_1_1err__tag" kind="struct"><name>details::err_tag</name>
+  </compound>
+  <compound refid="classqqmusic_1_1utils_1_1Exception" kind="class"><name>qqmusic::utils::Exception</name>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61ed" kind="enum"><name>Kind</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda740b03317ad7756d5227a4dd950444e1" kind="enumvalue"><name>ResponseCodeError</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda230590ea8c016d4cd6c002d2301698ef" kind="enumvalue"><name>CredendialExpiredError</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edabc63855ddec67b1f55ee3c6b85999660" kind="enumvalue"><name>CredentialInvalidError</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda7a4d889d82fcb141a4d432a2eb202f36" kind="enumvalue"><name>LoginError</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda9b6594f656d54889fad15a03efe4d098" kind="enumvalue"><name>SignInvalidError</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edaf678393aba9ad90b7dec7a7fe957eb8b" kind="enumvalue"><name>DataDestroy</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda70d9547f596baea216d692b4fefebb72" kind="enumvalue"><name>RuntimeError</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edada9e09104845c00314685f79d4d64953" kind="enumvalue"><name>NetworkError</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61eda780f3e59c6786d5c96687aedbd3e2abb" kind="enumvalue"><name>JsonError</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edae6e659ca310121f4e7349b04111aa725" kind="enumvalue"><name>OperationOutOfTime</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edadd967bb56ccfc4304106930b811abe03" kind="enumvalue"><name>SslError</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a272788edd862ff2eae6bfd996ecb61edad89787c2717118eb4e8daffefa29fab1" kind="enumvalue"><name>UnknownError</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a5b14ee82a3c415c0fe12636f3e945f96" kind="variable"><name>kind_code</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a0342d601c2e2de8edd2f0520e9316216" kind="variable"><name>reason</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1aec37f28c1d58fd27fb416ebc92c8aae6" kind="variable"><name>ReasonKindMap</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a1dac7af3f35288599f383809d7c9b03b" kind="variable"><name>HttpResponseCodeMap</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a58ea126d9545139b73facb552fdc1ee9" kind="function"><name>Exception</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1abbfeb5373bc5b6b37bd5aea6196e0873" kind="function"><name>Exception</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a10c3e5f7ee5ad9d9bb41e06335115c98" kind="function"><name>Exception</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1af25a4fb741f85d3e6e30cb46512a043e" kind="function"><name>get_error_enum</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a15c335f1802fa23d33d45bad70144bd3" kind="function"><name>kind</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Exception_1a0d5f0c37269e87893c080b83cdba56df" kind="function"><name>what</name></member>
+  </compound>
+  <compound refid="structdetails_1_1IsResult" kind="struct"><name>details::IsResult</name>
+  </compound>
+  <compound refid="structdetails_1_1IsResult_3_01Result_3_01T_00_01E_01_4_01_4" kind="struct"><name>details::IsResult&lt; Result&lt; T, E &gt; &gt;</name>
+  </compound>
+  <compound refid="classqqmusic_1_1crypto_1_1KeyDerive" kind="class"><name>qqmusic::crypto::KeyDerive</name>
+    <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a53ebe1bd9099f55a1ad182195a8efe91" kind="variable"><name>DeriveV2Key1</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a5567133e98efc1e17174e391b63990fc" kind="variable"><name>DeriveV2Key2</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a0bda842e27a16d337d8755775dc8432d" kind="function"><name>derive</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a5a0a8206482bc971539104250a03b365" kind="function"><name>derive_V1</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1af2c373cdfa8bbdade44abddfce23b81b" kind="function"><name>derive_V2</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a08c06a8bd745b3856ea940a6c7734a74" kind="function"><name>decrypt_tencent_tea</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1KeyDerive_1a1f5826cc0002e6c4d76d425c7417577d" kind="function"><name>makeSimpleKey</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1Lyric" kind="struct"><name>qqmusic::Lyric</name>
+    <member refid="structqqmusic_1_1Lyric_1acf72e681db7cafcc17f10aa9457b9054" kind="variable"><name>lyric</name></member>
+    <member refid="structqqmusic_1_1Lyric_1a2227ff43925bb02603b7181fd535dab7" kind="variable"><name>trans</name></member>
+    <member refid="structqqmusic_1_1Lyric_1a78dcde78913d94b1538ae8905b9196ad" kind="variable"><name>roma</name></member>
+  </compound>
+  <compound refid="structdetails_1_1err_1_1impl_1_1Map" kind="struct"><name>details::err::impl::Map</name>
+  </compound>
+  <compound refid="structdetails_1_1err_1_1Map" kind="struct"><name>details::err::Map</name>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1impl_1_1Map" kind="struct"><name>details::ok::impl::Map</name>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1Map" kind="struct"><name>details::ok::Map</name>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Result_3_01U_00_01E_01_4_07Arg_08_4" kind="struct"><name>details::ok::impl::Map&lt; Result&lt; U, E &gt;(Arg)&gt;</name>
+    <member refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Result_3_01U_00_01E_01_4_07Arg_08_4_1a3917bc36b7aeac29eddb0ade934b58d2" kind="function"><name>map</name></member>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Result_3_01U_00_01E_01_4_07void_08_4" kind="struct"><name>details::ok::impl::Map&lt; Result&lt; U, E &gt;(void)&gt;</name>
+    <member refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Result_3_01U_00_01E_01_4_07void_08_4_1a88e653151babb183215f54dcd1a33a9a" kind="function"><name>map</name></member>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1Map_3_01Ret_07_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::ok::Map&lt; Ret(*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Arg_08_4" kind="struct"><name>details::ok::impl::Map&lt; Ret(Arg)&gt;</name>
+    <member refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Arg_08_4_1a309775c25f58c8d80b4781187e865536" kind="function"><name>map</name></member>
+  </compound>
+  <compound refid="structdetails_1_1err_1_1impl_1_1Map_3_01Ret_07Cls_1_1_5_08_07Arg_08_01const_01_4" kind="struct"><name>details::err::impl::Map&lt; Ret(Cls::*)(Arg) const &gt;</name>
+    <member refid="structdetails_1_1err_1_1impl_1_1Map_3_01Ret_07Cls_1_1_5_08_07Arg_08_01const_01_4_1ae106ce99b3fea3dd26368ff859bc5442" kind="function"><name>map</name></member>
+    <member refid="structdetails_1_1err_1_1impl_1_1Map_3_01Ret_07Cls_1_1_5_08_07Arg_08_01const_01_4_1a04a2381e9d93d32a41f4f03760a7cc3b" kind="function"><name>map</name></member>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Cls_1_1_5_08_07Arg_08_01const_01_4" kind="struct"><name>details::ok::impl::Map&lt; Ret(Cls::*)(Arg) const &gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07Cls_1_1_5_08_07Arg_08_4" kind="struct"><name>details::ok::impl::Map&lt; Ret(Cls::*)(Arg)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1Map_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" kind="struct"><name>details::ok::Map&lt; Ret(Cls::*)(Args...) const &gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1Map_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::ok::Map&lt; Ret(Cls::*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07void_08_4" kind="struct"><name>details::ok::impl::Map&lt; Ret(void)&gt;</name>
+    <member refid="structdetails_1_1ok_1_1impl_1_1Map_3_01Ret_07void_08_4_1a6063fdd91e03592517ce8bc2e6e9f1da" kind="function"><name>map</name></member>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1Map_3_01std_1_1function_3_01Ret_07Args_8_8_8_08_4_01_4" kind="struct"><name>details::ok::Map&lt; std::function&lt; Ret(Args...)&gt; &gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1impl_1_1Map_3_01void_07Arg_08_4" kind="struct"><name>details::ok::impl::Map&lt; void(Arg)&gt;</name>
+    <member refid="structdetails_1_1ok_1_1impl_1_1Map_3_01void_07Arg_08_4_1ae268dab7e56ba39cffb4d83d8e5b4a06" kind="function"><name>map</name></member>
+  </compound>
+  <compound refid="structdetails_1_1ok_1_1impl_1_1Map_3_01void_07void_08_4" kind="struct"><name>details::ok::impl::Map&lt; void(void)&gt;</name>
+    <member refid="structdetails_1_1ok_1_1impl_1_1Map_3_01void_07void_08_4_1afac2036e847ae4a9ad9e3e60b7173961" kind="function"><name>map</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1crypto_1_1MapCipher" kind="class"><name>qqmusic::crypto::MapCipher</name>
+    <member refid="classqqmusic_1_1crypto_1_1MapCipher_1ac803eba5b7a507f069942f38da92a616" kind="variable"><name>key</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1MapCipher_1abb21284d1ea901b95299c2e4b93340e1" kind="function"><name>MapCipher</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1MapCipher_1ac6e8db7a5fdaca34ab3e6d3128e87ebf" kind="function"><name>decrypt</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1MvUrl" kind="struct"><name>qqmusic::MvUrl</name>
+    <member refid="structqqmusic_1_1MvUrl_1a3dd35af972d4617c3a5a1d52bef2168b" kind="variable"><name>vid</name></member>
+    <member refid="structqqmusic_1_1MvUrl_1a6b713b93491f340cc3879c511789d0a2" kind="variable"><name>mp4</name></member>
+    <member refid="structqqmusic_1_1MvUrl_1aa6b5a5599b9f5ff86f6782edf09fce6e" kind="variable"><name>hls</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1details_1_1NetworkContext" kind="struct"><name>qqmusic::details::NetworkContext</name>
+    <member refid="structqqmusic_1_1details_1_1NetworkContext_1a0d948e7c3209315101b69a8bf525b386" kind="variable"><name>cookies</name></member>
+    <member refid="structqqmusic_1_1details_1_1NetworkContext_1ace72820f4d35701adaa779001ce18bdc" kind="variable"><name>credential</name></member>
+    <member refid="structqqmusic_1_1details_1_1NetworkContext_1a8a8affb854c40c44cb80e3097545950c" kind="variable"><name>api_config</name></member>
+    <member refid="structqqmusic_1_1details_1_1NetworkContext_1a6dea41385dd7019dd97bb97b25e69376" kind="variable"><name>device</name></member>
+    <member refid="structqqmusic_1_1details_1_1NetworkContext_1ab249576a0de021d17d1593143a243d8b" kind="variable"><name>qimei</name></member>
+    <member refid="structqqmusic_1_1details_1_1NetworkContext_1a5a6a13e9292d5a3e5377f5a55ce4c076" kind="variable"><name>ignore_ssl_error</name></member>
+    <member refid="structqqmusic_1_1details_1_1NetworkContext_1a1445f0dbfca981bd12c9cf4bc0a61036" kind="variable"><name>timeout</name></member>
+    <member refid="structqqmusic_1_1details_1_1NetworkContext_1af460eeb0c9590526acbbf502e59d04f8" kind="function"><name>NetworkContext</name></member>
+  </compound>
+  <compound refid="structtypes_1_1Ok" kind="struct"><name>types::Ok</name>
+    <member refid="structtypes_1_1Ok_1a64ad615f810c220cc41cc869a9cbccaf" kind="variable"><name>val</name></member>
+    <member refid="structtypes_1_1Ok_1a51a17efeebc165cd42c07824f29953f7" kind="function"><name>Ok</name></member>
+    <member refid="structtypes_1_1Ok_1a1749fd0d008f382b71b3fbfe98e5b895" kind="function"><name>Ok</name></member>
+  </compound>
+  <compound refid="structtypes_1_1Ok_3_01void_01_4" kind="struct"><name>types::Ok&lt; void &gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1ok__tag" kind="struct"><name>details::ok_tag</name>
+  </compound>
+  <compound refid="structqqmusic_1_1utils_1_1OSVersion" kind="struct"><name>qqmusic::utils::OSVersion</name>
+    <member refid="structqqmusic_1_1utils_1_1OSVersion_1a7354e7e76b6933ba246bf8dbc9a24a87" kind="variable"><name>incremental</name></member>
+    <member refid="structqqmusic_1_1utils_1_1OSVersion_1ab5bebc675eacc80330d87e2c39728c8a" kind="variable"><name>release</name></member>
+    <member refid="structqqmusic_1_1utils_1_1OSVersion_1aaf16a5644c3c93a75e099e96638d65eb" kind="variable"><name>codename</name></member>
+    <member refid="structqqmusic_1_1utils_1_1OSVersion_1a1dc5e95b89f44f3c044d5db68012ed62" kind="variable"><name>sdk</name></member>
+    <member refid="structqqmusic_1_1utils_1_1OSVersion_1a24a3d7e3e5a6213376908fd870a92d7f" kind="function"><name>OSVersion</name></member>
+    <member refid="structqqmusic_1_1utils_1_1OSVersion_1a4c67fa93ee08920b571c2d09d2322aa8" kind="function"><name>NLOHMANN_DEFINE_TYPE_INTRUSIVE</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1utils_1_1PathManager" kind="class"><name>qqmusic::utils::PathManager</name>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1aebe7a9b0bfbbc6de4a125bc6c900988a" kind="variable"><name>cache_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1a7902439cc5784a9fb15deed1a3917c86" kind="variable"><name>log_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1ac86d239729aae96693a47e17fd89aeb8" kind="variable"><name>download_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1a1a64b30a96781cd11f5f89416a0cf65c" kind="function"><name>get_instance</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1a693cd422a26943d9316a0efa37252f52" kind="function"><name>set_download_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1a9252bb643b6964ca888f3f42646ad096" kind="function"><name>set_download_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1ad30fa0e42bf89006eca19034e222436d" kind="function"><name>set_cache_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1a87da555d36991f57ce4f072b2a8577d6" kind="function"><name>set_cache_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1a1607160fdd963aa66d83b83652fc44a4" kind="function"><name>set_log_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1a748b7d312c886c1308d9bd28cf267328" kind="function"><name>set_log_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1a3af65f173e5c25e5333c41fd589c6cb5" kind="function"><name>get_cache_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1a314d4d03e328434a1d7b1503e2d1c6e8" kind="function"><name>get_download_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1ab45d65d8bb0e18e607ccb8bbe25ed30f" kind="function"><name>get_log_path</name></member>
+    <member refid="classqqmusic_1_1utils_1_1PathManager_1a3c4ebef8866c5f66cea6eb879faadca6" kind="function"><name>PathManager</name></member>
+  </compound>
+  <compound refid="structPhoneLoginEvent" kind="struct"><name>PhoneLoginEvent</name>
+  </compound>
+  <compound refid="structqqmusic_1_1PhoneLoginResult" kind="struct"><name>qqmusic::PhoneLoginResult</name>
+    <member refid="structqqmusic_1_1PhoneLoginResult_1ac6041cda924c95c1370f43a618e76316" kind="variable"><name>event</name></member>
+    <member refid="structqqmusic_1_1PhoneLoginResult_1ad6a2968d844de445abe07cc3b8937e5f" kind="variable"><name>msg</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1utils_1_1QimeiResult" kind="struct"><name>qqmusic::utils::QimeiResult</name>
+    <member refid="structqqmusic_1_1utils_1_1QimeiResult_1a92ce9fc41677d8424343f296f51b1137" kind="variable"><name>q16</name></member>
+    <member refid="structqqmusic_1_1utils_1_1QimeiResult_1abf7a36c379a4ba8da8234e6216c0179e" kind="variable"><name>q36</name></member>
+    <member refid="structqqmusic_1_1utils_1_1QimeiResult_1a174effcfc82d85d35978091c83fd18fa" kind="function"><name>NLOHMANN_DEFINE_TYPE_INTRUSIVE</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1QRCode" kind="struct"><name>qqmusic::QRCode</name>
+    <member refid="structqqmusic_1_1QRCode_1a5a9693be2fb7cb7021a257b5bb22bb36" kind="variable"><name>qr_type</name></member>
+    <member refid="structqqmusic_1_1QRCode_1a1dfc27ceb2d7374160b2f67c6c2d91c5" kind="variable"><name>identifier</name></member>
+    <member refid="structqqmusic_1_1QRCode_1a9e70b93ed7fa3b3aaed1362c3f5293c8" kind="variable"><name>mimie_type</name></member>
+    <member refid="structqqmusic_1_1QRCode_1a443911364d281300478db9c54386aecd" kind="variable"><name>data</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1QRCodeLoginEvent" kind="class"><name>qqmusic::QRCodeLoginEvent</name>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689" kind="enum"><name>Status</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a2ba22e58ca17bb728d522bba36cf8350" kind="enumvalue"><name>DONE</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689ae0740abfbc61bc2be0bfa78af61106ae" kind="enumvalue"><name>SCAN</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a8d428c502adec040b6a51e880034b9f4" kind="enumvalue"><name>CONF</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a499a6c694b83db642a374bbc7cb07711" kind="enumvalue"><name>REFUSE</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a070a0fb40f6c308ab544b227660aadff" kind="enumvalue"><name>TIMEOUT</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a1458cff4612a572a8be8f43e6721b689a03570470bad94692ce93e32700d2e1cb" kind="enumvalue"><name>OTHER</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a4712b6818b2af778e1a293e4d2163a16" kind="variable"><name>status</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a7d8056b7f7577a74f1fbe3d794642618" kind="variable"><name>name_map</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1ac5df038d39e4b9a58625d32ed106476e" kind="function"><name>QRCodeLoginEvent</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1af1f0224fc3c370b8020b4986debb6a1a" kind="function"><name>QRCodeLoginEvent</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1ad3030239af1e0b0f64f20a4137d50529" kind="function"><name>operator==</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a73a19988749761086db795ebf0c16640" kind="function"><name>operator!=</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a7e7f8ea7d1d36145ca3fa0a143b923ce" kind="function"><name>operator==</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a3f331da5f77cb1041ee199471a17548d" kind="function"><name>operator!=</name></member>
+    <member refid="classqqmusic_1_1QRCodeLoginEvent_1a446efdd058fd92ca99519e6a84b52a40" kind="function"><name>name</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1QRCodeLoginResult" kind="struct"><name>qqmusic::QRCodeLoginResult</name>
+    <member refid="structqqmusic_1_1QRCodeLoginResult_1ac1c5579a18e7c04a39aac1bc7739766f" kind="variable"><name>status</name></member>
+    <member refid="structqqmusic_1_1QRCodeLoginResult_1a81673639fc4c2ec7d00f9e61b4e63b42" kind="variable"><name>credential</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1crypto_1_1RC4Cipher" kind="class"><name>qqmusic::crypto::RC4Cipher</name>
+    <member refid="classqqmusic_1_1crypto_1_1RC4Cipher_1aa4f77d4eef176ceb4536471ea2c4ab90" kind="variable"><name>key</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1RC4Cipher_1a3d92369fda693ac1997440e4714e91a8" kind="function"><name>RC4Cipher</name></member>
+    <member refid="classqqmusic_1_1crypto_1_1RC4Cipher_1a8a465e31399c38ef1efe0e75ee4324b8" kind="function"><name>decrypt</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1details_1_1RequestParam" kind="struct"><name>qqmusic::details::RequestParam</name>
+    <member refid="structqqmusic_1_1details_1_1RequestParam_1a795b019af4d9755033be7709ed58123c" kind="variable"><name>url</name></member>
+    <member refid="structqqmusic_1_1details_1_1RequestParam_1a355e33e7a83a36e68399a1a0e4e9e0bc" kind="variable"><name>req</name></member>
+  </compound>
+  <compound refid="structResult" kind="struct"><name>Result</name>
+    <member refid="structResult_1af98d6550649fbcdc455364b54f8b16e6" kind="typedef"><name>storage_type</name></member>
+    <member refid="structResult_1a74f78567f924e8e6b5e949ac48e918cf" kind="variable"><name>ok_</name></member>
+    <member refid="structResult_1ad03d3d936cf4812c14e28b07dcb7291e" kind="variable"><name>storage_</name></member>
+    <member refid="structResult_1a590e045fd2f5067b615356dde188deb0" kind="function"><name>Result</name></member>
+    <member refid="structResult_1a0cd7d60df54755abe4007132d1462b74" kind="function"><name>Result</name></member>
+    <member refid="structResult_1ab6d4a9fc433978777fc4b44ceaa627f9" kind="function"><name>Result</name></member>
+    <member refid="structResult_1ab0ec4a6e5b030b32596842d7fe1ac1af" kind="function"><name>Result</name></member>
+    <member refid="structResult_1aae629483cfa83ecede1bbc59d16d1d1f" kind="function"><name>~Result</name></member>
+    <member refid="structResult_1a7374db4754c5c9885e9dfd100fa3e963" kind="function"><name>isOk</name></member>
+    <member refid="structResult_1a6c34b40e3f8c97c61d879581f82fb770" kind="function"><name>isErr</name></member>
+    <member refid="structResult_1a0850b722b5843b4b7663acede04dbb64" kind="function"><name>expect</name></member>
+    <member refid="structResult_1acf6a7b2ee2edcff2d3e8a0eacb482575" kind="function"><name>map</name></member>
+    <member refid="structResult_1a1d61b0674d434440b52f424bb237ede8" kind="function"><name>mapError</name></member>
+    <member refid="structResult_1ada61fbf1bd1d6cb68f501a39490962a1" kind="function"><name>then</name></member>
+    <member refid="structResult_1afef9859abb2038614c933ff282b88478" kind="function"><name>otherwise</name></member>
+    <member refid="structResult_1abee93968855c953526f3562ee69bec1f" kind="function"><name>orElse</name></member>
+    <member refid="structResult_1a9ab441d608b325add8ceb25ce646d9ec" kind="function"><name>storage</name></member>
+    <member refid="structResult_1ae502cb8d87eae5b28f4ad0ad368bc26a" kind="function"><name>storage</name></member>
+    <member refid="structResult_1a498d2ad8d52aec224a66df039b44601e" kind="function"><name>unwrapOr</name></member>
+    <member refid="structResult_1a131f9084fb730af2761ca9e877244744" kind="function"><name>unwrap</name></member>
+    <member refid="structResult_1a2fd0da020ddbd4efa5f5c3b4c24adb3f" kind="function"><name>unwrapErr</name></member>
+    <member refid="structResult_1acdb390cf38a63732552925b6af0403b5" kind="function"><name>expect_impl</name></member>
+    <member refid="structResult_1a8bd718600fa394ddfc55a6fde1ecd0ae" kind="function"><name>expect_impl</name></member>
+  </compound>
+  <compound refid="structdetails_1_1impl_1_1result__of" kind="struct"><name>details::impl::result_of</name>
+  </compound>
+  <compound refid="structdetails_1_1result__of" kind="struct"><name>details::result_of</name>
+  </compound>
+  <compound refid="structdetails_1_1result__of_3_01Ret_07_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::result_of&lt; Ret(*)(Args...)&gt;</name>
+    <member refid="structdetails_1_1result__of_3_01Ret_07_5_08_07Args_8_8_8_08_4_1a3a6ba53bb04b85c16334023dd4bda1b1" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structdetails_1_1impl_1_1result__of_3_01Ret_07Args_8_8_8_08_4" kind="struct"><name>details::impl::result_of&lt; Ret(Args...)&gt;</name>
+    <member refid="structdetails_1_1impl_1_1result__of_3_01Ret_07Args_8_8_8_08_4_1a33462afb1541b90727c735146286d5fb" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structdetails_1_1result__of_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" kind="struct"><name>details::result_of&lt; Ret(Cls::*)(Args...) const &gt;</name>
+    <member refid="structdetails_1_1result__of_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4_1aebc83fab2247c7f5b372bbac54b2f7d8" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structdetails_1_1impl_1_1result__of_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::impl::result_of&lt; Ret(Cls::*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1ResultErrType" kind="struct"><name>details::ResultErrType</name>
+    <member refid="structdetails_1_1ResultErrType_1a20f6d18d2c3ec9b4ea6811bf2c12b612" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structdetails_1_1ResultErrType_3_01Result_3_01T_00_01E_01_4_01_4" kind="struct"><name>details::ResultErrType&lt; Result&lt; T, E &gt; &gt;</name>
+    <member refid="structdetails_1_1ResultErrType_3_01Result_3_01T_00_01E_01_4_01_4_1a92462d962a31bd08741f41d035fd4b5d" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structdetails_1_1ResultOkType" kind="struct"><name>details::ResultOkType</name>
+    <member refid="structdetails_1_1ResultOkType_1a5b602fec87395b1f76bb96d75e7c5d2f" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structdetails_1_1ResultOkType_3_01Result_3_01T_00_01E_01_4_01_4" kind="struct"><name>details::ResultOkType&lt; Result&lt; T, E &gt; &gt;</name>
+    <member refid="structdetails_1_1ResultOkType_3_01Result_3_01T_00_01E_01_4_01_4_1a6c1e9c46971e27ad7ef69435e6d71008" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1utils_1_1Session" kind="class"><name>qqmusic::utils::Session</name>
+    <member refid="classqqmusic_1_1utils_1_1Session_1ac01f2e55f53ab751ca060dd59189c930" kind="friend"><name>SessionManager</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1abe6f8a5172e0b9a193cf118c5c1f8f1e" kind="friend"><name>SessionGuard</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1a3254225f77069e853bef3bcb9079b816" kind="variable"><name>lock</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1a7d1ef4dddd6b5f8e900420043aeb3c9d" kind="variable"><name>global_ctx</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1a8dee2ca3cf11fcd7175272ce162cb022" kind="variable"><name>local_ctx</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1a83b986a3a6a6796265efa649668ae4d1" kind="variable"><name>ioc</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1a99c57b319c8e1a3ecfa7103e74dcb250" kind="variable"><name>ssl_ctx</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1a3cd2fb2166ce8bf325efdf31499e2798" kind="function"><name>Session</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1a8d8c7fecadaf38903c8272d10be84983" kind="function"><name>Session</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1a2325c96c481b9f49eaa7790cb528cc16" kind="function"><name>get_context_ref</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1a4ac0a3a73bb0c5f6efa9e99e785c9a66" kind="function"><name>sync_global</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1a46f92ff5aedd4f5fb62927a579d04b87" kind="function"><name>update_local</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1ae2c3db5c443eff967e7878ac53f360b2" kind="function"><name>perform_request</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1ac45a1f32dae00dc23677561e59124b69" kind="function"><name>handle_http_request</name></member>
+    <member refid="classqqmusic_1_1utils_1_1Session_1a721356c5b8cefc52742dc07c6e35ab3f" kind="function"><name>handle_https_request</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1utils_1_1SessionGuard" kind="class"><name>qqmusic::utils::SessionGuard</name>
+    <member refid="classqqmusic_1_1utils_1_1SessionGuard_1aa650f3cc4af05e0111a53a6244db643b" kind="variable"><name>session_manager</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionGuard_1ae72a25440759ec2fe0c365f8f8c362eb" kind="function"><name>SessionGuard</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionGuard_1a7763b3b3856c52cc232ccbddd288e220" kind="function"><name>SessionGuard</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionGuard_1af561e4b278ccf492dafb5ad613d8addb" kind="function"><name>~SessionGuard</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1utils_1_1SessionManager" kind="class"><name>qqmusic::utils::SessionManager</name>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1aae863bddf6398d4115aa359705719470" kind="variable"><name>lock</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1af3f529a220c4e2750cc29fd11a72f616" kind="variable"><name>ctx</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1a21b29f7903c756896ef913c15e5dfe3a" kind="variable"><name>context_stack</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1aeae51225ed2e06248e60441ef95ca92f" kind="variable"><name>ioc</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1a0ca08b4906246d1ffe1ac8d55bafd689" kind="variable"><name>ssl_ctx</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1a9869f9a7d3f60db7a2197e87001fc1b4" kind="function"><name>SessionManager</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1ad364e9c50d94986e40ad7b1a19037688" kind="function"><name>operator=</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1a6e5f55f1a811bd32691c5ea7e9b8f993" kind="function"><name>get_session</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1abce5a80942ee98bb1053d347c9a6b96b" kind="function"><name>set_context</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1a86684de83c0dee48dcafca02d21f9f17" kind="function"><name>push_context</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1abc2de031ff9580f4186b0f047bdd6ae8" kind="function"><name>pop_context</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1ab45ddc12c37adfcfdb36cf9e7527ab01" kind="function"><name>get_instance</name></member>
+    <member refid="classqqmusic_1_1utils_1_1SessionManager_1ac2f641896c7d48514dd957eba3c5dbe6" kind="function"><name>SessionManager</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1SongFileType" kind="class"><name>qqmusic::SongFileType</name>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069" kind="enum"><name>Type</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069affbc21067b6cec574c3057def37b5d77" kind="enumvalue"><name>MASTER</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069acf591e8e0abb762619a5fa718a6b097c" kind="enumvalue"><name>ATMOS_2</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069a08d3b265dad720f4a0155d11aab1c1da" kind="enumvalue"><name>ATMOS_51</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069af58add5ccbd64b1540c8e344626efdfb" kind="enumvalue"><name>FLAC</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069a4033ac4ed2d0f9ba49c785446f102e64" kind="enumvalue"><name>OGG_640</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069a0f272e2de14d0683adbb69cf19697d7f" kind="enumvalue"><name>OGG_320</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069a48ae5b30ae7ed195856f7b7c20751c03" kind="enumvalue"><name>OGG_192</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069a812453820585a8a8c63b656338584e51" kind="enumvalue"><name>OGG_96</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069a4887ce1fdc53ff8910a6e4fdc89dca00" kind="enumvalue"><name>MP3_320</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069a781b67af45d3b43ea6814e5a134f17d3" kind="enumvalue"><name>MP3_128</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069a02dd71f0eaa4516befd77ed48904870a" kind="enumvalue"><name>ACC_192</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069afc9b56702700ef7534407434637ccd21" kind="enumvalue"><name>ACC_96</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad7b1f28ca4cd8fe864baa97e4089e069aae5af89095453f2ca73daac2d6394985" kind="enumvalue"><name>ACC_48</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1a9a2311a63f68cc6103c9a1c1ce891640" kind="variable"><name>inner</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1a434ba2e9e03832702e9695fd2bf887b4" kind="variable"><name>table</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad5161940c54eaee48a33ad6b67fe29e7" kind="function"><name>SongFileType</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1af3526e238e28ec1958227a350fcae661" kind="function"><name>SongFileType</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ad08cffc3335ac465af9d7a48d6fd148f" kind="function"><name>~SongFileType</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1a09bed25d3767fd407d5437f6f4f8abf7" kind="function"><name>prefix</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1a6706770607800ea19f0d0c467eab66dd" kind="function"><name>expandation</name></member>
+    <member refid="classqqmusic_1_1SongFileType_1ae87c8783caf034d89c744d9ac0ba8381" kind="function"><name>encrypted</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1SongInfo" kind="struct"><name>qqmusic::SongInfo</name>
+    <member refid="structqqmusic_1_1SongInfo_1a9556f9943461b3cc645e1066e6664985" kind="variable"><name>mid</name></member>
+    <member refid="structqqmusic_1_1SongInfo_1afec002a2f6a505875c8e77cb952c80d9" kind="variable"><name>url</name></member>
+    <member refid="structqqmusic_1_1SongInfo_1a7b4cc7c2cc51e337a5ba1ac540756fc1" kind="variable"><name>ekey</name></member>
+  </compound>
+  <compound refid="structdetails_1_1Storage" kind="struct"><name>details::Storage</name>
+    <member refid="structdetails_1_1Storage_1ab4e78c005c6d47baf7406d14794488d0" kind="typedef"><name>type</name></member>
+    <member refid="structdetails_1_1Storage_1a69dcb4f655f865d7b4d4cbffcf3d084a" kind="variable"><name>Size</name></member>
+    <member refid="structdetails_1_1Storage_1a4774f5fa801f8251672e9d7ac86cf7a8" kind="variable"><name>Align</name></member>
+    <member refid="structdetails_1_1Storage_1ae10e9bf917a289b399cef12991371ea4" kind="variable"><name>storage_</name></member>
+    <member refid="structdetails_1_1Storage_1ae90385e77f5bb2aab507c66e2ccb5c11" kind="variable"><name>initialized_</name></member>
+    <member refid="structdetails_1_1Storage_1af587667c0be5baf4cae2e39b059c312a" kind="function"><name>Storage</name></member>
+    <member refid="structdetails_1_1Storage_1a1f3c8e3c56170523dbd197359109bdf0" kind="function"><name>construct</name></member>
+    <member refid="structdetails_1_1Storage_1a3cfe59bca2ecd549bc36b1fe307480ee" kind="function"><name>construct</name></member>
+    <member refid="structdetails_1_1Storage_1a8ad26b40dfda16944a7acf92b93be356" kind="function"><name>rawConstruct</name></member>
+    <member refid="structdetails_1_1Storage_1a76f718d1f68d804ddd2c08c0bf960aa9" kind="function"><name>get</name></member>
+    <member refid="structdetails_1_1Storage_1a1168b67335f4536134b9aba89a3ae9e0" kind="function"><name>get</name></member>
+    <member refid="structdetails_1_1Storage_1a77bffc80335b4d232ead4cac9a508bea" kind="function"><name>destroy</name></member>
+    <member refid="structdetails_1_1Storage_1aebc9643256be1e1d18d35f663b491481" kind="function"><name>destroy</name></member>
+  </compound>
+  <compound refid="structdetails_1_1Storage_3_01void_00_01E_01_4" kind="struct"><name>details::Storage&lt; void, E &gt;</name>
+    <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a32a6b725aabb8419ca0452a470ba05dc" kind="typedef"><name>type</name></member>
+    <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1ab36e4740bdf1288fd33d0d7593ec9294" kind="variable"><name>storage_</name></member>
+    <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a7b0c28f7aaeccd09cfa815d95903e5cf" kind="variable"><name>initialized_</name></member>
+    <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1aefbb72da6c9a48f77e307b793a083dfb" kind="function"><name>construct</name></member>
+    <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1adc8de2414e6060f7a143d1c9528adc43" kind="function"><name>construct</name></member>
+    <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a850fd4ecce6aae3ebcb7284a1e6aacf1" kind="function"><name>rawConstruct</name></member>
+    <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a498d2e2106e10e23cbdbfbe30184283e" kind="function"><name>destroy</name></member>
+    <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a9d435e46b0ab9a5f61a3574ca9c45936" kind="function"><name>destroy</name></member>
+    <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1ae5f1acc69b83bcc62d487de0b8014eb4" kind="function"><name>get</name></member>
+    <member refid="structdetails_1_1Storage_3_01void_00_01E_01_4_1a3c3977b0fe6491dddec427f79c388095" kind="function"><name>get</name></member>
+  </compound>
+  <compound refid="structqqmusic_1_1TabType_1_1Tab" kind="struct"><name>qqmusic::TabType::Tab</name>
+    <member refid="structqqmusic_1_1TabType_1_1Tab_1a3561dd5f96fee874ea96f1e5d3c28bb0" kind="variable"><name>tab_id</name></member>
+    <member refid="structqqmusic_1_1TabType_1_1Tab_1a2ddaf2219fdcbf20b14b70e4a6c31195" kind="variable"><name>tab_name</name></member>
+  </compound>
+  <compound refid="classqqmusic_1_1TabType" kind="class"><name>qqmusic::TabType</name>
+    <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728" kind="enum"><name>Type</name></member>
+    <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a12892463c66d75e451f4df9fb65d9b18" kind="enumvalue"><name>WIKI</name></member>
+    <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728adbacd9db57ae4b020e0c5024e745c1c5" kind="enumvalue"><name>ALBUM</name></member>
+    <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a2d4418f5f37512925afcf30533d371f0" kind="enumvalue"><name>COMPOSER</name></member>
+    <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728acc52ae2d3dd570defb553a87e76560c8" kind="enumvalue"><name>LYRICIST</name></member>
+    <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728abafca60da2ec7935ced3300f50a1fd88" kind="enumvalue"><name>PRODUCER</name></member>
+    <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728aad60dcef9211bd43e14c083f255f4f0a" kind="enumvalue"><name>ARRANGER</name></member>
+    <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a2d7c1fbcdc7d70e67cf67c7ed879b8db" kind="enumvalue"><name>MUSICIAN</name></member>
+    <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728a45afbcd8801876720602ecbd303a38c2" kind="enumvalue"><name>SONG</name></member>
+    <member refid="classqqmusic_1_1TabType_1a4de8a0882517a49a72bb00ec9b203728ab01d7c8255c36bf4dcb1c6157d6a6aae" kind="enumvalue"><name>VIDEO</name></member>
+    <member refid="classqqmusic_1_1TabType_1a9a5e6b535478b2d1eb77e292a943b2e8" kind="variable"><name>inner</name></member>
+    <member refid="classqqmusic_1_1TabType_1af4691d0b3fe706275959592714c957c7" kind="variable"><name>tab_data</name></member>
+    <member refid="classqqmusic_1_1TabType_1a0eec398eb62602ff03ee301b741175e9" kind="function"><name>TabType</name></member>
+    <member refid="classqqmusic_1_1TabType_1abd60790952b9cc0ecfd1b578d33a0902" kind="function"><name>TabType</name></member>
+    <member refid="classqqmusic_1_1TabType_1aa0d5c78e9fe258072300fc1b059a5cb8" kind="function"><name>get_id</name></member>
+    <member refid="classqqmusic_1_1TabType_1af6f8abdf84b789ac0ee08d0b1f6f8756" kind="function"><name>get_name</name></member>
+  </compound>
+  <compound refid="structdetails_1_1And_1_1impl_1_1Then" kind="struct"><name>details::And::impl::Then</name>
+  </compound>
+  <compound refid="structdetails_1_1And_1_1Then" kind="struct"><name>details::And::Then</name>
+  </compound>
+  <compound refid="structdetails_1_1And_1_1impl_1_1Then_3_01Ret_07_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::And::impl::Then&lt; Ret(*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1And_1_1Then_3_01Ret_07_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::And::Then&lt; Ret(*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1And_1_1impl_1_1Then_3_01Ret_07Arg_08_4" kind="struct"><name>details::And::impl::Then&lt; Ret(Arg)&gt;</name>
+    <member refid="structdetails_1_1And_1_1impl_1_1Then_3_01Ret_07Arg_08_4_1a705360a53655d7ffccd0c720a77c41bb" kind="function"><name>then</name></member>
+  </compound>
+  <compound refid="structdetails_1_1And_1_1impl_1_1Then_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" kind="struct"><name>details::And::impl::Then&lt; Ret(Cls::*)(Args...) const &gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1And_1_1Then_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" kind="struct"><name>details::And::Then&lt; Ret(Cls::*)(Args...) const &gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1And_1_1impl_1_1Then_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::And::impl::Then&lt; Ret(Cls::*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1And_1_1Then_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::And::Then&lt; Ret(Cls::*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1And_1_1impl_1_1Then_3_01Ret_07void_08_4" kind="struct"><name>details::And::impl::Then&lt; Ret(void)&gt;</name>
+    <member refid="structdetails_1_1And_1_1impl_1_1Then_3_01Ret_07void_08_4_1a7a88bc2892555befb57e9f6e77cae256" kind="function"><name>then</name></member>
+  </compound>
+  <compound refid="structdetails_1_1void__t" kind="struct"><name>details::void_t</name>
+    <member refid="structdetails_1_1void__t_1ac048dfbe282b9b3e7bacedf3b0909169" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structdetails_1_1Other_1_1impl_1_1Wise" kind="struct"><name>details::Other::impl::Wise</name>
+  </compound>
+  <compound refid="structdetails_1_1Other_1_1Wise" kind="struct"><name>details::Other::Wise</name>
+  </compound>
+  <compound refid="structdetails_1_1Other_1_1impl_1_1Wise_3_01Ret_07_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::Other::impl::Wise&lt; Ret(*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1Other_1_1Wise_3_01Ret_07_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::Other::Wise&lt; Ret(*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1Other_1_1impl_1_1Wise_3_01Ret_07Arg_08_4" kind="struct"><name>details::Other::impl::Wise&lt; Ret(Arg)&gt;</name>
+    <member refid="structdetails_1_1Other_1_1impl_1_1Wise_3_01Ret_07Arg_08_4_1a399df5e28a735deef29f6895f998ef4f" kind="function"><name>otherwise</name></member>
+  </compound>
+  <compound refid="structdetails_1_1Other_1_1impl_1_1Wise_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" kind="struct"><name>details::Other::impl::Wise&lt; Ret(Cls::*)(Args...) const &gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1Other_1_1Wise_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_01const_01_4" kind="struct"><name>details::Other::Wise&lt; Ret(Cls::*)(Args...) const &gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1Other_1_1impl_1_1Wise_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::Other::impl::Wise&lt; Ret(Cls::*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="structdetails_1_1Other_1_1Wise_3_01Ret_07Cls_1_1_5_08_07Args_8_8_8_08_4" kind="struct"><name>details::Other::Wise&lt; Ret(Cls::*)(Args...)&gt;</name>
+  </compound>
+  <compound refid="namespaceconcepts" kind="namespace"><name>concepts</name>
+  </compound>
+  <compound refid="namespacedetails" kind="namespace"><name>details</name>
+    <member refid="details_2result_8h_1a597f8665b7f811e0e3458709ea6c668c" kind="function"><name>map</name></member>
+    <member refid="details_2result_8h_1a2030738f8e724d2be44da4d6a355f9d1" kind="function"><name>mapError</name></member>
+    <member refid="details_2result_8h_1acdc946fd10251915ff4f80acc56d5131" kind="function"><name>then</name></member>
+    <member refid="details_2result_8h_1a4f0f3a3450293008baaf5a7ed4c7907e" kind="function"><name>otherwise</name></member>
+    <member refid="details_2result_8h_1a4bc294d0174456a77055aadae3b93433" kind="function"><name>orElse</name></member>
+  </compound>
+  <compound refid="namespacedetails_1_1And" kind="namespace"><name>details::And</name>
+  </compound>
+  <compound refid="namespacedetails_1_1And_1_1impl" kind="namespace"><name>details::And::impl</name>
+  </compound>
+  <compound refid="namespacedetails_1_1err" kind="namespace"><name>details::err</name>
+  </compound>
+  <compound refid="namespacedetails_1_1err_1_1impl" kind="namespace"><name>details::err::impl</name>
+  </compound>
+  <compound refid="namespacedetails_1_1impl" kind="namespace"><name>details::impl</name>
+  </compound>
+  <compound refid="namespacedetails_1_1ok" kind="namespace"><name>details::ok</name>
+  </compound>
+  <compound refid="namespacedetails_1_1ok_1_1impl" kind="namespace"><name>details::ok::impl</name>
+  </compound>
+  <compound refid="namespacedetails_1_1Or" kind="namespace"><name>details::Or</name>
+  </compound>
+  <compound refid="namespacedetails_1_1Or_1_1impl" kind="namespace"><name>details::Or::impl</name>
+  </compound>
+  <compound refid="namespacedetails_1_1Other" kind="namespace"><name>details::Other</name>
+  </compound>
+  <compound refid="namespacedetails_1_1Other_1_1impl" kind="namespace"><name>details::Other::impl</name>
+  </compound>
+  <compound refid="namespaceqqmusic" kind="namespace"><name>qqmusic</name>
+    <member refid="album_8h_1a51db264092be9c3ff64069864a5afdbd" kind="enum"><name>CoverSize</name></member>
+    <member refid="album_8h_1a51db264092be9c3ff64069864a5afdbda9b9c17e13f0e3dc9860a26e08b59b2a7" kind="enumvalue"><name>SMALL</name></member>
+    <member refid="album_8h_1a51db264092be9c3ff64069864a5afdbda5b39c8b553c821e7cddc6da64b5bd2ee" kind="enumvalue"><name>DEFAULT</name></member>
+    <member refid="album_8h_1a51db264092be9c3ff64069864a5afdbda714d40c49a4d3127097951042ed9f7e5" kind="enumvalue"><name>MIDIUM</name></member>
+    <member refid="album_8h_1a51db264092be9c3ff64069864a5afdbda71726adf0ff60cd03eaf3c515883eeb8" kind="enumvalue"><name>LARGE</name></member>
+    <member refid="login_8h_1a3cb444ca9c8abe7cb599d88af731cbcb" kind="enum"><name>QRLoginType</name></member>
+    <member refid="login_8h_1a3cb444ca9c8abe7cb599d88af731cbcba7e56035a736d269ad670f312496a0846" kind="enumvalue"><name>QQ</name></member>
+    <member refid="login_8h_1a3cb444ca9c8abe7cb599d88af731cbcbaf597273dbad55bb6ae9b40ec8dfd7655" kind="enumvalue"><name>WX</name></member>
+    <member refid="login_8h_1aafd3dc585b16ba4327a777f8d20ad857" kind="enum"><name>PhoneLoginEvent</name></member>
+    <member refid="login_8h_1aafd3dc585b16ba4327a777f8d20ad857a548e51fa67d541384e9585adf0db95dc" kind="enumvalue"><name>SEND</name></member>
+    <member refid="login_8h_1aafd3dc585b16ba4327a777f8d20ad857a291d6945a9da1c9a56be64a04e003112" kind="enumvalue"><name>CAPTCHA</name></member>
+    <member refid="login_8h_1aafd3dc585b16ba4327a777f8d20ad857a1e3e433edd76f91457ea26d0ae88ec2f" kind="enumvalue"><name>FREQUENCY</name></member>
+    <member refid="login_8h_1aafd3dc585b16ba4327a777f8d20ad857a03570470bad94692ce93e32700d2e1cb" kind="enumvalue"><name>OTHER</name></member>
+    <member refid="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cb" kind="enum"><name>SearchType</name></member>
+    <member refid="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cbac184d7ee5f39c2a4112a9c14640488fa" kind="enumvalue"><name>SONG</name></member>
+    <member refid="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cba491d280d8e42777c128164f7a998c1a8" kind="enumvalue"><name>SINGER</name></member>
+    <member refid="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cbaeaa4b00b7c00e8fb9c185fdbb83b36a0" kind="enumvalue"><name>ALBUM</name></member>
+    <member refid="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cbacfff83c20a0c9926145496a688fd3d98" kind="enumvalue"><name>SONG_LIST</name></member>
+    <member refid="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cba77d96fc8e5c080038b043ead02dadfc3" kind="enumvalue"><name>MV</name></member>
+    <member refid="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cba2000a9ce226a4807e37c32b32a4ab258" kind="enumvalue"><name>LYRIC</name></member>
+    <member refid="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cba2e40ad879e955201df4dedbf8d479a12" kind="enumvalue"><name>USER</name></member>
+    <member refid="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cba003e5193cfd42211f8eee54e6d518891" kind="enumvalue"><name>AUDIO_ALBUM</name></member>
+    <member refid="search_8h_1af21cd91d67dfa17c2533a84f5fdd55cbae423b8bde9bfbfd7e9409b23b23aed91" kind="enumvalue"><name>AUDIO</name></member>
+    <member refid="singer_8h_1a1070e3375afdb885f1eace1eddac86a3" kind="enum"><name>AreaType</name></member>
+    <member refid="singer_8h_1a1070e3375afdb885f1eace1eddac86a3a5fb1f955b45e38e31789286a1790398d" kind="enumvalue"><name>ALL</name></member>
+    <member refid="singer_8h_1a1070e3375afdb885f1eace1eddac86a3a8a035bfda6c16c222a9edbcf7666a6ba" kind="enumvalue"><name>CHINA</name></member>
+    <member refid="singer_8h_1a1070e3375afdb885f1eace1eddac86a3a0cb33ad1b82531916cfa68d9eadaa2a8" kind="enumvalue"><name>TAIWAN</name></member>
+    <member refid="singer_8h_1a1070e3375afdb885f1eace1eddac86a3adda7f5a793b54dfab5b942e1953901f2" kind="enumvalue"><name>AMERICA</name></member>
+    <member refid="singer_8h_1a1070e3375afdb885f1eace1eddac86a3a676de5ba893af6bbc683c93306aaf769" kind="enumvalue"><name>JAPAN</name></member>
+    <member refid="singer_8h_1a1070e3375afdb885f1eace1eddac86a3ab9ae410939500d10dde7fe827b9d5db1" kind="enumvalue"><name>KOREA</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910a" kind="enum"><name>GenreType</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa5fb1f955b45e38e31789286a1790398d" kind="enumvalue"><name>ALL</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aaefdb39a4c7286afcecf0e8a7435fce6a" kind="enumvalue"><name>POP</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aabb0014f2e34a1a63c199eb717fe3accf" kind="enumvalue"><name>RAP</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aaf60aac4ca4d2cc63ad76d38b686116b5" kind="enumvalue"><name>CHINESE_STYLE</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aaafeb717aa2a101f7f64840e0be38c171" kind="enumvalue"><name>ROCK</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aaffb24a29f8c9c4ff4accf3782963e016" kind="enumvalue"><name>ELECTRONIC</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa0219e95299a2a5a2393ef66a4e5816fd" kind="enumvalue"><name>FOLK</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa0598e7a5219ba9cb79c243ec0b978230" kind="enumvalue"><name>R_AND_B</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa4e5221e93807401c86420e24cbc32646" kind="enumvalue"><name>ETHNIC</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa8285894c66ca02748285a8742ef204b7" kind="enumvalue"><name>LIGHT_MUSIC</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aaf94e4ce531cc2ee5e7987a51cf96cf30" kind="enumvalue"><name>JAZZ</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa264dccdf58359133ca3346bb8f8e4a97" kind="enumvalue"><name>CLASSICAL</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa6ddc09dc456001d9854e9fe670374eb2" kind="enumvalue"><name>COUNTRY</name></member>
+    <member refid="singer_8h_1a5f3f81f24021404f0c07d23f0b64910aa3838affc0d47a5ca0d23bc99e09805df" kind="enumvalue"><name>BLUES</name></member>
+    <member refid="singer_8h_1af9ed5360fdc5aadda229701831f902c1" kind="enum"><name>GenderType</name></member>
+    <member refid="singer_8h_1af9ed5360fdc5aadda229701831f902c1a5fb1f955b45e38e31789286a1790398d" kind="enumvalue"><name>ALL</name></member>
+    <member refid="singer_8h_1af9ed5360fdc5aadda229701831f902c1a797e877326f44c5763d1458d7f56d87a" kind="enumvalue"><name>MALE</name></member>
+    <member refid="singer_8h_1af9ed5360fdc5aadda229701831f902c1a4bf2e31c60d6a605954e399524cae56b" kind="enumvalue"><name>FEMALE</name></member>
+    <member refid="singer_8h_1af9ed5360fdc5aadda229701831f902c1a720909a4b948fc9e33633b61960d6b3c" kind="enumvalue"><name>GROUP</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03" kind="enum"><name>IndexType</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a7fc56270e7a70fa81a5935b72eacbe29" kind="enumvalue"><name>A</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a9d5ed678fe57bcca610140957afab571" kind="enumvalue"><name>B</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a0d61f8370cad1d412f80b84d143e1257" kind="enumvalue"><name>C</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03af623e75af30e62bbd73d6df5b50bb7b5" kind="enumvalue"><name>D</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a3a3ea00cfc35332cedf6e5e9a32e94da" kind="enumvalue"><name>E</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a800618943025315f869e4e1f09471012" kind="enumvalue"><name>F</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03adfcf28d0734569a6a693bc8194de62bf" kind="enumvalue"><name>G</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03ac1d9f50f86825a1a2302ec2449c17196" kind="enumvalue"><name>H</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03add7536794b63bf90eccfd37f9b147d7f" kind="enumvalue"><name>I</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03aff44570aca8241914870afbc310cdb85" kind="enumvalue"><name>J</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03aa5f3c6a11b03839d46af9fb43c97c188" kind="enumvalue"><name>K</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03ad20caec3b48a1eef164cb4ca81ba2587" kind="enumvalue"><name>L</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a69691c7bdcc3ce6d5d8a1361f22d04ac" kind="enumvalue"><name>M</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a8d9c307cb7f3c4a32822a51922d1ceaa" kind="enumvalue"><name>N</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03af186217753c37b9b9f958d906208506e" kind="enumvalue"><name>O</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a44c29edb103a2872f519ad0c9a0fdaaa" kind="enumvalue"><name>P</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03af09564c9ca56850d4cd6b3319e541aee" kind="enumvalue"><name>Q</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03ae1e1d3d40573127e9ee0480caf1283d6" kind="enumvalue"><name>R</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a5dbc98dcc983a70728bd082d1a47546e" kind="enumvalue"><name>S</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03ab9ece18c950afbfa6b0fdbfa4ff731d3" kind="enumvalue"><name>T</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a4c614360da93c0a041b22e537de151eb" kind="enumvalue"><name>U</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a5206560a306a2e085a437fd258eb57ce" kind="enumvalue"><name>V</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a61e9c06ea9a85a5088a499df6458d276" kind="enumvalue"><name>W</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a02129bb861061d1a052c592e2dc6b383" kind="enumvalue"><name>X</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a57cec4137b614c87cb4e24a3d003a3e0" kind="enumvalue"><name>Y</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a21c2e59531c8710156d34a3c30ac81d5" kind="enumvalue"><name>Z</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a50b7748612b28db487d115f220bb77ab" kind="enumvalue"><name>HASH</name></member>
+    <member refid="singer_8h_1a600f7514d5c24d277eb8a657c026de03a5fb1f955b45e38e31789286a1790398d" kind="enumvalue"><name>ALL</name></member>
+    <member refid="result_8h_1a9b4b068d9532115402b634b30568b0d3" kind="typedef"><name>Result</name></member>
+    <member refid="result_8h_1a47fc0658fec640e3bd29c7826017f96c" kind="typedef"><name>Task</name></member>
+    <member refid="album_8cc_1a73830376e67c1908325c8770ea238ba4" kind="function"><name>get_album_cover_url</name></member>
+    <member refid="album_8cc_1a75ab6487cfa2d6bef2ed8c76076fd5ea" kind="function"><name>get_album_detail</name></member>
+    <member refid="album_8cc_1aa204c7b2b432b3c6c73a880be6d49a02" kind="function"><name>get_album_detail</name></member>
+    <member refid="album_8cc_1a7dd68b88ceb1e32172a9f49b7ca5d11a" kind="function"><name>get_album_songs</name></member>
+    <member refid="album_8cc_1a2f5ea1adb002aabde4deacda71e4c992" kind="function"><name>get_album_songs</name></member>
+    <member refid="login_8cc_1a9b207a608632103f12b50177d6ae692d" kind="function"><name>get_qrcode</name></member>
+    <member refid="login_8cc_1a48f47718e92af6b9407354e02315cb71" kind="function"><name>check_qq_qr</name></member>
+    <member refid="login_8cc_1a16856c623630b7216dbe0e7909d82288" kind="function"><name>check_wx_qr</name></member>
+    <member refid="login_8cc_1a5bdbc43c710ba15d3bf9f31b589e0c1b" kind="function"><name>send_authcode</name></member>
+    <member refid="login_8cc_1a9746551aa8bedfb7439317e334d0c61a" kind="function"><name>phone_authorize</name></member>
+    <member refid="lyric_8cc_1ac0e83ac2da6145ac2ba27c6824844e59" kind="function"><name>get_lyric</name></member>
+    <member refid="lyric_8cc_1acc7b429fb5719e783b4a4c99a424b1de" kind="function"><name>get_lyric</name></member>
+    <member refid="mv_8cc_1aa329314d535879dc134901b4f262d447" kind="function"><name>get_mv_detail</name></member>
+    <member refid="mv_8cc_1a04e8cde9166a1cf46d6345192133635a" kind="function"><name>get_mv_urls</name></member>
+    <member refid="search_8cc_1a016d982ddd5556f1e546fad33f8d81af" kind="function"><name>hotkey</name></member>
+    <member refid="search_8cc_1ae505573339cf5c3338efb67f6514e72a" kind="function"><name>keyword_complete</name></member>
+    <member refid="search_8cc_1a100765c1a6001fcd3268b4eca1b7f217" kind="function"><name>quick_search</name></member>
+    <member refid="search_8cc_1a2bd1f98306e0394e78e548bf8127e8e9" kind="function"><name>general_search</name></member>
+    <member refid="search_8cc_1a8af394fc46973a38cad5d961c57eed99" kind="function"><name>search_by_type</name></member>
+    <member refid="singer_8cc_1aff93e39373b0696b5a5697abc5fa7b57" kind="function"><name>get_singer_list</name></member>
+    <member refid="singer_8cc_1aae6fa8b2c5f8da6842874ae699ad197c" kind="function"><name>get_singer_list_index</name></member>
+    <member refid="singer_8cc_1a57c1235e6f830d390c4fef2f313ec3df" kind="function"><name>get_singer_list_index_all</name></member>
+    <member refid="singer_8cc_1a951de06c3744f2934a2b3f686c07f671" kind="function"><name>get_singer_info</name></member>
+    <member refid="singer_8cc_1aa445d245b1e54dd1b11eb10d905a0e28" kind="function"><name>get_tab_detail</name></member>
+    <member refid="singer_8cc_1a7f9174527598b6227320e2da1f492889" kind="function"><name>get_singer_desc</name></member>
+    <member refid="singer_8cc_1aea53ce06d45a2b9cfffc3366c56e0969" kind="function"><name>get_similar_singers</name></member>
+    <member refid="singer_8cc_1a14750a1283344356f7251bbc4c3370ec" kind="function"><name>get_songs_list</name></member>
+    <member refid="singer_8cc_1acd7c49d8e0b38bfd68221e99348516bf" kind="function"><name>get_songs_list_all</name></member>
+    <member refid="singer_8cc_1a6c31cb059be0490dd194d5efe4914f70" kind="function"><name>get_album_list</name></member>
+    <member refid="singer_8cc_1af7d8c5969aa694638df42fedd9d429d8" kind="function"><name>get_album_list_all</name></member>
+    <member refid="singer_8cc_1a8fa53257abefbb66f4257fd3e5139531" kind="function"><name>get_mv_list</name></member>
+    <member refid="singer_8cc_1a2d1a019dedbec114a312b590506a56db" kind="function"><name>get_mv_list_all</name></member>
+    <member refid="song_8cc_1a4ee88b9ad1f651e9be88e922a37d8c14" kind="function"><name>query_song</name></member>
+    <member refid="song_8cc_1ab986285677e72f270f972763b1345924" kind="function"><name>query_song</name></member>
+    <member refid="song_8cc_1a00135463cf6db4a96f17ea0cc0156649" kind="function"><name>get_song_urls</name></member>
+    <member refid="song_8cc_1add675d7f250e258145ad61fcf4c999cf" kind="function"><name>get_try_url</name></member>
+    <member refid="song_8cc_1a9d50fad85a484e9b9385567a0181e51c" kind="function"><name>get_song_detail</name></member>
+    <member refid="song_8cc_1a4ca9c6758c58121b05254525e7faf47c" kind="function"><name>get_song_detail</name></member>
+    <member refid="song_8cc_1a1368960435eaa891917b2c5a218fbada" kind="function"><name>get_similar_songs</name></member>
+    <member refid="song_8cc_1ac49dacd1a99acd2ab9b699171cdcd9a5" kind="function"><name>get_labels</name></member>
+    <member refid="song_8cc_1a2ae33282cc98fec335816ebf86c1c66c" kind="function"><name>get_related_songlist</name></member>
+    <member refid="song_8cc_1a0ba408311a34155d030e601b8c8ebfc9" kind="function"><name>get_related_mv</name></member>
+    <member refid="song_8cc_1a39d3043ea74e3a4ff402e08023d965c8" kind="function"><name>get_other_version</name></member>
+    <member refid="song_8cc_1acc6dad7b69ff6618e82ad6ae29f7f521" kind="function"><name>get_other_version</name></member>
+    <member refid="song_8cc_1a4057b751378d926d501ea91fcb670a9c" kind="function"><name>get_producer_info</name></member>
+    <member refid="song_8cc_1aad751c398df9697e6c79b9c78f8ae463" kind="function"><name>get_producer_info</name></member>
+    <member refid="song_8cc_1a2832cd43a66eba9da5341de929d3a8ac" kind="function"><name>get_sheet</name></member>
+    <member refid="song_8cc_1adf198785da5b652558e50eb11844a5fa" kind="function"><name>get_fav_num</name></member>
+    <member refid="songlist_8cc_1aeb843a32455d9771a47ae4ee9d4ceda4" kind="function"><name>get_songlist_detail</name></member>
+    <member refid="songlist_8cc_1a3ead0616cb7ea0b637c69c370c769a65" kind="function"><name>get_songlist</name></member>
+    <member refid="songlist_8cc_1a60d89b4b48fa68ac638a0262dc8b536d" kind="function"><name>songlist_create</name></member>
+    <member refid="songlist_8cc_1a8368e3e6b0e050fc68d005548d1f5722" kind="function"><name>songlist_delete</name></member>
+    <member refid="songlist_8cc_1a55a22ffefa2aa3c40324dbf88f2edd0f" kind="function"><name>songlist_add_songs</name></member>
+    <member refid="songlist_8cc_1a8ae4259a40bffce4f8a730f45d37133f" kind="function"><name>songlist_delete_songs</name></member>
+    <member refid="toplist_8cc_1a7ef5e40f88bf026200718fec958b35f7" kind="function"><name>get_toplist_category</name></member>
+    <member refid="toplist_8cc_1ace2c8e22c6b650dd35aadf08b7ea51f6" kind="function"><name>get_toplist_item_detail</name></member>
+    <member refid="user_8cc_1a781752eaa7f79dd37a27c12b8393e28d" kind="function"><name>get_euin</name></member>
+    <member refid="user_8cc_1a78db2833fcc146ff840d07dd2c054ec7" kind="function"><name>get_musicid</name></member>
+    <member refid="user_8cc_1acf82b1e1a0eedd33c75230bbe969fcea" kind="function"><name>get_homepage</name></member>
+    <member refid="user_8cc_1a3a3ee1b8ad53ee759e5e536f1dc147ce" kind="function"><name>get_vip_info</name></member>
+    <member refid="user_8cc_1aabb9ba90cd3570c2747ab7c598a95262" kind="function"><name>get_follow_singers</name></member>
+    <member refid="user_8cc_1acca39ca3c47dd79ead6086a018211cb6" kind="function"><name>get_fans</name></member>
+    <member refid="user_8cc_1ab2e3a79b7a3a5b3997d669d35a054dbf" kind="function"><name>get_friend_list</name></member>
+    <member refid="user_8cc_1a9f8939eed62ccbe6bdbe871d46dfe15e" kind="function"><name>get_follow_usr</name></member>
+    <member refid="user_8cc_1afb7bfed24579bed55848e74f1495b1b1" kind="function"><name>get_created_songlist</name></member>
+    <member refid="user_8cc_1a20191a6780b72120e04756cdb0710b8e" kind="function"><name>get_fav_song</name></member>
+    <member refid="user_8cc_1a8dc922c36f196c5ae9e639360dedd4d2" kind="function"><name>get_fav_songlist</name></member>
+    <member refid="user_8cc_1adc1a18a3fe79c3badcec00e91dbb6009" kind="function"><name>get_fav_album</name></member>
+    <member refid="user_8cc_1a20579dc32f58318cdf8664f0158b2b2e" kind="function"><name>get_fav_mv</name></member>
+    <member refid="user_8cc_1a945d26bdb83c287bb95ff493651bef8a" kind="function"><name>get_music_gene</name></member>
+  </compound>
+  <compound refid="namespaceqqmusic_1_1crypto" kind="namespace"><name>qqmusic::crypto</name>
+    <member refid="qmc_8cc_1a51e3499e04de77d66f7271fffa535b96" kind="function"><name>read2buf</name></member>
+  </compound>
+  <compound refid="namespaceqqmusic_1_1crypto_1_1TeaCipher" kind="namespace"><name>qqmusic::crypto::TeaCipher</name>
+    <member refid="cipher__tea_8h_1a7eb41e8e60086fd09f81bbda7a551c24" kind="function"><name>decrypt</name></member>
+  </compound>
+  <compound refid="namespaceqqmusic_1_1details" kind="namespace"><name>qqmusic::details</name>
+    <member refid="namespaceqqmusic_1_1details_1a56735209614b6a1c6c76f1f636bdd341" kind="enum"><name>tripledes_crypt_mode</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a56735209614b6a1c6c76f1f636bdd341a53c82eba31f6d416f331de9162ebe997" kind="enumvalue"><name>encrypt</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a56735209614b6a1c6c76f1f636bdd341a9a2d8ce3ffdcdf2123bddd94d79ef200" kind="enumvalue"><name>decrypt</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a6a9cf82baf9473b7e9321862f2afd25d" kind="typedef"><name>tripledes_key_schedule</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a36c518832b3efbebc5ad37b68bd8fd9b" kind="variable"><name>VERSION</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a476c7e52ed46db89730fce9effe6ec38" kind="variable"><name>VERSION_CODE</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a5411bc95e843d7e582bcbb17887153c6" kind="function"><name>key_schedule</name></member>
+    <member refid="namespaceqqmusic_1_1details_1acdace206d13210029126a95f1d27e612" kind="function"><name>bitnum</name></member>
+    <member refid="namespaceqqmusic_1_1details_1ac926eb74a3559a294ac2d4a0f1da3a2d" kind="function"><name>bitnum_intl</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a08dcb68237a9daa502ebde875f8065fa" kind="function"><name>bitnum_intr</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a11e4cdcc6b34236f8ba2ac859fbf1db7" kind="function"><name>crypt</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a41e86cc000c2a1f15c9a11e63953ae9e" kind="function"><name>initial_permutation</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a271487d4a04a97c45ce12cc35e1a2192" kind="function"><name>inverse_permutation</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a0f78feef11c1bc58347fcd174d64478f" kind="function"><name>transform</name></member>
+    <member refid="namespaceqqmusic_1_1details_1aa6a28f75a5f80620b75715e563a35326" kind="function"><name>sbox_bit</name></member>
+    <member refid="namespaceqqmusic_1_1details_1a01e8651d22481d48e625faf1bcbc1daf" kind="function"><name>tripledes_key_setup</name></member>
+    <member refid="namespaceqqmusic_1_1details_1ae9f7afce2b88d64ba1b8ff3ddc2decc0" kind="function"><name>tripledes_crypt</name></member>
+  </compound>
+  <compound refid="namespaceqqmusic_1_1utils" kind="namespace"><name>qqmusic::utils</name>
+    <member refid="namespaceqqmusic_1_1utils_1a5acd096d92184c34074b7164983855c5" kind="enum"><name>qrc_type</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a5acd096d92184c34074b7164983855c5aa1234b3161b4fbfdfb96dd576b65bbea" kind="enumvalue"><name>cloud</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a5acd096d92184c34074b7164983855c5af5ddaf0ca7929578b408c909429f68f2" kind="enumvalue"><name>local</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a8e9d5eb4b6f56a4d6c90d406c2499100" kind="typedef"><name>HttpResponse</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a02f1e0e8826f25fcfc21d9864b3e634b" kind="function"><name>resp2buf</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a2d489567b020f1ad6aff04a77c4da17e" kind="function"><name>hex2buf</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a29c8802f83925f715b99c15b19e4bcf4" kind="function"><name>head</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1aa250d9a2d2aa8b7097b1ed637dc6c718" kind="function"><name>tail</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a28258e482a48ec4bf7a7d608cccaa397" kind="function"><name>middle</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1af3b3b64def81c94ee6e65875a37b0dbd" kind="function"><name>sign</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a90677d00a3a9be293836126eac782517" kind="function"><name>decompress</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1ad070c85c43fd950887a6ec882cf56fa0" kind="function"><name>qmc1_decrypt</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1ae36a519ee4e4658ca212fd2a890f69cf" kind="function"><name>qrc_decode</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a95a530d7fa81009bc430f987466c200a" kind="function"><name>hash33</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a37da4107b43c896ff5522b4a1d01c642" kind="function"><name>get_search_id</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a64f9e98bd4303eee4a412799048c8583" kind="function"><name>parse_cookie</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1ac0b8958b4f89d786d2bd6883cdceb635" kind="function"><name>get_device_info</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a0e4582ca294982acc156d976ee5d7ea9" kind="function"><name>cache_device</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1aa01478c64ffd5e3b8084956cfce6e186" kind="function"><name>custom_co_spawn_entry_point</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a3bedea760eb27e7afc28f3e6fbbdd4ff" kind="function"><name>sync_exec</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1a3ffc525456b74839c9ae8a33a40e3069" kind="function"><name>sync_exec</name></member>
+    <member refid="namespaceqqmusic_1_1utils_1ac3b6079508bc40da2055769ae6485f38" kind="function"><name>get_qimei</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="namespacetypes" kind="namespace"><name>types</name>
+  </compound>
+  <compound refid="album_8h" kind="file"><name>album.h</name>
+  </compound>
+  <compound refid="cipher_8h" kind="file"><name>cipher.h</name>
+  </compound>
+  <compound refid="cipher__map_8h" kind="file"><name>cipher_map.h</name>
+  </compound>
+  <compound refid="cipher__rc4_8h" kind="file"><name>cipher_rc4.h</name>
+  </compound>
+  <compound refid="cipher__tea_8h" kind="file"><name>cipher_tea.h</name>
+  </compound>
+  <compound refid="key__derive_8h" kind="file"><name>key_derive.h</name>
+  </compound>
+  <compound refid="qmc_8h" kind="file"><name>qmc.h</name>
+  </compound>
+  <compound refid="api_8h" kind="file"><name>api.h</name>
+  </compound>
+  <compound refid="context_8h" kind="file"><name>context.h</name>
+  </compound>
+  <compound refid="tripledes_8h" kind="file"><name>tripledes.h</name>
+  </compound>
+  <compound refid="login_8h" kind="file"><name>login.h</name>
+  </compound>
+  <compound refid="lyric_8h" kind="file"><name>lyric.h</name>
+  </compound>
+  <compound refid="mv_8h" kind="file"><name>mv.h</name>
+  </compound>
+  <compound refid="details_2result_8h" kind="file"><name>details/result.h</name>
+    <member refid="details_2result_8h_1ac5f3fcf72a226796996e2fd5359582c8" kind="define"><name>TRY</name></member>
+    <member refid="details_2result_8h_1a38ab3952eb72069f4eeae957e23d7d1e" kind="function"><name>Ok</name></member>
+    <member refid="details_2result_8h_1a5640fc30a16148457fc8e14c4e05cfa4" kind="function"><name>Ok</name></member>
+    <member refid="details_2result_8h_1a548f7b18866514ecf470c9a5046e214d" kind="function"><name>Err</name></member>
+    <member refid="details_2result_8h_1a43b143dc89ad107750e98550d7c65114" kind="function"><name>operator==</name></member>
+    <member refid="details_2result_8h_1ab436e95465009c2a79635cce1427b069" kind="function"><name>operator==</name></member>
+    <member refid="details_2result_8h_1a612d7b43358a478e36c507da84246528" kind="function"><name>operator==</name></member>
+    <member refid="details_2result_8h_1a820c6fe994c19ac7fff2681c31e6ed57" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="result_8h" kind="file"><name>result.h</name>
+  </compound>
+  <compound refid="search_8h" kind="file"><name>search.h</name>
+  </compound>
+  <compound refid="singer_8h" kind="file"><name>singer.h</name>
+  </compound>
+  <compound refid="song_8h" kind="file"><name>song.h</name>
+  </compound>
+  <compound refid="songlist_8h" kind="file"><name>songlist.h</name>
+  </compound>
+  <compound refid="toplist_8h" kind="file"><name>toplist.h</name>
+  </compound>
+  <compound refid="user_8h" kind="file"><name>user.h</name>
+  </compound>
+  <compound refid="async-executor_8h" kind="file"><name>async-executor.h</name>
+  </compound>
+  <compound refid="buffer_8h" kind="file"><name>buffer.h</name>
+  </compound>
+  <compound refid="common_8h" kind="file"><name>common.h</name>
+  </compound>
+  <compound refid="cookie_8h" kind="file"><name>cookie.h</name>
+  </compound>
+  <compound refid="credential_8h" kind="file"><name>credential.h</name>
+  </compound>
+  <compound refid="device_8h" kind="file"><name>device.h</name>
+  </compound>
+  <compound refid="exception_8h" kind="file"><name>exception.h</name>
+  </compound>
+  <compound refid="paths_8h" kind="file"><name>paths.h</name>
+  </compound>
+  <compound refid="qimei_8h" kind="file"><name>qimei.h</name>
+  </compound>
+  <compound refid="session_8h" kind="file"><name>session.h</name>
+  </compound>
+  <compound refid="album_8cc" kind="file"><name>album.cc</name>
+  </compound>
+  <compound refid="cipher__map_8cc" kind="file"><name>cipher_map.cc</name>
+  </compound>
+  <compound refid="cipher__rc4_8cc" kind="file"><name>cipher_rc4.cc</name>
+  </compound>
+  <compound refid="cipher__tea_8cc" kind="file"><name>cipher_tea.cc</name>
+  </compound>
+  <compound refid="key__derive_8cc" kind="file"><name>key_derive.cc</name>
+  </compound>
+  <compound refid="qmc_8cc" kind="file"><name>qmc.cc</name>
+  </compound>
+  <compound refid="api_8cc" kind="file"><name>api.cc</name>
+  </compound>
+  <compound refid="tripledes_8cc" kind="file"><name>tripledes.cc</name>
+  </compound>
+  <compound refid="login_8cc" kind="file"><name>login.cc</name>
+    <member refid="login_8cc_1addd2d11f3e8857a9bc8a005758fb2476" kind="function"><name>auth_qq_qr</name></member>
+    <member refid="login_8cc_1a7a84a84ed8477fe8a7726e9278b7fd26" kind="function"><name>auth_wx_qr</name></member>
+  </compound>
+  <compound refid="lyric_8cc" kind="file"><name>lyric.cc</name>
+  </compound>
+  <compound refid="mv_8cc" kind="file"><name>mv.cc</name>
+  </compound>
+  <compound refid="search_8cc" kind="file"><name>search.cc</name>
+  </compound>
+  <compound refid="singer_8cc" kind="file"><name>singer.cc</name>
+  </compound>
+  <compound refid="song_8cc" kind="file"><name>song.cc</name>
+  </compound>
+  <compound refid="songlist_8cc" kind="file"><name>songlist.cc</name>
+  </compound>
+  <compound refid="toplist_8cc" kind="file"><name>toplist.cc</name>
+  </compound>
+  <compound refid="user_8cc" kind="file"><name>user.cc</name>
+  </compound>
+  <compound refid="async-executor_8cc" kind="file"><name>async-executor.cc</name>
+  </compound>
+  <compound refid="common_8cc" kind="file"><name>common.cc</name>
+  </compound>
+  <compound refid="cookie_8cc" kind="file"><name>cookie.cc</name>
+  </compound>
+  <compound refid="credential_8cc" kind="file"><name>credential.cc</name>
+  </compound>
+  <compound refid="device_8cc" kind="file"><name>device.cc</name>
+  </compound>
+  <compound refid="paths_8cc" kind="file"><name>paths.cc</name>
+  </compound>
+  <compound refid="qimei_8cc" kind="file"><name>qimei.cc</name>
+    <member refid="qimei_8cc_1a68c6bc2e4b099bc0c8ead53f98e8c590" kind="variable"><name>PUBLIC_KEY</name></member>
+    <member refid="qimei_8cc_1aafd1b854ee761ff6a0c5dcb22b059caa" kind="variable"><name>SECRET</name></member>
+    <member refid="qimei_8cc_1a79947b449d1a774c6648c0bed54b8c52" kind="variable"><name>APP_KEY</name></member>
+    <member refid="qimei_8cc_1a9fb00c5c52a2bb0d29944bd2da4a4412" kind="function"><name>rsa_encrypt</name></member>
+    <member refid="qimei_8cc_1abdbd350ce77f611e8c01aba016330670" kind="function"><name>aes_encrypt</name></member>
+    <member refid="qimei_8cc_1a86919741d4993cac332d8577c096a766" kind="function"><name>random_beacon_id</name></member>
+    <member refid="qimei_8cc_1a884ece8111dd2e4e9d8b598eb6437a9b" kind="function"><name>load_rand_payload</name></member>
+  </compound>
+  <compound refid="session_8cc" kind="file"><name>session.cc</name>
+    <member refid="session_8cc_1aa1ac4fdf9208824abf8b5d2074fb96d0" kind="function"><name>handle_http_redirecting</name></member>
+    <member refid="session_8cc_1a24ea8778c3c6e7b6854d56976072ba9b" kind="function"><name>handle_https_redirecting</name></member>
+  </compound>
+  <compound refid="todo" kind="page"><name>todo</name>
+  </compound>
+  <compound refid="dir_544e59fdeba566aba49a0802b8225c84" kind="dir"><name>crypto</name>
+  </compound>
+  <compound refid="dir_4261af1259721e3e39e0d2dd7354b511" kind="dir"><name>crypto</name>
+  </compound>
+  <compound refid="dir_6e6556f41d7f85330fbda245682a6a39" kind="dir"><name>details</name>
+  </compound>
+  <compound refid="dir_b485ae80868baed16097635ed27c0024" kind="dir"><name>details</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_d63c0418b33b823a308efea67b8f3df2" kind="dir"><name>qqmusic</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_478616d8952f43e793f28d8ded6e3463" kind="dir"><name>utils</name>
+  </compound>
+  <compound refid="dir_313caf1132e152dd9b58bea13a4052ca" kind="dir"><name>utils</name>
+  </compound>
+</doxygenindex>

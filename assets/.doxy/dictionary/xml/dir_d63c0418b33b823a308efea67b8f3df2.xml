@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="dir_d63c0418b33b823a308efea67b8f3df2" kind="dir">
+    <compoundname>qqmusic</compoundname>
+    <innerdir refid="dir_544e59fdeba566aba49a0802b8225c84">crypto</innerdir>
+    <innerdir refid="dir_6e6556f41d7f85330fbda245682a6a39">details</innerdir>
+    <innerdir refid="dir_478616d8952f43e793f28d8ded6e3463">utils</innerdir>
+    <innerfile refid="album_8h">album.h</innerfile>
+    <innerfile refid="login_8h">login.h</innerfile>
+    <innerfile refid="lyric_8h">lyric.h</innerfile>
+    <innerfile refid="mv_8h">mv.h</innerfile>
+    <innerfile refid="result_8h">result.h</innerfile>
+    <innerfile refid="search_8h">search.h</innerfile>
+    <innerfile refid="singer_8h">singer.h</innerfile>
+    <innerfile refid="song_8h">song.h</innerfile>
+    <innerfile refid="songlist_8h">songlist.h</innerfile>
+    <innerfile refid="toplist_8h">toplist.h</innerfile>
+    <innerfile refid="user_8h">user.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/"/>
+  </compounddef>
+</doxygen>

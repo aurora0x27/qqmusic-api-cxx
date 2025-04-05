@@ -1,0 +1,512 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structqqmusic_1_1utils_1_1Device" kind="struct" language="C++" prot="public">
+    <compoundname>qqmusic::utils::Device</compoundname>
+    <includes refid="device_8h" local="no">device.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a20f748c20f458db551815fa9b82f6c77" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::display</definition>
+        <argsstring></argsstring>
+        <name>display</name>
+        <qualifiedname>qqmusic::utils::Device::display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="34" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a9da883834b0bd860e4ba5a6244922782" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::product</definition>
+        <argsstring></argsstring>
+        <name>product</name>
+        <qualifiedname>qqmusic::utils::Device::product</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="35" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a91a68ab84a071bbb8f86210977eebf24" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::device</definition>
+        <argsstring></argsstring>
+        <name>device</name>
+        <qualifiedname>qqmusic::utils::Device::device</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="36" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1ad8309e77a8a81ffa27c470fab0d8d7ef" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::board</definition>
+        <argsstring></argsstring>
+        <name>board</name>
+        <qualifiedname>qqmusic::utils::Device::board</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="37" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a696b528dd59f0bc472598866d4bbe675" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <qualifiedname>qqmusic::utils::Device::model</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="38" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a5774c0a784f1d0aa79f9f29234b0be71" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::fingerprint</definition>
+        <argsstring></argsstring>
+        <name>fingerprint</name>
+        <qualifiedname>qqmusic::utils::Device::fingerprint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="39" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1aa762cb3f2b52ff548c808c00113ebba5" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::boot_id</definition>
+        <argsstring></argsstring>
+        <name>boot_id</name>
+        <qualifiedname>qqmusic::utils::Device::boot_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="40" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a553ac67c007b1861f556e17fdce6828b" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::proc_version</definition>
+        <argsstring></argsstring>
+        <name>proc_version</name>
+        <qualifiedname>qqmusic::utils::Device::proc_version</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="41" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a251522c0f7a286b352dc0e8cbaec32b2" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::imei</definition>
+        <argsstring></argsstring>
+        <name>imei</name>
+        <qualifiedname>qqmusic::utils::Device::imei</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="42" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1aeabdffa9803af3227f8cbe9d22d6d8fd" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::brand</definition>
+        <argsstring></argsstring>
+        <name>brand</name>
+        <qualifiedname>qqmusic::utils::Device::brand</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="43" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1aabe4cb189686fd131c4fa232e3f322f9" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::bootloader</definition>
+        <argsstring></argsstring>
+        <name>bootloader</name>
+        <qualifiedname>qqmusic::utils::Device::bootloader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="44" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a9cdacedf871a8ec63aacdfe4d4691779" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::base_band</definition>
+        <argsstring></argsstring>
+        <name>base_band</name>
+        <qualifiedname>qqmusic::utils::Device::base_band</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="45" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1af3310ed0efe3b728b8a147f4a0815cff" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structqqmusic_1_1utils_1_1OSVersion" kindref="compound">OSVersion</ref></type>
+        <definition>struct OSVersion qqmusic::utils::Device::version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <qualifiedname>qqmusic::utils::Device::version</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="46" column="20" bodyfile="include/qqmusic/utils/device.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1afa17ffe554a4e5f12e9f23599b3989d8" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::sim_info</definition>
+        <argsstring></argsstring>
+        <name>sim_info</name>
+        <qualifiedname>qqmusic::utils::Device::sim_info</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="47" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1aaddf87d16659d793bcb69e6e93a0e3dc" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::os_type</definition>
+        <argsstring></argsstring>
+        <name>os_type</name>
+        <qualifiedname>qqmusic::utils::Device::os_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="48" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a16734fe5738e690253ecf735f34ecfe6" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::mac_address</definition>
+        <argsstring></argsstring>
+        <name>mac_address</name>
+        <qualifiedname>qqmusic::utils::Device::mac_address</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="49" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a21bc2d3ebea255da1771901b74f76ad0" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; qqmusic::utils::Device::ip_address</definition>
+        <argsstring></argsstring>
+        <name>ip_address</name>
+        <qualifiedname>qqmusic::utils::Device::ip_address</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="50" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a11d030d58566d00bac2f1db584196697" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::wifi_bssid</definition>
+        <argsstring></argsstring>
+        <name>wifi_bssid</name>
+        <qualifiedname>qqmusic::utils::Device::wifi_bssid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="51" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1ae9e96cb14a4630aa3e6b70330cbfb8eb" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::wifi_ssid</definition>
+        <argsstring></argsstring>
+        <name>wifi_ssid</name>
+        <qualifiedname>qqmusic::utils::Device::wifi_ssid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="52" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a3403cd306801550f524bfeed770a2892" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; qqmusic::utils::Device::imsi_md5</definition>
+        <argsstring></argsstring>
+        <name>imsi_md5</name>
+        <qualifiedname>qqmusic::utils::Device::imsi_md5</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="53" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a1d595ba9c477b1ba1045c6ea6903e46d" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::android_id</definition>
+        <argsstring></argsstring>
+        <name>android_id</name>
+        <qualifiedname>qqmusic::utils::Device::android_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="54" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1ae29e02ab8ff2f2ac552f903ac6d02c93" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::apn</definition>
+        <argsstring></argsstring>
+        <name>apn</name>
+        <qualifiedname>qqmusic::utils::Device::apn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="55" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a8778f03fed626e27c84487bb26837d8e" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::vendor_name</definition>
+        <argsstring></argsstring>
+        <name>vendor_name</name>
+        <qualifiedname>qqmusic::utils::Device::vendor_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="56" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a6e91bc2a53393df5c0f7c9257c8ba140" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::vendor_os_name</definition>
+        <argsstring></argsstring>
+        <name>vendor_os_name</name>
+        <qualifiedname>qqmusic::utils::Device::vendor_os_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="57" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqqmusic_1_1utils_1_1Device_1a631bbe77db91b3581b70bb0403708c4c" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string qqmusic::utils::Device::qimei</definition>
+        <argsstring></argsstring>
+        <name>qimei</name>
+        <qualifiedname>qqmusic::utils::Device::qimei</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="58" column="17" bodyfile="include/qqmusic/utils/device.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structqqmusic_1_1utils_1_1Device_1ac63d08eb2a3e3ccda6f9842f8fea9d92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::Device::Device</definition>
+        <argsstring>()</argsstring>
+        <name>Device</name>
+        <qualifiedname>qqmusic::utils::Device::Device</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="32" column="5" bodyfile="src/utils/device.cc" bodystart="91" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="structqqmusic_1_1utils_1_1Device_1a593aff49ef00e12b0b7594caba0761ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>qqmusic::utils::Device::NLOHMANN_DEFINE_TYPE_INTRUSIVE</definition>
+        <argsstring>(Device, display, product, device, board, model, fingerprint, boot_id, proc_version, imei, brand, bootloader, base_band, version, sim_info, os_type, mac_address, wifi_bssid, wifi_ssid, imsi_md5, android_id, apn, vendor_name, vendor_os_name, qimei)</argsstring>
+        <name>NLOHMANN_DEFINE_TYPE_INTRUSIVE</name>
+        <qualifiedname>qqmusic::utils::Device::NLOHMANN_DEFINE_TYPE_INTRUSIVE</qualifiedname>
+        <param>
+          <type><ref refid="structqqmusic_1_1utils_1_1Device" kindref="compound">Device</ref></type>
+        </param>
+        <param>
+          <type>display</type>
+        </param>
+        <param>
+          <type>product</type>
+        </param>
+        <param>
+          <type>device</type>
+        </param>
+        <param>
+          <type>board</type>
+        </param>
+        <param>
+          <type>model</type>
+        </param>
+        <param>
+          <type>fingerprint</type>
+        </param>
+        <param>
+          <type>boot_id</type>
+        </param>
+        <param>
+          <type>proc_version</type>
+        </param>
+        <param>
+          <type>imei</type>
+        </param>
+        <param>
+          <type>brand</type>
+        </param>
+        <param>
+          <type>bootloader</type>
+        </param>
+        <param>
+          <type>base_band</type>
+        </param>
+        <param>
+          <type>version</type>
+        </param>
+        <param>
+          <type>sim_info</type>
+        </param>
+        <param>
+          <type>os_type</type>
+        </param>
+        <param>
+          <type>mac_address</type>
+        </param>
+        <param>
+          <type>wifi_bssid</type>
+        </param>
+        <param>
+          <type>wifi_ssid</type>
+        </param>
+        <param>
+          <type>imsi_md5</type>
+        </param>
+        <param>
+          <type>android_id</type>
+        </param>
+        <param>
+          <type>apn</type>
+        </param>
+        <param>
+          <type>vendor_name</type>
+        </param>
+        <param>
+          <type>vendor_os_name</type>
+        </param>
+        <param>
+          <type>qimei</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/utils/device.h" line="60" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>设备信息 </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>qqmusic::utils::Device</label>
+        <link refid="structqqmusic_1_1utils_1_1Device"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>version</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>qqmusic::utils::OSVersion</label>
+        <link refid="structqqmusic_1_1utils_1_1OSVersion"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/qqmusic/utils/device.h" line="31" column="1" bodyfile="include/qqmusic/utils/device.h" bodystart="31" bodyend="85"/>
+    <listofallmembers>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a1d595ba9c477b1ba1045c6ea6903e46d" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>android_id</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1ae29e02ab8ff2f2ac552f903ac6d02c93" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>apn</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a9cdacedf871a8ec63aacdfe4d4691779" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>base_band</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1ad8309e77a8a81ffa27c470fab0d8d7ef" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>board</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1aa762cb3f2b52ff548c808c00113ebba5" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>boot_id</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1aabe4cb189686fd131c4fa232e3f322f9" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>bootloader</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1aeabdffa9803af3227f8cbe9d22d6d8fd" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>brand</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a91a68ab84a071bbb8f86210977eebf24" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>device</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1ac63d08eb2a3e3ccda6f9842f8fea9d92" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>Device</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a20f748c20f458db551815fa9b82f6c77" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>display</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a5774c0a784f1d0aa79f9f29234b0be71" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>fingerprint</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a251522c0f7a286b352dc0e8cbaec32b2" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>imei</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a3403cd306801550f524bfeed770a2892" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>imsi_md5</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a21bc2d3ebea255da1771901b74f76ad0" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>ip_address</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a16734fe5738e690253ecf735f34ecfe6" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>mac_address</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a696b528dd59f0bc472598866d4bbe675" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>model</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a593aff49ef00e12b0b7594caba0761ce" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>NLOHMANN_DEFINE_TYPE_INTRUSIVE</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1aaddf87d16659d793bcb69e6e93a0e3dc" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>os_type</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a553ac67c007b1861f556e17fdce6828b" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>proc_version</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a9da883834b0bd860e4ba5a6244922782" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>product</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a631bbe77db91b3581b70bb0403708c4c" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>qimei</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1afa17ffe554a4e5f12e9f23599b3989d8" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>sim_info</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a8778f03fed626e27c84487bb26837d8e" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>vendor_name</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a6e91bc2a53393df5c0f7c9257c8ba140" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>vendor_os_name</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1af3310ed0efe3b728b8a147f4a0815cff" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>version</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1a11d030d58566d00bac2f1db584196697" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>wifi_bssid</name></member>
+      <member refid="structqqmusic_1_1utils_1_1Device_1ae9e96cb14a4630aa3e6b70330cbfb8eb" prot="public" virt="non-virtual"><scope>qqmusic::utils::Device</scope><name>wifi_ssid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

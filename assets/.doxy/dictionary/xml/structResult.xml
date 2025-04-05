@@ -1,0 +1,473 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="zh">
+  <compounddef id="structResult" kind="struct" language="C++" prot="public">
+    <compoundname>Result</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename E</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structResult_1af98d6550649fbcdc455364b54f8b16e6" prot="public" static="no">
+        <type><ref refid="structdetails_1_1Storage" kindref="compound">details::Storage</ref>&lt; T, E &gt;</type>
+        <definition>typedef details::Storage&lt;T, E&gt; Result&lt; T, E &gt;::storage_type</definition>
+        <argsstring></argsstring>
+        <name>storage_type</name>
+        <qualifiedname>Result::storage_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="688" column="30" bodyfile="include/qqmusic/details/result.h" bodystart="688" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structResult_1a74f78567f924e8e6b5e949ac48e918cf" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Result&lt; T, E &gt;::ok_</definition>
+        <argsstring></argsstring>
+        <name>ok_</name>
+        <qualifiedname>Result::ok_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="812" column="10" bodyfile="include/qqmusic/details/result.h" bodystart="812" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structResult_1ad03d3d936cf4812c14e28b07dcb7291e" prot="private" static="no" mutable="no">
+        <type><ref refid="structdetails_1_1Storage" kindref="compound">storage_type</ref></type>
+        <definition>storage_type Result&lt; T, E &gt;::storage_</definition>
+        <argsstring></argsstring>
+        <name>storage_</name>
+        <qualifiedname>Result::storage_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="813" column="18" bodyfile="include/qqmusic/details/result.h" bodystart="813" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structResult_1a590e045fd2f5067b615356dde188deb0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Result&lt; T, E &gt;::Result</definition>
+        <argsstring>(types::Ok&lt; T &gt; ok)</argsstring>
+        <name>Result</name>
+        <qualifiedname>Result::Result</qualifiedname>
+        <param>
+          <type><ref refid="structtypes_1_1Ok" kindref="compound">types::Ok</ref>&lt; T &gt;</type>
+          <declname>ok</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="690" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="690" bodyend="693"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1a0cd7d60df54755abe4007132d1462b74" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Result&lt; T, E &gt;::Result</definition>
+        <argsstring>(types::Err&lt; E &gt; err)</argsstring>
+        <name>Result</name>
+        <qualifiedname>Result::Result</qualifiedname>
+        <param>
+          <type><ref refid="structtypes_1_1Err" kindref="compound">types::Err</ref>&lt; E &gt;</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="695" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="695" bodyend="698"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1ab6d4a9fc433978777fc4b44ceaa627f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Result&lt; T, E &gt;::Result</definition>
+        <argsstring>(Result &amp;&amp;other)</argsstring>
+        <name>Result</name>
+        <qualifiedname>Result::Result</qualifiedname>
+        <param>
+          <type><ref refid="structResult" kindref="compound">Result</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="700" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="700" bodyend="710"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1ab0ec4a6e5b030b32596842d7fe1ac1af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Result&lt; T, E &gt;::Result</definition>
+        <argsstring>(const Result &amp;other)</argsstring>
+        <name>Result</name>
+        <qualifiedname>Result::Result</qualifiedname>
+        <param>
+          <type>const <ref refid="structResult" kindref="compound">Result</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="712" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="712" bodyend="720"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1aae629483cfa83ecede1bbc59d16d1d1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Result&lt; T, E &gt;::~Result</definition>
+        <argsstring>()</argsstring>
+        <name>~Result</name>
+        <qualifiedname>Result::~Result</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="722" column="5" bodyfile="include/qqmusic/details/result.h" bodystart="722" bodyend="727"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1a7374db4754c5c9885e9dfd100fa3e963" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Result&lt; T, E &gt;::isOk</definition>
+        <argsstring>() const</argsstring>
+        <name>isOk</name>
+        <qualifiedname>Result::isOk</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="729" column="10" bodyfile="include/qqmusic/details/result.h" bodystart="729" bodyend="729"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1a6c34b40e3f8c97c61d879581f82fb770" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Result&lt; T, E &gt;::isErr</definition>
+        <argsstring>() const</argsstring>
+        <name>isErr</name>
+        <qualifiedname>Result::isErr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="731" column="10" bodyfile="include/qqmusic/details/result.h" bodystart="731" bodyend="731"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1a0850b722b5843b4b7663acede04dbb64" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T Result&lt; T, E &gt;::expect</definition>
+        <argsstring>(const char *str) const</argsstring>
+        <name>expect</name>
+        <qualifiedname>Result::expect</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="733" column="7" bodyfile="include/qqmusic/details/result.h" bodystart="733" bodyend="739"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1acf6a7b2ee2edcff2d3e8a0eacb482575" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Func</type>
+          </param>
+          <param>
+            <type>typename Ret</type>
+            <defval><ref refid="structResult" kindref="compound">Result</ref>&lt;typename <ref refid="structdetails_1_1ResultOkType" kindref="compound">details::ResultOkType</ref>&lt;typename <ref refid="structdetails_1_1result__of" kindref="compound">details::result_of</ref>&lt;Func&gt;::type&gt;::type, E&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>Ret</type>
+        <definition>Ret Result&lt; T, E &gt;::map</definition>
+        <argsstring>(Func func) const</argsstring>
+        <name>map</name>
+        <qualifiedname>Result::map</qualifiedname>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="745" column="9" bodyfile="include/qqmusic/details/result.h" bodystart="745" bodyend="747"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1a1d61b0674d434440b52f424bb237ede8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Func</type>
+          </param>
+          <param>
+            <type>typename Ret</type>
+            <defval><ref refid="structResult" kindref="compound">Result</ref>&lt;T, typename <ref refid="structdetails_1_1ResultErrType" kindref="compound">details::ResultErrType</ref>&lt;typename <ref refid="structdetails_1_1result__of" kindref="compound">details::result_of</ref>&lt;Func&gt;::type&gt;::type&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>Ret</type>
+        <definition>Ret Result&lt; T, E &gt;::mapError</definition>
+        <argsstring>(Func func) const</argsstring>
+        <name>mapError</name>
+        <qualifiedname>Result::mapError</qualifiedname>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="753" column="9" bodyfile="include/qqmusic/details/result.h" bodystart="753" bodyend="755"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1ada61fbf1bd1d6cb68f501a39490962a1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt;</type>
+        <definition>Result&lt; T, E &gt; Result&lt; T, E &gt;::then</definition>
+        <argsstring>(Func func) const</argsstring>
+        <name>then</name>
+        <qualifiedname>Result::then</qualifiedname>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="758" column="12" bodyfile="include/qqmusic/details/result.h" bodystart="758" bodyend="760"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1afef9859abb2038614c933ff282b88478" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structResult" kindref="compound">Result</ref>&lt; T, E &gt;</type>
+        <definition>Result&lt; T, E &gt; Result&lt; T, E &gt;::otherwise</definition>
+        <argsstring>(Func func) const</argsstring>
+        <name>otherwise</name>
+        <qualifiedname>Result::otherwise</qualifiedname>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="763" column="12" bodyfile="include/qqmusic/details/result.h" bodystart="763" bodyend="765"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1abee93968855c953526f3562ee69bec1f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Func</type>
+          </param>
+          <param>
+            <type>typename Ret</type>
+            <defval><ref refid="structResult" kindref="compound">Result</ref>&lt;T, typename <ref refid="structdetails_1_1ResultErrType" kindref="compound">details::ResultErrType</ref>&lt;typename <ref refid="structdetails_1_1result__of" kindref="compound">details::result_of</ref>&lt;Func&gt;::type&gt;::type&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>Ret</type>
+        <definition>Ret Result&lt; T, E &gt;::orElse</definition>
+        <argsstring>(Func func) const</argsstring>
+        <name>orElse</name>
+        <qualifiedname>Result::orElse</qualifiedname>
+        <param>
+          <type>Func</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="771" column="9" bodyfile="include/qqmusic/details/result.h" bodystart="771" bodyend="773"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1a9ab441d608b325add8ceb25ce646d9ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structdetails_1_1Storage" kindref="compound">storage_type</ref> &amp;</type>
+        <definition>storage_type &amp; Result&lt; T, E &gt;::storage</definition>
+        <argsstring>()</argsstring>
+        <name>storage</name>
+        <qualifiedname>Result::storage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="775" column="18" bodyfile="include/qqmusic/details/result.h" bodystart="775" bodyend="775"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1ae502cb8d87eae5b28f4ad0ad368bc26a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structdetails_1_1Storage" kindref="compound">storage_type</ref> &amp;</type>
+        <definition>const storage_type &amp; Result&lt; T, E &gt;::storage</definition>
+        <argsstring>() const</argsstring>
+        <name>storage</name>
+        <qualifiedname>Result::storage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="777" column="24" bodyfile="include/qqmusic/details/result.h" bodystart="777" bodyend="777"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1a498d2ad8d52aec224a66df039b44601e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+            <defval>T</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if&lt;!std::is_same&lt; U, void &gt;::value, U &gt;::type</type>
+        <definition>std::enable_if&lt;!std::is_same&lt; U, void &gt;::value, U &gt;::type Result&lt; T, E &gt;::unwrapOr</definition>
+        <argsstring>(const U &amp;defaultValue) const</argsstring>
+        <name>unwrapOr</name>
+        <qualifiedname>Result::unwrapOr</qualifiedname>
+        <param>
+          <type>const U &amp;</type>
+          <declname>defaultValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="780" column="37" bodyfile="include/qqmusic/details/result.h" bodystart="780" bodyend="786"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1a131f9084fb730af2761ca9e877244744" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+            <defval>T</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if&lt;!std::is_same&lt; U, void &gt;::value, U &gt;::type</type>
+        <definition>std::enable_if&lt;!std::is_same&lt; U, void &gt;::value, U &gt;::type Result&lt; T, E &gt;::unwrap</definition>
+        <argsstring>() const</argsstring>
+        <name>unwrap</name>
+        <qualifiedname>Result::unwrap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="789" column="37" bodyfile="include/qqmusic/details/result.h" bodystart="789" bodyend="796"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1a2fd0da020ddbd4efa5f5c3b4c24adb3f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>E</type>
+        <definition>E Result&lt; T, E &gt;::unwrapErr</definition>
+        <argsstring>() const</argsstring>
+        <name>unwrapErr</name>
+        <qualifiedname>Result::unwrapErr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="798" column="7" bodyfile="include/qqmusic/details/result.h" bodystart="798" bodyend="805"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="structResult_1acdb390cf38a63732552925b6af0403b5" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T Result&lt; T, E &gt;::expect_impl</definition>
+        <argsstring>(std::true_type) const</argsstring>
+        <name>expect_impl</name>
+        <qualifiedname>Result::expect_impl</qualifiedname>
+        <param>
+          <type>std::true_type</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="808" column="7" bodyfile="include/qqmusic/details/result.h" bodystart="808" bodyend="808"/>
+      </memberdef>
+      <memberdef kind="function" id="structResult_1a8bd718600fa394ddfc55a6fde1ecd0ae" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T Result&lt; T, E &gt;::expect_impl</definition>
+        <argsstring>(std::false_type) const</argsstring>
+        <name>expect_impl</name>
+        <qualifiedname>Result::expect_impl</qualifiedname>
+        <param>
+          <type>std::false_type</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/qqmusic/details/result.h" line="810" column="7" bodyfile="include/qqmusic/details/result.h" bodystart="810" bodyend="810"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/qqmusic/details/result.h" line="685" column="1" bodyfile="include/qqmusic/details/result.h" bodystart="685" bodyend="814"/>
+    <listofallmembers>
+      <member refid="structResult_1a0850b722b5843b4b7663acede04dbb64" prot="public" virt="non-virtual"><scope>Result</scope><name>expect</name></member>
+      <member refid="structResult_1acdb390cf38a63732552925b6af0403b5" prot="private" virt="non-virtual"><scope>Result</scope><name>expect_impl</name></member>
+      <member refid="structResult_1a8bd718600fa394ddfc55a6fde1ecd0ae" prot="private" virt="non-virtual"><scope>Result</scope><name>expect_impl</name></member>
+      <member refid="structResult_1a6c34b40e3f8c97c61d879581f82fb770" prot="public" virt="non-virtual"><scope>Result</scope><name>isErr</name></member>
+      <member refid="structResult_1a7374db4754c5c9885e9dfd100fa3e963" prot="public" virt="non-virtual"><scope>Result</scope><name>isOk</name></member>
+      <member refid="structResult_1acf6a7b2ee2edcff2d3e8a0eacb482575" prot="public" virt="non-virtual"><scope>Result</scope><name>map</name></member>
+      <member refid="structResult_1a1d61b0674d434440b52f424bb237ede8" prot="public" virt="non-virtual"><scope>Result</scope><name>mapError</name></member>
+      <member refid="structResult_1a74f78567f924e8e6b5e949ac48e918cf" prot="private" virt="non-virtual"><scope>Result</scope><name>ok_</name></member>
+      <member refid="structResult_1abee93968855c953526f3562ee69bec1f" prot="public" virt="non-virtual"><scope>Result</scope><name>orElse</name></member>
+      <member refid="structResult_1afef9859abb2038614c933ff282b88478" prot="public" virt="non-virtual"><scope>Result</scope><name>otherwise</name></member>
+      <member refid="structResult_1a590e045fd2f5067b615356dde188deb0" prot="public" virt="non-virtual"><scope>Result</scope><name>Result</name></member>
+      <member refid="structResult_1a0cd7d60df54755abe4007132d1462b74" prot="public" virt="non-virtual"><scope>Result</scope><name>Result</name></member>
+      <member refid="structResult_1ab6d4a9fc433978777fc4b44ceaa627f9" prot="public" virt="non-virtual"><scope>Result</scope><name>Result</name></member>
+      <member refid="structResult_1ab0ec4a6e5b030b32596842d7fe1ac1af" prot="public" virt="non-virtual"><scope>Result</scope><name>Result</name></member>
+      <member refid="structResult_1a9ab441d608b325add8ceb25ce646d9ec" prot="public" virt="non-virtual"><scope>Result</scope><name>storage</name></member>
+      <member refid="structResult_1ae502cb8d87eae5b28f4ad0ad368bc26a" prot="public" virt="non-virtual"><scope>Result</scope><name>storage</name></member>
+      <member refid="structResult_1ad03d3d936cf4812c14e28b07dcb7291e" prot="private" virt="non-virtual"><scope>Result</scope><name>storage_</name></member>
+      <member refid="structResult_1af98d6550649fbcdc455364b54f8b16e6" prot="public" virt="non-virtual"><scope>Result</scope><name>storage_type</name></member>
+      <member refid="structResult_1ada61fbf1bd1d6cb68f501a39490962a1" prot="public" virt="non-virtual"><scope>Result</scope><name>then</name></member>
+      <member refid="structResult_1a131f9084fb730af2761ca9e877244744" prot="public" virt="non-virtual"><scope>Result</scope><name>unwrap</name></member>
+      <member refid="structResult_1a2fd0da020ddbd4efa5f5c3b4c24adb3f" prot="public" virt="non-virtual"><scope>Result</scope><name>unwrapErr</name></member>
+      <member refid="structResult_1a498d2ad8d52aec224a66df039b44601e" prot="public" virt="non-virtual"><scope>Result</scope><name>unwrapOr</name></member>
+      <member refid="structResult_1aae629483cfa83ecede1bbc59d16d1d1f" prot="public" virt="non-virtual"><scope>Result</scope><name>~Result</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
