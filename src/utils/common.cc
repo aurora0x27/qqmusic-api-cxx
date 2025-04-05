@@ -20,7 +20,7 @@ namespace qqmusic::utils {
 
 buffer resp2buf(http::response<http::dynamic_body>&& resp) {
     /* TODO: I haven't found a better way to convert http::request to normal buffer*/
-    auto* ptr = boost::asio::buffer_cast<const uint8_t*>(*resp.body().data().begin());
+    auto* ptr = static_cast<const uint8_t*>((*resp.body().data().begin()).data());
     auto size = resp.body().data().buffer_bytes();
     return qqmusic::utils::buffer{ptr, size};
 }
