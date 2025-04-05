@@ -6,6 +6,7 @@
 #include <iostream>
 #include <qqmusic/crypto/cipher_tea.h>
 #include <qqmusic/crypto/key_derive.h>
+#include <qqmusic/result.h>
 #include <qqmusic/utils/buffer.h>
 #include <vector>
 

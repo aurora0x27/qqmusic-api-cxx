@@ -66,7 +66,6 @@ private:
 
     /**
     * @brief V2密钥处理
-    * @param raw 
     */
     static qqmusic::utils::buffer derive_V2(qqmusic::utils::buffer raw);
 
