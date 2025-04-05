@@ -60,13 +60,12 @@ target_link_library(
 ./include
 └── qqmusic
     ├── crypto
-    │   ├── mflac.h
-    │   ├── mgg.h
-    │   ├── qmcflac.h
-    │   ├── qmc.h
-    │   ├── qmcogg.h
-    │   ├── tkm.h
-    │   └── tm.h
+    │   ├── cipher.h
+    │   ├── cipher_map.h
+    │   ├── cipher_rc4.h
+    │   ├── cipher_tea.h
+    │   ├── key_derive.h
+    │   └── qmc.h
     ├── details
     │   ├── api.h
     │   ├── context.h
