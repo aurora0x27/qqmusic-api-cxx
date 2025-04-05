@@ -196,6 +196,8 @@ qqmusic::Task<qqmusic::Result<QRCodeLoginResult>> check_wx_qr(QRCode& qrc);
  *         出错就会返回`Err`
  *
  * @note 异步函数, 返回`Task`
+ *
+ * @warning 该函数仍有问题, 不应使用
  * */
 qqmusic::Task<qqmusic::Result<PhoneLoginResult>> send_authcode(
     std::string_view phone, std::string_view country_code = "86");
@@ -211,6 +213,8 @@ qqmusic::Task<qqmusic::Result<PhoneLoginResult>> send_authcode(
  *         出错就会返回`Err`
  *
  * @note 异步函数, 返回`Task`
+ *
+ * @warning 该函数仍有问题, 不应使用
  * */
 qqmusic::Task<qqmusic::Result<utils::Credential>> phone_authorize(
     std::string_view phone, std::string_view auth_code, std::string_view country_code = "86");

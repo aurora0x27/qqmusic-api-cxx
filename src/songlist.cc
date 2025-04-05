@@ -8,7 +8,7 @@
 
 namespace qqmusic {
 
-Task<Result<nlohmann::json>> get_songlist_detail(uint64_t songlist_id,
+Task<Result<nlohmann::json>> get_songlist_detail(uint64_t dissid,
                                                  unsigned dirid,
                                                  unsigned num,
                                                  unsigned page,
@@ -18,7 +18,7 @@ Task<Result<nlohmann::json>> get_songlist_detail(uint64_t songlist_id,
     auto session = utils::SessionManager::get_instance().get_session();
     auto api = details::Api(session, "music.srfDissInfo.DissInfo", "CgiGetDiss");
 
-    nlohmann::json params = {{"disstid", songlist_id},
+    nlohmann::json params = {{"disstid", dissid},
                              {"dirid", dirid},
                              {"tag", tag},
                              {"song_begin", num * (page - 1)},
@@ -70,8 +70,8 @@ Task<Result<nlohmann::json>> get_songlist_detail(uint64_t songlist_id,
     co_return Err(utils::Exception(utils::Exception::UnknownError, "Not implemented"));
 }
 
-Task<Result<nlohmann::json>> get_songlist(uint64_t songlist_id, unsigned dirid) {
-    auto response = co_await get_songlist_detail(songlist_id, dirid, 100, 1, true);
+Task<Result<nlohmann::json>> get_songlist(uint64_t dissid, unsigned dirid) {
+    auto response = co_await get_songlist_detail(dissid, dirid, 100, 1, true);
     if (response.isErr()) {
         co_return Err(utils::Exception(response.unwrapErr()));
     }
@@ -85,7 +85,7 @@ Task<Result<nlohmann::json>> get_songlist(uint64_t songlist_id, unsigned dirid) 
 
     std::vector<Task<Result<nlohmann::json>>> tasks;
     for (unsigned i = 100; i < total; i += 100) {
-        tasks.push_back(get_songlist_detail(songlist_id, dirid, 100, i, true));
+        tasks.push_back(get_songlist_detail(dissid, dirid, 100, i, true));
     }
 
     auto& async_executor = utils::AsyncExecutor::get_instance();

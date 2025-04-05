@@ -111,13 +111,13 @@ Task<Result<nlohmann::json>> quick_search(std::string_view keyword) {
         switch (rc) {
         case 0:
             co_return Ok(resp_json["data"]);
-        case 2000:
-            co_return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::SignInvalidError,
-                                                    "[quick_search] -- Sign is invalid"));
         case 1000:
             co_return Err(
                 qqmusic::utils::Exception(qqmusic::utils::Exception::CredendialExpiredError,
                                           "[quick_search] -- Credential is expired"));
+        case 2000:
+            co_return Err(qqmusic::utils::Exception(qqmusic::utils::Exception::SignInvalidError,
+                                                    "[quick_search] -- Sign is invalid"));
         default:
             co_return Err(qqmusic::utils::Exception(
                 qqmusic::utils::Exception::ResponseCodeError,
@@ -125,11 +125,10 @@ Task<Result<nlohmann::json>> quick_search(std::string_view keyword) {
         }
 
     } catch (const std::exception& e) {
-        Err(utils::Exception(utils::Exception::JsonError,
+        co_return Err(utils::Exception(utils::Exception::JsonError,
                              std::format("[quick_search] -- Cannot parse response: `{}`",
                                          e.what())));
     }
-    co_return Err(utils::Exception(utils::Exception::UnknownError, "Not implemented"));
 }
 
 Task<Result<nlohmann::json>> general_search(std::string_view keyword,
