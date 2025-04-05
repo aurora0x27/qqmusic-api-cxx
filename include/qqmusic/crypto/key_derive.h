@@ -43,7 +43,7 @@ public:
     * @brief 主要的密钥派生函数，处理派生逻辑
     * 当检测到V2前缀时，先进行V2解密，然后进行V1解密
     * 如果没有V2前缀，则直接进行V1解密
-    * @param raw_key 
+    * @param raw_key 原始密钥
     * @return qqmusic::utils::buffer 解密后的密钥
     */
     static qqmusic::utils::buffer derive(qqmusic::utils::buffer&& raw_key);

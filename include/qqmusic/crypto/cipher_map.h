@@ -29,6 +29,8 @@ public:
 
     /**
      * @brief map解密算法
+     * @param buf 待解密的密钥
+     * @param offset 偏移量
      */
     void decrypt(qqmusic::utils::buffer& buf, size_t offset) override;
 

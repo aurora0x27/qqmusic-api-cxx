@@ -27,6 +27,11 @@ class RC4Cipher : public Cipher {
 public:
     explicit RC4Cipher(const std::vector<uint8_t>& key);
 
+    /**
+     * @brief RC4解密算法
+     * @param buf 待解密的密钥
+     * @param offset 偏移量
+     */
     void decrypt(qqmusic::utils::buffer& buf, size_t offset) override;
 
 private:

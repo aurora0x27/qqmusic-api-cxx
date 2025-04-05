@@ -27,7 +27,6 @@ bool Decoder::decrypt() {
     // 初始化解密算法
     if (key.size() > 300) {
         cipher = std::make_unique<RC4Cipher>(key);
-        // 新的单次调用方式
         cipher->decrypt(buf_in, 0);
         buf_out.insert(buf_out.end(), buf_in.begin(), buf_in.end());
     } else if (!key.empty()) {

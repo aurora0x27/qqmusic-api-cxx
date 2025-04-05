@@ -44,7 +44,7 @@ class Decoder {
 public:
     /**
      * @brief 解码器构造函数
-     * @param 需要传入加密的密钥ekey
+     * @param ekey 需要传入加密的密钥
      */
     explicit Decoder(std::string&& ekey);
 
@@ -59,7 +59,6 @@ public:
     /**
      * @brief 存取待解密数据到 buf_in 中
      * @param buf 缓冲区（存放未解密的数据）
-     * @return buf_in
      */
     bool read2buf(qqmusic::utils::buffer&& buf);
 

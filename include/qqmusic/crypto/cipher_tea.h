@@ -25,6 +25,9 @@ namespace qqmusic::crypto::TeaCipher {
 
 /**
  * @brief tea解密，每次解密8字节
+ * @param buf 待解密的密钥
+ * @param offset 偏移量
+ * @param key 解密需要用到的密钥，在 key_derive.cc 中生成
  */
 void decrypt(qqmusic::utils::buffer& buf, size_t offset, const std::vector<uint8_t>& key);
 
