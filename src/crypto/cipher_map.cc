@@ -1,6 +1,14 @@
+#include <iostream>
 #include <qqmusic/crypto/cipher_map.h>
 
 namespace qqmusic::crypto {
+
+MapCipher::MapCipher(const std::vector<uint8_t>& key)
+    : key(key) {
+    if (key.size() == 0) {
+        std::cout << "[MapCipher constructor failed] key size is 0" << std::endl;
+    }
+}
 
 void MapCipher::decrypt(qqmusic::utils::buffer& buf, size_t offset) {
     const auto rotate = [](uint8_t value, uint8_t bits) {

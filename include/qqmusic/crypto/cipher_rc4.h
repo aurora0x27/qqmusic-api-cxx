@@ -10,6 +10,7 @@
  * qqmusic::crypto::RC4Cipher cipher(key);
  * cipher.decrypt(buf, 0);
  * @endcode
+ * @note 该接口未测试，暂不可用
  */
 #ifndef QQMUSIC_CRYPTO_CIPHER_RC4_H
 #define QQMUSIC_CRYPTO_CIPHER_RC4_H
@@ -24,8 +25,7 @@ namespace qqmusic::crypto {
 
 class RC4Cipher : public Cipher {
 public:
-    explicit RC4Cipher(const std::vector<uint8_t>& key)
-        : key(key) {}
+    explicit RC4Cipher(const std::vector<uint8_t>& key);
 
     void decrypt(qqmusic::utils::buffer& buf, size_t offset) override;
 

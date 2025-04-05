@@ -1,6 +1,13 @@
 #include <qqmusic/crypto/cipher_rc4.h>
 
 namespace qqmusic::crypto {
+RC4Cipher::RC4Cipher(const std::vector<uint8_t>& key)
+    : key(key) {
+    if (key.size() == 0) {
+        std::cout << "[RC4Cipher constructor failed] key size is 0" << std::endl;
+    }
+}
+
 void RC4Cipher::decrypt(qqmusic::utils::buffer& buf, size_t offset) {
     // 初始化S盒
     std::vector<uint8_t> box(key.size());

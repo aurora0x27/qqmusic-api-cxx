@@ -12,11 +12,18 @@
  * @code{.cc}
  * SongInfo song = ...;
  * if (song.ekey.has_value()) {
- *      qqmusic::crypto::Decoder(*song.ekey);
+ *      qqmusic::crypto::Decoder decoder(*song.ekey);
+ *      if (read2buf(buf)) {
+ *          if (decoder.decrypt()) {
+ *              std::cout << "decrypt successful" << std::endl;
+ *          }
+ *      }
  * } else {
  *      // throw error
  * }
+ * // then can use `buf_out`
  * @endcode
+ * @note 该接口未测试，暂不可用
  */
 #ifndef QQMUSIC_CRYPTO_QMC_H
 #define QQMUSIC_CRYPTO_QMC_H
@@ -29,15 +36,17 @@
 #include <qqmusic/crypto/key_derive.h>
 #include <qqmusic/details/result.h>
 #include <qqmusic/utils/buffer.h>
-#include <utility>
 #include <vector>
 
 namespace qqmusic::crypto {
 
 class Decoder {
 public:
-    explicit Decoder(std::string&& ekey)
-        : ekey((uint8_t*) ekey.data(), ekey.size()){};
+    /**
+     * @brief 解码器构造函数
+     * @param 需要传入加密的密钥ekey
+     */
+    explicit Decoder(std::string&& ekey);
 
     /**
      * @brief 解码器完整解码过程
@@ -49,10 +58,10 @@ public:
 
     /**
      * @brief 存取待解密数据到 buf_in 中
-     * @param buf_ 缓冲区（存放未解密的数据）
-     * @return 缓冲区大小和 buf_in
+     * @param buf 缓冲区（存放未解密的数据）
+     * @return buf_in
      */
-    std::pair<size_t, qqmusic::utils::buffer> read2buf(qqmusic::utils::buffer&& buf);
+    bool read2buf(qqmusic::utils::buffer&& buf);
 
 private:
     qqmusic::utils::buffer ekey;                     ///< 加密密钥

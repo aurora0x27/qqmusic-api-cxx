@@ -8,9 +8,16 @@
 
 namespace qqmusic::crypto {
 
-std::pair<size_t, qqmusic::utils::buffer> read2buf(qqmusic::utils::buffer&& buf) {
+Decoder::Decoder(std::string&& ekey)
+    : ekey((uint8_t*) ekey.data(), ekey.size()){};
+
+bool read2buf(qqmusic::utils::buffer&& buf) {
     qqmusic::utils::buffer buf_in(std::move(buf));
-    return {buf_in.size(), std::move(buf_in)};
+    if (buf_in.size() < 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 bool Decoder::decrypt() {
@@ -28,7 +35,7 @@ bool Decoder::decrypt() {
         cipher->decrypt(buf_in, 0);
         buf_out.insert(buf_out.end(), buf_in.begin(), buf_in.end());
     } else {
-        std::cout << "Decoder decrypt failed!" << std::endl;
+        std::cout << "Decoder decrypt failed! key size abnormal!" << std::endl;
         return false;
     }
     return true;

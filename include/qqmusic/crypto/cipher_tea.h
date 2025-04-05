@@ -12,6 +12,7 @@
  *     qqmusic::crypto::TeaCipher::decrypt(buf, offset, key);
  * }
  * @endcode
+ * @note 该接口未测试，暂不可用
  */
 #ifndef QQ_MUSIC_CIPHER_TEA_H
 #define QQ_MUSIC_CIPHER_TEA_H

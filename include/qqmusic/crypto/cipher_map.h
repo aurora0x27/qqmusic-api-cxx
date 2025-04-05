@@ -11,6 +11,7 @@
  * qqmusic::crypto::MapCipher cipher(key);
  * cipher.decrypt(buf, 0);
  * @endcode
+ * @note 该接口未测试，暂不可用
  */
 #ifndef QQ_MUSIC_CIPHER_MAP_H
 #define QQ_MUSIC_CIPHER_MAP_H
@@ -24,8 +25,7 @@ namespace qqmusic::crypto {
 
 class MapCipher : public Cipher {
 public:
-    explicit MapCipher(const std::vector<uint8_t>& key_)
-        : key(key_) {}
+    explicit MapCipher(const std::vector<uint8_t>& key);
 
     /**
      * @brief map解密算法

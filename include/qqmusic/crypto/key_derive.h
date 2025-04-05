@@ -25,6 +25,7 @@
  * qqmusic::crypto::Decoder Decoder(ekey); // 用ekey初始化解码器，ekey存取为解码器的公有变量
  * auto key = qqmusic::crypto::KeyDrive::derive(Decoder.ekey);
  * @endcode
+ * @note 该接口未测试，暂不可用
  */
 #ifndef QQMUSIC_CRYPTO_KEY_DERIVE_H
 #define QQMUSIC_CRYPTO_KEY_DERIVE_H
@@ -43,6 +44,7 @@ public:
     * 当检测到V2前缀时，先进行V2解密，然后进行V1解密
     * 如果没有V2前缀，则直接进行V1解密
     * @param raw_key 
+    * @return qqmusic::utils::buffer 解密后的密钥
     */
     static qqmusic::utils::buffer derive(qqmusic::utils::buffer&& raw_key);
 
